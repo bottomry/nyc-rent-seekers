@@ -9,10 +9,10 @@ export const AREA_FILL_KEYS = ["safmr", "zori", "ntas", "tracts"] as const;
 export type AreaFillKey = (typeof AREA_FILL_KEYS)[number];
 
 const QUALITY_OPTIONS = [
-  { value: "exact", label: "Exact" },
-  { value: "strong", label: "Strong" },
-  { value: "representative", label: "Representative" },
-  { value: "context_only", label: "Context only" },
+  { value: "exact", label: "Same place and unit scope" },
+  { value: "strong", label: "Strong geographic match" },
+  { value: "representative", label: "Useful broader comparison" },
+  { value: "context_only", label: "Rough context only" },
 ] as const;
 
 const FILTERS_OPEN_KEY = "nrs-filters-open";
@@ -159,7 +159,7 @@ export function renderLayerControls(
 
   const metricControl = `
     <div class="metric-control" data-testid="metric-control">
-      <label for="map-metric-select">Map metric</label>
+      <label for="map-metric-select">Color buildings by</label>
       <select id="map-metric-select" data-testid="map-metric-select" data-control="map-metric"
         aria-label="Map color metric">
         ${MAP_METRICS.map((m) => metricOption(m.value, m.label)).join("")}
@@ -184,7 +184,7 @@ export function renderLayerControls(
   const marketSourceControl = showMarketSource
     ? `
     <div class="market-source-control" data-testid="market-source-control">
-      <label for="market-source-select">Nearby market rent source</label>
+      <label for="market-source-select">Which nearby-market measure?</label>
       <select id="market-source-select" data-testid="market-source-select" data-control="market-source"
         aria-label="Nearby market rent source">
         ${sourceOption("best", "Best available match")}
@@ -219,7 +219,7 @@ export function renderLayerControls(
 
   const qualityControl = `
     <div class="quality-filter-control" data-testid="quality-filter-control">
-      <div class="layer-controls-title">Match quality filter</div>
+      <div class="layer-controls-title">Which comparisons should appear?</div>
       ${qualityChecks}
       <p class="layer-hint">“Context only” is off unless you turn it on. The map and rankings follow this filter.</p>
     </div>`;
@@ -236,7 +236,7 @@ export function renderLayerControls(
       : showBedroom
         ? `
     <div class="bedroom-control" data-testid="bedroom-control">
-      <label for="hud-bedroom-select">HUD SAFMR bedroom</label>
+      <label for="hud-bedroom-select">Which bedroom size?</label>
       <select id="hud-bedroom-select" data-testid="hud-bedroom-select" data-control="bedroom"
         aria-label="HUD SAFMR bedroom count">
         ${brOption(0, "Studio / 0BR")}
@@ -322,8 +322,8 @@ export function renderLayerControls(
     <div class="layer-controls" data-testid="layer-controls">
       <details class="filters-disclosure" data-testid="filters-disclosure" ${filtersOpen ? "open" : ""}>
         <summary class="filters-summary" data-testid="filters-summary">
-          <span class="filters-summary-label">Map filters</span>
-          <span class="filters-summary-hint">layers · metric · source · quality</span>
+          <span class="filters-summary-label">Change the map</span>
+          <span class="filters-summary-hint">what colors mean · market comparison · visible areas</span>
         </summary>
         <div class="filters-body">
           <div class="layer-controls-title">Layers</div>

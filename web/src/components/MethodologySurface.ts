@@ -22,8 +22,8 @@ export type MethodSectionId =
   | "method-limitations";
 
 const SECTIONS: Array<{ id: MethodSectionId; label: string }> = [
-  { id: "method-health", label: "Data health" },
   { id: "method-wedge", label: "How the difference works" },
+  { id: "method-health", label: "Data health" },
   { id: "method-quality", label: "Match quality" },
   { id: "method-sources", label: "Sources" },
   { id: "method-measures", label: "Kinds of rent" },
@@ -654,10 +654,9 @@ export function renderMethodologySurface(
     <div class="methodology-surface" data-testid="methodology-surface">
       <header class="method-header">
         <div>
-          <h2 data-testid="methodology-title">How the numbers work</h2>
+          <h2 data-testid="methodology-title">Verify the rent difference</h2>
           <p class="subhead">
-            How each rent difference is calculated, which sources and dates feed it,
-            and how complete this release is.
+            Start with the calculation, then inspect its match, sources, uncertainty, and release health.
           </p>
         </div>
       </header>

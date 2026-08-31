@@ -23,6 +23,22 @@ export function qualityRank(q: string | ComparisonQuality | undefined): number {
   return QUALITY_RANK[String(q || "unavailable")] ?? 99;
 }
 
+/** User-facing interpretation of the technical comparison class. */
+export function qualityLabel(q: string | ComparisonQuality | null | undefined): string {
+  switch (String(q || "unavailable")) {
+    case "exact":
+      return "Same place and unit scope";
+    case "strong":
+      return "Strong geographic match";
+    case "representative":
+      return "Useful broader comparison";
+    case "context_only":
+      return "Rough context only";
+    default:
+      return "No usable comparison";
+  }
+}
+
 function allComparisons(bundle: DemoBundle): RentComparison[] {
   const out: RentComparison[] = [...(bundle.comparisons || [])];
   const seen = new Set(out.map((c) => c.comparison_id));
