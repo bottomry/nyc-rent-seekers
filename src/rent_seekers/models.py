@@ -32,6 +32,12 @@ class OccupancyState(str, Enum):
     all = "all"
 
 
+class PopulationRentGapType(str, Enum):
+    incumbency_within_regime = "incumbency_within_regime"
+    same_tenure_regulation = "same_tenure_regulation"
+    illustrative_cross_regime = "illustrative_cross_regime"
+
+
 class SourceArtifact(BaseModel):
     artifact_id: str
     source_id: str
@@ -191,6 +197,62 @@ class PopulationRentObservation(BaseModel):
             and any(value is None for value in uncertainty)
         ):
             raise ValueError("replicate-weighted observations require complete uncertainty fields")
+        return self
+
+
+class PopulationRentGap(BaseModel):
+    """Descriptive difference between two compatible population-rent observations."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    derived_type: Literal["population_rent_gap"] = "population_rent_gap"
+    gap_id: NonEmptyString
+    gap_type: PopulationRentGapType
+    operation: Literal["minuend_minus_subtrahend"] = "minuend_minus_subtrahend"
+    minuend_observation_id: NonEmptyString
+    subtrahend_observation_id: NonEmptyString
+    minuend_housing_regime: NonEmptyString
+    minuend_tenure_cohort: NonEmptyString
+    subtrahend_housing_regime: NonEmptyString
+    subtrahend_tenure_cohort: NonEmptyString
+    geography_id: NonEmptyString
+    geography_type: NonEmptyString
+    geography_name: NonEmptyString
+    survey_vintage: NonEmptyString
+    measure: NonEmptyString
+    measure_basis: MeasureBasis
+    gross_or_net: NonEmptyString
+    statistic: NonEmptyString
+    currency: NonEmptyString
+    cadence: NonEmptyString
+    dollar_difference: float
+    percent_difference: float | None
+    percent_denominator_observation_id: NonEmptyString
+    direction: Literal["positive", "negative", "zero"]
+    comparability_notes: list[NonEmptyString] = Field(min_length=1)
+    uncertainty_note: NonEmptyString
+    inference_class: Literal["descriptive_only"] = "descriptive_only"
+    illustrative: bool = False
+    causal_claim_allowed: Literal[False] = False
+
+    @model_validator(mode="after")
+    def lineage_and_type_are_consistent(self) -> "PopulationRentGap":
+        if self.minuend_observation_id == self.subtrahend_observation_id:
+            raise ValueError("population-rent gaps require two different observations")
+        if self.percent_denominator_observation_id != self.subtrahend_observation_id:
+            raise ValueError("population-rent gap percent denominator must be the subtrahend")
+        expected_direction = (
+            "positive"
+            if self.dollar_difference > 0
+            else "negative"
+            if self.dollar_difference < 0
+            else "zero"
+        )
+        if self.direction != expected_direction:
+            raise ValueError("population-rent gap direction must match its dollar difference")
+        cross_regime = self.gap_type == PopulationRentGapType.illustrative_cross_regime
+        if self.illustrative != cross_regime:
+            raise ValueError("only cross-regime population-rent gaps are illustrative")
         return self
 
 
