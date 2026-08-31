@@ -472,6 +472,172 @@ button.badge-warn.badge-compact {
   line-height: 1.45;
 }
 
+.rent-context-lenses {
+  display: flex;
+  gap: 0.35rem;
+  margin-top: 0.7rem;
+  overflow-x: auto;
+  padding-bottom: 0.15rem;
+  scrollbar-width: thin;
+}
+
+.rent-context-lenses button,
+.rent-context-next {
+  flex: 0 0 auto;
+  border: 1px solid rgba(196, 181, 253, 0.26);
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.5);
+  color: #ddd6fe;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.66rem;
+  font-weight: 700;
+  padding: 0.34rem 0.55rem;
+}
+
+.rent-context-lenses button.active,
+.rent-context-lenses button:focus-visible,
+.rent-context-next:focus-visible {
+  border-color: #c4b5fd;
+  background: rgba(124, 58, 237, 0.3);
+  color: #fff;
+  outline: none;
+}
+
+.rent-context-insight {
+  margin-top: 0.7rem;
+  padding: 0.72rem;
+  border-left: 3px solid #a78bfa;
+  border-radius: 8px;
+  background: rgba(124, 58, 237, 0.13);
+}
+
+.rent-context-insight > strong {
+  display: block;
+  margin-top: 0.18rem;
+  color: #f5f3ff;
+  font-size: 0.86rem;
+  line-height: 1.35;
+}
+
+.rent-context-insight > p,
+.rent-context-calculation p {
+  margin: 0.3rem 0 0;
+  color: var(--muted);
+  font-size: 0.68rem;
+  line-height: 1.42;
+}
+
+.rent-context-calculation {
+  margin-top: 0.5rem;
+  font-size: 0.67rem;
+}
+
+.rent-context-calculation summary {
+  color: #ddd6fe;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.rent-context-calculation code {
+  display: block;
+  overflow-wrap: anywhere;
+  margin-top: 0.25rem;
+  color: #94a3b8;
+  font-size: 0.58rem;
+}
+
+.rent-context-next {
+  margin-top: 0.55rem;
+}
+
+.rent-context-groups {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.65rem;
+  margin-top: 0.7rem;
+}
+
+.rent-context-group {
+  min-width: 0;
+  padding: 0.68rem;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.38);
+  transition: opacity 150ms ease, border-color 150ms ease;
+}
+
+.rent-context-group.seeker {
+  border-color: rgba(251, 146, 60, 0.35);
+}
+
+.rent-context-group.current {
+  border-color: rgba(34, 211, 238, 0.26);
+}
+
+.rent-context-group-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.rent-context-group-heading span {
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.rent-context-group-heading small,
+.rent-context-group > p {
+  color: var(--muted);
+  font-size: 0.63rem;
+}
+
+.rent-context-group > p {
+  margin: 0.18rem 0 0;
+  line-height: 1.35;
+}
+
+.rent-context-group .rent-context-list {
+  margin-top: 0.5rem;
+}
+
+.rent-context[data-rent-lens="seeking"] .rent-context-group.current,
+.rent-context[data-rent-lens="public"] .rent-context-group.seeker {
+  opacity: 0.42;
+}
+
+.rent-context[data-rent-lens="incumbency"] .rent-context-row:not([data-context-id^="unregulated_market"]),
+.rent-context[data-rent-lens="regulation"] .rent-context-row[data-context-id^="public_housing"],
+.rent-context[data-rent-lens="regulation"] .rent-context-row[data-context-id="selected-development"],
+.rent-context[data-rent-lens="public"] .rent-context-row:not([data-context-id^="public_housing"]):not([data-context-id="selected-development"]) {
+  opacity: 0.35;
+}
+
+.rent-context-reliability-details {
+  width: fit-content;
+  margin-top: 0.12rem;
+}
+
+.rent-context-reliability-details summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.rent-context-reliability-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.rent-context-reliability-details > span {
+  display: block;
+  max-width: 28rem;
+  margin-top: 0.22rem;
+  color: var(--muted);
+  font-size: 0.61rem;
+  line-height: 1.4;
+}
+
 .rent-lens {
   margin-top: 0.7rem;
   border: 1px solid rgba(196, 181, 253, 0.22);

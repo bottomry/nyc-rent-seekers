@@ -139,7 +139,11 @@ function renderZctaInfo(info: {
 }
 
 async function boot(): Promise<void> {
-  let populationRents: PopulationRentLoadState = { status: "loading", observations: [] };
+  let populationRents: PopulationRentLoadState = {
+    status: "loading",
+    observations: [],
+    gaps: [],
+  };
   const populationRentsPromise = loadPopulationRentObservations();
   const bundle = await loadBundle();
   const drawer = $("drawer");

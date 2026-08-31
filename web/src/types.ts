@@ -97,16 +97,49 @@ export interface PopulationRentObservation {
   imputed: boolean;
 }
 
+export type PopulationRentGapType =
+  | "incumbency_within_regime"
+  | "same_tenure_regulation"
+  | "illustrative_cross_regime";
+
+export interface PopulationRentGap {
+  derived_type: "population_rent_gap";
+  gap_id: string;
+  gap_type: PopulationRentGapType;
+  operation: "minuend_minus_subtrahend";
+  minuend_observation_id: string;
+  subtrahend_observation_id: string;
+  minuend_housing_regime: string;
+  minuend_tenure_cohort: string;
+  subtrahend_housing_regime: string;
+  subtrahend_tenure_cohort: string;
+  geography_id: string;
+  geography_type: string;
+  geography_name: string;
+  survey_vintage: string;
+  dollar_difference: number;
+  percent_difference: number | null;
+  percent_denominator_observation_id: string;
+  direction: "positive" | "negative" | "zero";
+  comparability_notes: string[];
+  uncertainty_note: string;
+  inference_class: "descriptive_only";
+  illustrative: boolean;
+  causal_claim_allowed: false;
+}
+
 export interface NychvsPopulationDocument {
   schema_version: number;
   survey_vintage: string;
   geographies?: Record<string, { id: string; type: string; name: string }>;
   population_rent_observations: PopulationRentObservation[];
+  population_rent_gaps: PopulationRentGap[];
 }
 
 export interface PopulationRentLoadState {
   status: "loading" | "ready" | "error";
   observations: PopulationRentObservation[];
+  gaps: PopulationRentGap[];
 }
 
 export interface RentComparison {
