@@ -73,3 +73,10 @@ def test_analytical_ui_release_gate_covers_teaching_states_and_mobile_behavior()
         assert teaching_contract in component
     assert "@media (max-width:" in styles
     assert "grid-template-columns: repeat(2, minmax(0, 1fr))" in styles
+
+
+def test_product_chrome_excludes_repository_lifecycle_labels():
+    lifecycle_labels = ("public project", "private software", "promotion stage")
+    for relative in ("web/index.html", "web/demo.html"):
+        surface = (ROOT / relative).read_text(encoding="utf-8").lower()
+        assert not any(label in surface for label in lifecycle_labels), relative
