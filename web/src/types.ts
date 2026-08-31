@@ -92,6 +92,8 @@ export interface PopulationRentObservation {
   confidence_interval_upper?: number | null;
   coefficient_of_variation?: number | null;
   reliability_status: "reliable" | "use_with_caution" | "unavailable";
+  inference_class: "descriptive_only";
+  rival_explanations: string[];
   available: boolean;
   unavailable_reason?: string | null;
   imputed: boolean;
@@ -124,14 +126,30 @@ export interface PopulationRentGap {
   comparability_notes: string[];
   uncertainty_note: string;
   inference_class: "descriptive_only";
+  minuend_reliability_status: "reliable" | "use_with_caution";
+  subtrahend_reliability_status: "reliable" | "use_with_caution";
+  rival_explanations: string[];
   illustrative: boolean;
   causal_claim_allowed: false;
 }
 
 export interface NychvsPopulationDocument {
   schema_version: number;
+  source_id: string;
   survey_vintage: string;
   geographies?: Record<string, { id: string; type: string; name: string }>;
+  source_artifacts: Record<
+    string,
+    {
+      artifact_id: string;
+      sha256: string;
+      source_url: string;
+      landing_page: string;
+      documentation_url: string;
+      raw_publication_allowed: false;
+    }
+  >;
+  method: Record<string, unknown>;
   population_rent_observations: PopulationRentObservation[];
   population_rent_gaps: PopulationRentGap[];
 }
@@ -140,6 +158,10 @@ export interface PopulationRentLoadState {
   status: "loading" | "ready" | "error";
   observations: PopulationRentObservation[];
   gaps: PopulationRentGap[];
+  sourceId?: string;
+  surveyVintage?: string;
+  sourceArtifacts?: NychvsPopulationDocument["source_artifacts"];
+  method?: Record<string, unknown>;
 }
 
 export interface RentComparison {

@@ -155,6 +155,8 @@ class PopulationRentObservation(BaseModel):
     confidence_interval_upper: float | None = None
     coefficient_of_variation: float | None = Field(default=None, ge=0)
     reliability_status: Literal["reliable", "use_with_caution", "unavailable"]
+    inference_class: Literal["descriptive_only"] = "descriptive_only"
+    rival_explanations: list[NonEmptyString] = Field(min_length=1)
     available: bool
     unavailable_reason: str | None = None
     imputed: bool = False
@@ -232,6 +234,9 @@ class PopulationRentGap(BaseModel):
     comparability_notes: list[NonEmptyString] = Field(min_length=1)
     uncertainty_note: NonEmptyString
     inference_class: Literal["descriptive_only"] = "descriptive_only"
+    minuend_reliability_status: Literal["reliable", "use_with_caution"]
+    subtrahend_reliability_status: Literal["reliable", "use_with_caution"]
+    rival_explanations: list[NonEmptyString] = Field(min_length=1)
     illustrative: bool = False
     causal_claim_allowed: Literal[False] = False
 
