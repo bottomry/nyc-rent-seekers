@@ -705,6 +705,50 @@ button.badge-warn.badge-compact {
   font-size: 0.59rem;
 }
 
+.rent-next-action {
+  width: 100%;
+  min-height: 2.5rem;
+  margin: 0.35rem 0 0.75rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 9px;
+  background: rgba(56, 189, 248, 0.09);
+  color: var(--accent);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.rent-next-action:hover,
+.rent-next-action:focus-visible {
+  border-color: rgba(56, 189, 248, 0.68);
+  background: rgba(56, 189, 248, 0.15);
+  outline: none;
+}
+
+.comparison-details {
+  margin-top: 0.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.42);
+}
+
+.comparison-details > summary {
+  min-height: 2.5rem;
+  padding: 0.65rem 0.72rem;
+  color: #cbd5e1;
+  cursor: pointer;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.comparison-details-body {
+  min-width: 0;
+  padding: 0 0.72rem 0.72rem;
+}
+
 .rent-lens {
   margin-top: 0.7rem;
   border: 1px solid rgba(196, 181, 253, 0.22);
@@ -1826,8 +1870,18 @@ code {
   }
 
   .side-stack {
-    max-height: 48vh;
+    max-height: none;
     position: relative;
+  }
+
+  .side-stack:not(.is-selected) {
+    order: -1;
+    overflow: visible;
+  }
+
+  .side-stack:not(.is-selected) + .map-pane,
+  .map-pane {
+    order: 1;
   }
 
   /* P-07: mobile selection bottom sheet — hero first */
@@ -1837,7 +1891,7 @@ code {
     right: 0;
     bottom: 0;
     z-index: 8;
-    max-height: 52vh;
+    max-height: 60vh;
     border-radius: 16px 16px 0 0;
     border-top: 1px solid var(--border);
     box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.45);

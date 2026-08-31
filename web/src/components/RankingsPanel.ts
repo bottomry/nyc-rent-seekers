@@ -9,7 +9,6 @@ import {
   rankMetricRows,
   summarizeRows,
 } from "../metrics";
-import { sourceLabel } from "../compare";
 import { escapeHtml, formatPct, formatUsd } from "../format";
 
 export type RankingSort = "monthly-wedge" | "pct-below" | "name" | "units";
@@ -23,14 +22,6 @@ export function renderCityOverview(
   const pctSummary = summarizeRows(compared, "percent_below_comparator");
   const nDev = bundle.meta.geometry?.developments ?? bundle.developments?.length ?? 0;
   const nCompared = compared.length;
-  const qc =
-    bundle.comparison_index?.quality_counts_best_available ||
-    bundle.comparison_index?.quality_counts ||
-    {};
-  const qcLine = ["exact", "strong", "representative", "context_only"]
-    .map((k) => (qc[k] ? `${k} ${qc[k]}` : null))
-    .filter(Boolean)
-    .join(" · ");
 
   // P-04: short overview + top-3 ranks (filters live in disclosure)
   const top = rankMetricRows(rows, "monthly-wedge").slice(0, 3);
@@ -58,20 +49,14 @@ export function renderCityOverview(
         <div>
           <h2 data-testid="city-overview-title">Citywide rent differences</h2>
           <p class="subhead">
-            ${nCompared.toLocaleString("en-US")} compared of ${nDev.toLocaleString("en-US")} developments
-            ${qcLine ? ` · ${escapeHtml(qcLine)}` : ""}
+            A typical building-wide rent difference across
+            ${nCompared.toLocaleString("en-US")} of ${nDev.toLocaleString("en-US")} developments.
           </p>
         </div>
       </div>
-      <p class="method-link-row">
+      <p class="method-link-row contextual-verification">
         <button type="button" class="linkish" data-action="open-methodology"
-          data-section="method-health" data-testid="overview-link-health">Data health</button>
-        ·
-        <button type="button" class="linkish" data-action="open-methodology"
-          data-section="method-wedge" data-testid="overview-link-method">Methodology</button>
-        ·
-        <button type="button" class="linkish" data-action="open-methodology"
-          data-section="method-quality" data-testid="overview-link-quality">Quality classes</button>
+          data-section="method-wedge" data-testid="overview-link-method">Verify this overview</button>
       </p>
       <div class="agg-grid compact" data-testid="city-aggregations">
         <div class="metric-card">
@@ -106,7 +91,8 @@ export function renderCityOverview(
         <ol class="ranking-list interactive">${topList}</ol>
       </div>
       <p class="muted" data-testid="city-overview-hint">
-        Search or tap a building for the rent difference. Open Map filters for layers and sources.
+        Search or tap a building to explain its rent difference. Use Change the map to test another
+        market comparison or color scale.
       </p>
     </div>
   `;
@@ -137,7 +123,7 @@ export function renderRankingsPanel(
     metric !== "monthly-wedge" &&
     metric !== "pct-below" &&
     metric !== "annual-wedge";
-  const colCount = showMetricCol ? 8 : 7;
+  const colCount = showMetricCol ? 6 : 5;
 
   const body = ranked.length
     ? ranked
@@ -152,10 +138,11 @@ export function renderRankingsPanel(
             r.current_unit_count != null
               ? r.current_unit_count.toLocaleString("en-US")
               : "—";
-          const src = r.market_source ? sourceLabel(r.market_source) : "—";
           const metricCell = formatMetricValue(metric, r);
           return `
-          <tr data-testid="ranking-row" data-development-id="${escapeHtml(r.development_id)}">
+          <tr data-testid="ranking-row" data-development-id="${escapeHtml(r.development_id)}"
+            data-comparison-quality="${escapeHtml(String(r.comparison_quality || ""))}"
+            data-market-source="${escapeHtml(String(r.market_source || ""))}">
             <td class="rank-col">${i + 1}</td>
             <td>
               <button type="button" class="rank-link" data-action="rank-select"
@@ -167,8 +154,6 @@ export function renderRankingsPanel(
             <td class="num">${escapeHtml(wedge)}</td>
             <td class="num">${escapeHtml(pct)}</td>
             ${showMetricCol ? `<td class="num">${escapeHtml(metricCell)}</td>` : ""}
-            <td>${escapeHtml(String(r.comparison_quality || ""))}</td>
-            <td>${escapeHtml(src)}</td>
             <td class="num">${escapeHtml(units)}</td>
           </tr>`;
         })
@@ -187,7 +172,8 @@ export function renderRankingsPanel(
         <div>
           <h2>Rankings</h2>
           <p class="subhead">
-            ${ranked.length} developments · filter-synced with map
+            Which buildings have the largest rent differences? Choose a building to explain its rent difference.
+            ${ranked.length} developments · same selection as the map
             ${filterChip}
           </p>
         </div>
@@ -232,8 +218,6 @@ export function renderRankingsPanel(
               <th scope="col">$/mo lower</th>
               <th scope="col">% cheaper</th>
               ${showMetricCol ? `<th scope="col">Map metric</th>` : ""}
-              <th scope="col">Match</th>
-              <th scope="col">Source</th>
               <th scope="col">Apts</th>
             </tr>
           </thead>

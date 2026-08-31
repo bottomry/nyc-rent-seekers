@@ -267,6 +267,89 @@ async function playwrightSmoke() {
   }
 
   try {
+    const mobileInitial = await browser.newPage({ viewport: { width: 390, height: 844 } });
+    await mobileInitial.goto(`http://127.0.0.1:${port}/app/index.html`, {
+      waitUntil: "networkidle",
+      timeout: 30000,
+    });
+    await mobileInitial.waitForSelector('[data-testid="city-overview"]', { timeout: 15000 });
+    const mobileOverview = await mobileInitial.evaluate(() => {
+      const overview = document.querySelector('[data-testid="city-overview"]');
+      const map = document.getElementById("map-pane");
+      const filters = document.querySelector('[data-testid="filters-disclosure"]');
+      return {
+        overviewTop: overview?.getBoundingClientRect().top ?? null,
+        mapTop: map?.getBoundingClientRect().top ?? null,
+        filtersOpen: filters?.hasAttribute("open") ?? null,
+        overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+      };
+    });
+    if (
+      mobileOverview.overviewTop == null ||
+      mobileOverview.mapTop == null ||
+      mobileOverview.overviewTop >= 844 ||
+      mobileOverview.overviewTop >= mobileOverview.mapTop ||
+      mobileOverview.filtersOpen !== false ||
+      mobileOverview.overflow > 1
+    ) {
+      throw new Error(
+        `mobile city answer must precede the map without overflow: ${JSON.stringify(mobileOverview)}`,
+      );
+    }
+    const mobileInitialText = (await mobileInitial.textContent("body")) || "";
+    for (const label of [
+      "Change the map",
+      "what colors mean · market comparison · visible areas",
+      "Verify",
+    ]) {
+      if (!mobileInitialText.includes(label)) {
+        throw new Error(`mobile initial state missing question-shaped control ${label}`);
+      }
+    }
+    await mobileInitial.close();
+
+    const mobileSelected = await browser.newPage({ viewport: { width: 390, height: 844 } });
+    await mobileSelected.goto(
+      `http://127.0.0.1:${port}/app/index.html?development=nycha%3Atds%3A136`,
+      { waitUntil: "networkidle", timeout: 30000 },
+    );
+    await mobileSelected.waitForSelector('[data-testid="change-market-btn"]', {
+      timeout: 15000,
+    });
+    const mobileSelectedOrder = await mobileSelected.evaluate(() => {
+      const rect = (testid) => {
+        const node = document.querySelector(`[data-testid="${testid}"]`);
+        const bounds = node?.getBoundingClientRect();
+        return bounds ? { top: bounds.top, bottom: bounds.bottom } : null;
+      };
+      return {
+        hero: rect("hero-wedge"),
+        next: rect("change-market-btn"),
+        context: rect("rent-population-context"),
+        comparison: rect("comparison-details"),
+        provenance: rect("provenance-drawer"),
+        overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+      };
+    });
+    if (
+      !mobileSelectedOrder.hero ||
+      !mobileSelectedOrder.next ||
+      !mobileSelectedOrder.context ||
+      !mobileSelectedOrder.comparison ||
+      !mobileSelectedOrder.provenance ||
+      mobileSelectedOrder.hero.top >= mobileSelectedOrder.next.top ||
+      mobileSelectedOrder.next.bottom > 844 ||
+      mobileSelectedOrder.next.top >= mobileSelectedOrder.context.top ||
+      mobileSelectedOrder.context.top >= mobileSelectedOrder.comparison.top ||
+      mobileSelectedOrder.comparison.top >= mobileSelectedOrder.provenance.top ||
+      mobileSelectedOrder.overflow > 1
+    ) {
+      throw new Error(
+        `mobile selected answer order is incoherent: ${JSON.stringify(mobileSelectedOrder)}`,
+      );
+    }
+    await mobileSelected.close();
+
     const page = await browser.newPage();
     await page.goto(url, { waitUntil: "networkidle", timeout: 30000 });
     if (!appOnly) {
@@ -377,6 +460,35 @@ async function playwrightSmoke() {
     });
     if (debugLeak.lastBuild || debugLeak.geocoded || debugLeak.geometryReview) {
       throw new Error(`app shell still shows debug stats: ${JSON.stringify(debugLeak)}`);
+    }
+
+    const comparisonDetails = await page.$('[data-testid="comparison-details"]');
+    if (!comparisonDetails) {
+      throw new Error("development answer is missing the progressive comparison disclosure");
+    }
+    const comparisonDetailsOpen = await comparisonDetails.evaluate((node) =>
+      node.hasAttribute("open"),
+    );
+    if (comparisonDetailsOpen) {
+      throw new Error("secondary rent cards and match mechanics should start collapsed");
+    }
+    await page.waitForSelector('[data-testid="change-market-btn"]');
+    await page.click('[data-testid="change-market-btn"]');
+    const marketActionState = await page.evaluate(() => ({
+      filtersOpen: document
+        .querySelector('[data-testid="filters-disclosure"]')
+        ?.hasAttribute("open"),
+      focused: document.activeElement?.getAttribute("data-testid") || null,
+      query: window.location.search,
+    }));
+    if (
+      !marketActionState.filtersOpen ||
+      marketActionState.focused !== "market-source-select" ||
+      !marketActionState.query.includes("development=nycha%3Atds%3A136")
+    ) {
+      throw new Error(
+        `market next action did not preserve and focus analysis state: ${JSON.stringify(marketActionState)}`,
+      );
     }
 
     // NRS-009 / HCI: map metric lives in Map filters disclosure (may be collapsed on select)
@@ -737,6 +849,16 @@ async function playwrightSmoke() {
       throw new Error(`expected citywide ranking rows ≥10, got ${rankRows.length}`);
     }
     await page.waitForSelector('[data-testid="rankings-aggregations"]');
+    const rankingHeaders = await page.$$eval('[data-testid="rankings-table"] th', (nodes) =>
+      nodes.map((node) => node.textContent?.trim() || ""),
+    );
+    if (rankingHeaders.includes("Match") || rankingHeaders.includes("Source")) {
+      throw new Error(`rankings overemphasize verification columns: ${rankingHeaders.join(" | ")}`);
+    }
+    const rankingsText = (await page.textContent('[data-testid="rankings-panel"]')) || "";
+    if (!rankingsText.includes("Choose a building to explain its rent difference")) {
+      throw new Error(`rankings missing a natural next action: ${rankingsText}`);
+    }
     // Copy data card on development drawer
     await page.click('[data-testid="view-map"]');
     await page.goto(
@@ -760,6 +882,23 @@ async function playwrightSmoke() {
     // NRS-010: methodology + data-health product surface
     await page.click('[data-testid="view-methodology"]');
     await page.waitForSelector('[data-testid="methodology-surface"]', { timeout: 10000 });
+    const verifyHeading =
+      (await page.textContent('[data-testid="methodology-title"]')) || "";
+    if (!verifyHeading.includes("Verify the rent difference")) {
+      throw new Error(`verification surface leads with machinery: ${verifyHeading}`);
+    }
+    const verificationState = await page.evaluate(() => ({
+      query: window.location.search,
+      active: document.querySelector(".method-nav-btn.active")?.getAttribute("data-section"),
+    }));
+    if (
+      !verificationState.query.includes("section=method-wedge") ||
+      verificationState.active !== "method-wedge"
+    ) {
+      throw new Error(
+        `verification surface did not open at the calculation: ${JSON.stringify(verificationState)}`,
+      );
+    }
     await page.waitForSelector('[data-testid="method-health-banner"]');
     await page.waitForSelector('[data-testid="health-release-id"]');
     await page.waitForSelector('[data-testid="wedge-formula"]');

@@ -208,7 +208,7 @@ async function boot(): Promise<void> {
   let qualityFilter = parseQualityFilter(urlState.quality);
   let mapMetric: MapMetric = parseMapMetric(urlState.metric);
   let appView: AppView = urlState.view || "map";
-  let methodSection: string | null = urlState.methodSection || "method-health";
+  let methodSection: string | null = urlState.methodSection || "method-wedge";
   let rentLens: RentContextLens = urlState.rentLens;
   let rentDetailsOpen = urlState.rentDetails;
   let rankSort: RankingSort = "monthly-wedge";
@@ -242,7 +242,7 @@ async function boot(): Promise<void> {
   };
 
   const openMethodology = (section?: string | null): void => {
-    methodSection = section || methodSection || "method-health";
+    methodSection = section || methodSection || "method-wedge";
     setView("methodology", methodSection);
   };
 
@@ -368,6 +368,15 @@ async function boot(): Promise<void> {
   const wireDrawerActions = (): void => {
     if (!product) return;
     product.querySelector('[data-action="open-sources"]')?.addEventListener("click", openSources);
+    product.querySelector('[data-action="choose-market"]')?.addEventListener("click", () => {
+      writeFiltersOpen(true);
+      rerenderLayerControls();
+      const select = layerHost?.querySelector<HTMLSelectElement>(
+        '[data-testid="market-source-select"]',
+      );
+      select?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      select?.focus();
+    });
     wireMethodLinks(product);
     if (product.dataset.rentContextDelegated !== "1") {
       product.dataset.rentContextDelegated = "1";
@@ -409,7 +418,7 @@ async function boot(): Promise<void> {
         selectedId = null;
         setSelectedDevelopment(map, null);
         writeState({ development: null, area: null });
-        writeFiltersOpen(true);
+        writeFiltersOpen(false);
         showCityOverview();
         rerenderLayerControls();
       });
@@ -932,7 +941,7 @@ async function boot(): Promise<void> {
     if (!layerHost) return;
     rebuildMetricRows();
     // P-01/P-04: closed on selection (unless user re-opened); open by default otherwise
-    const openFilters = selectedId ? readFiltersOpen(false) : readFiltersOpen(true);
+    const openFilters = readFiltersOpen(false);
 
     layerHost.innerHTML = renderLayerControls(layerState, {
       bedroom,
@@ -1094,7 +1103,7 @@ async function boot(): Promise<void> {
       const v: AppView =
         raw === "rankings" ? "rankings" : raw === "methodology" ? "methodology" : "map";
       if (v === "methodology") {
-        setView("methodology", methodSection || "method-health");
+        setView("methodology", methodSection || "method-wedge");
       } else {
         setView(v);
       }
@@ -1117,7 +1126,7 @@ async function boot(): Promise<void> {
         selectedId = null;
         setSelectedDevelopment(map, null);
         writeState({ development: null });
-        writeFiltersOpen(true);
+        writeFiltersOpen(false);
         showCityOverview();
         rerenderLayerControls();
       }

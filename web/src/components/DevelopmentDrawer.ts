@@ -12,6 +12,7 @@ import type {
 import type { RentContextLens } from "../state";
 import {
   comparisonsForDevelopment,
+  qualityLabel,
   resolveObservationPair,
   selectComparison,
   sourceLabel as marketSourceLabel,
@@ -164,14 +165,14 @@ function renderAlternatives(alts: RentComparison[] | ComparisonAlt[]): string {
       const wedge =
         a.monthly_wedge_usd != null ? formatUsd(a.monthly_wedge_usd) + "/mo" : "—";
       return `<li data-testid="alt-comparison" data-comparison-id="${escapeHtml(a.comparison_id)}">
-        <strong>${escapeHtml(String(a.comparison_quality).toUpperCase())}</strong>
+        <strong>${escapeHtml(qualityLabel(a.comparison_quality))}</strong>
         · ${escapeHtml(src)} · ${escapeHtml(wedge)}
       </li>`;
     })
     .join("");
   return `
     <div class="alternatives-box" data-testid="alternatives-box">
-      <strong>Alternatives (quality-ranked)</strong>
+      <strong>Other available market measures</strong>
       <ul>${items}</ul>
     </div>`;
 }
@@ -837,7 +838,6 @@ export function renderDevelopmentDrawer(
 
   const unitsMeta = unitsLine(development);
   const srcKind = comparison.market_source || market.measure_basis;
-  const measuredNote = `both sides from published sources · difference calculated here`;
   const barMarketLabel = marketBarLabel(market);
 
   // Optional historical structured record (e.g. Fulton Open Data $756 / 2025-01-01)
@@ -873,15 +873,15 @@ export function renderDevelopmentDrawer(
         ${formatPct(comparison.percent_below_comparator)} cheaper than nearby market rent
       </div>
       <div class="metric-detail" data-testid="wedge-provenance">
-        match <strong data-testid="quality-class">${escapeHtml(String(comparison.comparison_quality))}</strong>
-        · market source ${escapeHtml(marketSourceLabel(String(srcKind)))}
-        · NYCHA rent as of ${escapeHtml((tenant.period_start || "").slice(0, 7) || "—")}
-        · market rent as of ${escapeHtml((market.period_start || "").slice(0, 7) || "—")}
-        · ${escapeHtml(measuredNote)}
+        <strong data-testid="quality-class">${escapeHtml(qualityLabel(comparison.comparison_quality))}</strong>
+        · published NYCHA and nearby-market rents with their dates shown below
       </div>
     </div>
 
     ${renderRentBars(tenant.value, market.value, { marketLabel: barMarketLabel })}
+
+    <button type="button" class="rent-next-action" data-action="choose-market"
+      data-testid="change-market-btn">Compare using another market measure</button>
 
     ${renderPopulationRentContext(
       development,
@@ -892,39 +892,46 @@ export function renderDevelopmentDrawer(
       rentDetailsOpen,
     )}
 
-    <div class="metric-block compact">
-      <div class="metric-label">What residents pay (building average)</div>
-      <div class="metric-value tenant compact" data-testid="tenant-rent">${formatUsd(tenant.value)}</div>
-      <div class="metric-detail">
-        ${escapeHtml(tenantScope)} · as of ${formatPeriod(tenant.period_start)} · ${tenantLink}
+    <details class="comparison-details" data-testid="comparison-details">
+      <summary>Check the rents, match, and alternatives</summary>
+      <div class="comparison-details-body">
+        <div class="metric-block compact">
+          <div class="metric-label">What residents pay (building average)</div>
+          <div class="metric-value tenant compact" data-testid="tenant-rent">${formatUsd(tenant.value)}</div>
+          <div class="metric-detail">
+            ${escapeHtml(tenantScope)} · as of ${formatPeriod(tenant.period_start)} · ${tenantLink}
+          </div>
+        </div>
+
+        <div class="metric-block compact">
+          <div class="metric-label">Nearby market rent</div>
+          <div class="metric-value market compact" data-testid="market-rent">${formatUsd(market.value)}</div>
+          <div class="metric-detail" data-testid="market-scope">
+            ${escapeHtml(marketArea)} · ${escapeHtml(marketScope)} · ${formatMonthYear(market.period_start)} · ${marketLink}
+          </div>
+        </div>
+
+        <div class="quality-box" data-testid="quality-box">
+          <strong>${escapeHtml(qualityLabel(comparison.comparison_quality))}</strong>
+          <p class="metric-detail">Technical class: ${escapeHtml(String(comparison.comparison_quality))}
+            · selected measure: ${escapeHtml(marketSourceLabel(String(srcKind)))}</p>
+          <ul data-testid="quality-reasons-preview">${reasonsHtml}</ul>
+          ${moreReasonsHtml}
+          <p class="method-link-row">
+            <button type="button" class="linkish" data-action="open-methodology"
+              data-section="method-quality" data-testid="link-quality-method">
+              How comparison strength is judged
+            </button>
+          </p>
+        </div>
+
+        ${renderAlternatives(alternatives || [])}
+
+        ${historicalBlock}
+
+        ${unitsMeta ? `<div class="units-line">${escapeHtml(unitsMeta)}</div>` : ""}
       </div>
-    </div>
-
-    <div class="metric-block compact">
-      <div class="metric-label">Nearby market rent</div>
-      <div class="metric-value market compact" data-testid="market-rent">${formatUsd(market.value)}</div>
-      <div class="metric-detail" data-testid="market-scope">
-        ${escapeHtml(marketArea)} · ${escapeHtml(marketScope)} · ${formatMonthYear(market.period_start)} · ${marketLink}
-      </div>
-    </div>
-
-    <div class="quality-box" data-testid="quality-box">
-      <strong>How good this match is · ${escapeHtml(String(comparison.comparison_quality).toUpperCase())}</strong>
-      <ul data-testid="quality-reasons-preview">${reasonsHtml}</ul>
-      ${moreReasonsHtml}
-      <p class="method-link-row">
-        <button type="button" class="linkish" data-action="open-methodology"
-          data-section="method-quality" data-testid="link-quality-method">
-          What the match labels mean
-        </button>
-      </p>
-    </div>
-
-    ${renderAlternatives(alternatives || [])}
-
-    ${historicalBlock}
-
-    ${unitsMeta ? `<div class="units-line">${escapeHtml(unitsMeta)}</div>` : ""}
+    </details>
 
     <details class="provenance-drawer" data-testid="provenance-drawer">
       <summary>Details &amp; provenance</summary>
@@ -939,7 +946,7 @@ export function renderDevelopmentDrawer(
           · ${escapeHtml(comparison.calculation_version || "rent-wedge-v1")}
         </p>
         <p class="muted">
-          Every rent figure above links to its source and date. Open Methodology for the
+          Every rent figure above links to its source and date. Open Verify for the
           formula, match labels, sources, and data health.
         </p>
         <p class="method-link-row">
@@ -961,7 +968,7 @@ export function renderDevelopmentDrawer(
       </button>
       <button type="button" class="btn" data-action="open-methodology" data-section="method-wedge"
         data-testid="methodology-btn">
-        Methodology
+        Verify method and data
       </button>
       <button type="button" class="btn" data-action="copy-comparison-explanation"
         data-testid="copy-comparison-explanation-btn">
