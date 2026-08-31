@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "github_owner": "bottomry",
+  "private_paths_manifest": ".scrim-private",
+  "private_companion": "bottomry/nyc-rent-seekers-internal",
+  "private_overlay_installer": "scripts/install-private-docs.sh"
+}

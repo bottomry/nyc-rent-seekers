@@ -1,0 +1,62 @@
+{
+  "type": "FeatureCollection",
+  "name": "nyc_boroughs_simplified",
+  "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "boro_name": "Manhattan", "boro_code": 1 },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-74.047, 40.683], [-73.907, 40.683], [-73.907, 40.882],
+          [-74.047, 40.882], [-74.047, 40.683]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "boro_name": "Brooklyn", "boro_code": 3 },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-74.042, 40.570], [-73.833, 40.570], [-73.833, 40.739],
+          [-74.042, 40.739], [-74.042, 40.570]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "boro_name": "Queens", "boro_code": 4 },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-73.962, 40.541], [-73.700, 40.541], [-73.700, 40.800],
+          [-73.962, 40.800], [-73.962, 40.541]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "boro_name": "Bronx", "boro_code": 2 },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-73.933, 40.785], [-73.765, 40.785], [-73.765, 40.915],
+          [-73.933, 40.915], [-73.933, 40.785]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "boro_name": "Staten Island", "boro_code": 5 },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-74.255, 40.496], [-74.052, 40.496], [-74.052, 40.649],
+          [-74.255, 40.649], [-74.255, 40.496]
+        ]]
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "source_id": "hud_safmr",
+  "artifact_id": "hud-safmr-fy2026-revised",
+  "fiscal_year": "FY2026",
+  "period_start": "2025-10-01",
+  "period_end": "2026-09-30",
+  "effective_date": "2026-05-21",
+  "revision": "revised",
+  "gross_or_net": "gross",
+  "measure_basis": "regulatory_market_benchmark",
+  "statistic": "40th_percentile_methodology",
+  "display_label": "HUD FY2026 Small Area Fair Market Rent \u2014 ZIP-level gross-rent benchmark",
+  "not_a_label": "median asking rent",
+  "raw_snapshot": {
+    "path": "data/raw/hud/fy2026_safmrs_revised.xlsx",
+    "sha256": "35e26f33181adcfd2b5b457f7824fe2880e65be18aec2805766e39b5eaf3e28f",
+    "source_url": "https://www.huduser.gov/portal/datasets/fmr/fmr2026/fy2026_safmrs_revised.xlsx",
+    "landing_page": "https://www.huduser.gov/portal/datasets/fmr/smallarea/index.html",
+    "retrieved_at": "2026-08-11T13:53:39.885709+00:00"
+  },
+  "zcta_snapshot": {
+    "path": "data/raw/zcta/35j5-n34v.geojson",
+    "sha256": "74502fac9d4ba367d35273fa32e4e536ab453fc789ea9963154e4b574d83ec99",
+    "source_url": "https://data.cityofnewyork.us/resource/35j5-n34v.geojson",
+    "landing_page": "https://data.cityofnewyork.us/Health/ZIP-Code-Tabulation-Areas/35j5-n34v",
+    "retrieved_at": "2026-08-11T13:53:39.890056+00:00",
+    "vintage": "2020"
+  },
+  "zip_count": 410,
+  "observation_count": 2050,
+  "zcta_features": 221,
+  "zcta_matched": 219,
+  "zcta_missing_safmr": 2,
+  "developments_assigned": 216,
+  "developments_unassigned": 0,
+  "built_at": "2026-08-11T13:53:42.123247+00:00",
+  "api_token_required": false,
+  "browser_api": false
+}

@@ -1,0 +1,172 @@
+vintage: "2023"
+survey_year: 2023
+geography:
+  id: nyc
+  type: citywide
+  name: New York City
+
+geographies:
+  nyc:
+    type: citywide
+    name: New York City
+    borough_values: ["1", "2", "3", "4", "5"]
+  outer_boroughs:
+    type: borough_group
+    name: Outer boroughs
+    borough_values: ["1", "2", "4", "5"]
+  bronx:
+    type: borough
+    name: Bronx
+    borough_values: ["1"]
+    development_borough_codes: [BX]
+    fallback_geography_id: outer_boroughs
+  brooklyn:
+    type: borough
+    name: Brooklyn
+    borough_values: ["2"]
+    development_borough_codes: [BK]
+    fallback_geography_id: outer_boroughs
+  manhattan:
+    type: borough
+    name: Manhattan
+    borough_values: ["3"]
+    development_borough_codes: [MN]
+    fallback_geography_id: nyc
+  queens:
+    type: borough
+    name: Queens
+    borough_values: ["4"]
+    development_borough_codes: [QN]
+    fallback_geography_id: outer_boroughs
+  staten_island:
+    type: borough
+    name: Staten Island
+    borough_values: ["5"]
+    development_borough_codes: [SI]
+    fallback_geography_id: outer_boroughs
+
+files:
+  occupied:
+    artifact_id: nychvs-2023-occupied-puf
+    filename: occupied_puf_23.csv
+    sha256: a3ea29294d9198f3a267b5e7e9db5106290d0a0687fdb8c1fd1bd1f65dd90776
+  all_units:
+    artifact_id: nychvs-2023-allunits-puf
+    filename: allunits_puf_23.csv
+    sha256: afee0ffbba8cc59369c18dac90a733c16517af181a5da5f5f245141fcd14da02
+
+fields:
+  join_key: CONTROL
+  tenure: TENURE
+  renter_value: "1"
+  first_move_year: HHFIRSTMOVEIN
+  gross_rent: GRENT
+  weight: FW
+  replicate_weight_prefix: FW
+  housing_type: CSR
+  borough: BORO
+
+# HPD's published 2023 turnover table defines recent movers as households whose
+# earliest current occupant arrived in either of the two prior calendar years.
+# Survey-year movers are excluded because that year is incomplete at interview.
+cohorts:
+  recent:
+    first_move_year_min: 2021
+    first_move_year_max: 2022
+  incumbent:
+    first_move_year_max: 2020
+  survey_year_partial:
+    first_move_year_min: 2023
+    first_move_year_max: 2023
+
+populations:
+  regulated_private:
+    label: Regulated private rentals
+    csr_values: ["32", "90", "97"]
+  rent_stabilized:
+    label: Rent stabilized
+    csr_values: ["32"]
+  unregulated_market:
+    label: Market rentals
+    csr_values: ["80"]
+  public_housing:
+    label: Public housing
+    csr_values: ["05"]
+
+quality:
+  # These are project display guards, not HPD publication thresholds. HPD supplies
+  # the variance method; this product decides which estimates it can explain safely.
+  min_rent_sample_count: 30
+  reliable_cv_max: 0.15
+  use_with_caution_cv_max: 0.30
+  allow_use_with_caution: true
+  unavailable_value: null
+  impute_underpowered_cells: false
+
+variance:
+  method: successive_difference_replication
+  replicate_weight_count: 80
+  variance_multiplier: 0.05
+  confidence_level: 0.95
+  critical_value: 1.96
+  authority: NYC Department of Housing Preservation and Development
+  methodology_url: https://www.nyc.gov/assets/hpd/downloads/pdfs/about/2023-nychvs-guide-to-estimating-variances.pdf
+  design_url: https://www.nyc.gov/assets/hpd/downloads/pdfs/about/2023-nychvs-sample-design-weighting-error-estimation.pdf
+
+comptroller_reference:
+  source: "NYC Comptroller, Spotlight: New York City's Rental Housing Market"
+  source_url: https://comptroller.nyc.gov/reports/spotlight-new-york-citys-rental-housing-market
+  chart_data_url: https://docs.google.com/spreadsheets/d/1Yi8qQ3vBQTTc5vDrmEfrn2u45M9lmYthgpfTWP05_8E/gviz/tq?tqx=out:csv&sheet=Chart4
+  vintage: "2021"
+  measure: monthly_contract_rent
+  statistic: weighted_median
+  cohort_labels:
+    incumbent: Existing Tenants (2+ Yrs)
+    recent: New Tenants (<2 Yrs)
+  comparison_note: >-
+    The public reference uses 2021 contract rent. This product uses 2023 gross rent and the two
+    complete years before the survey, so it reproduces the geographic comparison structure and
+    records changes in direction or scale rather than claiming an exact replication.
+  benchmark_comparisons:
+    outer_borough_unregulated_incumbency_gap:
+      minuend:
+        geography_id: outer_boroughs
+        population_id: unregulated_market
+        cohort_id: recent
+        value: 2000
+      subtrahend:
+        geography_id: outer_boroughs
+        population_id: unregulated_market
+        cohort_id: incumbent
+        value: 1600
+    manhattan_unregulated_incumbency_gap:
+      minuend:
+        geography_id: manhattan
+        population_id: unregulated_market
+        cohort_id: recent
+        value: 2800
+      subtrahend:
+        geography_id: manhattan
+        population_id: unregulated_market
+        cohort_id: incumbent
+        value: 2771
+    outer_borough_recent_regulated_vs_incumbent_unregulated:
+      minuend:
+        geography_id: outer_boroughs
+        population_id: regulated_private
+        cohort_id: recent
+        value: 1750
+      subtrahend:
+        geography_id: outer_boroughs
+        population_id: unregulated_market
+        cohort_id: incumbent
+        value: 1600
+
+published_benchmarks:
+  source: 2023 NYCHVS Selected Initial Findings and 2024 RGB Income and Affordability Study
+  tolerance_usd: 1
+  citywide_weighted_median_gross_rent:
+    all_renters: 1695
+    rent_stabilized: 1570
+    unregulated_market: 2115
+    public_housing: 588

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "description": "Synthetic PUF-shaped citywide fixture with synthetic CONTROL values for offline production-path validation; not NYCHVS respondent data.",
+  "synthetic": true,
+  "source_artifacts": {
+    "occupied": {
+      "artifact_id": "synthetic-nychvs-occupied-fixture",
+      "sha256": "2d5c34c39a903fe215437fbfdefddf8842d63035eb7e2579fe81292d3bf24612"
+    },
+    "all_units": {
+      "artifact_id": "synthetic-nychvs-all-units-fixture",
+      "sha256": "53b1898ca780d031e55dad93d707c88a6b15534f16fa2a8bd7223304e23f372c"
+    }
+  }
+}

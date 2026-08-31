@@ -1,0 +1,128 @@
+sources:
+  nycha_ddb_pdf:
+    kind: official_publication
+    authority: New York City Housing Authority
+    landing_page: https://www.nyc.gov/site/nycha/about/developments.page
+    current_url: https://www.nyc.gov/assets/nycha/downloads/pdf/ddb/2026ddb.pdf
+    expected_media_type: application/pdf
+    update_cadence: annual
+    raw_snapshot_public: true
+
+  nycha_ddb_open_data:
+    kind: official_open_data
+    authority: New York City Housing Authority
+    landing_page: https://data.cityofnewyork.us/Housing-Development/NYCHA-Development-Data-Book/evjd-dqpz
+    csv_url: https://data.cityofnewyork.us/api/views/evjd-dqpz/rows.csv?accessType=DOWNLOAD
+    update_cadence: source_defined
+    raw_snapshot_public: verify
+
+  nycha_development_geometry:
+    kind: official_open_data
+    authority: New York City Housing Authority
+    landing_page: https://data.cityofnewyork.us/Housing-Development/NYCHA-Public-Housing-Developments/phvi-damg
+    dataset_id: phvi-damg
+    geojson_url: https://data.cityofnewyork.us/resource/phvi-damg.geojson?$limit=5000
+    preferred_format: geojson
+    raw_snapshot_public: verify
+
+  nta_2020:
+    kind: official_open_data
+    authority: NYC Department of City Planning
+    landing_page: https://data.cityofnewyork.us/City-Government/2020-Neighborhood-Tabulation-Areas-NTAs-/9nt8-h7nd
+    dataset_id: 9nt8-h7nd
+    geojson_url: https://data.cityofnewyork.us/resource/9nt8-h7nd.geojson?$limit=5000
+    vintage: "2020"
+    raw_snapshot_public: true
+
+  tract_2020:
+    kind: official_open_data
+    authority: NYC Department of City Planning
+    landing_page: https://data.cityofnewyork.us/City-Government/2020-Census-Tracts/63ge-mke6
+    dataset_id: 63ge-mke6
+    geojson_url: https://data.cityofnewyork.us/resource/63ge-mke6.geojson?$limit=5000
+    vintage: "2020"
+    raw_snapshot_public: true
+
+  tract_nta_crosswalk:
+    kind: official_open_data
+    authority: NYC Department of City Planning
+    landing_page: https://data.cityofnewyork.us/City-Government/2020-Census-Tracts-to-2020-NTAs-and-CDTAs-Equivale/hm78-6dwm
+    dataset_id: hm78-6dwm
+    csv_url: https://data.cityofnewyork.us/resource/hm78-6dwm.csv?$limit=5000
+    vintage: "2020"
+    raw_snapshot_public: true
+
+  renthop_curated:
+    kind: commercial_web_observation
+    authority: RentHop
+    landing_page: https://www.renthop.com/average-rent-in/chelsea-new-york-ny
+    acquisition: manual_reviewed_observations_only
+    broad_scraping_allowed: false_until_reviewed
+    raw_snapshot_public: false
+
+  hud_safmr:
+    kind: official_federal
+    authority: U.S. Department of Housing and Urban Development
+    landing_page: https://www.huduser.gov/portal/datasets/fmr/smallarea/index.html
+    fmr_page: https://www.huduser.gov/portal/datasets/fmr.html
+    # Prefer revised FY2026 bulk file (effective May 21, 2026). Free public; no token.
+    bulk_url: https://www.huduser.gov/portal/datasets/fmr/fmr2026/fy2026_safmrs_revised.xlsx
+    bulk_url_original: https://www.huduser.gov/portal/datasets/fmr/fmr2026/fy2026_safmrs.xlsx
+    fiscal_year: "FY2026"
+    effective_date: "2026-05-21"
+    expected_media_type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+    update_cadence: annual
+    raw_snapshot_public: true
+    api_token_required: false
+    browser_api_forbidden: true
+    license_or_terms_note: "HUD USER public data — free federal public dataset; no license/token"
+
+  zcta_2020:
+    kind: official_open_data
+    authority: NYC Open Data / U.S. Census Bureau ZCTA product
+    landing_page: https://data.cityofnewyork.us/Health/ZIP-Code-Tabulation-Areas/35j5-n34v
+    dataset_id: 35j5-n34v
+    geojson_url: https://data.cityofnewyork.us/resource/35j5-n34v.geojson?$limit=5000
+    vintage: "2020"
+    preferred_format: geojson
+    raw_snapshot_public: true
+
+  zori:
+    kind: commercial_research_aggregate
+    authority: Zillow Group (Zillow Research)
+    landing_page: https://www.zillow.com/research/data/
+    methodology_url: https://www.zillow.com/research/methodology-zori-repeat-rent-27092/
+    # Prefer configured CSV URL — Zillow occasionally renames download paths.
+    csv_url: https://files.zillowstatic.com/research/public_csvs/zori/Zip_zori_uc_sfrcondomfr_sm_month.csv
+    csv_filename: Zip_zori_uc_sfrcondomfr_sm_month.csv
+    geography: zip
+    property_type: all_homes_plus_multifamily
+    unit_scope: all_units
+    smoothing: smoothed
+    expected_media_type: text/csv
+    update_cadence: monthly
+    raw_snapshot_public: true
+    api_token_required: false
+    browser_api_forbidden: true
+    attribution: "Data Provided by Zillow Group"
+    license_or_terms_note: >
+      Free public research CSV; attribution to Zillow Group required. Terms of Use
+      permit display and redistribution of aggregate research data with clear attribution.
+      No license/token for static downloads. Do not imply Zillow endorsement.
+
+  nychvs_2023:
+    kind: official_public_use_microdata
+    authority: NYC Department of Housing Preservation and Development
+    landing_page: https://www.nyc.gov/site/hpd/about/research.page
+    documentation_url: https://www.nyc.gov/assets/hpd/downloads/pdfs/about/2023-nychvs-puf-user-guide-codebook.pdf
+    occupied_csv_url: https://home4.nyc.gov/assets/hpd/data/occupied_puf_23.csv
+    all_units_csv_url: https://home4.nyc.gov/assets/hpd/data/allunits_puf_23.csv
+    vintage: "2023"
+    update_cadence: survey_cycle
+    raw_snapshot_public: false
+    derived_publication_allowed: true
+    api_token_required: false
+    browser_api_forbidden: true
+    license_or_terms_note: >
+      Official NYCHVS public-use files. Raw microdata remain build-time inputs and are
+      gitignored; only documented aggregate estimates and provenance receipts are published.

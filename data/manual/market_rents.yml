@@ -1,0 +1,3 @@
+# Curated market rent observations (manual YAML set per §5.10).
+observations:
+  - path: chelsea_market_rent.yml

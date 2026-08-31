@@ -1,0 +1,22 @@
+{
+  "zip_count": 410,
+  "zcta_features": 221,
+  "zcta_with_safmr": 219,
+  "zcta_missing_safmr": 2,
+  "missing_zips": [
+    "07305",
+    "11021"
+  ],
+  "developments_assigned": 216,
+  "fulton_zip_check": {
+    "zip": "10011",
+    "safmr_2br": 4370,
+    "safmr_0br": 3800,
+    "safmr_1br": 3990,
+    "safmr_3br": 5470,
+    "safmr_4br": 5950,
+    "fiscal_year": "FY2026",
+    "period_start": "2025-10-01",
+    "period_end": "2026-09-30"
+  }
+}

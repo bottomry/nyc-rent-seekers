@@ -1,0 +1,10 @@
+# Paths whose content belongs only in the permanent private companion.
+docs/adr
+docs/adr/**
+docs/THREAT_MODEL.md
+docs/spec.md
+docs/PROGRESS.md
+product
+product/**
+.private-product
+.private-product/**

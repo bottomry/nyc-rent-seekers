@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nyc-rent-seekers.local/schemas/population_rent_observation.schema.json",
+  "title": "population_rent_observation",
+  "type": "object",
+  "required": [
+    "observation_type",
+    "observation_id",
+    "source_id",
+    "source_artifact_ids",
+    "housing_regime",
+    "tenure_cohort",
+    "occupancy_state",
+    "geography_id",
+    "geography_type",
+    "geography_name",
+    "survey_vintage",
+    "measure",
+    "measure_basis",
+    "gross_or_net",
+    "statistic",
+    "currency",
+    "cadence",
+    "value",
+    "sample_size",
+    "weighted_population",
+    "variance_method",
+    "replicate_weight_count",
+    "variance",
+    "standard_error",
+    "margin_of_error",
+    "confidence_level",
+    "confidence_interval_lower",
+    "confidence_interval_upper",
+    "coefficient_of_variation",
+    "reliability_status",
+    "available",
+    "unavailable_reason",
+    "imputed"
+  ],
+  "properties": {
+    "observation_type": { "const": "population_rent" },
+    "observation_id": { "type": "string", "minLength": 1 },
+    "source_id": { "type": "string", "minLength": 1 },
+    "source_artifact_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "housing_regime": { "type": "string", "minLength": 1 },
+    "tenure_cohort": { "type": "string", "minLength": 1 },
+    "occupancy_state": {
+      "type": "string",
+      "enum": ["occupied", "vacant", "all"]
+    },
+    "geography_id": { "type": "string", "minLength": 1 },
+    "geography_type": { "type": "string", "minLength": 1 },
+    "geography_name": { "type": "string", "minLength": 1 },
+    "survey_vintage": { "type": "string", "minLength": 1 },
+    "measure": { "type": "string", "minLength": 1 },
+    "measure_basis": {
+      "type": "string",
+      "enum": ["actual_paid", "asking", "regulatory_market_benchmark", "index"]
+    },
+    "gross_or_net": { "type": "string", "minLength": 1 },
+    "statistic": { "type": "string", "minLength": 1 },
+    "currency": { "type": "string", "minLength": 1 },
+    "cadence": { "type": "string", "minLength": 1 },
+    "value": { "type": ["number", "null"] },
+    "sample_size": { "type": "integer", "minimum": 0 },
+    "weighted_population": { "type": "number", "minimum": 0 },
+    "eligible_sample_size": { "type": ["integer", "null"], "minimum": 0 },
+    "eligible_weighted_population": { "type": ["number", "null"], "minimum": 0 },
+    "weight_field": { "type": ["string", "null"] },
+    "variance_method": { "type": ["string", "null"] },
+    "replicate_weight_count": { "type": "integer", "minimum": 0 },
+    "variance": { "type": ["number", "null"], "minimum": 0 },
+    "standard_error": { "type": ["number", "null"], "minimum": 0 },
+    "margin_of_error": { "type": ["number", "null"], "minimum": 0 },
+    "confidence_level": { "type": ["number", "null"], "exclusiveMinimum": 0, "exclusiveMaximum": 1 },
+    "confidence_interval_lower": { "type": ["number", "null"] },
+    "confidence_interval_upper": { "type": ["number", "null"] },
+    "coefficient_of_variation": { "type": ["number", "null"], "minimum": 0 },
+    "reliability_status": {
+      "type": "string",
+      "enum": ["reliable", "use_with_caution", "unavailable"]
+    },
+    "available": { "type": "boolean" },
+    "unavailable_reason": { "type": ["string", "null"] },
+    "imputed": { "type": "boolean" }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "available": { "const": true } } },
+      "then": {
+        "properties": {
+          "value": { "type": "number" },
+          "unavailable_reason": { "type": "null" }
+        }
+      },
+      "else": {
+        "properties": {
+          "value": { "type": "null" },
+          "unavailable_reason": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

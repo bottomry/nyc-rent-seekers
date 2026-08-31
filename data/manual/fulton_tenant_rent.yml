@@ -1,0 +1,22 @@
+# NYCHA Fulton — average monthly gross rent as of Jan 1, 2026.
+# Official term preserved: average monthly gross rent (development-wide households).
+observation_id: "nycha:tds:136:avg-gross-rent:2026-01-01"
+housing_development_id: "nycha:tds:136"
+period_start: 2026-01-01
+period_end: 2026-01-01
+measure_basis: actual_paid
+gross_or_net: gross
+statistic: mean
+unit_scope: all_units
+bedroom_count: null
+currency: USD
+cadence: monthly
+value: 783
+household_or_unit_basis: households
+utility_basis: source_defined_gross
+source_artifact_id: nycha-ddb-pdf-2026
+source_field: "AVG MONTHLY GROSS RENT"
+source_url: "https://www.nyc.gov/assets/nycha/downloads/pdf/ddb/2026ddb.pdf"
+notes: >-
+  Development-wide household average as of January 1, 2026; not a current
+  2BR-specific figure. From the official NYCHA Development Data Book 2026 PDF.

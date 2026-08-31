@@ -1,0 +1,84 @@
+{
+  "description": "Rows held out of the renderable citywide set because key fields are missing or unusable (no TDS, no average monthly gross rent, or a parse error). Every raw row is either in developments/tenant_rents or here \u2014 nothing is dropped silently. These need better source data from NYCHA before they can appear on the map.",
+  "count": 8,
+  "rows": [
+    {
+      "row_index": 170,
+      "reason": "missing_avg_monthly_gross_rent",
+      "development": "LA PRECIOSA",
+      "tds_raw": "590",
+      "fields": {
+        "data_as_of": "2025-01-01",
+        "explanation": "Open Data lists this development but AVG MONTHLY GROSS RENT is blank. The 2026 PDF also has no rent for this TDS. Source data gap \u2014 we need a published rent before a wedge can be drawn."
+      }
+    },
+    {
+      "row_index": 173,
+      "reason": "missing_avg_monthly_gross_rent",
+      "development": "LAVANBURG HOMES",
+      "tds_raw": "310",
+      "fields": {
+        "data_as_of": "2025-01-01",
+        "explanation": "Open Data lists this development but AVG MONTHLY GROSS RENT is blank. The 2026 PDF also has no rent for this TDS. Source data gap \u2014 we need a published rent before a wedge can be drawn."
+      }
+    },
+    {
+      "row_index": 231,
+      "reason": "missing_avg_monthly_gross_rent",
+      "development": "PROSPECT PLAZA I",
+      "tds_raw": "591",
+      "fields": {
+        "data_as_of": "2025-01-01",
+        "explanation": "Open Data lists this development but AVG MONTHLY GROSS RENT is blank. The 2026 PDF also has no rent for this TDS. Source data gap \u2014 we need a published rent before a wedge can be drawn."
+      }
+    },
+    {
+      "row_index": 232,
+      "reason": "missing_avg_monthly_gross_rent",
+      "development": "PROSPECT PLAZA II",
+      "tds_raw": "592",
+      "fields": {
+        "data_as_of": "2025-01-01",
+        "explanation": "Open Data lists this development but AVG MONTHLY GROSS RENT is blank. The 2026 PDF also has no rent for this TDS. Source data gap \u2014 we need a published rent before a wedge can be drawn."
+      }
+    },
+    {
+      "row_index": 233,
+      "reason": "missing_tds",
+      "development": "PROSPECT PLAZA PHASE III",
+      "tds_raw": null,
+      "fields": {
+        "explanation": "Open Data row has no TDS number, so it cannot be joined to a map footprint or PDF rent. Source data gap \u2014 we need a stable development key from NYCHA."
+      }
+    },
+    {
+      "row_index": 234,
+      "reason": "missing_avg_monthly_gross_rent",
+      "development": "PSS GRANDPARENT FAMILY APARTMENTS",
+      "tds_raw": "560",
+      "fields": {
+        "data_as_of": "2025-01-01",
+        "explanation": "Open Data lists this development but AVG MONTHLY GROSS RENT is blank. The 2026 PDF also has no rent for this TDS. Source data gap \u2014 we need a published rent before a wedge can be drawn."
+      }
+    },
+    {
+      "row_index": 240,
+      "reason": "missing_tds",
+      "development": "RANDOLPH NORTH",
+      "tds_raw": null,
+      "fields": {
+        "explanation": "Open Data row has no TDS number, so it cannot be joined to a map footprint or PDF rent. Source data gap \u2014 we need a stable development key from NYCHA."
+      }
+    },
+    {
+      "row_index": 241,
+      "reason": "missing_avg_monthly_gross_rent",
+      "development": "RANDOLPH SOUTH",
+      "tds_raw": "561",
+      "fields": {
+        "data_as_of": "2025-01-01",
+        "explanation": "Open Data lists this development but AVG MONTHLY GROSS RENT is blank. The 2026 PDF also has no rent for this TDS. Source data gap \u2014 we need a published rent before a wedge can be drawn."
+      }
+    }
+  ]
+}

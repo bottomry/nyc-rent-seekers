@@ -1,0 +1,16 @@
+# Structured Fulton Houses development record (manual observation for NRS-002).
+# Source: NYCHA Development Data Book 2026 (official PDF definitions).
+development_id: "nycha:tds:136"
+jurisdiction_id: us-ny-nyc
+housing_authority_id: nycha
+name: Fulton
+hud_amp_id: NY005001360
+tds_id: "136"
+consolidated_tds_id: "136"
+program: FEDERAL
+borough_code: MN
+neighborhood_label: "Chelsea, Manhattan"
+current_unit_count: 944
+avg_rental_rooms_per_unit: 4.4
+source_artifact_id: nycha-ddb-pdf-2026
+geometry_id: "nycha-polygon:136"

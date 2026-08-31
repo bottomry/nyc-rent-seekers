@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nyc-rent-seekers.local/schemas/rent_comparison.schema.json",
+  "title": "rent_comparison",
+  "type": "object",
+  "required": [
+    "comparison_id",
+    "housing_development_id",
+    "tenant_rent_observation_id",
+    "market_rent_observation_id",
+    "monthly_wedge_usd",
+    "annualized_wedge_usd",
+    "percent_below_comparator",
+    "comparison_quality",
+    "calculation_version"
+  ],
+  "properties": {
+    "comparison_id": { "type": "string" },
+    "housing_development_id": { "type": "string" },
+    "tenant_rent_observation_id": { "type": "string" },
+    "market_rent_observation_id": { "type": "string" },
+    "monthly_wedge_usd": { "type": "number" },
+    "annualized_wedge_usd": { "type": "number" },
+    "percent_below_comparator": { "type": "number" },
+    "comparison_quality": {
+      "type": "string",
+      "enum": ["exact", "strong", "representative", "context_only", "unavailable"]
+    },
+    "quality_reasons": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "calculation_version": { "type": "string" }
+  }
+}

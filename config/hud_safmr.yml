@@ -1,0 +1,42 @@
+# HUD Small Area Fair Market Rent policy (NRS-006 / §5.8)
+fiscal_year: "FY2026"
+# Revised bulk file effective May 21, 2026; fiscal year still Oct 1–Sep 30.
+period_start: "2025-10-01"
+period_end: "2026-09-30"
+effective_date: "2026-05-21"
+revision: revised
+artifact_id: hud-safmr-fy2026-revised
+source_id: hud_safmr
+
+# New York HUD Metro FMR Area filter (source-native geography for NYC ZIPs)
+hud_area_name_contains: "New York, NY HUD Metro FMR Area"
+hud_area_code: "METRO35620MM5600"
+
+# Bedroom columns in the bulk xlsx (SAFMR values only; ignore payment-standard cols)
+bedroom_columns:
+  0: "SAFMR\n0BR"
+  1: "SAFMR\n1BR"
+  2: "SAFMR\n2BR"
+  3: "SAFMR\n3BR"
+  4: "SAFMR\n4BR"
+
+zip_column: "ZIP\nCode"
+area_code_column: "HUD Area Code"
+area_name_column: "HUD Fair Market Rent Area Name"
+
+measure:
+  measure_basis: regulatory_market_benchmark
+  gross_or_net: gross
+  statistic: "40th_percentile_methodology"
+  unit_scope: bedroom_specific
+  cadence: monthly
+  currency: USD
+
+# Label language — never call this median asking rent
+display_label: "HUD FY2026 Small Area Fair Market Rent — ZIP-level gross-rent benchmark"
+not_a_label: "median asking rent"
+
+# Expected NYC ZCTA coverage band (geometry features after filter)
+zcta_feature_band:
+  min: 180
+  max: 250

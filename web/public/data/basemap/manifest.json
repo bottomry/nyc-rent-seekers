@@ -1,0 +1,14 @@
+{
+  "basemap": "local-geojson-vector",
+  "local_only": true,
+  "external_tile_requests": false,
+  "layers": {
+    "boroughs": "Dissolved from DCP 2020 NTA display geometry (local processed)",
+    "nta_boundaries": "DCP 2020 NTA simplified display geometry (local processed)",
+    "water": "BBox minus borough land (derived, local)",
+    "streets": "OpenStreetMap major roads via Overpass (motorway\u2013tertiary), simplified + clipped to NYC",
+    "labels": "NTA/borough representative points + selected major street names",
+    "glyphs": "Noto Sans Regular glyph PBFs vendored under fonts/ (Protomaps basemaps-assets)"
+  },
+  "attribution": "\u00a9 OpenStreetMap contributors \u00b7 NYC DCP NTA 2020 \u00b7 local static basemap"
+}

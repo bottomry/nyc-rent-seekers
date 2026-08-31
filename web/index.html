@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="NYC Rent Seekers — how much lower is NYCHA rent than nearby market rent?" />
+    <!-- NRS-012 / §12.4 browser hardening: CSP + framing; edge _headers mirror these -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; worker-src 'self' blob:; child-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'"
+    />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="no-referrer" />
+    <title>NYC Rent Seekers</title>
+    <link rel="stylesheet" href="/src/styles/app.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar compact">
+        <div class="brand">
+          <h1>NYC Rent Seekers</h1>
+          <span class="badge" id="stage-badge">public project</span>
+        </div>
+        <p class="thesis short">
+          How much lower is monthly NYCHA rent than nearby market rent at this building?
+        </p>
+        <nav class="view-tabs" data-testid="view-tabs" aria-label="Primary views">
+          <button type="button" class="view-tab active" data-view="map" data-testid="view-map"
+            aria-pressed="true">Map</button>
+          <button type="button" class="view-tab" data-view="rankings" data-testid="view-rankings"
+            aria-pressed="false">Rankings</button>
+          <button type="button" class="view-tab" data-view="methodology" data-testid="view-methodology"
+            aria-pressed="false">Methodology</button>
+        </nav>
+      </header>
+      <main class="shell-main" id="shell-main">
+        <div id="map-pane" class="map-pane">
+          <div id="map" class="map" role="application" aria-label="NYC rent-wedge map" tabindex="0"></div>
+          <div id="map-legend" class="map-legend" data-testid="map-legend" hidden></div>
+          <div id="touch-preview" class="touch-preview" data-testid="touch-preview" hidden role="status"></div>
+        </div>
+        <div id="rankings-host" class="rankings-host panel" data-testid="rankings-host" hidden></div>
+        <div id="methodology-host" class="methodology-host panel" data-testid="methodology-host" hidden
+          aria-label="Methodology and data health"></div>
+        <aside class="panel side-stack" id="side-panel" aria-label="Development and filters">
+          <div id="search-host" class="search-host sticky-search" data-testid="search-host"></div>
+          <div class="sheet-handle" data-testid="sheet-handle" aria-hidden="true">
+            <button type="button" class="sheet-handle-btn" data-action="toggle-sheet"
+              aria-label="Expand or collapse selection sheet" data-testid="sheet-handle-btn"></button>
+          </div>
+          <div id="product-panel" data-testid="product-panel" aria-live="polite">
+            <p class="muted">Loading rent difference…</p>
+          </div>
+          <div id="layer-controls-host"></div>
+          <aside class="source-panel shell-source" id="source-panel" hidden aria-label="Sources"></aside>
+        </aside>
+      </main>
+      <div class="hover-card" id="hover-card" hidden role="tooltip"></div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

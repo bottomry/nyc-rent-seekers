@@ -1,0 +1,3028 @@
+{
+  "assignments": [
+    {
+      "assignment_id": "nycha:tds:233->zcta:10456",
+      "subject_id": "nycha:tds:233",
+      "geography_id": "zcta:10456",
+      "zcta": "10456",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:214->zcta:10472",
+      "subject_id": "nycha:tds:214",
+      "geography_id": "zcta:10472",
+      "zcta": "10472",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:359->zcta:10024",
+      "subject_id": "nycha:tds:359",
+      "geography_id": "zcta:10024",
+      "zcta": "10024",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:156->zcta:11206",
+      "subject_id": "nycha:tds:156",
+      "geography_id": "zcta:11206",
+      "zcta": "11206",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:265->zcta:10002",
+      "subject_id": "nycha:tds:265",
+      "geography_id": "zcta:10002",
+      "zcta": "10002",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:150->zcta:10025",
+      "subject_id": "nycha:tds:150",
+      "geography_id": "zcta:10025",
+      "zcta": "10025",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:118->zcta:10455",
+      "subject_id": "nycha:tds:118",
+      "geography_id": "zcta:10455",
+      "zcta": "10455",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:31->zcta:11213",
+      "subject_id": "nycha:tds:31",
+      "geography_id": "zcta:11213",
+      "zcta": "11213",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:85->zcta:11213",
+      "subject_id": "nycha:tds:85",
+      "geography_id": "zcta:11213",
+      "zcta": "11213",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:22->zcta:10023",
+      "subject_id": "nycha:tds:22",
+      "geography_id": "zcta:10023",
+      "zcta": "10023",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:187->zcta:10023",
+      "subject_id": "nycha:tds:187",
+      "geography_id": "zcta:10023",
+      "zcta": "10023",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:26->zcta:11102",
+      "subject_id": "nycha:tds:26",
+      "geography_id": "zcta:11102",
+      "zcta": "11102",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:256->zcta:11238",
+      "subject_id": "nycha:tds:256",
+      "geography_id": "zcta:11238",
+      "zcta": "11238",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:91->zcta:11434",
+      "subject_id": "nycha:tds:91",
+      "geography_id": "zcta:11434",
+      "zcta": "11434",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:60->zcta:10002",
+      "subject_id": "nycha:tds:60",
+      "geography_id": "zcta:10002",
+      "zcta": "10002",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:198->zcta:10002",
+      "subject_id": "nycha:tds:198",
+      "geography_id": "zcta:10002",
+      "zcta": "10002",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:165->zcta:11691",
+      "subject_id": "nycha:tds:165",
+      "geography_id": "zcta:11691",
+      "zcta": "11691",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:52->zcta:10306",
+      "subject_id": "nycha:tds:52",
+      "geography_id": "zcta:10306",
+      "zcta": "10306",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:54->zcta:11354",
+      "subject_id": "nycha:tds:54",
+      "geography_id": "zcta:11354",
+      "zcta": "11354",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:243->zcta:11206",
+      "subject_id": "nycha:tds:243",
+      "geography_id": "zcta:11206",
+      "zcta": "11206",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:271->zcta:11206",
+      "subject_id": "nycha:tds:271",
+      "geography_id": "zcta:11206",
+      "zcta": "11206",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:346->zcta:10472",
+      "subject_id": "nycha:tds:346",
+      "geography_id": "zcta:10472",
+      "zcta": "10472",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:264->zcta:10009",
+      "subject_id": "nycha:tds:264",
+      "geography_id": "zcta:10009",
+      "zcta": "10009",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:56->zcta:11236",
+      "subject_id": "nycha:tds:56",
+      "geography_id": "zcta:11236",
+      "zcta": "11236",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:65->zcta:11233",
+      "subject_id": "nycha:tds:65",
+      "geography_id": "zcta:11233",
+      "zcta": "11233",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:32->zcta:10472",
+      "subject_id": "nycha:tds:32",
+      "geography_id": "zcta:10472",
+      "zcta": "10472",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:157->zcta:10472",
+      "subject_id": "nycha:tds:157",
+      "geography_id": "zcta:10472",
+      "zcta": "10472",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:325->zcta:11233",
+      "subject_id": "nycha:tds:325",
+      "geography_id": "zcta:11233",
+      "zcta": "11233",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:16->zcta:11212",
+      "subject_id": "nycha:tds:16",
+      "geography_id": "zcta:11212",
+      "zcta": "11212",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:235->zcta:10460",
+      "subject_id": "nycha:tds:235",
+      "geography_id": "zcta:10460",
+      "zcta": "10460",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:86->zcta:11206",
+      "subject_id": "nycha:tds:86",
+      "geography_id": "zcta:11206",
+      "zcta": "11206",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:113->zcta:10456",
+      "subject_id": "nycha:tds:113",
+      "geography_id": "zcta:10456",
+      "zcta": "10456",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:166->zcta:11224",
+      "subject_id": "nycha:tds:166",
+      "geography_id": "zcta:11224",
+      "zcta": "11224",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:164->zcta:11692",
+      "subject_id": "nycha:tds:164",
+      "geography_id": "zcta:11692",
+      "zcta": "11692",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:58->zcta:10029",
+      "subject_id": "nycha:tds:58",
+      "geography_id": "zcta:10029",
+      "zcta": "10029",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:206->zcta:10301",
+      "subject_id": "nycha:tds:206",
+      "geography_id": "zcta:10301",
+      "zcta": "10301",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:80->zcta:10473",
+      "subject_id": "nycha:tds:80",
+      "geography_id": "zcta:10473",
+      "zcta": "10473",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:134->zcta:10001",
+      "subject_id": "nycha:tds:134",
+      "geography_id": "zcta:10001",
+      "zcta": "10001",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:176->zcta:10001",
+      "subject_id": "nycha:tds:176",
+      "geography_id": "zcta:10001",
+      "zcta": "10001",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:307->zcta:10456",
+      "subject_id": "nycha:tds:307",
+      "geography_id": "zcta:10456",
+      "zcta": "10456",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:308->zcta:10456",
+      "subject_id": "nycha:tds:308",
+      "geography_id": "zcta:10456",
+      "zcta": "10456",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:335->zcta:10456",
+      "subject_id": "nycha:tds:335",
+      "geography_id": "zcta:10456",
+      "zcta": "10456",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:336->zcta:10456",
+      "subject_id": "nycha:tds:336",
+      "geography_id": "zcta:10456",
+      "zcta": "10456",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:11->zcta:10473",
+      "subject_id": "nycha:tds:11",
+      "geography_id": "zcta:10473",
+      "zcta": "10473",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:123->zcta:10029",
+      "subject_id": "nycha:tds:123",
+      "geography_id": "zcta:10029",
+      "zcta": "10029",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:236->zcta:10456",
+      "subject_id": "nycha:tds:236",
+      "geography_id": "zcta:10456",
+      "zcta": "10456",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:94->zcta:11224",
+      "subject_id": "nycha:tds:94",
+      "geography_id": "zcta:11224",
+      "zcta": "11224",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:239->zcta:11224",
+      "subject_id": "nycha:tds:239",
+      "geography_id": "zcta:11224",
+      "zcta": "11224",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:238->zcta:11224",
+      "subject_id": "nycha:tds:238",
+      "geography_id": "zcta:11224",
+      "zcta": "11224",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:216->zcta:11224",
+      "subject_id": "nycha:tds:216",
+      "geography_id": "zcta:11224",
+      "zcta": "11224",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:232->zcta:11433",
+      "subject_id": "nycha:tds:232",
+      "geography_id": "zcta:11433",
+      "zcta": "11433",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:69->zcta:11211",
+      "subject_id": "nycha:tds:69",
+      "geography_id": "zcta:11211",
+      "zcta": "11211",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:70->zcta:11208",
+      "subject_id": "nycha:tds:70",
+      "geography_id": "zcta:11208",
+      "zcta": "11208",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:155->zcta:10025",
+      "subject_id": "nycha:tds:155",
+      "geography_id": "zcta:10025",
+      "zcta": "10025",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:148->zcta:10025",
+      "subject_id": "nycha:tds:148",
+      "geography_id": "zcta:10025",
+      "zcta": "10025",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:82->zcta:10025",
+      "subject_id": "nycha:tds:82",
+      "geography_id": "zcta:10025",
+      "zcta": "10025",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:582->zcta:10025",
+      "subject_id": "nycha:tds:582",
+      "geography_id": "zcta:10025",
+      "zcta": "10025",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:111->zcta:10030",
+      "subject_id": "nycha:tds:111",
+      "geography_id": "zcta:10030",
+      "zcta": "10030",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:41->zcta:10034",
+      "subject_id": "nycha:tds:41",
+      "geography_id": "zcta:10034",
+      "zcta": "10034",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:304->zcta:10459",
+      "subject_id": "nycha:tds:304",
+      "geography_id": "zcta:10459",
+      "zcta": "10459",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:338->zcta:10460",
+      "subject_id": "nycha:tds:338",
+      "geography_id": "zcta:10460",
+      "zcta": "10460",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:263->zcta:11208",
+      "subject_id": "nycha:tds:263",
+      "geography_id": "zcta:11208",
+      "zcta": "11208",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:9->zcta:10029",
+      "subject_id": "nycha:tds:9",
+      "geography_id": "zcta:10029",
+      "zcta": "10029",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:15->zcta:10001",
+      "subject_id": "nycha:tds:15",
+      "geography_id": "zcta:10001",
+      "zcta": "10001",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:29->zcta:11201",
+      "subject_id": "nycha:tds:29",
+      "geography_id": "zcta:11201",
+      "zcta": "11201",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:209->zcta:11420",
+      "subject_id": "nycha:tds:209",
+      "geography_id": "zcta:11420",
+      "zcta": "11420",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:212->zcta:11412",
+      "subject_id": "nycha:tds:212",
+      "geography_id": "zcta:11412",
+      "zcta": "11412",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:213->zcta:11411",
+      "subject_id": "nycha:tds:213",
+      "geography_id": "zcta:11411",
+      "zcta": "11411",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:226->zcta:11411",
+      "subject_id": "nycha:tds:226",
+      "geography_id": "zcta:11411",
+      "zcta": "11411",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:283->zcta:11208",
+      "subject_id": "nycha:tds:283",
+      "geography_id": "zcta:11208",
+      "zcta": "11208",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:260->zcta:11413",
+      "subject_id": "nycha:tds:260",
+      "geography_id": "zcta:11413",
+      "zcta": "11413",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:273->zcta:11412",
+      "subject_id": "nycha:tds:273",
+      "geography_id": "zcta:11412",
+      "zcta": "11412",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:274->zcta:11420",
+      "subject_id": "nycha:tds:274",
+      "geography_id": "zcta:11420",
+      "zcta": "11420",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:275->zcta:11412",
+      "subject_id": "nycha:tds:275",
+      "geography_id": "zcta:11412",
+      "zcta": "11412",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:284->zcta:11429",
+      "subject_id": "nycha:tds:284",
+      "geography_id": "zcta:11429",
+      "zcta": "11429",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:1->zcta:10009",
+      "subject_id": "nycha:tds:1",
+      "geography_id": "zcta:10009",
+      "zcta": "10009",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:59->zcta:10456",
+      "subject_id": "nycha:tds:59",
+      "geography_id": "zcta:10456",
+      "zcta": "10456",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:136->zcta:10011",
+      "subject_id": "nycha:tds:136",
+      "geography_id": "zcta:10011",
+      "zcta": "10011",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:252->zcta:11212",
+      "subject_id": "nycha:tds:252",
+      "geography_id": "zcta:11212",
+      "zcta": "11212",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:225->zcta:10462",
+      "subject_id": "nycha:tds:225",
+      "geography_id": "zcta:10462",
+      "zcta": "10462",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:171->zcta:11212",
+      "subject_id": "nycha:tds:171",
+      "geography_id": "zcta:11212",
+      "zcta": "11212",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:44->zcta:11234",
+      "subject_id": "nycha:tds:44",
+      "geography_id": "zcta:11234",
+      "zcta": "11234",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:100->zcta:10002",
+      "subject_id": "nycha:tds:100",
+      "geography_id": "zcta:10002",
+      "zcta": "10002",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:25->zcta:11217",
+      "subject_id": "nycha:tds:25",
+      "geography_id": "zcta:11217",
+      "zcta": "11217",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:87->zcta:10027",
+      "subject_id": "nycha:tds:87",
+      "geography_id": "zcta:10027",
+      "zcta": "10027",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:68->zcta:11224",
+      "subject_id": "nycha:tds:68",
+      "geography_id": "zcta:11224",
+      "zcta": "11224",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:40->zcta:10467",
+      "subject_id": "nycha:tds:40",
+      "geography_id": "zcta:10467",
+      "zcta": "10467",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:142->zcta:11224",
+      "subject_id": "nycha:tds:142",
+      "geography_id": "zcta:11224",
+      "zcta": "11224",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:75->zcta:11693",
+      "subject_id": "nycha:tds:75",
+      "geography_id": "zcta:11693",
+      "zcta": "11693",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:262->zcta:10019",
+      "subject_id": "nycha:tds:262",
+      "geography_id": "zcta:10019",
+      "zcta": "10019",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:184->zcta:10002",
+      "subject_id": "nycha:tds:184",
+      "geography_id": "zcta:10002",
+      "zcta": "10002",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:78->zcta:10452",
+      "subject_id": "nycha:tds:78",
+      "geography_id": "zcta:10452",
+      "zcta": "10452",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:215->zcta:10460",
+      "subject_id": "nycha:tds:215",
+      "geography_id": "zcta:10460",
+      "zcta": "10460",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:159->zcta:10128",
+      "subject_id": "nycha:tds:159",
+      "geography_id": "zcta:10128",
+      "zcta": "10128",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:72->zcta:11212",
+      "subject_id": "nycha:tds:72",
+      "geography_id": "zcta:11212",
+      "zcta": "11212",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:168->zcta:11212",
+      "subject_id": "nycha:tds:168",
+      "geography_id": "zcta:11212",
+      "zcta": "11212",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:367->zcta:10474",
+      "subject_id": "nycha:tds:367",
+      "geography_id": "zcta:10474",
+      "zcta": "10474",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:109->zcta:11206",
+      "subject_id": "nycha:tds:109",
+      "geography_id": "zcta:11206",
+      "zcta": "11206",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:14->zcta:11201",
+      "subject_id": "nycha:tds:14",
+      "geography_id": "zcta:11201",
+      "zcta": "11201",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:316->zcta:11432",
+      "subject_id": "nycha:tds:316",
+      "geography_id": "zcta:11432",
+      "zcta": "11432",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:139->zcta:10128",
+      "subject_id": "nycha:tds:139",
+      "geography_id": "zcta:10128",
+      "zcta": "10128",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:120->zcta:10451",
+      "subject_id": "nycha:tds:120",
+      "geography_id": "zcta:10451",
+      "zcta": "10451",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:64->zcta:10029",
+      "subject_id": "nycha:tds:64",
+      "geography_id": "zcta:10029",
+      "zcta": "10029",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:17->zcta:10029",
+      "subject_id": "nycha:tds:17",
+      "geography_id": "zcta:10029",
+      "zcta": "10029",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:30->zcta:10026",
+      "subject_id": "nycha:tds:30",
+      "geography_id": "zcta:10026",
+      "zcta": "10026",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:10->zcta:11233",
+      "subject_id": "nycha:tds:10",
+      "geography_id": "zcta:11233",
+      "zcta": "11233",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:161->zcta:11233",
+      "subject_id": "nycha:tds:161",
+      "geography_id": "zcta:11233",
+      "zcta": "11233",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:76->zcta:10002",
+      "subject_id": "nycha:tds:76",
+      "geography_id": "zcta:10002",
+      "zcta": "10002",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:152->zcta:10002",
+      "subject_id": "nycha:tds:152",
+      "geography_id": "zcta:10002",
+      "zcta": "10002",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:122->zcta:11238",
+      "subject_id": "nycha:tds:122",
+      "geography_id": "zcta:11238",
+      "zcta": "11238",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:186->zcta:11354",
+      "subject_id": "nycha:tds:186",
+      "geography_id": "zcta:11354",
+      "zcta": "11354",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:201->zcta:11354",
+      "subject_id": "nycha:tds:201",
+      "geography_id": "zcta:11354",
+      "zcta": "11354",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:101->zcta:10029",
+      "subject_id": "nycha:tds:101",
+      "geography_id": "zcta:10029",
+      "zcta": "10029",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:50->zcta:10029",
+      "subject_id": "nycha:tds:50",
+      "geography_id": "zcta:10029",
+      "zcta": "10029",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:20->zcta:10037",
+      "subject_id": "nycha:tds:20",
+      "geography_id": "zcta:10037",
+      "zcta": "10037",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:276->zcta:11207",
+      "subject_id": "nycha:tds:276",
+      "geography_id": "zcta:11207",
+      "zcta": "11207",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:362->zcta:10459",
+      "subject_id": "nycha:tds:362",
+      "geography_id": "zcta:10459",
+      "zcta": "10459",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:169->zcta:11212",
+      "subject_id": "nycha:tds:169",
+      "geography_id": "zcta:11212",
+      "zcta": "11212",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:326->zcta:10002",
+      "subject_id": "nycha:tds:326",
+      "geography_id": "zcta:10002",
+      "zcta": "10002",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:337->zcta:10009",
+      "subject_id": "nycha:tds:337",
+      "geography_id": "zcta:10009",
+      "zcta": "10009",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:364->zcta:10009",
+      "subject_id": "nycha:tds:364",
+      "geography_id": "zcta:10009",
+      "zcta": "10009",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:292->zcta:10009",
+      "subject_id": "nycha:tds:292",
+      "geography_id": "zcta:10009",
+      "zcta": "10009",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:49->zcta:10463",
+      "subject_id": "nycha:tds:49",
+      "geography_id": "zcta:10463",
+      "zcta": "10463",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:21->zcta:11206",
+      "subject_id": "nycha:tds:21",
+      "geography_id": "zcta:11206",
+      "zcta": "11206",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:77->zcta:10303",
+      "subject_id": "nycha:tds:77",
+      "geography_id": "zcta:10303",
+      "zcta": "10303",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:83->zcta:11223",
+      "subject_id": "nycha:tds:83",
+      "geography_id": "zcta:11223",
+      "zcta": "11223",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:103->zcta:10456",
+      "subject_id": "nycha:tds:103",
+      "geography_id": "zcta:10456",
+      "zcta": "10456",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:28->zcta:10451",
+      "subject_id": "nycha:tds:28",
+      "geography_id": "zcta:10451",
+      "zcta": "10451",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:183->zcta:10009",
+      "subject_id": "nycha:tds:183",
+      "geography_id": "zcta:10009",
+      "zcta": "10009",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:84->zcta:10454",
+      "subject_id": "nycha:tds:84",
+      "geography_id": "zcta:10454",
+      "zcta": "10454",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:132->zcta:10454",
+      "subject_id": "nycha:tds:132",
+      "geography_id": "zcta:10454",
+      "zcta": "10454",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:145->zcta:10454",
+      "subject_id": "nycha:tds:145",
+      "geography_id": "zcta:10454",
+      "zcta": "10454",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:88->zcta:10473",
+      "subject_id": "nycha:tds:88",
+      "geography_id": "zcta:10473",
+      "zcta": "10473",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:102->zcta:10456",
+      "subject_id": "nycha:tds:102",
+      "geography_id": "zcta:10456",
+      "zcta": "10456",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:502->zcta:10456",
+      "subject_id": "nycha:tds:502",
+      "geography_id": "zcta:10456",
+      "zcta": "10456",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:130->zcta:10456",
+      "subject_id": "nycha:tds:130",
+      "geography_id": "zcta:10456",
+      "zcta": "10456",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:267->zcta:10451",
+      "subject_id": "nycha:tds:267",
+      "geography_id": "zcta:10451",
+      "zcta": "10451",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:121->zcta:10454",
+      "subject_id": "nycha:tds:121",
+      "geography_id": "zcta:10454",
+      "zcta": "10454",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:314->zcta:10305",
+      "subject_id": "nycha:tds:314",
+      "geography_id": "zcta:10305",
+      "zcta": "10305",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:43->zcta:11235",
+      "subject_id": "nycha:tds:43",
+      "geography_id": "zcta:11235",
+      "zcta": "11235",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:172->zcta:11224",
+      "subject_id": "nycha:tds:172",
+      "geography_id": "zcta:11224",
+      "zcta": "11224",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:51->zcta:11692",
+      "subject_id": "nycha:tds:51",
+      "geography_id": "zcta:11692",
+      "zcta": "11692",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:47->zcta:10467",
+      "subject_id": "nycha:tds:47",
+      "geography_id": "zcta:10467",
+      "zcta": "10467",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:24->zcta:10451",
+      "subject_id": "nycha:tds:24",
+      "geography_id": "zcta:10451",
+      "zcta": "10451",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:39->zcta:10467",
+      "subject_id": "nycha:tds:39",
+      "geography_id": "zcta:10467",
+      "zcta": "10467",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:89->zcta:11208",
+      "subject_id": "nycha:tds:89",
+      "geography_id": "zcta:11208",
+      "zcta": "11208",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:149->zcta:10039",
+      "subject_id": "nycha:tds:149",
+      "geography_id": "zcta:10039",
+      "zcta": "10039",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:53->zcta:11367",
+      "subject_id": "nycha:tds:53",
+      "geography_id": "zcta:11367",
+      "zcta": "11367",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:505->zcta:11101",
+      "subject_id": "nycha:tds:505",
+      "geography_id": "zcta:11101",
+      "zcta": "11101",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:5->zcta:11101",
+      "subject_id": "nycha:tds:5",
+      "geography_id": "zcta:11101",
+      "zcta": "11101",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:245->zcta:10465",
+      "subject_id": "nycha:tds:245",
+      "geography_id": "zcta:10465",
+      "zcta": "10465",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:37->zcta:10039",
+      "subject_id": "nycha:tds:37",
+      "geography_id": "zcta:10039",
+      "zcta": "10039",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:48->zcta:11106",
+      "subject_id": "nycha:tds:48",
+      "geography_id": "zcta:11106",
+      "zcta": "11106",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:4->zcta:11231",
+      "subject_id": "nycha:tds:4",
+      "geography_id": "zcta:11231",
+      "zcta": "11231",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:79->zcta:11231",
+      "subject_id": "nycha:tds:79",
+      "geography_id": "zcta:11231",
+      "zcta": "11231",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:55->zcta:11691",
+      "subject_id": "nycha:tds:55",
+      "geography_id": "zcta:11691",
+      "zcta": "11691",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:143->zcta:11356",
+      "subject_id": "nycha:tds:143",
+      "geography_id": "zcta:11356",
+      "zcta": "11356",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:515->zcta:10025",
+      "subject_id": "nycha:tds:515",
+      "geography_id": "zcta:10025",
+      "zcta": "10025",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:517->zcta:10025",
+      "subject_id": "nycha:tds:517",
+      "geography_id": "zcta:10025",
+      "zcta": "10025",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:117->zcta:10301",
+      "subject_id": "nycha:tds:117",
+      "geography_id": "zcta:10301",
+      "zcta": "10301",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:18->zcta:10009",
+      "subject_id": "nycha:tds:18",
+      "geography_id": "zcta:10009",
+      "zcta": "10009",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:19->zcta:10009",
+      "subject_id": "nycha:tds:19",
+      "geography_id": "zcta:10009",
+      "zcta": "10009",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:218->zcta:10021",
+      "subject_id": "nycha:tds:218",
+      "geography_id": "zcta:10021",
+      "zcta": "10021",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:135->zcta:11206",
+      "subject_id": "nycha:tds:135",
+      "geography_id": "zcta:11206",
+      "zcta": "11206",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:177->zcta:11206",
+      "subject_id": "nycha:tds:177",
+      "geography_id": "zcta:11206",
+      "zcta": "11206",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:99->zcta:10002",
+      "subject_id": "nycha:tds:99",
+      "geography_id": "zcta:10002",
+      "zcta": "10002",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:93->zcta:10455",
+      "subject_id": "nycha:tds:93",
+      "geography_id": "zcta:10455",
+      "zcta": "10455",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:38->zcta:10027",
+      "subject_id": "nycha:tds:38",
+      "geography_id": "zcta:10027",
+      "zcta": "10027",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:45->zcta:10453",
+      "subject_id": "nycha:tds:45",
+      "geography_id": "zcta:10453",
+      "zcta": "10453",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:192->zcta:10002",
+      "subject_id": "nycha:tds:192",
+      "geography_id": "zcta:10002",
+      "zcta": "10002",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:36->zcta:11229",
+      "subject_id": "nycha:tds:36",
+      "geography_id": "zcta:11229",
+      "zcta": "11229",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:279->zcta:11432",
+      "subject_id": "nycha:tds:279",
+      "geography_id": "zcta:11432",
+      "zcta": "11432",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:27->zcta:10038",
+      "subject_id": "nycha:tds:27",
+      "geography_id": "zcta:10038",
+      "zcta": "10038",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:67->zcta:10472",
+      "subject_id": "nycha:tds:67",
+      "geography_id": "zcta:10472",
+      "zcta": "10472",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:71->zcta:10473",
+      "subject_id": "nycha:tds:71",
+      "geography_id": "zcta:10473",
+      "zcta": "10473",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:35->zcta:10305",
+      "subject_id": "nycha:tds:35",
+      "geography_id": "zcta:10305",
+      "zcta": "10305",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:8->zcta:11433",
+      "subject_id": "nycha:tds:8",
+      "geography_id": "zcta:11433",
+      "zcta": "11433",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:66->zcta:11433",
+      "subject_id": "nycha:tds:66",
+      "geography_id": "zcta:11433",
+      "zcta": "11433",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:559->zcta:10002",
+      "subject_id": "nycha:tds:559",
+      "geography_id": "zcta:10002",
+      "zcta": "10002",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:114->zcta:10304",
+      "subject_id": "nycha:tds:114",
+      "geography_id": "zcta:10304",
+      "zcta": "10304",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:153->zcta:10016",
+      "subject_id": "nycha:tds:153",
+      "geography_id": "zcta:10016",
+      "zcta": "10016",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:73->zcta:11206",
+      "subject_id": "nycha:tds:73",
+      "geography_id": "zcta:11206",
+      "zcta": "11206",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:170->zcta:11224",
+      "subject_id": "nycha:tds:170",
+      "geography_id": "zcta:11224",
+      "zcta": "11224",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:97->zcta:10029",
+      "subject_id": "nycha:tds:97",
+      "geography_id": "zcta:10029",
+      "zcta": "10029",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:234->zcta:11249",
+      "subject_id": "nycha:tds:234",
+      "geography_id": "zcta:11249",
+      "zcta": "11249",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:223->zcta:10456",
+      "subject_id": "nycha:tds:223",
+      "geography_id": "zcta:10456",
+      "zcta": "10456",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:268->zcta:10024",
+      "subject_id": "nycha:tds:268",
+      "geography_id": "zcta:10024",
+      "zcta": "10024",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:63->zcta:10465",
+      "subject_id": "nycha:tds:63",
+      "geography_id": "zcta:10465",
+      "zcta": "10465",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:193->zcta:10465",
+      "subject_id": "nycha:tds:193",
+      "geography_id": "zcta:10465",
+      "zcta": "10465",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:96->zcta:11212",
+      "subject_id": "nycha:tds:96",
+      "geography_id": "zcta:11212",
+      "zcta": "11212",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:42->zcta:10314",
+      "subject_id": "nycha:tds:42",
+      "geography_id": "zcta:10314",
+      "zcta": "10314",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:131->zcta:11206",
+      "subject_id": "nycha:tds:131",
+      "geography_id": "zcta:11206",
+      "zcta": "11206",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:266->zcta:10002",
+      "subject_id": "nycha:tds:266",
+      "geography_id": "zcta:10002",
+      "zcta": "10002",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:240->zcta:11207",
+      "subject_id": "nycha:tds:240",
+      "geography_id": "zcta:11207",
+      "zcta": "11207",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:261->zcta:11207",
+      "subject_id": "nycha:tds:261",
+      "geography_id": "zcta:11207",
+      "zcta": "11207",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:61->zcta:11212",
+      "subject_id": "nycha:tds:61",
+      "geography_id": "zcta:11212",
+      "zcta": "11212",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:146->zcta:11212",
+      "subject_id": "nycha:tds:146",
+      "geography_id": "zcta:11212",
+      "zcta": "11212",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:315->zcta:11239",
+      "subject_id": "nycha:tds:315",
+      "geography_id": "zcta:11239",
+      "zcta": "11239",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:6->zcta:10002",
+      "subject_id": "nycha:tds:6",
+      "geography_id": "zcta:10002",
+      "zcta": "10002",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:7->zcta:10002",
+      "subject_id": "nycha:tds:7",
+      "geography_id": "zcta:10002",
+      "zcta": "10002",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:74->zcta:10035",
+      "subject_id": "nycha:tds:74",
+      "geography_id": "zcta:10035",
+      "zcta": "10035",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:23->zcta:10009",
+      "subject_id": "nycha:tds:23",
+      "geography_id": "zcta:10009",
+      "zcta": "10009",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:62->zcta:10029",
+      "subject_id": "nycha:tds:62",
+      "geography_id": "zcta:10029",
+      "zcta": "10029",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:141->zcta:10456",
+      "subject_id": "nycha:tds:141",
+      "geography_id": "zcta:10456",
+      "zcta": "10456",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:360->zcta:10459",
+      "subject_id": "nycha:tds:360",
+      "geography_id": "zcta:10459",
+      "zcta": "10459",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:526->zcta:10459",
+      "subject_id": "nycha:tds:526",
+      "geography_id": "zcta:10459",
+      "zcta": "10459",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:246->zcta:10453",
+      "subject_id": "nycha:tds:246",
+      "geography_id": "zcta:10453",
+      "zcta": "10453",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:514->zcta:11205",
+      "subject_id": "nycha:tds:514",
+      "geography_id": "zcta:11205",
+      "zcta": "11205",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:112->zcta:10029",
+      "subject_id": "nycha:tds:112",
+      "geography_id": "zcta:10029",
+      "zcta": "10029",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:33->zcta:11377",
+      "subject_id": "nycha:tds:33",
+      "geography_id": "zcta:11377",
+      "zcta": "11377",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:182->zcta:11212",
+      "subject_id": "nycha:tds:182",
+      "geography_id": "zcta:11212",
+      "zcta": "11212",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:178->zcta:10025",
+      "subject_id": "nycha:tds:178",
+      "geography_id": "zcta:10025",
+      "zcta": "10025",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:151->zcta:10025",
+      "subject_id": "nycha:tds:151",
+      "geography_id": "zcta:10025",
+      "zcta": "10025",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:173->zcta:10025",
+      "subject_id": "nycha:tds:173",
+      "geography_id": "zcta:10025",
+      "zcta": "10025",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:174->zcta:10024",
+      "subject_id": "nycha:tds:174",
+      "geography_id": "zcta:10024",
+      "zcta": "10024",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    },
+    {
+      "assignment_id": "nycha:tds:163->zcta:11217",
+      "subject_id": "nycha:tds:163",
+      "geography_id": "zcta:11217",
+      "zcta": "11217",
+      "assignment_method": "representative_point_in_zcta",
+      "overlap_share": 1.0,
+      "is_primary": true,
+      "quality": "strong",
+      "source_geometry_vintages": {
+        "development": "nycha-open-data-current",
+        "geography": "2020"
+      }
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+calculation_version: rent-wedge-v1
+
+period_matching:
+  prefer_same_month: true
+  near_months: 6
+  representative_max_months: 18
+  # Beyond this without historical-analysis mode → unavailable
+  hard_max_months: 36
+
+quality:
+  # Rank order (best → worst). Used for best-available selection and rankings.
+  rank_order:
+    - exact
+    - strong
+    - representative
+    - context_only
+    - unavailable
+  default_filter:
+    - exact
+    - strong
+    - representative
+  context_only_opt_in: true
+
+unit_scope:
+  # Preferred matching order (§7.3)
+  preference:
+    - same_bedroom
+    - all_unit_vs_all_unit
+    - development_wide_vs_representative_bedroom
+  # Impossible combinations are disabled in UI and never labeled exact
+  impossible:
+    - { market_unit_scope: all_units, bedroom_count: 0 }
+    - { market_unit_scope: all_units, bedroom_count: 1 }
+    - { market_unit_scope: all_units, bedroom_count: 2 }
+    - { market_unit_scope: all_units, bedroom_count: 3 }
+    - { market_unit_scope: all_units, bedroom_count: 4 }
+
+gross_net:
+  # Compatible pairs (mild mismatch is disclosed, not fatal)
+  compatible:
+    - [gross, gross]
+    - [net, net]
+    - [gross, unknown]
+    - [net, unknown]
+    - [unknown, unknown]
+    - [unknown, gross]
+    - [unknown, net]
+
+aggregations:
+  # §7.5 — both always available; never label either "the neighborhood average" alone
+  modes:
+    - development_unweighted_median
+    - unit_weighted_mean
+
+# Labels — product language rules (§16); prefer plain words in the UI
+language:
+  wedge_terms:
+    - monthly rent difference
+    - cheaper than nearby market rent
+    - market-rent wedge
+  plain_percent_label: cheaper than nearby market rent
+  forbidden_wedge_labels:
+    - government spending
+    - cash subsidy
+    - direct government expenditure
+    - taxpayer gift

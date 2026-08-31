@@ -1,0 +1,66 @@
+name: test
+
+on:
+  push:
+    branches: [main, "fm/**"]
+  pull_request:
+  workflow_dispatch:
+
+# Least privilege — no deployment secrets on PR (NRS-012 / §12.3 + §12.6)
+permissions:
+  contents: read
+
+# Explicit empty env: external/fork PRs must never inherit deploy or source tokens.
+# Do not add secrets.* mappings to this workflow.
+env: {}
+
+jobs:
+  isolation-and-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@94527f2e458b27549849d47d273a16bec83a01e9 # v7
+        with:
+          python-version: "3.12"
+
+      - name: Setup Node
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Bootstrap
+        run: make bootstrap
+
+      - name: Isolation checks (must fail on peer-product coupling)
+        run: make test-isolation
+
+      - name: Unit / contract / golden tests
+        run: uv run pytest -q
+
+      - name: Python lint
+        run: uv run ruff check src tests
+
+      - name: Typecheck + web build
+        run: |
+          npm run typecheck
+          make web-build
+
+      - name: Browser smoke
+        run: |
+          npx playwright install --with-deps chromium
+          node tests/browser/smoke.mjs --app-only
+
+      - name: Edge hardening unit gate (NRS-012)
+        run: uv run pytest tests/unit/test_edge_hardening.py -q
+
+      - name: Static-edge load test (cache-hit, no build runner)
+        run: node scripts/static-edge-load.mjs
+
+      - name: Guard — fixtures and static build only
+        run: |
+          echo "PR/push test job is fixtures + static build only; no deploy step."

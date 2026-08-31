@@ -1,0 +1,106 @@
+# NRS-012 — dependency scan + PR secret isolation (local-first policy artifact).
+# External / fork PRs never receive deployment or source tokens.
+name: security
+
+on:
+  push:
+    branches: [main, "fm/**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+
+# Never map deployment or licensed-source tokens into this workflow.
+
+jobs:
+  pr-isolation:
+    name: Fork/PR secret isolation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+
+      - name: Assert workflow YAML maps no deploy/source secrets
+        run: |
+          set -euo pipefail
+          # Fail if any workflow references a secret context (except none — we allow zero).
+          if grep -REn '\$\{\{\s*secrets\.' .github/workflows/; then
+            echo "FAIL: workflow references secret context" >&2
+            exit 1
+          fi
+          # Build patterns without embedding forbidden token names in this file.
+          pat1="$(printf '%s_%s' RENT_SEEKERS DEPLOY)"
+          pat2="$(printf '%s_%s' SOURCE TOKEN)"
+          pat3="$(printf '%s_%s' HUD API)"
+          pat4="$(printf '%s_%s' MAPBOX TOKEN)"
+          pat5="$(printf '%s%s' CITY SCROLL)"
+          hits="$(grep -REin "${pat1}|${pat2}|${pat3}|${pat4}|${pat5}" .github/workflows/ || true)"
+          # Ignore this step's own constructed patterns (no real secret mapping).
+          hits="$(printf '%s\n' "$hits" | grep -v 'security.yml:' || true)"
+          if [ -n "$hits" ]; then
+            echo "$hits" >&2
+            echo "FAIL: deploy/source/peer token name in workflows" >&2
+            exit 1
+          fi
+          echo "ok: no deployment/source secrets on PR surface"
+
+      - name: Permissions are read-only for contents
+        run: |
+          set -euo pipefail
+          grep -nE 'contents:[[:space:]]*read' .github/workflows/test.yml
+          grep -nE 'contents:[[:space:]]*read' .github/workflows/security.yml
+
+  dependency-audit:
+    name: Dependency audit (fixtures-only, no source fetch)
+    runs-on: ubuntu-latest
+    # Still runs on fork PRs — uses no secrets
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@94527f2e458b27549849d47d273a16bec83a01e9 # v7
+        with:
+          python-version: "3.12"
+
+      - name: npm ci + audit
+        run: |
+          npm ci
+          npm audit --audit-level=high
+
+      - name: Python dependency audit
+        run: |
+          uv sync --frozen --all-extras
+          uv run pip-audit --skip-editable
+
+  codeql:
+    name: CodeQL (public repository)
+    runs-on: ubuntu-latest
+    if: github.event.repository.visibility == 'public' && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
+    permissions:
+      contents: read
+      security-events: write
+      actions: read
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@5ba2889ada762081db2c4f32a729827dce632c7b # v3
+        with:
+          languages: javascript-typescript, python
+
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@5ba2889ada762081db2c4f32a729827dce632c7b # v3
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@5ba2889ada762081db2c4f32a729827dce632c7b # v3

@@ -1,0 +1,93 @@
+# Separate deployment identity for NYC Rent Seekers.
+# Must never share hosts, buckets, secrets, or service accounts with other products.
+project: nyc-rent-seekers
+package: rent_seekers
+stage: private-prototype
+
+identity:
+  service_name: nyc-rent-seekers
+  deploy_account: rent-seekers-deploy
+  origin_namespace: nyc-rent-seekers
+
+serving:
+  local_port: 8791
+  static_root: dist
+  status_path: status.json
+  demo_path: nyc-rent-seekers-demo.html
+  latest_pointer: latest.json
+  releases_prefix: releases
+  # §9 cache-control: immutable release assets long-lived; pointer/status short.
+  cache_control:
+    immutable_assets: "public, max-age=31536000, immutable"
+    pointer_and_status: "public, max-age=60, must-revalidate"
+    html_entry: "public, max-age=300, must-revalidate"
+
+release:
+  # Pointer (latest.json) is updated only after validate + smoke pass.
+  # A failed attempt never mutates prior release prefixes.
+  promote_after_validation: true
+  preserve_prior_on_failure: true
+  content_addressed: true
+
+# NRS-012 / §12 — static-edge security (browser-facing)
+security:
+  basemap: local-nyc-geojson
+  origin_isolation: separate-static-origin-from-cairn-cityscroll
+  provider_tokens_in_browser: false
+  cookies: none
+  third_party_analytics: false
+  # Optional overrides; defaults live in rent_seekers.security.headers
+  content_security_policy: >-
+    default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline';
+    img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self';
+    worker-src 'self' blob:; child-src 'self' blob:; object-src 'none';
+    base-uri 'self'; form-action 'none'; frame-ancestors 'none'
+  headers:
+    X-Content-Type-Options: nosniff
+    X-Frame-Options: DENY
+    Referrer-Policy: no-referrer
+    Permissions-Policy: >-
+      accelerometer=(), camera=(), geolocation=(), gyroscope=(),
+      magnetometer=(), microphone=(), payment=(), usb=()
+    Cross-Origin-Opener-Policy: same-origin
+    Cross-Origin-Resource-Policy: same-origin
+    X-Permitted-Cross-Domain-Policies: none
+
+# NRS-012 operational limits — build-time fetch + published payload caps
+operational_limits:
+  source_fetch:
+    timeout_seconds: 60
+    max_download_bytes: 83886080   # 80 MiB
+    max_retries: 2
+    backoff_seconds: 1.5
+    # Extra hosts beyond those discovered from config/sources.yml
+    allowed_hosts: []
+  payload:
+    max_release_file_bytes: 41943040      # 40 MiB
+    max_release_total_bytes: 262144000    # 250 MiB
+    max_demo_bundle_bytes: 83886080       # 80 MiB
+  alerts:
+    # Operator thresholds for the static host account (not live cloud hooks).
+    bandwidth_alert_gb_per_day: 50
+    build_duration_alert_minutes: 45
+  notes: >-
+    Static edge only: browser traffic never reaches the build runner.
+    Bandwidth/build alerts are documented operator thresholds.
+
+# Forbidden coupling markers — CI fails if any appear in code or config
+isolation:
+  forbidden_package_names:
+    - cityscroll
+    - city-scroll
+    - city_scroll
+    - crol-list
+    - crol_list
+    - crollist
+  forbidden_env_vars:
+    - CITYSCROLL_
+    - CITY_SCROLL_
+    - CROL_
+  forbidden_hosts:
+    - cityscroll.
+    - city-scroll.
+    - crol-list.

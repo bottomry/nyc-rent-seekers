@@ -1,0 +1,119 @@
+{
+  "project": "nyc-rent-seekers",
+  "stage": "public-release",
+  "release_id": "2026-08-30T214045Z-demo",
+  "last_successful_build": "2026-08-30T21:40:45.158060+00:00",
+  "nycha_pdf_vintage": "2026-01-01",
+  "nycha_structured_vintages": {
+    "2025-01-01": 338
+  },
+  "nycha_vintage": "2026-01-01",
+  "geometry_vintage": "nycha-open-data-current",
+  "nta_vintage": "2020",
+  "tract_vintage": "2020",
+  "market_vintages": {
+    "renthop_curated": "2026-08",
+    "hud_safmr": "FY2026",
+    "zori": "2026-06-30"
+  },
+  "hud_safmr_fiscal_year": "FY2026",
+  "hud_safmr_zips": 410,
+  "hud_safmr_zctas": 221,
+  "zori_current_month": "2026-06-30",
+  "zori_data_lag_days": 42,
+  "zori_zips": 255,
+  "zori_zctas": 221,
+  "developments_ingested": 338,
+  "developments_with_structured_rent": 338,
+  "developments_with_pdf_rent": 209,
+  "developments_advanced_to_pdf": 209,
+  "developments_retained_structured": 129,
+  "developments_geocoded": 216,
+  "developments_compared": 216,
+  "quality_counts": {
+    "exact": 0,
+    "strong": 195,
+    "representative": 222,
+    "context_only": 0,
+    "unavailable": 0
+  },
+  "quality_counts_best_available": {
+    "exact": 0,
+    "strong": 195,
+    "representative": 21,
+    "context_only": 0,
+    "unavailable": 0
+  },
+  "default_quality_filter": [
+    "exact",
+    "strong",
+    "representative"
+  ],
+  "aggregations": {
+    "monthly_wedge_usd": {
+      "metric": "monthly_wedge_usd",
+      "n_developments": 216,
+      "development_unweighted_median": 2519.4449999999997,
+      "unit_weighted_mean": 2890.315250354684,
+      "unit_weighted_median_proxy": 2520.5,
+      "weighting_notes": {
+        "development_unweighted_median": "Each development counts once \u2014 not unit-weighted.",
+        "unit_weighted_mean": "Weighted by current NYCHA unit counts where available; missing units default to weight 1.",
+        "unit_weighted_median_proxy": "Median of the unit-weighted distribution (cumulative unit weight)."
+      }
+    },
+    "percent_below_comparator": {
+      "metric": "percent_below_comparator",
+      "n_developments": 216,
+      "development_unweighted_median": 0.8096642704165655,
+      "unit_weighted_mean": 0.808241216826262,
+      "unit_weighted_median_proxy": 0.806237137881906,
+      "weighting_notes": {
+        "development_unweighted_median": "Each development counts once \u2014 not unit-weighted.",
+        "unit_weighted_mean": "Weighted by current NYCHA unit counts where available; missing units default to weight 1.",
+        "unit_weighted_median_proxy": "Median of the unit-weighted distribution (cumulative unit weight)."
+      }
+    }
+  },
+  "nta_features": 262,
+  "tract_features": 2325,
+  "zcta_features": 221,
+  "geometry_review_rows": 0,
+  "quarantine_count": 8,
+  "mixed_vintage": {
+    "pdf_available": true,
+    "pdf_data_as_of": "2026-01-01",
+    "developments_current": 338,
+    "advanced_to_pdf": 209,
+    "retained_structured": 129,
+    "stale_structured_count": 129,
+    "low_confidence_pdf_rejected": 0,
+    "selected_period_distribution": {
+      "2025-01-01": 129,
+      "2026-01-01": 209
+    },
+    "selected_source_distribution": {
+      "pdf": 209,
+      "structured": 129
+    },
+    "banner": "NYCHA current rents: 209 from 2026-01-01 \u00b7 129 still on structured Open Data (129 stale vs PDF) \u00b7 periods 2025-01-01\u00d7129, 2026-01-01\u00d7209"
+  },
+  "fulton_current": {
+    "value": 783.0,
+    "data_as_of": "2026-01-01",
+    "observation_id": "nycha:tds:136:avg-gross-rent:2026-01-01",
+    "source_artifact_id": "nycha-ddb-pdf-2026"
+  },
+  "fulton_structured": {
+    "value": 756.0,
+    "data_as_of": "2025-01-01",
+    "observation_id": "nycha:tds:136:avg-gross-rent:2025-01-01:open-data"
+  },
+  "warnings": [
+    "Best-available comparisons for 216 developments (quality filter: exact/strong/representative).",
+    "Fulton curated RentHop comparison remains representative (development-wide actual vs 2BR market); ZORI all-unit is strong.",
+    "NYCHA current rents: 209 from 2026-01-01 \u00b7 129 still on structured Open Data (129 stale vs PDF) \u00b7 periods 2025-01-01\u00d7129, 2026-01-01\u00d7209"
+  ],
+  "public_url": "https://bottomry.github.io/nyc-rent-seekers/",
+  "repository_url": "https://github.com/bottomry/nyc-rent-seekers"
+}

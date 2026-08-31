@@ -1,0 +1,121 @@
+{
+  "description": "PDF rows held out of the current-value set because they could not be resolved (parse failure, rent conflict, or missing key fields). Identical LLC re-lists of an already-kept development are not quarantined \u2014 they appear under resolved_relists.",
+  "count": 0,
+  "rows": [],
+  "resolved_relists": {
+    "description": "Expected LLC1 / mixed-finance re-lists of developments already kept from the primary borough listing. The real record is in the current-value set; these rows are audit trail only.",
+    "count": 10,
+    "rows": [
+      {
+        "reason": "llc_relist_identical_to_kept",
+        "development": "AMSTERDAM ADDITION",
+        "tds_raw": "187",
+        "dropped_page": 69,
+        "kept_page": 33,
+        "dropped_section": "llc1",
+        "kept_section": "borough",
+        "kept_rent": 627.0,
+        "explanation": "Identical LLC/mixed-finance re-list of a development already kept from the primary borough listing. Primary record is in the current-value set."
+      },
+      {
+        "reason": "llc_relist_identical_to_kept",
+        "development": "BUSHWICK",
+        "tds_raw": "86",
+        "dropped_page": 69,
+        "kept_page": 22,
+        "dropped_section": "llc1",
+        "kept_section": "borough",
+        "kept_rent": 627.0,
+        "explanation": "Identical LLC/mixed-finance re-list of a development already kept from the primary borough listing. Primary record is in the current-value set."
+      },
+      {
+        "reason": "llc_relist_identical_to_kept",
+        "development": "CASTLE HILL",
+        "tds_raw": "80",
+        "dropped_page": 69,
+        "kept_page": 9,
+        "dropped_section": "llc1",
+        "kept_section": "borough",
+        "kept_rent": 653.0,
+        "explanation": "Identical LLC/mixed-finance re-list of a development already kept from the primary borough listing. Primary record is in the current-value set."
+      },
+      {
+        "reason": "llc_relist_identical_to_kept",
+        "development": "CHELSEA",
+        "tds_raw": "134",
+        "dropped_page": 69,
+        "kept_page": 35,
+        "dropped_section": "llc1",
+        "kept_section": "borough",
+        "kept_rent": 726.0,
+        "explanation": "Identical LLC/mixed-finance re-list of a development already kept from the primary borough listing. Primary record is in the current-value set."
+      },
+      {
+        "reason": "llc_relist_identical_to_kept",
+        "development": "DREW-HAMILTON",
+        "tds_raw": "111",
+        "dropped_page": 69,
+        "kept_page": 36,
+        "dropped_section": "llc1",
+        "kept_section": "borough",
+        "kept_rent": 643.0,
+        "explanation": "Identical LLC/mixed-finance re-list of a development already kept from the primary borough listing. Primary record is in the current-value set."
+      },
+      {
+        "reason": "llc_relist_identical_to_kept",
+        "development": "MARBLE HILL",
+        "tds_raw": "49",
+        "dropped_page": 70,
+        "kept_page": 13,
+        "dropped_section": "llc1",
+        "kept_section": "borough",
+        "kept_rent": 612.0,
+        "explanation": "Identical LLC/mixed-finance re-list of a development already kept from the primary borough listing. Primary record is in the current-value set."
+      },
+      {
+        "reason": "llc_relist_identical_to_kept",
+        "development": "MARLBORO",
+        "tds_raw": "83",
+        "dropped_page": 70,
+        "kept_page": 27,
+        "dropped_section": "llc1",
+        "kept_section": "borough",
+        "kept_rent": 690.0,
+        "explanation": "Identical LLC/mixed-finance re-list of a development already kept from the primary borough listing. Primary record is in the current-value set."
+      },
+      {
+        "reason": "llc_relist_identical_to_kept",
+        "development": "RUTGERS",
+        "tds_raw": "99",
+        "dropped_page": 70,
+        "kept_page": 42,
+        "dropped_section": "llc1",
+        "kept_section": "borough",
+        "kept_rent": 696.0,
+        "explanation": "Identical LLC/mixed-finance re-list of a development already kept from the primary borough listing. Primary record is in the current-value set."
+      },
+      {
+        "reason": "llc_relist_identical_to_kept",
+        "development": "SAINT MARY'S PARK",
+        "tds_raw": "93",
+        "dropped_page": 70,
+        "kept_page": 16,
+        "dropped_section": "llc1",
+        "kept_section": "borough",
+        "kept_rent": 634.0,
+        "explanation": "Identical LLC/mixed-finance re-list of a development already kept from the primary borough listing. Primary record is in the current-value set."
+      },
+      {
+        "reason": "llc_relist_identical_to_kept",
+        "development": "STAPLETON",
+        "tds_raw": "114",
+        "dropped_page": 70,
+        "kept_page": 55,
+        "dropped_section": "llc1",
+        "kept_section": "borough",
+        "kept_rent": 690.0,
+        "explanation": "Identical LLC/mixed-finance re-list of a development already kept from the primary borough listing. Primary record is in the current-value set."
+      }
+    ]
+  }
+}

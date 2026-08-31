@@ -1,0 +1,21 @@
+# Curated Chelsea 2BR median asking rent — August 2026 (RentHop neighborhood page).
+# Manual reviewed observation only; no broad scraping.
+observation_id: "renthop:chelsea:2026-08:2br"
+market_area_id: "neighborhood:chelsea"
+period_start: 2026-08-01
+period_end: 2026-08-31
+measure_basis: asking
+gross_or_net: unknown
+statistic: median
+unit_scope: bedroom_specific
+bedroom_count: 2
+currency: USD
+cadence: monthly
+value: 9350
+sample_size: null
+source_artifact_id: renthop-chelsea-2026-08
+source_url: "https://www.renthop.com/average-rent-in/chelsea-new-york-ny"
+notes: >-
+  Curated neighborhood median asking rent for 2-bedroom units in Chelsea,
+  August 2026. Asking rent for units offered to market entrants — not
+  equivalent to rents actually paid by incumbent households.

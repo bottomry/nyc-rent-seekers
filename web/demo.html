@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="NYC Rent Seekers — Fulton Houses market-rent wedge map"
+    />
+    <title>NYC Rent Seekers — Fulton evidence map</title>
+    <link rel="stylesheet" href="/src/styles/app.css" />
+  </head>
+  <body class="demo">
+    <div id="app">
+      <header class="topbar compact">
+        <div class="brand">
+          <h1>NYC Rent Seekers</h1>
+          <span class="badge">public project</span>
+          <span class="badge badge-soft" id="coverage-badge">Fulton wedge live</span>
+        </div>
+        <p class="thesis short">
+          Monthly rent difference at each NYCHA building — what NYCHA residents pay versus nearby
+          market rent, with sources and dates on every figure.
+        </p>
+      </header>
+      <main class="shell-main demo-main">
+        <div id="map" class="map" role="application" aria-label="NYC rent-wedge map"></div>
+        <div id="layer-controls-host" class="layer-controls-float"></div>
+        <aside class="drawer" id="drawer" hidden aria-live="polite"></aside>
+        <aside class="source-panel" id="source-panel" hidden></aside>
+      </main>
+      <div class="hover-card" id="hover-card" hidden></div>
+    </div>
+    <!-- Evidence payloads injected by build; fallbacks load from /data/ -->
+    <script id="rent-seekers-data" type="application/json">{"_pending":true}</script>
+    <script id="rent-seekers-population-data" type="application/json">{"_pending":true}</script>
+    <script type="module" src="/src/demo.ts"></script>
+  </body>
+</html>

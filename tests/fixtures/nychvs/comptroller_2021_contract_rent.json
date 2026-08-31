@@ -1,0 +1,24 @@
+{
+  "source": "NYC Comptroller, Spotlight: New York City's Rental Housing Market, Chart 3",
+  "source_url": "https://comptroller.nyc.gov/reports/spotlight-new-york-citys-rental-housing-market",
+  "chart_data_url": "https://docs.google.com/spreadsheets/d/1Yi8qQ3vBQTTc5vDrmEfrn2u45M9lmYthgpfTWP05_8E/gviz/tq?tqx=out:csv&sheet=Chart4",
+  "vintage": "2021",
+  "measure": "monthly_contract_rent",
+  "statistic": "weighted_median",
+  "cohorts": {
+    "incumbent": "Existing Tenants (2+ Yrs)",
+    "recent": "New Tenants (<2 Yrs)"
+  },
+  "values": {
+    "manhattan": {
+      "unregulated_market": {"incumbent": 2771, "recent": 2800},
+      "regulated_private": {"incumbent": 1296, "recent": 2500},
+      "public_housing": {"incumbent": 459, "recent": 581}
+    },
+    "outer_boroughs": {
+      "unregulated_market": {"incumbent": 1600, "recent": 2000},
+      "regulated_private": {"incumbent": 1300, "recent": 1750},
+      "public_housing": {"incumbent": 525, "recent": 470}
+    }
+  }
+}

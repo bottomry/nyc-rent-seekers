@@ -1,0 +1,26 @@
+artifacts:
+  - artifact_id: nycha-ddb-pdf-2026
+    source_id: nycha-ddb
+    source_url: "https://www.nyc.gov/assets/nycha/downloads/pdf/ddb/2026ddb.pdf"
+    retrieved_at: "2026-08-10T23:00:00Z"
+    published_or_effective_date: 2026-01-01
+    sha256: null
+    media_type: application/pdf
+    raw_publication_allowed: true
+    raw_snapshot_path: null
+    parser_version: manual-nrs-002
+    license_or_terms_note: official NYC government publication
+
+  - artifact_id: renthop-chelsea-2026-08
+    source_id: renthop-curated
+    source_url: "https://www.renthop.com/average-rent-in/chelsea-new-york-ny"
+    retrieved_at: "2026-08-10T23:00:00Z"
+    published_or_effective_date: 2026-08-01
+    sha256: null
+    media_type: text/html
+    raw_publication_allowed: false
+    raw_snapshot_path: null
+    parser_version: manual-curated-v1
+    license_or_terms_note: >-
+      Manually reviewed citation of a public neighborhood rent page.
+      Broad scraping not authorized for this project stage.

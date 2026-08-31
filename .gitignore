@@ -1,0 +1,33 @@
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+dist/
+.env
+data/cache/
+data/raw/
+data/normalized/
+data/quarantine/
+# Display geometry is generated into data/processed and web/public — commit the
+# compact public copies; keep processed intermediate optional.
+data/processed/
+*.pmtiles
+.DS_Store
+.pytest_cache/
+.ruff_cache/
+# Developer-agent instructions are supplied by the ambient workspace, not shipped.
+/AGENTS.md
+/CLAUDE.md
+# Maintainer-only documentation is supplied by a private sibling checkout.
+/docs/adr
+/docs/THREAT_MODEL.md
+/docs/spec.md
+/docs/PROGRESS.md
+# Private epics, stories, and work packets stay in the internal companion.
+/product
+/.private-product
+# Structured DDB JSON mirrors are generated; prefer rebuild via normalize.
+# (fixtures under data/fixtures/nycha_ddb are committed)
+*.egg-info/
+.coverage
+htmlcov/

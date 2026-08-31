@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nyc-rent-seekers.local/schemas/release_manifest.schema.json",
+  "title": "ReleaseManifest",
+  "description": "Immutable content-addressed release inventory (NRS-011 / §9).",
+  "type": "object",
+  "required": [
+    "release_id",
+    "built_at",
+    "content_digest",
+    "artifacts",
+    "immutable",
+    "base_path"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "release_id": {
+      "type": "string",
+      "minLength": 8,
+      "description": "Timestamp + short content address, e.g. 2026-08-10T230000Z-a1b2c3d"
+    },
+    "commit_sha": { "type": ["string", "null"] },
+    "built_at": { "type": "string" },
+    "content_digest": {
+      "type": "string",
+      "minLength": 16,
+      "description": "SHA-256 over sorted path+checksum inventory (excluding pointer files)"
+    },
+    "content_address": { "type": "string" },
+    "last_successful": { "type": "boolean" },
+    "jurisdictions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "source_vintages": { "type": "object" },
+    "coverage": { "type": "object" },
+    "quality_counts": { "type": "object" },
+    "warnings": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "artifacts": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": ["sha256", "byte_length"],
+        "properties": {
+          "sha256": { "type": "string", "minLength": 64, "maxLength": 64 },
+          "byte_length": { "type": "integer", "minimum": 0 }
+        }
+      }
+    },
+    "immutable": { "const": true },
+    "base_path": {
+      "type": "string",
+      "pattern": "^/releases/.+/$"
+    }
+  }
+}

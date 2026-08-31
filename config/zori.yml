@@ -1,0 +1,59 @@
+# Zillow Observed Rent Index — all-unit current-market series (NRS-007 / §5.9)
+source_id: zori
+artifact_id: zori-zip-sfrcondomfr-sm-month
+# Property type in filename: uc_sfrcondomfr = all homes (SFR + condo/coop + multifamily)
+property_type: all_homes_plus_multifamily
+unit_scope: all_units
+# Smoothed monthly series (not seasonally adjusted cut)
+smoothing: smoothed
+seasonally_adjusted: false
+cadence: monthly
+
+# Official research data page + configured CSV URL (paths change; config wins)
+landing_page: https://www.zillow.com/research/data/
+methodology_url: https://www.zillow.com/research/methodology-zori-repeat-rent-27092/
+csv_url: https://files.zillowstatic.com/research/public_csvs/zori/Zip_zori_uc_sfrcondomfr_sm_month.csv
+csv_filename: Zip_zori_uc_sfrcondomfr_sm_month.csv
+
+# NYC filter: State NY + New York metro (source-native ZIP rows)
+state: NY
+metro_name_contains: "New York-Newark-Jersey City"
+
+# Geography
+geography_type: zcta
+region_type: zip
+
+measure:
+  measure_basis: index
+  gross_or_net: unknown
+  statistic: typical_observed_rent_35_65_percentile_smoothed
+  unit_scope: all_units
+  cadence: monthly
+  currency: USD
+
+# Label language — never call this median asking rent or 2BR
+display_label: "Zillow ZORI — ZIP-level typical observed market rent (all units, smoothed)"
+not_a_label: "median asking rent"
+not_bedroom_label: "2BR"
+
+# Attribution required by Zillow research data terms
+attribution: "Data Provided by Zillow Group"
+license_or_terms_note: >
+  Zillow Research aggregate CSV downloads are free for public use by consumers,
+  media, analysts, academics and policymakers, consistent with Zillow Terms of Use.
+  Proper attribution to Zillow Group is required on every surface that displays the data.
+  Raw CSV may be snapshotted for reproducible builds; derived ZIP values and choropleths
+  may be published with attribution. Do not imply endorsement by or partnership with Zillow.
+  No API token required for static research CSV downloads.
+raw_publication_allowed: true
+derived_publication_allowed: true
+api_token_required: false
+browser_api_forbidden: true
+
+# History retained in compact public package (months of monthly values per ZIP)
+history_months: 24
+
+# Expected NYC ZIP coverage band after metro filter
+zip_feature_band:
+  min: 150
+  max: 400

@@ -1,0 +1,20 @@
+{
+  "matched_zctas": 219,
+  "missing_zctas": 2,
+  "feature_count": 221,
+  "fiscal_year": "FY2026",
+  "period_start": "2025-10-01",
+  "period_end": "2026-09-30",
+  "source_id": "hud_safmr",
+  "source_artifact_id": "hud-safmr-fy2026-revised",
+  "display_label": "HUD FY2026 Small Area Fair Market Rent \u2014 ZIP-level gross-rent benchmark",
+  "not_a_label": "median asking rent",
+  "gross_or_net": "gross",
+  "bedroom_keys": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ]
+}

@@ -1,0 +1,37 @@
+# Structured NYCHA Development Data Book (Open Data) — normalize policy (NRS-004)
+source_id: nycha_ddb_open_data
+dataset_id: evjd-dqpz
+artifact_id: nycha-ddb-open-data-csv
+
+required_columns:
+  - DATA AS OF
+  - DEVELOPMENT
+  - HUD AMP#
+  - TDS#
+  - CONSOLIDATED TDS#
+  - PROGRAM
+  - NUMBER OF CURRENT APARTMENTS
+  - NUMBER OF RENTAL ROOMS
+  - AVG NO R/R PER APARTMENT
+  - AVG MONTHLY GROSS RENT
+
+# Fail loudly when source row-count drifts beyond this band without review.
+row_count:
+  min: 250
+  max: 500
+  expected_note: "~346 rows as of 2025-vintage Open Data snapshot; geometry has ~216 polygons"
+
+# Money / rent sanity
+rent:
+  min_usd: 1
+  max_usd: 5000
+
+outputs:
+  developments_json: data/processed/nycha_ddb/developments.json
+  developments_parquet: data/processed/nycha_ddb/developments.parquet
+  tenant_rents_json: data/processed/nycha_ddb/tenant_rents.json
+  tenant_rents_parquet: data/processed/nycha_ddb/tenant_rents.parquet
+  quarantine_json: data/processed/nycha_ddb/quarantine.json
+  join_json: data/processed/nycha_ddb/geometry_join.json
+  source_health_json: data/processed/nycha_ddb/source_health.json
+  coverage_json: data/processed/nycha_ddb/coverage.json

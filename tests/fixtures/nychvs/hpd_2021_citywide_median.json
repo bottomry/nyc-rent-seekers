@@ -1,0 +1,22 @@
+{
+  "source": "NYC HPD 2023 NYCHVS Guide to Estimating Variances",
+  "source_url": "https://www.nyc.gov/assets/hpd/downloads/pdfs/about/2023-nychvs-guide-to-estimating-variances.pdf",
+  "source_puf_url": "https://www.nyc.gov/assets/hpd/downloads/pdfs/about/occupied_puf_21.csv",
+  "source_puf_sha256": "51b1e886bb61ff2ce3787e90dc8c58ccf523629dde108156dcc004d479740cf4",
+  "measure": "2021 citywide median gross rent for occupied renter households with reported gross rent",
+  "sample_count": 4424,
+  "point_estimate": 1575.0,
+  "replicate_medians": [
+    1575, 1565, 1579, 1585, 1575, 1575, 1568, 1594, 1583, 1574,
+    1568, 1588, 1574, 1564, 1575, 1580, 1571, 1575, 1580, 1575,
+    1570, 1575, 1570, 1580, 1575, 1590, 1575, 1571, 1580, 1570,
+    1569, 1585, 1587, 1568, 1575, 1594, 1580, 1575, 1574, 1583,
+    1571, 1583, 1570, 1586, 1570, 1575, 1590, 1571, 1575, 1575,
+    1568, 1596, 1568, 1585, 1568, 1588, 1575, 1570, 1575, 1575,
+    1568, 1586, 1588, 1573, 1580, 1575, 1580, 1568, 1580, 1575,
+    1580, 1570, 1579, 1587, 1571, 1575, 1580, 1571, 1583, 1580
+  ],
+  "variance_multiplier": 0.05,
+  "expected_standard_error": 14.89966442575134,
+  "expected_confidence_interval_95": [1545.7966577255273, 1604.2033422744727]
+}

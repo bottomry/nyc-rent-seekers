@@ -1,0 +1,111 @@
+{
+  "source_id": "nycha_ddb_open_data",
+  "dataset_id": "evjd-dqpz",
+  "artifact_id": "nycha-ddb-open-data-csv",
+  "built_at": "2026-08-11T13:58:07.776055+00:00",
+  "raw_snapshot": {
+    "path": "data/raw/nycha/evjd-dqpz.csv",
+    "sha256": "e7f932f7adddc08cf130bf7ccd11e49bbdda7b63725450a8a678b54a09b63e1a",
+    "byte_length": 120762,
+    "retrieved_at": "2026-08-11T13:58:06.871941+00:00",
+    "source_url": "https://data.cityofnewyork.us/api/views/evjd-dqpz/rows.csv",
+    "landing_page": "https://data.cityofnewyork.us/Housing-Development/NYCHA-Development-Data-Book/evjd-dqpz"
+  },
+  "schema": {
+    "column_count": 52,
+    "required_columns_ok": true,
+    "columns": [
+      "DATA AS OF",
+      "DEVELOPMENT",
+      "HUD AMP#",
+      "TDS#",
+      "CONSOLIDATED TDS#",
+      "DEVELOPMENT EDP#",
+      "OPERATING EDP#",
+      "HUD #",
+      "PROGRAM",
+      "METHOD",
+      "TYPE",
+      "NUMBER OF SECTION 8 TRANSITION APARTMENTS",
+      "NUMBER OF CURRENT APARTMENTS",
+      "TOTAL NUMBER OF APARTMENTS",
+      "NUMBER OF RENTAL ROOMS",
+      "AVG NO R/R PER APARTMENT",
+      "POPULATION SECTION 8 TRANSITION",
+      "POPULATION PUBLIC HOUSING",
+      "TOTAL POPULATION",
+      "TOTAL # OF FIXED INCOME HOUSEHOLD",
+      "PERCENT FIXED INCOME HOUSEHOLDS",
+      "NUMBER OF RESIDENTIAL BLDGS",
+      "NUMBER OF NON-RESIDENTIAL BLDGS",
+      "NUMBER OF STAIRHALLS",
+      "NUMBER OF STORIES",
+      "TOTAL AREA SQ FT",
+      "ACRES",
+      "NET DEV AREA SQ FT",
+      "EXCLUDING PARK ACRES",
+      "BLDG COVERAGE SQ FT",
+      "CUBAGE CU FT",
+      "BLDG COVERAGE %",
+      "DENSITY",
+      "DEVELOPMENT COST",
+      "PER RENTAL ROOM",
+      "AVG MONTHLY GROSS RENT",
+      "LOCATION STREET A",
+      "LOCATION STREET B",
+      "LOCATION STREET C",
+      "LOCATION STREET D",
+      "BOROUGH",
+      "COMMUNITY DISTIRCT",
+      "US CONGRESSIONAL DISTRICT",
+      "NY STATE SENATE DISTRICT",
+      "NY STATE ASSEMBLY DISTRICT",
+      "NY CITY COUNCIL DISTRICT",
+      "COMPLETION DATE",
+      "FEDERALIZED DEVELOPMENT",
+      "SENIOR DEVELOPMENT",
+      "ELECTRICITY PAID BY RESIDENTS",
+      "PRIVATE MANAGEMENT",
+      "RAD TRANSFERRED DATE"
+    ]
+  },
+  "rows": {
+    "raw": 346,
+    "valid": 338,
+    "quarantined": 8,
+    "valid_share": 0.976878612716763
+  },
+  "data_as_of_distribution": {
+    "2025-01-01": 338
+  },
+  "quarantine_reasons": {
+    "missing_avg_monthly_gross_rent": 6,
+    "missing_tds": 2
+  },
+  "geometry_join": {
+    "matched": 216,
+    "ddb_without_geometry": 122,
+    "geometry_without_ddb": 0
+  },
+  "parquet": {
+    "developments": {
+      "path": "data/processed/nycha_ddb/developments.parquet",
+      "format": "parquet",
+      "row_count": 338,
+      "byte_length": 21778
+    },
+    "tenant_rents": {
+      "path": "data/processed/nycha_ddb/tenant_rents.parquet",
+      "format": "parquet",
+      "row_count": 338,
+      "byte_length": 12016
+    }
+  },
+  "honesty": {
+    "measure": "average monthly gross rent",
+    "measure_basis": "actual_paid",
+    "statistic": "mean",
+    "unit_scope": "all_units",
+    "note": "Each row is labeled by its source DATA AS OF date. This Open Data snapshot may lag the newest NYCHA DDB PDF."
+  }
+}

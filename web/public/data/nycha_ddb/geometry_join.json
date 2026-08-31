@@ -1,0 +1,2931 @@
+{
+  "matched_count": 216,
+  "ddb_without_geometry_count": 122,
+  "geometry_without_ddb_count": 0,
+  "matched": [
+    {
+      "development_id": "nycha:tds:233",
+      "tds_id": "233",
+      "name": "1162-1176 WASHINGTON AVENUE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 619.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:233"
+    },
+    {
+      "development_id": "nycha:tds:214",
+      "tds_id": "214",
+      "name": "1471 WATSON AVENUE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 549.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:214"
+    },
+    {
+      "development_id": "nycha:tds:359",
+      "tds_id": "359",
+      "name": "154 WEST 84TH STREET",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 726.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:359"
+    },
+    {
+      "development_id": "nycha:tds:156",
+      "tds_id": "156",
+      "name": "303 VERNON AVENUE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 632.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:156"
+    },
+    {
+      "development_id": "nycha:tds:265",
+      "tds_id": "265",
+      "name": "45 ALLEN STREET",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 846.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:265"
+    },
+    {
+      "development_id": "nycha:tds:150",
+      "tds_id": "150",
+      "name": "830 AMSTERDAM AVENUE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 675.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:150"
+    },
+    {
+      "development_id": "nycha:tds:118",
+      "tds_id": "118",
+      "name": "ADAMS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 608.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:118"
+    },
+    {
+      "development_id": "nycha:tds:31",
+      "tds_id": "31",
+      "name": "ALBANY",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 642.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:31"
+    },
+    {
+      "development_id": "nycha:tds:85",
+      "tds_id": "85",
+      "name": "ALBANY II",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 603.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:85"
+    },
+    {
+      "development_id": "nycha:tds:22",
+      "tds_id": "22",
+      "name": "AMSTERDAM",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 653.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:22"
+    },
+    {
+      "development_id": "nycha:tds:187",
+      "tds_id": "187",
+      "name": "AMSTERDAM ADDITION",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 599.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:187"
+    },
+    {
+      "development_id": "nycha:tds:26",
+      "tds_id": "26",
+      "name": "ASTORIA",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 726.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:26"
+    },
+    {
+      "development_id": "nycha:tds:256",
+      "tds_id": "256",
+      "name": "ATLANTIC TERMINAL SITE 4B",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 657.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:256"
+    },
+    {
+      "development_id": "nycha:tds:91",
+      "tds_id": "91",
+      "name": "BAISLEY PARK",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 694.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:91"
+    },
+    {
+      "development_id": "nycha:tds:60",
+      "tds_id": "60",
+      "name": "BARUCH",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 619.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:60"
+    },
+    {
+      "development_id": "nycha:tds:198",
+      "tds_id": "198",
+      "name": "BARUCH HOUSES ADDITION",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 383.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:198"
+    },
+    {
+      "development_id": "nycha:tds:165",
+      "tds_id": "165",
+      "name": "BEACH 41ST STREET-BEACH CHANNEL DRIVE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 623.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:165"
+    },
+    {
+      "development_id": "nycha:tds:52",
+      "tds_id": "52",
+      "name": "BERRY",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 627.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:52"
+    },
+    {
+      "development_id": "nycha:tds:54",
+      "tds_id": "54",
+      "name": "BLAND",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 696.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:54"
+    },
+    {
+      "development_id": "nycha:tds:243",
+      "tds_id": "243",
+      "name": "BORINQUEN PLAZA I",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 636.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:243"
+    },
+    {
+      "development_id": "nycha:tds:271",
+      "tds_id": "271",
+      "name": "BORINQUEN PLAZA II",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 701.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:271"
+    },
+    {
+      "development_id": "nycha:tds:346",
+      "tds_id": "346",
+      "name": "BOYNTON AVENUE REHAB",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 504.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:346"
+    },
+    {
+      "development_id": "nycha:tds:264",
+      "tds_id": "264",
+      "name": "BRACETTI PLAZA",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 654.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:264"
+    },
+    {
+      "development_id": "nycha:tds:56",
+      "tds_id": "56",
+      "name": "BREUKELEN",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 667.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:56"
+    },
+    {
+      "development_id": "nycha:tds:65",
+      "tds_id": "65",
+      "name": "BREVOORT",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 671.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:65"
+    },
+    {
+      "development_id": "nycha:tds:32",
+      "tds_id": "32",
+      "name": "BRONX RIVER",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 539.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:32"
+    },
+    {
+      "development_id": "nycha:tds:157",
+      "tds_id": "157",
+      "name": "BRONX RIVER ADDITION",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 350.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:157"
+    },
+    {
+      "development_id": "nycha:tds:325",
+      "tds_id": "325",
+      "name": "BROWN",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 458.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:325"
+    },
+    {
+      "development_id": "nycha:tds:16",
+      "tds_id": "16",
+      "name": "BROWNSVILLE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 655.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:16"
+    },
+    {
+      "development_id": "nycha:tds:235",
+      "tds_id": "235",
+      "name": "BRYANT AVENUE-EAST 174TH STREET",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 663.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:235"
+    },
+    {
+      "development_id": "nycha:tds:86",
+      "tds_id": "86",
+      "name": "BUSHWICK",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 586.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:86"
+    },
+    {
+      "development_id": "nycha:tds:113",
+      "tds_id": "113",
+      "name": "BUTLER",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 606.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:113"
+    },
+    {
+      "development_id": "nycha:tds:166",
+      "tds_id": "166",
+      "name": "CAREY GARDENS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 597.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:166"
+    },
+    {
+      "development_id": "nycha:tds:164",
+      "tds_id": "164",
+      "name": "CARLETON MANOR",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 538.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:164"
+    },
+    {
+      "development_id": "nycha:tds:58",
+      "tds_id": "58",
+      "name": "CARVER",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 658.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:58"
+    },
+    {
+      "development_id": "nycha:tds:206",
+      "tds_id": "206",
+      "name": "CASSIDY-LAFAYETTE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 369.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:206"
+    },
+    {
+      "development_id": "nycha:tds:80",
+      "tds_id": "80",
+      "name": "CASTLE HILL",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 611.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:80"
+    },
+    {
+      "development_id": "nycha:tds:134",
+      "tds_id": "134",
+      "name": "CHELSEA",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 670.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:134"
+    },
+    {
+      "development_id": "nycha:tds:176",
+      "tds_id": "176",
+      "name": "CHELSEA ADDITION",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 410.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:176"
+    },
+    {
+      "development_id": "nycha:tds:307",
+      "tds_id": "307",
+      "name": "CLAREMONT REHAB (GROUP 2)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 511.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:307"
+    },
+    {
+      "development_id": "nycha:tds:308",
+      "tds_id": "308",
+      "name": "CLAREMONT REHAB (GROUP 3)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 579.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:308"
+    },
+    {
+      "development_id": "nycha:tds:335",
+      "tds_id": "335",
+      "name": "CLAREMONT REHAB (GROUP 4)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 584.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:335"
+    },
+    {
+      "development_id": "nycha:tds:336",
+      "tds_id": "336",
+      "name": "CLAREMONT REHAB (GROUP 5)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 661.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:336"
+    },
+    {
+      "development_id": "nycha:tds:11",
+      "tds_id": "11",
+      "name": "CLASON POINT GARDENS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 730.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:11"
+    },
+    {
+      "development_id": "nycha:tds:123",
+      "tds_id": "123",
+      "name": "CLINTON",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 649.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:123"
+    },
+    {
+      "development_id": "nycha:tds:236",
+      "tds_id": "236",
+      "name": "COLLEGE AVENUE-EAST 165TH STREET",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 337.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:236"
+    },
+    {
+      "development_id": "nycha:tds:94",
+      "tds_id": "94",
+      "name": "CONEY ISLAND",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 660.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:94"
+    },
+    {
+      "development_id": "nycha:tds:239",
+      "tds_id": "239",
+      "name": "CONEY ISLAND I (SITE 1B)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 596.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:239"
+    },
+    {
+      "development_id": "nycha:tds:238",
+      "tds_id": "238",
+      "name": "CONEY ISLAND I (SITE 8)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 570.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:238"
+    },
+    {
+      "development_id": "nycha:tds:216",
+      "tds_id": "216",
+      "name": "CONEY ISLAND I (SITES 4 & 5)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 678.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:216"
+    },
+    {
+      "development_id": "nycha:tds:232",
+      "tds_id": "232",
+      "name": "CONLON LIHFE TOWER",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 405.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:232"
+    },
+    {
+      "development_id": "nycha:tds:69",
+      "tds_id": "69",
+      "name": "COOPER PARK",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 653.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:69"
+    },
+    {
+      "development_id": "nycha:tds:70",
+      "tds_id": "70",
+      "name": "CYPRESS HILLS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 585.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:70"
+    },
+    {
+      "development_id": "nycha:tds:155",
+      "tds_id": "155",
+      "name": "DE HOSTOS APARTMENTS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 598.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:155"
+    },
+    {
+      "development_id": "nycha:tds:148",
+      "tds_id": "148",
+      "name": "DOUGLASS ADDITION",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 662.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:148"
+    },
+    {
+      "development_id": "nycha:tds:82",
+      "tds_id": "82",
+      "name": "DOUGLASS I",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 620.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:82"
+    },
+    {
+      "development_id": "nycha:tds:582",
+      "tds_id": "582",
+      "name": "DOUGLASS II",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 686.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:582"
+    },
+    {
+      "development_id": "nycha:tds:111",
+      "tds_id": "111",
+      "name": "DREW-HAMILTON",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 576.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:111"
+    },
+    {
+      "development_id": "nycha:tds:41",
+      "tds_id": "41",
+      "name": "DYCKMAN",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 626.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:41"
+    },
+    {
+      "development_id": "nycha:tds:304",
+      "tds_id": "304",
+      "name": "EAST 165TH STREET-BRYANT AVENUE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 778.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:304"
+    },
+    {
+      "development_id": "nycha:tds:338",
+      "tds_id": "338",
+      "name": "EAST 173RD STREET-VYSE AVENUE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 714.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:338"
+    },
+    {
+      "development_id": "nycha:tds:263",
+      "tds_id": "263",
+      "name": "EAST NEW YORK CITY LINE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 726.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:263"
+    },
+    {
+      "development_id": "nycha:tds:9",
+      "tds_id": "9",
+      "name": "EAST RIVER",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 560.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:9"
+    },
+    {
+      "development_id": "nycha:tds:15",
+      "tds_id": "15",
+      "name": "ELLIOTT",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 668.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:15"
+    },
+    {
+      "development_id": "nycha:tds:29",
+      "tds_id": "29",
+      "name": "FARRAGUT",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 643.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:29"
+    },
+    {
+      "development_id": "nycha:tds:209",
+      "tds_id": "209",
+      "name": "FHA REPOSSESSED HOUSES (GROUP I)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 901.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:209"
+    },
+    {
+      "development_id": "nycha:tds:212",
+      "tds_id": "212",
+      "name": "FHA REPOSSESSED HOUSES (GROUP II)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 1308.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:212"
+    },
+    {
+      "development_id": "nycha:tds:213",
+      "tds_id": "213",
+      "name": "FHA REPOSSESSED HOUSES (GROUP III)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 948.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:213"
+    },
+    {
+      "development_id": "nycha:tds:226",
+      "tds_id": "226",
+      "name": "FHA REPOSSESSED HOUSES (GROUP IV)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 1106.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:226"
+    },
+    {
+      "development_id": "nycha:tds:283",
+      "tds_id": "283",
+      "name": "FHA REPOSSESSED HOUSES (GROUP IX)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 1020.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:283"
+    },
+    {
+      "development_id": "nycha:tds:260",
+      "tds_id": "260",
+      "name": "FHA REPOSSESSED HOUSES (GROUP V)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 940.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:260"
+    },
+    {
+      "development_id": "nycha:tds:273",
+      "tds_id": "273",
+      "name": "FHA REPOSSESSED HOUSES (GROUP VI)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 731.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:273"
+    },
+    {
+      "development_id": "nycha:tds:274",
+      "tds_id": "274",
+      "name": "FHA REPOSSESSED HOUSES (GROUP VII)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 678.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:274"
+    },
+    {
+      "development_id": "nycha:tds:275",
+      "tds_id": "275",
+      "name": "FHA REPOSSESSED HOUSES (GROUP VIII)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 864.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:275"
+    },
+    {
+      "development_id": "nycha:tds:284",
+      "tds_id": "284",
+      "name": "FHA REPOSSESSED HOUSES (GROUP X)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 685.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:284"
+    },
+    {
+      "development_id": "nycha:tds:1",
+      "tds_id": "1",
+      "name": "FIRST HOUSES",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 592.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:1"
+    },
+    {
+      "development_id": "nycha:tds:59",
+      "tds_id": "59",
+      "name": "FOREST",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 588.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:59"
+    },
+    {
+      "development_id": "nycha:tds:136",
+      "tds_id": "136",
+      "name": "FULTON",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 756.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:136"
+    },
+    {
+      "development_id": "nycha:tds:252",
+      "tds_id": "252",
+      "name": "GARVEY (GROUP A)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 718.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:252"
+    },
+    {
+      "development_id": "nycha:tds:225",
+      "tds_id": "225",
+      "name": "GLEBE AVENUE-WESTCHESTER AVENUE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 407.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:225"
+    },
+    {
+      "development_id": "nycha:tds:171",
+      "tds_id": "171",
+      "name": "GLENMORE PLAZA",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 573.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:171"
+    },
+    {
+      "development_id": "nycha:tds:44",
+      "tds_id": "44",
+      "name": "GLENWOOD",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 666.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:44"
+    },
+    {
+      "development_id": "nycha:tds:100",
+      "tds_id": "100",
+      "name": "GOMPERS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 654.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:100"
+    },
+    {
+      "development_id": "nycha:tds:25",
+      "tds_id": "25",
+      "name": "GOWANUS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 713.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:25"
+    },
+    {
+      "development_id": "nycha:tds:87",
+      "tds_id": "87",
+      "name": "GRANT",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 678.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:87"
+    },
+    {
+      "development_id": "nycha:tds:68",
+      "tds_id": "68",
+      "name": "GRAVESEND",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 587.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:68"
+    },
+    {
+      "development_id": "nycha:tds:40",
+      "tds_id": "40",
+      "name": "GUN HILL",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 655.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:40"
+    },
+    {
+      "development_id": "nycha:tds:142",
+      "tds_id": "142",
+      "name": "HABER",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 355.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:142"
+    },
+    {
+      "development_id": "nycha:tds:75",
+      "tds_id": "75",
+      "name": "HAMMEL",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 546.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:75"
+    },
+    {
+      "development_id": "nycha:tds:262",
+      "tds_id": "262",
+      "name": "HARBORVIEW TERRACE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 620.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:262"
+    },
+    {
+      "development_id": "nycha:tds:184",
+      "tds_id": "184",
+      "name": "HERNANDEZ",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 540.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:184"
+    },
+    {
+      "development_id": "nycha:tds:78",
+      "tds_id": "78",
+      "name": "HIGHBRIDGE GARDENS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 649.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:78"
+    },
+    {
+      "development_id": "nycha:tds:215",
+      "tds_id": "215",
+      "name": "HOE AVENUE-EAST 173RD STREET",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 664.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:215"
+    },
+    {
+      "development_id": "nycha:tds:159",
+      "tds_id": "159",
+      "name": "HOLMES TOWERS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 597.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:159"
+    },
+    {
+      "development_id": "nycha:tds:72",
+      "tds_id": "72",
+      "name": "HOWARD",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 494.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:72"
+    },
+    {
+      "development_id": "nycha:tds:168",
+      "tds_id": "168",
+      "name": "HUGHES APARTMENTS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 696.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:168"
+    },
+    {
+      "development_id": "nycha:tds:367",
+      "tds_id": "367",
+      "name": "HUNTS POINT AVENUE REHAB",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 619.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:367"
+    },
+    {
+      "development_id": "nycha:tds:109",
+      "tds_id": "109",
+      "name": "HYLAN",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 610.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:109"
+    },
+    {
+      "development_id": "nycha:tds:14",
+      "tds_id": "14",
+      "name": "INGERSOLL",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 667.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:14"
+    },
+    {
+      "development_id": "nycha:tds:316",
+      "tds_id": "316",
+      "name": "INTERNATIONAL TOWER",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 457.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:316"
+    },
+    {
+      "development_id": "nycha:tds:139",
+      "tds_id": "139",
+      "name": "ISAACS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 615.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:139"
+    },
+    {
+      "development_id": "nycha:tds:120",
+      "tds_id": "120",
+      "name": "JACKSON",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 568.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:120"
+    },
+    {
+      "development_id": "nycha:tds:64",
+      "tds_id": "64",
+      "name": "JEFFERSON",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 646.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:64"
+    },
+    {
+      "development_id": "nycha:tds:17",
+      "tds_id": "17",
+      "name": "JOHNSON",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 676.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:17"
+    },
+    {
+      "development_id": "nycha:tds:30",
+      "tds_id": "30",
+      "name": "KING TOWERS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 645.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:30"
+    },
+    {
+      "development_id": "nycha:tds:10",
+      "tds_id": "10",
+      "name": "KINGSBOROUGH",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 633.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:10"
+    },
+    {
+      "development_id": "nycha:tds:161",
+      "tds_id": "161",
+      "name": "KINGSBOROUGH EXTENSION",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 431.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:161"
+    },
+    {
+      "development_id": "nycha:tds:76",
+      "tds_id": "76",
+      "name": "LA GUARDIA",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 711.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:76"
+    },
+    {
+      "development_id": "nycha:tds:152",
+      "tds_id": "152",
+      "name": "LA GUARDIA ADDITION",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 356.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:152"
+    },
+    {
+      "development_id": "nycha:tds:122",
+      "tds_id": "122",
+      "name": "LAFAYETTE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 681.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:122"
+    },
+    {
+      "development_id": "nycha:tds:186",
+      "tds_id": "186",
+      "name": "LATIMER GARDENS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 622.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:186"
+    },
+    {
+      "development_id": "nycha:tds:201",
+      "tds_id": "201",
+      "name": "LEAVITT STREET-34TH AVENUE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 343.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:201"
+    },
+    {
+      "development_id": "nycha:tds:101",
+      "tds_id": "101",
+      "name": "LEHMAN VILLAGE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 598.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:101"
+    },
+    {
+      "development_id": "nycha:tds:50",
+      "tds_id": "50",
+      "name": "LEXINGTON",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 650.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:50"
+    },
+    {
+      "development_id": "nycha:tds:20",
+      "tds_id": "20",
+      "name": "LINCOLN",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 637.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:20"
+    },
+    {
+      "development_id": "nycha:tds:276",
+      "tds_id": "276",
+      "name": "LONG ISLAND BAPTIST HOUSES",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 642.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:276"
+    },
+    {
+      "development_id": "nycha:tds:362",
+      "tds_id": "362",
+      "name": "LONGFELLOW AVENUE REHAB",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 765.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:362"
+    },
+    {
+      "development_id": "nycha:tds:169",
+      "tds_id": "169",
+      "name": "LOW HOUSES",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 615.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:169"
+    },
+    {
+      "development_id": "nycha:tds:326",
+      "tds_id": "326",
+      "name": "LOWER EAST SIDE I INFILL",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 602.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:326"
+    },
+    {
+      "development_id": "nycha:tds:337",
+      "tds_id": "337",
+      "name": "LOWER EAST SIDE II",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 717.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:337"
+    },
+    {
+      "development_id": "nycha:tds:364",
+      "tds_id": "364",
+      "name": "LOWER EAST SIDE III",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 843.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:364"
+    },
+    {
+      "development_id": "nycha:tds:292",
+      "tds_id": "292",
+      "name": "LOWER EAST SIDE REHAB (GROUP 5)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 707.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:292"
+    },
+    {
+      "development_id": "nycha:tds:49",
+      "tds_id": "49",
+      "name": "MARBLE HILL",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 588.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:49"
+    },
+    {
+      "development_id": "nycha:tds:21",
+      "tds_id": "21",
+      "name": "MARCY",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 650.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:21"
+    },
+    {
+      "development_id": "nycha:tds:77",
+      "tds_id": "77",
+      "name": "MARINER'S HARBOR",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 613.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:77"
+    },
+    {
+      "development_id": "nycha:tds:83",
+      "tds_id": "83",
+      "name": "MARLBORO",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 640.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:83"
+    },
+    {
+      "development_id": "nycha:tds:103",
+      "tds_id": "103",
+      "name": "MCKINLEY",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 607.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:103"
+    },
+    {
+      "development_id": "nycha:tds:28",
+      "tds_id": "28",
+      "name": "MELROSE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 558.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:28"
+    },
+    {
+      "development_id": "nycha:tds:183",
+      "tds_id": "183",
+      "name": "MELTZER TOWER",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 338.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:183"
+    },
+    {
+      "development_id": "nycha:tds:84",
+      "tds_id": "84",
+      "name": "MILL BROOK",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 553.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:84"
+    },
+    {
+      "development_id": "nycha:tds:132",
+      "tds_id": "132",
+      "name": "MILL BROOK EXTENSION",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 505.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:132"
+    },
+    {
+      "development_id": "nycha:tds:145",
+      "tds_id": "145",
+      "name": "MITCHEL",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 609.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:145"
+    },
+    {
+      "development_id": "nycha:tds:88",
+      "tds_id": "88",
+      "name": "MONROE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 636.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:88"
+    },
+    {
+      "development_id": "nycha:tds:102",
+      "tds_id": "102",
+      "name": "MORRIS I",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 588.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:102"
+    },
+    {
+      "development_id": "nycha:tds:502",
+      "tds_id": "502",
+      "name": "MORRIS II",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 582.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:502"
+    },
+    {
+      "development_id": "nycha:tds:130",
+      "tds_id": "130",
+      "name": "MORRISANIA",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 584.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:130"
+    },
+    {
+      "development_id": "nycha:tds:267",
+      "tds_id": "267",
+      "name": "MORRISANIA AIR RIGHTS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 538.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:267"
+    },
+    {
+      "development_id": "nycha:tds:121",
+      "tds_id": "121",
+      "name": "MOTT HAVEN",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 640.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:121"
+    },
+    {
+      "development_id": "nycha:tds:314",
+      "tds_id": "314",
+      "name": "NEW LANE AREA",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 393.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:314"
+    },
+    {
+      "development_id": "nycha:tds:43",
+      "tds_id": "43",
+      "name": "NOSTRAND",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 626.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:43"
+    },
+    {
+      "development_id": "nycha:tds:51",
+      "tds_id": "51",
+      "name": "OCEAN BAY APARTMENTS (OCEANSIDE)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 710.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:51"
+    },
+    {
+      "development_id": "nycha:tds:172",
+      "tds_id": "172",
+      "name": "O'DWYER GARDENS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 624.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:172"
+    },
+    {
+      "development_id": "nycha:tds:47",
+      "tds_id": "47",
+      "name": "PARKSIDE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 584.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:47"
+    },
+    {
+      "development_id": "nycha:tds:24",
+      "tds_id": "24",
+      "name": "PATTERSON",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 606.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:24"
+    },
+    {
+      "development_id": "nycha:tds:39",
+      "tds_id": "39",
+      "name": "PELHAM PARKWAY",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 643.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:39"
+    },
+    {
+      "development_id": "nycha:tds:89",
+      "tds_id": "89",
+      "name": "PINK",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 604.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:89"
+    },
+    {
+      "development_id": "nycha:tds:149",
+      "tds_id": "149",
+      "name": "POLO GROUNDS TOWERS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 613.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:149"
+    },
+    {
+      "development_id": "nycha:tds:53",
+      "tds_id": "53",
+      "name": "POMONOK",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 652.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:53"
+    },
+    {
+      "development_id": "nycha:tds:505",
+      "tds_id": "505",
+      "name": "QUEENSBRIDGE NORTH",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 621.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:505"
+    },
+    {
+      "development_id": "nycha:tds:5",
+      "tds_id": "5",
+      "name": "QUEENSBRIDGE SOUTH",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 611.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:5"
+    },
+    {
+      "development_id": "nycha:tds:245",
+      "tds_id": "245",
+      "name": "RANDALL AVENUE-BALCOM AVENUE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 387.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:245"
+    },
+    {
+      "development_id": "nycha:tds:37",
+      "tds_id": "37",
+      "name": "RANGEL",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 631.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:37"
+    },
+    {
+      "development_id": "nycha:tds:48",
+      "tds_id": "48",
+      "name": "RAVENSWOOD",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 704.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:48"
+    },
+    {
+      "development_id": "nycha:tds:4",
+      "tds_id": "4",
+      "name": "RED HOOK EAST",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 590.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:4"
+    },
+    {
+      "development_id": "nycha:tds:79",
+      "tds_id": "79",
+      "name": "RED HOOK WEST",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 604.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:79"
+    },
+    {
+      "development_id": "nycha:tds:55",
+      "tds_id": "55",
+      "name": "REDFERN",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 681.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:55"
+    },
+    {
+      "development_id": "nycha:tds:143",
+      "tds_id": "143",
+      "name": "REHAB PROGRAM (COLLEGE POINT)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 276.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:143"
+    },
+    {
+      "development_id": "nycha:tds:515",
+      "tds_id": "515",
+      "name": "REHAB PROGRAM (DOUGLASS REHABS)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 653.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:515"
+    },
+    {
+      "development_id": "nycha:tds:517",
+      "tds_id": "517",
+      "name": "REHAB PROGRAM (WISE REHAB)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 776.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:517"
+    },
+    {
+      "development_id": "nycha:tds:117",
+      "tds_id": "117",
+      "name": "RICHMOND TERRACE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 608.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:117"
+    },
+    {
+      "development_id": "nycha:tds:18",
+      "tds_id": "18",
+      "name": "RIIS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 666.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:18"
+    },
+    {
+      "development_id": "nycha:tds:19",
+      "tds_id": "19",
+      "name": "RIIS II",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 667.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:19"
+    },
+    {
+      "development_id": "nycha:tds:218",
+      "tds_id": "218",
+      "name": "ROBBINS PLAZA",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 409.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:218"
+    },
+    {
+      "development_id": "nycha:tds:135",
+      "tds_id": "135",
+      "name": "ROOSEVELT I",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 598.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:135"
+    },
+    {
+      "development_id": "nycha:tds:177",
+      "tds_id": "177",
+      "name": "ROOSEVELT II",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 613.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:177"
+    },
+    {
+      "development_id": "nycha:tds:99",
+      "tds_id": "99",
+      "name": "RUTGERS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 626.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:99"
+    },
+    {
+      "development_id": "nycha:tds:93",
+      "tds_id": "93",
+      "name": "SAINT MARY'S PARK",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 615.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:93"
+    },
+    {
+      "development_id": "nycha:tds:38",
+      "tds_id": "38",
+      "name": "SAINT NICHOLAS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 645.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:38"
+    },
+    {
+      "development_id": "nycha:tds:45",
+      "tds_id": "45",
+      "name": "SEDGWICK",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 585.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:45"
+    },
+    {
+      "development_id": "nycha:tds:192",
+      "tds_id": "192",
+      "name": "SEWARD PARK EXTENSION",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 645.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:192"
+    },
+    {
+      "development_id": "nycha:tds:36",
+      "tds_id": "36",
+      "name": "SHEEPSHEAD BAY",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 653.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:36"
+    },
+    {
+      "development_id": "nycha:tds:279",
+      "tds_id": "279",
+      "name": "SHELTON HOUSE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 374.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:279"
+    },
+    {
+      "development_id": "nycha:tds:27",
+      "tds_id": "27",
+      "name": "SMITH",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 631.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:27"
+    },
+    {
+      "development_id": "nycha:tds:67",
+      "tds_id": "67",
+      "name": "SOTOMAYOR HOUSES",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 601.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:67"
+    },
+    {
+      "development_id": "nycha:tds:71",
+      "tds_id": "71",
+      "name": "SOUNDVIEW",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 559.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:71"
+    },
+    {
+      "development_id": "nycha:tds:35",
+      "tds_id": "35",
+      "name": "SOUTH BEACH",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 635.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:35"
+    },
+    {
+      "development_id": "nycha:tds:8",
+      "tds_id": "8",
+      "name": "SOUTH JAMAICA I",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 609.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:8"
+    },
+    {
+      "development_id": "nycha:tds:66",
+      "tds_id": "66",
+      "name": "SOUTH JAMAICA II",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 676.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:66"
+    },
+    {
+      "development_id": "nycha:tds:559",
+      "tds_id": "559",
+      "name": "STANTON STREET",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 735.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:559"
+    },
+    {
+      "development_id": "nycha:tds:114",
+      "tds_id": "114",
+      "name": "STAPLETON",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 631.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:114"
+    },
+    {
+      "development_id": "nycha:tds:153",
+      "tds_id": "153",
+      "name": "STRAUS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 614.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:153"
+    },
+    {
+      "development_id": "nycha:tds:73",
+      "tds_id": "73",
+      "name": "SUMNER",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 608.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:73"
+    },
+    {
+      "development_id": "nycha:tds:170",
+      "tds_id": "170",
+      "name": "SURFSIDE GARDENS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 514.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:170"
+    },
+    {
+      "development_id": "nycha:tds:97",
+      "tds_id": "97",
+      "name": "TAFT",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 660.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:97"
+    },
+    {
+      "development_id": "nycha:tds:234",
+      "tds_id": "234",
+      "name": "TAYLOR STREET-WYTHE AVENUE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 587.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:234"
+    },
+    {
+      "development_id": "nycha:tds:223",
+      "tds_id": "223",
+      "name": "TELLER AVENUE-EAST 166TH STREET",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 514.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:223"
+    },
+    {
+      "development_id": "nycha:tds:268",
+      "tds_id": "268",
+      "name": "THOMAS APARTMENTS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 466.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:268"
+    },
+    {
+      "development_id": "nycha:tds:63",
+      "tds_id": "63",
+      "name": "THROGGS NECK",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 592.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:63"
+    },
+    {
+      "development_id": "nycha:tds:193",
+      "tds_id": "193",
+      "name": "THROGGS NECK ADDITION",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 613.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:193"
+    },
+    {
+      "development_id": "nycha:tds:96",
+      "tds_id": "96",
+      "name": "TILDEN",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 600.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:96"
+    },
+    {
+      "development_id": "nycha:tds:42",
+      "tds_id": "42",
+      "name": "TODT HILL",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 689.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:42"
+    },
+    {
+      "development_id": "nycha:tds:131",
+      "tds_id": "131",
+      "name": "TOMPKINS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 651.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:131"
+    },
+    {
+      "development_id": "nycha:tds:266",
+      "tds_id": "266",
+      "name": "TWO BRIDGES URA (SITE 7)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 769.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:266"
+    },
+    {
+      "development_id": "nycha:tds:240",
+      "tds_id": "240",
+      "name": "UNITY PLAZA (SITES 17,24,25A)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 700.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:240"
+    },
+    {
+      "development_id": "nycha:tds:261",
+      "tds_id": "261",
+      "name": "UNITY PLAZA (SITES 4-27)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 676.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:261"
+    },
+    {
+      "development_id": "nycha:tds:61",
+      "tds_id": "61",
+      "name": "VAN DYKE I",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 666.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:61"
+    },
+    {
+      "development_id": "nycha:tds:146",
+      "tds_id": "146",
+      "name": "VAN DYKE II",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 390.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:146"
+    },
+    {
+      "development_id": "nycha:tds:315",
+      "tds_id": "315",
+      "name": "VANDALIA AVENUE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 455.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:315"
+    },
+    {
+      "development_id": "nycha:tds:6",
+      "tds_id": "6",
+      "name": "VLADECK",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 601.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:6"
+    },
+    {
+      "development_id": "nycha:tds:7",
+      "tds_id": "7",
+      "name": "VLADECK II",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 607.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:7"
+    },
+    {
+      "development_id": "nycha:tds:74",
+      "tds_id": "74",
+      "name": "WAGNER",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 630.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:74"
+    },
+    {
+      "development_id": "nycha:tds:23",
+      "tds_id": "23",
+      "name": "WALD",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 631.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:23"
+    },
+    {
+      "development_id": "nycha:tds:62",
+      "tds_id": "62",
+      "name": "WASHINGTON",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 642.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:62"
+    },
+    {
+      "development_id": "nycha:tds:141",
+      "tds_id": "141",
+      "name": "WEBSTER",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 597.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:141"
+    },
+    {
+      "development_id": "nycha:tds:360",
+      "tds_id": "360",
+      "name": "WEST FARMS ROAD REHAB",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 620.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:360"
+    },
+    {
+      "development_id": "nycha:tds:526",
+      "tds_id": "526",
+      "name": "WEST FARMS SQUARE CONVENTIONAL",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 625.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:526"
+    },
+    {
+      "development_id": "nycha:tds:246",
+      "tds_id": "246",
+      "name": "WEST TREMONT AVENUE-SEDGWICK AVENUE AREA",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 346.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:246"
+    },
+    {
+      "development_id": "nycha:tds:514",
+      "tds_id": "514",
+      "name": "WHITMAN",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 609.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:514"
+    },
+    {
+      "development_id": "nycha:tds:112",
+      "tds_id": "112",
+      "name": "WILSON",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 786.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:112"
+    },
+    {
+      "development_id": "nycha:tds:33",
+      "tds_id": "33",
+      "name": "WOODSIDE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 661.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:33"
+    },
+    {
+      "development_id": "nycha:tds:182",
+      "tds_id": "182",
+      "name": "WOODSON",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 382.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:182"
+    },
+    {
+      "development_id": "nycha:tds:178",
+      "tds_id": "178",
+      "name": "WSUR (BROWNSTONES)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 609.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:178"
+    },
+    {
+      "development_id": "nycha:tds:151",
+      "tds_id": "151",
+      "name": "WSUR (SITE A) 120 WEST 94TH STREET",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 788.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:151"
+    },
+    {
+      "development_id": "nycha:tds:173",
+      "tds_id": "173",
+      "name": "WSUR (SITE B) 74 WEST 92ND STREET",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 653.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:173"
+    },
+    {
+      "development_id": "nycha:tds:174",
+      "tds_id": "174",
+      "name": "WSUR (SITE C) 589 AMSTERDAM AVENUE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 621.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:174"
+    },
+    {
+      "development_id": "nycha:tds:163",
+      "tds_id": "163",
+      "name": "WYCKOFF GARDENS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 712.0,
+      "join_status": "matched",
+      "geometry_id": "nycha-polygon:163"
+    }
+  ],
+  "ddb_without_geometry": [
+    {
+      "development_id": "nycha:tds:180",
+      "tds_id": "180",
+      "name": "1010 EAST 178TH STREET",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 513.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:242",
+      "tds_id": "242",
+      "name": "104-14 TAPSCOTT STREET",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 604.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:154",
+      "tds_id": "154",
+      "name": "131 SAINT NICHOLAS AVENUE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 630.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:203",
+      "tds_id": "203",
+      "name": "335 EAST 111TH STREET",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 427.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:185",
+      "tds_id": "185",
+      "name": "344 EAST 28TH STREET",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 555.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:196",
+      "tds_id": "196",
+      "name": "572 WARREN STREET",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 492.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:210",
+      "tds_id": "210",
+      "name": "ARMSTRONG I",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 487.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:228",
+      "tds_id": "228",
+      "name": "ARMSTRONG II",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 522.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:125",
+      "tds_id": "125",
+      "name": "AUDUBON",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 587.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:202",
+      "tds_id": "202",
+      "name": "BAILEY AVENUE-WEST 193RD STREET",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 563.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:92",
+      "tds_id": "92",
+      "name": "BAY VIEW",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 650.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:126",
+      "tds_id": "126",
+      "name": "BAYCHESTER",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 421.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:311",
+      "tds_id": "311",
+      "name": "BEDFORD-STUYVESANT REHAB",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 607.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:345",
+      "tds_id": "345",
+      "name": "BELMONT-SUTTER AREA",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 618.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:357",
+      "tds_id": "357",
+      "name": "BERRY STREET-SOUTH 9TH STREET",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 544.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:211",
+      "tds_id": "211",
+      "name": "BETANCES I",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 465.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:518",
+      "tds_id": "518",
+      "name": "BETANCES II, 13",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 397.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:519",
+      "tds_id": "519",
+      "name": "BETANCES II, 18",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 478.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:220",
+      "tds_id": "220",
+      "name": "BETANCES II, 9A",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 494.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:520",
+      "tds_id": "520",
+      "name": "BETANCES III, 13",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 394.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:521",
+      "tds_id": "521",
+      "name": "BETANCES III, 18",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 412.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:222",
+      "tds_id": "222",
+      "name": "BETANCES III, 9A",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 563.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:230",
+      "tds_id": "230",
+      "name": "BETANCES IV",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 501.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:231",
+      "tds_id": "231",
+      "name": "BETANCES V",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 486.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:285",
+      "tds_id": "285",
+      "name": "BETANCES VI",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 516.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:160",
+      "tds_id": "160",
+      "name": "BETHUNE GARDENS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 338.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:189",
+      "tds_id": "189",
+      "name": "BOSTON ROAD PLAZA",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 419.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:138",
+      "tds_id": "138",
+      "name": "BOSTON SECOR",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 621.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:46",
+      "tds_id": "46",
+      "name": "BOULEVARD",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 543.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:302",
+      "tds_id": "302",
+      "name": "BUSHWICK II (GROUPS A & C)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 542.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:303",
+      "tds_id": "303",
+      "name": "BUSHWICK II (GROUPS B & D)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 513.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:324",
+      "tds_id": "324",
+      "name": "BUSHWICK II CDA (GROUP E)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 473.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:286",
+      "tds_id": "286",
+      "name": "CAMPOS PLAZA II",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 792.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:334",
+      "tds_id": "334",
+      "name": "CLAREMONT PARKWAY-FRANKLIN AVENUE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 388.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:199",
+      "tds_id": "199",
+      "name": "CORSI HOUSES",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 343.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:312",
+      "tds_id": "312",
+      "name": "CROWN HEIGHTS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 688.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:190",
+      "tds_id": "190",
+      "name": "DAVIDSON",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 590.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:082, 582",
+      "tds_id": "082, 582",
+      "name": "DOUGLASS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 645.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:224",
+      "tds_id": "224",
+      "name": "EAGLE AVENUE-EAST 163RD STREET",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 530.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:237",
+      "tds_id": "237",
+      "name": "EAST 152ND STREET-COURTLANDT AVENUE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 515.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:208",
+      "tds_id": "208",
+      "name": "EAST 180TH STREET-MONTEREY AVENUE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 559.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:34",
+      "tds_id": "34",
+      "name": "EASTCHESTER GARDENS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 604.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:57",
+      "tds_id": "57",
+      "name": "EDENWALD",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 584.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:205",
+      "tds_id": "205",
+      "name": "FENIMORE-LEFFERTS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 805.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:207",
+      "tds_id": "207",
+      "name": "FIORENTINO PLAZA",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 577.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:197",
+      "tds_id": "197",
+      "name": "FORT INDEPENDENCE STREET-HEATH AVENUE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 551.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:309",
+      "tds_id": "309",
+      "name": "FORT WASHINGTON AVENUE REHAB",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 318.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:525",
+      "tds_id": "525",
+      "name": "FRANKLIN AVENUE I CONVENTIONAL",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 491.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:531",
+      "tds_id": "531",
+      "name": "FRANKLIN AVENUE II CONVENTIONAL",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 386.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:524",
+      "tds_id": "524",
+      "name": "FRANKLIN AVENUE III CONVENTIONAL",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 450.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:281",
+      "tds_id": "281",
+      "name": "GRAMPION",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 613.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:3",
+      "tds_id": "3",
+      "name": "HARLEM RIVER",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 536.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:147",
+      "tds_id": "147",
+      "name": "HARLEM RIVER II",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 624.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:347",
+      "tds_id": "347",
+      "name": "HARRISON AVENUE REHAB (GROUP A)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 501.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:547",
+      "tds_id": "547",
+      "name": "HARRISON AVENUE REHAB (GROUP B)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 578.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:370",
+      "tds_id": "370",
+      "name": "HIGHBRIDGE REHABS (ANDERSON AVENUE)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 432.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:371",
+      "tds_id": "371",
+      "name": "HIGHBRIDGE REHABS (NELSON AVENUE)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 543.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:247",
+      "tds_id": "247",
+      "name": "HOPE GARDENS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 456.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:339",
+      "tds_id": "339",
+      "name": "HOWARD AVENUE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 699.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:365",
+      "tds_id": "365",
+      "name": "HOWARD AVENUE-PARK PLACE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 681.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:140",
+      "tds_id": "140",
+      "name": "INDEPENDENCE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 426.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:348",
+      "tds_id": "348",
+      "name": "LENOX ROAD-ROCKAWAY PARKWAY",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 604.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:95",
+      "tds_id": "95",
+      "name": "LINDEN",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 591.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:81",
+      "tds_id": "81",
+      "name": "MANHATTANVILLE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 592.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:296",
+      "tds_id": "296",
+      "name": "MANHATTANVILLE REHAB (GROUP 2)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 530.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:297",
+      "tds_id": "297",
+      "name": "MANHATTANVILLE REHAB (GROUP 3)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 447.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:363",
+      "tds_id": "363",
+      "name": "MARCY AVENUE-GREENE AVENUE SITE A",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 462.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:358",
+      "tds_id": "358",
+      "name": "MARCY AVENUE-GREENE AVENUE SITE B",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 413.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:344",
+      "tds_id": "344",
+      "name": "MARSHALL PLAZA",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 301.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:181",
+      "tds_id": "181",
+      "name": "METRO NORTH PLAZA",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 645.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:191",
+      "tds_id": "191",
+      "name": "MIDDLETOWN PLAZA",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 374.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:129",
+      "tds_id": "129",
+      "name": "MOORE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 605.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:277",
+      "tds_id": "277",
+      "name": "MORRIS PARK SENIOR CITIZENS HOME",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 349.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:133",
+      "tds_id": "133",
+      "name": "MURPHY",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 438.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:98",
+      "tds_id": "98",
+      "name": "OCEAN BAY APARTMENTS (BAYSIDE)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 503.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:162",
+      "tds_id": "162",
+      "name": "OCEAN HILL APARTMENTS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 792.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:313",
+      "tds_id": "313",
+      "name": "OCEAN HILL-BROWNSVILLE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 619.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:195",
+      "tds_id": "195",
+      "name": "PALMETTO GARDENS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 313.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:204",
+      "tds_id": "204",
+      "name": "PARK AVENUE-EAST 122ND, 123RD STREETS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 554.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:351",
+      "tds_id": "351",
+      "name": "PARK ROCK REHAB",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 674.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:194",
+      "tds_id": "194",
+      "name": "PENNSYLVANIA AVENUE-WORTMAN AVENUE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 463.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:340",
+      "tds_id": "340",
+      "name": "PUBLIC SCHOOL 139 (CONVERSION)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 359.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:352",
+      "tds_id": "352",
+      "name": "RALPH AVENUE REHAB",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 675.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:004, 079",
+      "tds_id": "004, 079",
+      "name": "RED HOOK I",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 586.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:079*",
+      "tds_id": "079*",
+      "name": "RED HOOK II",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 676.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:516",
+      "tds_id": "516",
+      "name": "REHAB PROGRAM (TAFT REHABS)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 572.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:167",
+      "tds_id": "167",
+      "name": "REID APARTMENTS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 349.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:241",
+      "tds_id": "241",
+      "name": "ROBINSON",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 673.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:282",
+      "tds_id": "282",
+      "name": "RUTLAND TOWERS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 604.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:280",
+      "tds_id": "280",
+      "name": "SACK WERN",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 688.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:377",
+      "tds_id": "377",
+      "name": "SAMUEL (CITY)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 743.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:389",
+      "tds_id": "389",
+      "name": "SAMUEL (MHOP) I",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 795.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:398",
+      "tds_id": "398",
+      "name": "SAMUEL (MHOP) II",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 1061.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:399",
+      "tds_id": "399",
+      "name": "SAMUEL (MHOP) III",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 823.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:158",
+      "tds_id": "158",
+      "name": "SARATOGA VILLAGE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 753.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:305",
+      "tds_id": "305",
+      "name": "SOUTH BRONX AREA (SITE 402)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 688.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:353",
+      "tds_id": "353",
+      "name": "STEBBINS AVENUE-HEWITT PLACE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 585.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:366",
+      "tds_id": "366",
+      "name": "STERLING PLACE REHABS (SAINT JOHNS-STERLING)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 669.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:368",
+      "tds_id": "368",
+      "name": "STERLING PLACE REHABS (STERLING-BUFFALO)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 647.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:221",
+      "tds_id": "221",
+      "name": "STUYVESANT GARDENS I",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 718.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:333",
+      "tds_id": "333",
+      "name": "STUYVESANT GARDENS II",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 453.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:369",
+      "tds_id": "369",
+      "name": "SUTTER AVENUE-UNION STREET",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 728.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:354",
+      "tds_id": "354",
+      "name": "TAPSCOTT STREET REHAB",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 641.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:287",
+      "tds_id": "287",
+      "name": "TWIN PARKS EAST (SITE 9)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 323.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:227",
+      "tds_id": "227",
+      "name": "TWIN PARKS WEST (SITES 1 & 2)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 521.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:342",
+      "tds_id": "342",
+      "name": "UNION AVENUE-EAST 163RD STREET",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 326.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:356",
+      "tds_id": "356",
+      "name": "UNION AVENUE-EAST 166TH STREET",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 604.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:341",
+      "tds_id": "341",
+      "name": "UNIVERSITY AVENUE REHAB",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 578.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:343",
+      "tds_id": "343",
+      "name": "UPACA (SITE 5)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 383.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:355",
+      "tds_id": "355",
+      "name": "UPACA (SITE 6)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 374.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:293",
+      "tds_id": "293",
+      "name": "WASHINGTON HEIGHTS REHAB (GROUPS 1&2)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 466.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:523",
+      "tds_id": "523",
+      "name": "WASHINGTON HEIGHTS REHAB PHASE III (FORT WASHINGTON)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 532.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:329",
+      "tds_id": "329",
+      "name": "WASHINGTON HEIGHTS REHAB PHASE III (HARLEM RIVER)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 617.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:330",
+      "tds_id": "330",
+      "name": "WASHINGTON HEIGHTS REHAB PHASE IV (C)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 514.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:331",
+      "tds_id": "331",
+      "name": "WASHINGTON HEIGHTS REHAB PHASE IV (D)",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 578.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:229",
+      "tds_id": "229",
+      "name": "WEEKSVILLE GARDENS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 524.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:116",
+      "tds_id": "116",
+      "name": "WEST BRIGHTON I",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 607.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:175",
+      "tds_id": "175",
+      "name": "WEST BRIGHTON II",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 389.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:124",
+      "tds_id": "124",
+      "name": "WHITE",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 354.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:128",
+      "tds_id": "128",
+      "name": "WILLIAMS PLAZA",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 442.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:2",
+      "tds_id": "2",
+      "name": "WILLIAMSBURG",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 518.0,
+      "join_status": "ddb_without_geometry"
+    },
+    {
+      "development_id": "nycha:tds:127",
+      "tds_id": "127",
+      "name": "WISE TOWERS",
+      "data_as_of": "2025-01-01",
+      "avg_monthly_gross_rent": 591.0,
+      "join_status": "ddb_without_geometry"
+    }
+  ],
+  "geometry_without_ddb": [],
+  "geometry_source_path": "web/public/data/geometry/developments.geojson"
+}

@@ -1,0 +1,17 @@
+{
+  "matched_zctas": 164,
+  "missing_zctas": 57,
+  "feature_count": 221,
+  "current_month": "2026-06-30",
+  "data_lag_days": 42,
+  "period_start": null,
+  "period_end": "2026-06-30",
+  "unit_scope": "all_units",
+  "source_id": "zori",
+  "source_artifact_id": "zori-zip-sfrcondomfr-sm-month",
+  "display_label": "Zillow ZORI \u2014 ZIP-level typical observed market rent (all units, smoothed)",
+  "not_a_label": "median asking rent",
+  "attribution": "Data Provided by Zillow Group",
+  "gross_or_net": "unknown",
+  "measure_basis": "index"
+}
