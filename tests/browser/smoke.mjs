@@ -429,11 +429,17 @@ async function playwrightSmoke() {
       "Observed incumbency gap",
       "Recent market movers paid $1,057 more than incumbents",
       "descriptive only",
+      "Apartment size, condition, and location may differ",
+      "Household characteristics, eligibility, selection, and lease timing may differ",
+      "Sampling error may change the size or direction",
       "Next: compare regulation",
     ]) {
       if (!insightText.includes(label)) {
         throw new Error(`deterministic rent insight missing ${label}: ${insightText}`);
       }
+    }
+    if (insightText.includes("caused by") || insightText.includes("leads to")) {
+      throw new Error(`descriptive insight asserted a causal explanation: ${insightText}`);
     }
     await page.click('[data-action="rent-lens"][data-rent-lens="incumbency"]');
     const lensState = await page.evaluate(() => ({
@@ -498,6 +504,52 @@ async function playwrightSmoke() {
       if (!lensText.includes(label)) {
         throw new Error(`asking-versus-occupied explainer missing ${label}: ${lensText}`);
       }
+    }
+    const provenanceInitiallyOpen = await page.$(
+      '[data-testid="population-provenance"][open]',
+    );
+    if (provenanceInitiallyOpen) {
+      throw new Error("survey provenance should start collapsed");
+    }
+    await page.click('[data-testid="population-provenance"] > summary');
+    const provenanceText =
+      (await page.textContent('[data-testid="population-provenance"]')) || "";
+    for (const label of [
+      "2023 NYCHVS public-use files",
+      "Occupied PUF",
+      "All Units PUF",
+      "Official CSV",
+      "sha256",
+      "CONTROL",
+      "GRENT",
+      "FW1–FW80",
+      "CSR",
+      "TENURE",
+      "HHFIRSTMOVEIN",
+      "BORO",
+      "never imputed",
+      "nychvs-2023-occupied-puf",
+      "nychvs-2023-allunits-puf",
+      "nychvs:2023:manhattan:unregulated_market:recent",
+      "nychvs:2023:manhattan:unregulated_market:incumbent",
+    ]) {
+      if (!provenanceText.includes(label)) {
+        throw new Error(`survey provenance missing ${label}: ${provenanceText}`);
+      }
+    }
+    const provenanceState = await page.evaluate(() => ({
+      open: Boolean(document.querySelector('[data-testid="population-provenance"][open]')),
+      query: window.location.search,
+    }));
+    if (
+      !provenanceState.open ||
+      !provenanceState.query.includes("development=nycha%3Atds%3A136") ||
+      !provenanceState.query.includes("lens=incumbency") ||
+      !provenanceState.query.includes("rentDetails=1")
+    ) {
+      throw new Error(
+        `provenance disclosure disrupted analysis state: ${JSON.stringify(provenanceState)}`,
+      );
     }
     await page.goto(
       `http://127.0.0.1:${port}/app/index.html?development=nycha%3Atds%3A212`,
@@ -636,6 +688,8 @@ async function playwrightSmoke() {
               geography_type: "citywide",
               geography_name: "New York City",
               survey_vintage: "2023",
+              inference_class: "descriptive_only",
+              rival_explanations: ["The available sample is too imprecise for display."],
               reliability_status: "unavailable",
               available: false,
               value: null,
@@ -650,6 +704,8 @@ async function playwrightSmoke() {
               geography_type: "citywide",
               geography_name: "New York City",
               survey_vintage: "2023",
+              inference_class: "descriptive_only",
+              rival_explanations: ["Household and apartment characteristics may differ."],
               reliability_status: "reliable",
               available: true,
               value: 1966,

@@ -388,7 +388,7 @@ def build_geography_estimates(
 def build_population_rent_observations(
     estimates: list[dict[str, Any]],
     *,
-    source_artifacts: dict[str, dict[str, str]],
+    source_artifacts: dict[str, dict[str, Any]],
     source_id: str = nychvs_source.SOURCE_ID,
 ) -> list[dict[str, Any]]:
     """Project legacy estimate rows into the first-class observation contract."""
@@ -427,6 +427,12 @@ def build_population_rent_observations(
             confidence_interval_upper=estimate["confidence_interval_upper"],
             coefficient_of_variation=estimate["coefficient_of_variation"],
             reliability_status=str(estimate["reliability_status"]),
+            inference_class="descriptive_only",
+            rival_explanations=[
+                "Apartment size, condition, and utility arrangements differ within the population.",
+                "Household characteristics, selection, and survey sampling may differ "
+                "across cells.",
+            ],
             available=bool(estimate["available"]),
             unavailable_reason=estimate["unavailable_reason"],
             imputed=bool(estimate["imputed"]),
@@ -522,6 +528,13 @@ def derive_population_rent_gap(
             "No combined interval is asserted."
         ),
         inference_class="descriptive_only",
+        minuend_reliability_status=left.reliability_status,
+        subtrahend_reliability_status=right.reliability_status,
+        rival_explanations=[
+            "Apartment size, condition, and location may differ between the observed populations.",
+            "Household characteristics, eligibility, selection, and lease timing may differ.",
+            "Sampling error may change the size or direction of the observed difference.",
+        ],
         illustrative=gap_type == PopulationRentGapType.illustrative_cross_regime,
         causal_claim_allowed=False,
     )
@@ -773,7 +786,8 @@ def calculate_from_paths(
     paths = {"occupied": occupied_path, "all_units": all_units_path}
     if set(source_artifacts) != set(paths):
         raise ValueError("NYCHVS source artifacts must include occupied and all_units")
-    verified_artifacts: dict[str, dict[str, str]] = {}
+    verified_artifacts: dict[str, dict[str, Any]] = {}
+    source_settings = nychvs_source.source_cfg()
     for name, path in paths.items():
         artifact = source_artifacts[name]
         artifact_id = str(artifact.get("artifact_id") or "")
@@ -788,6 +802,12 @@ def calculate_from_paths(
         verified_artifacts[name] = {
             "artifact_id": artifact_id,
             "sha256": actual_sha256,
+            "source_url": str(
+                artifact.get("source_url") or source_settings[f"{name}_csv_url"]
+            ),
+            "landing_page": str(source_settings["landing_page"]),
+            "documentation_url": str(source_settings["documentation_url"]),
+            "raw_publication_allowed": False,
         }
 
     rows = merge_puf_files(occupied_path, all_units_path, cfg=cfg)
@@ -825,6 +845,11 @@ def calculate_from_paths(
             for geography_id, geography in cfg["geographies"].items()
         },
         "method": {
+            "join_field": cfg["fields"]["join_key"],
+            "tenure_field": cfg["fields"]["tenure"],
+            "housing_type_field": cfg["fields"]["housing_type"],
+            "first_move_year_field": cfg["fields"]["first_move_year"],
+            "occupancy_field": "OCC",
             "weight_field": cfg["fields"]["weight"],
             "rent_field": cfg["fields"]["gross_rent"],
             "rent_measure": "monthly gross rent including separately paid utilities",

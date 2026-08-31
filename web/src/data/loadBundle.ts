@@ -43,6 +43,8 @@ function isPopulationRentObservation(value: unknown): value is PopulationRentObs
     typeof row.geography_type === "string" &&
     typeof row.geography_name === "string" &&
     typeof row.survey_vintage === "string" &&
+    row.inference_class === "descriptive_only" &&
+    Array.isArray(row.rival_explanations) &&
     ["reliable", "use_with_caution", "unavailable"].includes(
       String(row.reliability_status),
     ) &&
@@ -68,6 +70,7 @@ function isPopulationRentGap(value: unknown): value is PopulationRentGap {
     typeof row.geography_id === "string" &&
     typeof row.dollar_difference === "number" &&
     row.inference_class === "descriptive_only" &&
+    Array.isArray(row.rival_explanations) &&
     row.causal_claim_allowed === false
   );
 }
@@ -89,6 +92,10 @@ function populationLoadState(document: unknown): PopulationRentLoadState {
     status: "ready",
     observations: candidate.population_rent_observations,
     gaps: candidate.population_rent_gaps,
+    sourceId: candidate.source_id,
+    surveyVintage: candidate.survey_vintage,
+    sourceArtifacts: candidate.source_artifacts,
+    method: candidate.method,
   };
 }
 

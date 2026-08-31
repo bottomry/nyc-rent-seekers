@@ -414,12 +414,78 @@ function renderGapInsight(
         <p>${formatUsd(Number(left.value))} minus ${formatUsd(Number(right.value))} =
           ${formatUsd(gap.dollar_difference)} (${gap.percent_difference == null ? "percentage unavailable" : `${gap.percent_difference.toFixed(1)}% of the second value`}).</p>
         <p>${escapeHtml(uncertainty)}</p>
+        <p><strong>Other explanations remain possible:</strong></p>
+        <ul>${gap.rival_explanations.map((reason) => `<li>${escapeHtml(reason)}</li>`).join("")}</ul>
         <code>${escapeHtml(left.observation_id)}</code>
         <code>${escapeHtml(right.observation_id)}</code>
       </details>
       <button type="button" class="rent-context-next" data-action="rent-lens"
         data-rent-lens="regulation">Next: compare regulation</button>
     </article>`;
+}
+
+function recordValue(record: Record<string, unknown>, key: string): string {
+  const value = record[key];
+  return typeof value === "string" || typeof value === "number" ? String(value) : "—";
+}
+
+function renderPopulationProvenance(
+  loadState: PopulationRentLoadState,
+  development: Development,
+): string {
+  if (loadState.status !== "ready" || !loadState.method || !loadState.sourceArtifacts) return "";
+  const method = loadState.method;
+  const variance =
+    method.variance && typeof method.variance === "object"
+      ? (method.variance as Record<string, unknown>)
+      : {};
+  const reliability =
+    method.reliability && typeof method.reliability === "object"
+      ? (method.reliability as Record<string, unknown>)
+      : {};
+  const gap = preferredGap(loadState, development);
+  const artifacts = Object.entries(loadState.sourceArtifacts)
+    .map(([name, artifact]) => {
+      const label = name === "occupied" ? "Occupied PUF" : "All Units PUF";
+      return `<article class="population-source-artifact">
+        <strong>${escapeHtml(label)}</strong>
+        <a href="${escapeHtml(artifact.source_url)}" target="_blank" rel="noopener noreferrer">Official CSV</a>
+        <code>${escapeHtml(artifact.artifact_id)}</code>
+        <code>sha256 ${escapeHtml(artifact.sha256)}</code>
+      </article>`;
+    })
+    .join("");
+  const gapLine = gap
+    ? `<p data-testid="population-gap-lineage"><strong>Displayed gap lineage:</strong>
+        <code>${escapeHtml(gap.minuend_observation_id)}</code> minus
+        <code>${escapeHtml(gap.subtrahend_observation_id)}</code>.</p>`
+    : "";
+  return `
+    <details class="population-provenance" data-testid="population-provenance">
+      <summary>Verify the survey calculation and sources</summary>
+      <div class="population-provenance-body">
+        <p><strong>${escapeHtml(loadState.surveyVintage || "2023")} NYCHVS public-use files</strong>
+          from NYC HPD. Raw household rows remain build-time inputs; this page publishes aggregates
+          and exact reconstruction metadata.</p>
+        <div class="population-source-grid">${artifacts}</div>
+        <p><a href="${escapeHtml(Object.values(loadState.sourceArtifacts)[0]?.documentation_url || "#")}" target="_blank" rel="noopener noreferrer">PUF user guide and codebook</a>
+          · <a href="${escapeHtml(recordValue(variance, "methodology_url"))}" target="_blank" rel="noopener noreferrer">variance guide</a></p>
+        <dl class="population-method-grid">
+          <div><dt>Join</dt><dd><code>${escapeHtml(recordValue(method, "join_field"))}</code></dd></div>
+          <div><dt>Rent</dt><dd><code>${escapeHtml(recordValue(method, "rent_field"))}</code> · ${escapeHtml(recordValue(method, "rent_measure"))}</dd></div>
+          <div><dt>Weight</dt><dd><code>${escapeHtml(recordValue(method, "weight_field"))}</code></dd></div>
+          <div><dt>Replicates</dt><dd><code>FW1–FW${escapeHtml(recordValue(variance, "replicate_weight_count"))}</code></dd></div>
+          <div><dt>Housing regime</dt><dd><code>${escapeHtml(recordValue(method, "housing_type_field"))}</code></dd></div>
+          <div><dt>Tenure/cohort</dt><dd><code>${escapeHtml(recordValue(method, "tenure_field"))}</code> · <code>${escapeHtml(recordValue(method, "first_move_year_field"))}</code></dd></div>
+          <div><dt>Geography</dt><dd><code>${escapeHtml(recordValue(method, "geography_field"))}</code></dd></div>
+          <div><dt>Display guards</dt><dd>sample ≥ ${escapeHtml(recordValue(reliability, "min_rent_sample_count"))}; reliable CV ≤ ${escapeHtml(recordValue(reliability, "reliable_cv_max"))}</dd></div>
+        </dl>
+        <p>Recent movers: 2021–2022. Incumbents: 2020 or earlier. Survey-year movers are excluded.
+          Cells are filtered to occupied renter households, classified with the All Units file,
+          weighted with full-sample and 80 replicate weights, and never imputed.</p>
+        ${gapLine}
+      </div>
+    </details>`;
 }
 
 function contextRowHtml(row: RentContextRow, max: number): string {
@@ -682,6 +748,7 @@ export function renderPopulationRentContext(
         </section>
       </div>
       ${renderRentLens(loadState, development, detailsOpen)}
+      ${renderPopulationProvenance(loadState, development)}
       <p class="rent-context-note">
         Recent movers arrived in 2021–2022; incumbents arrived in 2020 or earlier.
         The development rent is not the citywide public-housing median. Survey rows use 2023 NYCHVS

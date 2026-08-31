@@ -2,7 +2,7 @@
   "schema_version": 3,
   "source_id": "nychvs_2023",
   "survey_vintage": "2023",
-  "generated_at": "2026-08-31T17:11:18.471076+00:00",
+  "generated_at": "2026-08-31T17:47:03.007596+00:00",
   "geography": {
     "id": "nyc",
     "type": "citywide",
@@ -46,6 +46,11 @@
     }
   },
   "method": {
+    "join_field": "CONTROL",
+    "tenure_field": "TENURE",
+    "housing_type_field": "CSR",
+    "first_move_year_field": "HHFIRSTMOVEIN",
+    "occupancy_field": "OCC",
     "weight_field": "FW",
     "rent_field": "GRENT",
     "rent_measure": "monthly gross rent including separately paid utilities",
@@ -369,11 +374,19 @@
   "source_artifacts": {
     "occupied": {
       "artifact_id": "nychvs-2023-occupied-puf",
-      "sha256": "a3ea29294d9198f3a267b5e7e9db5106290d0a0687fdb8c1fd1bd1f65dd90776"
+      "sha256": "a3ea29294d9198f3a267b5e7e9db5106290d0a0687fdb8c1fd1bd1f65dd90776",
+      "source_url": "https://home4.nyc.gov/assets/hpd/data/occupied_puf_23.csv",
+      "landing_page": "https://www.nyc.gov/site/hpd/about/research.page",
+      "documentation_url": "https://www.nyc.gov/assets/hpd/downloads/pdfs/about/2023-nychvs-puf-user-guide-codebook.pdf",
+      "raw_publication_allowed": false
     },
     "all_units": {
       "artifact_id": "nychvs-2023-allunits-puf",
-      "sha256": "afee0ffbba8cc59369c18dac90a733c16517af181a5da5f5f245141fcd14da02"
+      "sha256": "afee0ffbba8cc59369c18dac90a733c16517af181a5da5f5f245141fcd14da02",
+      "source_url": "https://home4.nyc.gov/assets/hpd/data/allunits_puf_23.csv",
+      "landing_page": "https://www.nyc.gov/site/hpd/about/research.page",
+      "documentation_url": "https://www.nyc.gov/assets/hpd/downloads/pdfs/about/2023-nychvs-puf-user-guide-codebook.pdf",
+      "raw_publication_allowed": false
     }
   },
   "estimates": [
@@ -2690,6 +2703,11 @@
       "confidence_interval_upper": 2062.9428,
       "coefficient_of_variation": 0.025158,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -2731,6 +2749,11 @@
       "confidence_interval_upper": 1514.9675,
       "coefficient_of_variation": 0.012408,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -2772,6 +2795,11 @@
       "confidence_interval_upper": 2094.9615,
       "coefficient_of_variation": 0.02718,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -2813,6 +2841,11 @@
       "confidence_interval_upper": 1515.7789,
       "coefficient_of_variation": 0.010575,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -2854,6 +2887,11 @@
       "confidence_interval_upper": 3000.8546,
       "coefficient_of_variation": 0.037577,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -2895,6 +2933,11 @@
       "confidence_interval_upper": 2030.7356,
       "coefficient_of_variation": 0.021124,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -2936,6 +2979,11 @@
       "confidence_interval_upper": 744.6826,
       "coefficient_of_variation": 0.273178,
       "reliability_status": "use_with_caution",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -2977,6 +3025,11 @@
       "confidence_interval_upper": 650.0565,
       "coefficient_of_variation": 0.053846,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -3018,6 +3071,11 @@
       "confidence_interval_upper": 1847.1518,
       "coefficient_of_variation": 0.021338,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -3059,6 +3117,11 @@
       "confidence_interval_upper": 1512.7671,
       "coefficient_of_variation": 0.00954,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -3100,6 +3163,11 @@
       "confidence_interval_upper": 1867.225,
       "coefficient_of_variation": 0.022011,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -3141,6 +3209,11 @@
       "confidence_interval_upper": 1518.4099,
       "coefficient_of_variation": 0.009728,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -3182,6 +3255,11 @@
       "confidence_interval_upper": 2412.4259,
       "coefficient_of_variation": 0.03082,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -3223,6 +3301,11 @@
       "confidence_interval_upper": 1951.5287,
       "coefficient_of_variation": 0.019976,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -3264,6 +3347,11 @@
       "confidence_interval_upper": null,
       "coefficient_of_variation": null,
       "reliability_status": "unavailable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": false,
       "unavailable_reason": "project_reliability_guard_failed:cv=0.8763>0.3000",
       "imputed": false
@@ -3305,6 +3393,11 @@
       "confidence_interval_upper": 655.7171,
       "coefficient_of_variation": 0.047378,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -3346,6 +3439,11 @@
       "confidence_interval_upper": 1644.3578,
       "coefficient_of_variation": 0.033515,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -3387,6 +3485,11 @@
       "confidence_interval_upper": 1382.8064,
       "coefficient_of_variation": 0.012786,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -3428,6 +3531,11 @@
       "confidence_interval_upper": 1636.3913,
       "coefficient_of_variation": 0.028437,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -3469,6 +3577,11 @@
       "confidence_interval_upper": 1384.1738,
       "coefficient_of_variation": 0.012915,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -3510,6 +3623,11 @@
       "confidence_interval_upper": 2101.9646,
       "coefficient_of_variation": 0.05453,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -3551,6 +3669,11 @@
       "confidence_interval_upper": 1583.3331,
       "coefficient_of_variation": 0.021608,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -3592,6 +3715,11 @@
       "confidence_interval_upper": null,
       "coefficient_of_variation": null,
       "reliability_status": "unavailable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": false,
       "unavailable_reason": "project_sample_guard_failed:15<30",
       "imputed": false
@@ -3633,6 +3761,11 @@
       "confidence_interval_upper": 732.0557,
       "coefficient_of_variation": 0.07984,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -3674,6 +3807,11 @@
       "confidence_interval_upper": 2130.5396,
       "coefficient_of_variation": 0.035484,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -3715,6 +3853,11 @@
       "confidence_interval_upper": 1606.8227,
       "coefficient_of_variation": 0.027375,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -3756,6 +3899,11 @@
       "confidence_interval_upper": 2144.5321,
       "coefficient_of_variation": 0.037418,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -3797,6 +3945,11 @@
       "confidence_interval_upper": 1623.1331,
       "coefficient_of_variation": 0.026845,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -3838,6 +3991,11 @@
       "confidence_interval_upper": 2379.6233,
       "coefficient_of_variation": 0.026293,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -3879,6 +4037,11 @@
       "confidence_interval_upper": 2085.1512,
       "coefficient_of_variation": 0.045913,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -3920,6 +4083,11 @@
       "confidence_interval_upper": null,
       "coefficient_of_variation": null,
       "reliability_status": "unavailable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": false,
       "unavailable_reason": "project_sample_guard_failed:11<30",
       "imputed": false
@@ -3961,6 +4129,11 @@
       "confidence_interval_upper": 719.4698,
       "coefficient_of_variation": 0.129302,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -4002,6 +4175,11 @@
       "confidence_interval_upper": 3089.4423,
       "coefficient_of_variation": 0.070365,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -4043,6 +4221,11 @@
       "confidence_interval_upper": 1547.1201,
       "coefficient_of_variation": 0.03948,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -4084,6 +4267,11 @@
       "confidence_interval_upper": 3089.3973,
       "coefficient_of_variation": 0.066112,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -4125,6 +4313,11 @@
       "confidence_interval_upper": 1553.2671,
       "coefficient_of_variation": 0.03975,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -4166,6 +4359,11 @@
       "confidence_interval_upper": 3879.8792,
       "coefficient_of_variation": 0.035121,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -4207,6 +4405,11 @@
       "confidence_interval_upper": 2722.4145,
       "coefficient_of_variation": 0.029628,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -4248,6 +4451,11 @@
       "confidence_interval_upper": null,
       "coefficient_of_variation": null,
       "reliability_status": "unavailable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": false,
       "unavailable_reason": "project_sample_guard_failed:13<30",
       "imputed": false
@@ -4289,6 +4497,11 @@
       "confidence_interval_upper": 657.9496,
       "coefficient_of_variation": 0.100139,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -4330,6 +4543,11 @@
       "confidence_interval_upper": 2224.2113,
       "coefficient_of_variation": 0.071745,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -4371,6 +4589,11 @@
       "confidence_interval_upper": 1750.5631,
       "coefficient_of_variation": 0.028484,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -4412,6 +4635,11 @@
       "confidence_interval_upper": 2229.5025,
       "coefficient_of_variation": 0.07313,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -4453,6 +4681,11 @@
       "confidence_interval_upper": 1760.826,
       "coefficient_of_variation": 0.027426,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -4494,6 +4727,11 @@
       "confidence_interval_upper": 2675.3709,
       "coefficient_of_variation": 0.05854,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -4535,6 +4773,11 @@
       "confidence_interval_upper": 2060.3673,
       "coefficient_of_variation": 0.028877,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -4576,6 +4819,11 @@
       "confidence_interval_upper": null,
       "coefficient_of_variation": null,
       "reliability_status": "unavailable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": false,
       "unavailable_reason": "project_sample_guard_failed:5<30",
       "imputed": false
@@ -4617,6 +4865,11 @@
       "confidence_interval_upper": 886.4621,
       "coefficient_of_variation": 0.213438,
       "reliability_status": "use_with_caution",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -4658,6 +4911,11 @@
       "confidence_interval_upper": null,
       "coefficient_of_variation": null,
       "reliability_status": "unavailable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": false,
       "unavailable_reason": "project_sample_guard_failed:3<30",
       "imputed": false
@@ -4699,6 +4957,11 @@
       "confidence_interval_upper": 1897.4851,
       "coefficient_of_variation": 0.135199,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -4740,6 +5003,11 @@
       "confidence_interval_upper": null,
       "coefficient_of_variation": null,
       "reliability_status": "unavailable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": false,
       "unavailable_reason": "project_sample_guard_failed:2<30",
       "imputed": false
@@ -4781,6 +5049,11 @@
       "confidence_interval_upper": null,
       "coefficient_of_variation": null,
       "reliability_status": "unavailable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": false,
       "unavailable_reason": "project_sample_guard_failed:24<30",
       "imputed": false
@@ -4822,6 +5095,11 @@
       "confidence_interval_upper": null,
       "coefficient_of_variation": null,
       "reliability_status": "unavailable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": false,
       "unavailable_reason": "project_sample_guard_failed:16<30",
       "imputed": false
@@ -4863,6 +5141,11 @@
       "confidence_interval_upper": 2389.8043,
       "coefficient_of_variation": 0.084571,
       "reliability_status": "reliable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": true,
       "unavailable_reason": null,
       "imputed": false
@@ -4904,6 +5187,11 @@
       "confidence_interval_upper": null,
       "coefficient_of_variation": null,
       "reliability_status": "unavailable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": false,
       "unavailable_reason": "no_usable_rent_observations",
       "imputed": false
@@ -4945,6 +5233,11 @@
       "confidence_interval_upper": null,
       "coefficient_of_variation": null,
       "reliability_status": "unavailable",
+      "inference_class": "descriptive_only",
+      "rival_explanations": [
+        "Apartment size, condition, and utility arrangements differ within the population.",
+        "Household characteristics, selection, and survey sampling may differ across cells."
+      ],
       "available": false,
       "unavailable_reason": "project_sample_guard_failed:16<30",
       "imputed": false
@@ -4982,6 +5275,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     },
@@ -5016,6 +5316,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     },
@@ -5050,6 +5357,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     },
@@ -5084,6 +5398,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "use_with_caution",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     },
@@ -5118,6 +5439,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     },
@@ -5152,6 +5480,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     },
@@ -5186,6 +5521,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": true,
       "causal_claim_allowed": false
     },
@@ -5220,6 +5562,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     },
@@ -5254,6 +5603,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     },
@@ -5288,6 +5644,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     },
@@ -5322,6 +5685,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     },
@@ -5356,6 +5726,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     },
@@ -5390,6 +5767,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": true,
       "causal_claim_allowed": false
     },
@@ -5424,6 +5808,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     },
@@ -5458,6 +5849,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     },
@@ -5492,6 +5890,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     },
@@ -5526,6 +5931,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     },
@@ -5560,6 +5972,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     },
@@ -5594,6 +6013,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": true,
       "causal_claim_allowed": false
     },
@@ -5628,6 +6054,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     },
@@ -5662,6 +6095,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     },
@@ -5696,6 +6136,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     },
@@ -5730,6 +6177,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     },
@@ -5764,6 +6218,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     },
@@ -5798,6 +6259,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": true,
       "causal_claim_allowed": false
     },
@@ -5832,6 +6300,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     },
@@ -5866,6 +6341,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     },
@@ -5900,6 +6382,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     },
@@ -5934,6 +6423,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     },
@@ -5968,6 +6464,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     },
@@ -6002,6 +6505,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": true,
       "causal_claim_allowed": false
     },
@@ -6036,6 +6546,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     },
@@ -6070,6 +6587,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     },
@@ -6104,6 +6628,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     },
@@ -6138,6 +6669,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     },
@@ -6172,6 +6710,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     },
@@ -6206,6 +6751,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": true,
       "causal_claim_allowed": false
     },
@@ -6240,6 +6792,13 @@
       ],
       "uncertainty_note": "Point-estimate difference only; inspect both source observations for uncertainty. No combined interval is asserted.",
       "inference_class": "descriptive_only",
+      "minuend_reliability_status": "reliable",
+      "subtrahend_reliability_status": "reliable",
+      "rival_explanations": [
+        "Apartment size, condition, and location may differ between the observed populations.",
+        "Household characteristics, eligibility, selection, and lease timing may differ.",
+        "Sampling error may change the size or direction of the observed difference."
+      ],
       "illustrative": false,
       "causal_claim_allowed": false
     }

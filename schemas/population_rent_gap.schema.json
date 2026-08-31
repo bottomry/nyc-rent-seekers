@@ -31,6 +31,9 @@
     "comparability_notes",
     "uncertainty_note",
     "inference_class",
+    "minuend_reliability_status",
+    "subtrahend_reliability_status",
+    "rival_explanations",
     "illustrative",
     "causal_claim_allowed"
   ],
@@ -76,6 +79,19 @@
     },
     "uncertainty_note": { "type": "string", "minLength": 1 },
     "inference_class": { "const": "descriptive_only" },
+    "minuend_reliability_status": {
+      "type": "string",
+      "enum": ["reliable", "use_with_caution"]
+    },
+    "subtrahend_reliability_status": {
+      "type": "string",
+      "enum": ["reliable", "use_with_caution"]
+    },
+    "rival_explanations": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    },
     "illustrative": { "type": "boolean" },
     "causal_claim_allowed": { "const": false }
   },

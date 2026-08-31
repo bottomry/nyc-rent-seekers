@@ -9,6 +9,7 @@ import pytest
 
 from rent_seekers.config import project_root
 from rent_seekers.normalize.nychvs import calculate_from_paths, policy
+from rent_seekers.sources.nychvs import source_cfg
 
 ROOT = project_root()
 SYNTHETIC_ROOT = ROOT / "data" / "fixtures" / "nychvs" / "synthetic"
@@ -106,8 +107,16 @@ def test_real_citywide_cohort_estimates_are_public():
     assert document["survey_vintage"] == "2023"
     assert document["geography"] == cfg["geography"]
     assert document["published_benchmark_check"]["passed"] is True
+    sources = source_cfg()
     assert document["source_artifacts"] == {
-        name: {"artifact_id": spec["artifact_id"], "sha256": spec["sha256"]}
+        name: {
+            "artifact_id": spec["artifact_id"],
+            "sha256": spec["sha256"],
+            "source_url": sources[f"{name}_csv_url"],
+            "landing_page": sources["landing_page"],
+            "documentation_url": sources["documentation_url"],
+            "raw_publication_allowed": False,
+        }
         for name, spec in cfg["files"].items()
     }
     assert len(document["estimates"]) == 8
@@ -156,7 +165,11 @@ def test_real_citywide_cohort_estimates_are_public():
         for row in document["geography_estimates"]
     )
     serialized = json.dumps(document)
-    assert "CONTROL" not in serialized
+    assert document["method"]["join_field"] == "CONTROL"
+    assert all(
+        artifact["raw_publication_allowed"] is False
+        for artifact in document["source_artifacts"].values()
+    )
     assert document["method"]["geography_field"] == "BORO"
     assert "SYN-" not in serialized
 
