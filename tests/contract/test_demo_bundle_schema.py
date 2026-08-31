@@ -19,3 +19,4 @@ def test_schema_file_exists():
     assert (ROOT / "schemas" / "demo_bundle.schema.json").is_file()
     assert (ROOT / "schemas" / "rent_comparison.schema.json").is_file()
     assert (ROOT / "schemas" / "population_rent_observation.schema.json").is_file()
+    assert (ROOT / "schemas" / "population_rent_gap.schema.json").is_file()

@@ -12,6 +12,8 @@ from rent_seekers.config import load_yaml, project_root
 from rent_seekers.models import (
     MeasureBasis,
     OccupancyState,
+    PopulationRentGap,
+    PopulationRentGapType,
     PopulationRentObservation,
 )
 from rent_seekers.sources import nychvs as nychvs_source
@@ -433,6 +435,174 @@ def build_population_rent_observations(
     return observations
 
 
+_GAP_COMPATIBILITY_FIELDS = (
+    "source_id",
+    "occupancy_state",
+    "geography_id",
+    "geography_type",
+    "geography_name",
+    "survey_vintage",
+    "measure",
+    "measure_basis",
+    "gross_or_net",
+    "statistic",
+    "currency",
+    "cadence",
+)
+
+
+def derive_population_rent_gap(
+    minuend: PopulationRentObservation | dict[str, Any],
+    subtrahend: PopulationRentObservation | dict[str, Any],
+    *,
+    gap_type: PopulationRentGapType,
+    comparability_notes: list[str],
+) -> PopulationRentGap:
+    """Subtract two compatible, available occupied-stock rent observations."""
+    left = PopulationRentObservation.model_validate(minuend)
+    right = PopulationRentObservation.model_validate(subtrahend)
+    mismatches = [
+        field
+        for field in _GAP_COMPATIBILITY_FIELDS
+        if getattr(left, field) != getattr(right, field)
+    ]
+    if mismatches:
+        raise ValueError(
+            "incompatible population-rent observations: " + ", ".join(mismatches)
+        )
+    if not left.available or not right.available or left.value is None or right.value is None:
+        raise ValueError("population-rent gaps require two available observations")
+
+    difference = float(left.value) - float(right.value)
+    percent_difference = (
+        None
+        if float(right.value) == 0
+        else round(100 * difference / float(right.value), 6)
+    )
+    direction = "positive" if difference > 0 else "negative" if difference < 0 else "zero"
+    gap_id = ":".join(
+        (
+            "nychvs",
+            left.survey_vintage,
+            left.geography_id,
+            gap_type.value,
+            left.housing_regime,
+            left.tenure_cohort,
+            "minus",
+            right.housing_regime,
+            right.tenure_cohort,
+        )
+    )
+    return PopulationRentGap(
+        gap_id=gap_id,
+        gap_type=gap_type,
+        minuend_observation_id=left.observation_id,
+        subtrahend_observation_id=right.observation_id,
+        minuend_housing_regime=left.housing_regime,
+        minuend_tenure_cohort=left.tenure_cohort,
+        subtrahend_housing_regime=right.housing_regime,
+        subtrahend_tenure_cohort=right.tenure_cohort,
+        geography_id=left.geography_id,
+        geography_type=left.geography_type,
+        geography_name=left.geography_name,
+        survey_vintage=left.survey_vintage,
+        measure=left.measure,
+        measure_basis=left.measure_basis,
+        gross_or_net=left.gross_or_net,
+        statistic=left.statistic,
+        currency=left.currency,
+        cadence=left.cadence,
+        dollar_difference=difference,
+        percent_difference=percent_difference,
+        percent_denominator_observation_id=right.observation_id,
+        direction=direction,
+        comparability_notes=comparability_notes,
+        uncertainty_note=(
+            "Point-estimate difference only; inspect both source observations for uncertainty. "
+            "No combined interval is asserted."
+        ),
+        inference_class="descriptive_only",
+        illustrative=gap_type == PopulationRentGapType.illustrative_cross_regime,
+        causal_claim_allowed=False,
+    )
+
+
+def build_population_rent_gaps(
+    observations: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """Build supported gap types without imputing suppressed population cells."""
+    rows = [PopulationRentObservation.model_validate(row) for row in observations]
+    by_key = {
+        (row.geography_id, row.housing_regime, row.tenure_cohort): row for row in rows
+    }
+    geography_ids = list(dict.fromkeys(row.geography_id for row in rows))
+    gaps: list[PopulationRentGap] = []
+
+    def add_if_available(
+        geography_id: str,
+        left_key: tuple[str, str],
+        right_key: tuple[str, str],
+        gap_type: PopulationRentGapType,
+        notes: list[str],
+    ) -> None:
+        left = by_key.get((geography_id, *left_key))
+        right = by_key.get((geography_id, *right_key))
+        if left is None or right is None or not left.available or not right.available:
+            return
+        gaps.append(
+            derive_population_rent_gap(
+                left,
+                right,
+                gap_type=gap_type,
+                comparability_notes=notes,
+            )
+        )
+
+    for geography_id in geography_ids:
+        for regime in (
+            "unregulated_market",
+            "regulated_private",
+            "rent_stabilized",
+            "public_housing",
+        ):
+            add_if_available(
+                geography_id,
+                (regime, "recent"),
+                (regime, "incumbent"),
+                PopulationRentGapType.incumbency_within_regime,
+                [
+                    "Same source-native geography, survey vintage, rent measure, "
+                    "and housing regime.",
+                    "Recent-mover rent minus incumbent rent; observed association only.",
+                ],
+            )
+        for cohort in ("recent", "incumbent"):
+            add_if_available(
+                geography_id,
+                ("unregulated_market", cohort),
+                ("regulated_private", cohort),
+                PopulationRentGapType.same_tenure_regulation,
+                [
+                    "Same source-native geography, survey vintage, rent measure, "
+                    "and tenure cohort.",
+                    "Unregulated-market rent minus regulated-private rent; "
+                    "observed association only.",
+                ],
+            )
+        add_if_available(
+            geography_id,
+            ("regulated_private", "recent"),
+            ("unregulated_market", "incumbent"),
+            PopulationRentGapType.illustrative_cross_regime,
+            [
+                "Same source-native geography, survey vintage, and rent measure.",
+                "Crosses both regulation and tenure cohort, so it is illustrative "
+                "rather than decompositional.",
+            ],
+        )
+    return [gap.model_dump(mode="json") for gap in gaps]
+
+
 def build_comptroller_benchmark_results(
     geography_estimates: list[dict[str, Any]], *, cfg: dict[str, Any] | None = None
 ) -> list[dict[str, Any]]:
@@ -636,6 +806,10 @@ def calculate_from_paths(
             cfg=cfg,
         ),
     }
+    population_rent_observations = build_population_rent_observations(
+        geography_estimates,
+        source_artifacts=verified_artifacts,
+    )
     return {
         "schema_version": 3,
         "source_id": nychvs_source.SOURCE_ID,
@@ -667,10 +841,8 @@ def calculate_from_paths(
         "source_artifacts": verified_artifacts,
         "estimates": estimates,
         "geography_estimates": geography_estimates,
-        "population_rent_observations": build_population_rent_observations(
-            geography_estimates,
-            source_artifacts=verified_artifacts,
-        ),
+        "population_rent_observations": population_rent_observations,
+        "population_rent_gaps": build_population_rent_gaps(population_rent_observations),
         "published_benchmark_check": benchmark_check,
     }
 

@@ -16,8 +16,11 @@ def _quality_of(comp: dict[str, Any]) -> str:
 
 
 def is_population_rent_observation(item: dict[str, Any]) -> bool:
-    """Population statistics are context, never development comparators."""
-    return item.get("observation_type") == "population_rent"
+    """Population observations and their derived gaps never rank developments."""
+    return (
+        item.get("observation_type") == "population_rent"
+        or item.get("derived_type") == "population_rent_gap"
+    )
 
 
 def comparison_sort_key(comp: dict[str, Any]) -> tuple:
