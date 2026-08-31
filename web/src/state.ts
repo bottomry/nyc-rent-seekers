@@ -2,6 +2,7 @@
 
 export type MarketSourceOverride = "best" | "hud_safmr" | "zori" | "renthop";
 export type AppView = "map" | "rankings" | "methodology";
+export type RentContextLens = "overview" | "seeking" | "incumbency" | "regulation" | "public";
 
 export interface AppState {
   development: string | null;
@@ -23,6 +24,10 @@ export interface AppState {
   area: string | null;
   /** Methodology section anchor (e.g. method-wedge, method-health). */
   methodSection: string | null;
+  /** Question-shaped emphasis for the renter-context explainer. */
+  rentLens: RentContextLens;
+  /** Preserve the renter-context verification disclosure across rerenders. */
+  rentDetails: boolean;
 }
 
 const DEFAULTS: AppState = {
@@ -37,6 +42,8 @@ const DEFAULTS: AppState = {
   geo: null,
   area: null,
   methodSection: null,
+  rentLens: "overview",
+  rentDetails: false,
 };
 
 export function parseQualityFilter(raw: string | null | undefined): string[] {
@@ -66,6 +73,14 @@ export function readState(search = window.location.search): AppState {
         ? "methodology"
         : "map";
   const sectionRaw = p.get("section") || (window.location.hash || "").replace(/^#/, "") || null;
+  const lensRaw = p.get("lens");
+  const rentLens: RentContextLens =
+    lensRaw === "seeking" ||
+    lensRaw === "incumbency" ||
+    lensRaw === "regulation" ||
+    lensRaw === "public"
+      ? lensRaw
+      : "overview";
   return {
     development: p.get("development"),
     sources: p.get("sources") === "1",
@@ -78,6 +93,8 @@ export function readState(search = window.location.search): AppState {
     geo: p.get("geo"),
     area: p.get("area"),
     methodSection: sectionRaw,
+    rentLens,
+    rentDetails: p.get("rentDetails") === "1",
   };
 }
 
@@ -95,6 +112,8 @@ export function writeState(partial: Partial<AppState>, replace = true): AppState
   if (next.view && next.view !== DEFAULTS.view) p.set("view", next.view);
   if (next.geo) p.set("geo", next.geo);
   if (next.area) p.set("area", next.area);
+  if (next.rentLens !== DEFAULTS.rentLens) p.set("lens", next.rentLens);
+  if (next.rentDetails) p.set("rentDetails", "1");
   if (next.methodSection && next.view === "methodology") {
     p.set("section", next.methodSection);
   }

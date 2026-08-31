@@ -402,7 +402,11 @@ async function playwrightSmoke() {
     const contextText =
       (await page.textContent('[data-testid="rent-population-context"]')) || "";
     for (const label of [
-      "Who pays this rent?",
+      "What would a renter face now—and what do current renters pay?",
+      "Available to a seeker",
+      "Paid by current renters",
+      "A home available now",
+      "Residents of this development",
       "Selected development",
       "Selected market area",
       "Occupied-renter survey",
@@ -418,6 +422,35 @@ async function playwrightSmoke() {
       if (!contextText.includes(label)) {
         throw new Error(`renter context missing ${label}: ${contextText}`);
       }
+    }
+    const insightText =
+      (await page.textContent('[data-testid="rent-context-insight"]')) || "";
+    for (const label of [
+      "Observed incumbency gap",
+      "Recent market movers paid $1,057 more than incumbents",
+      "descriptive only",
+      "Next: compare regulation",
+    ]) {
+      if (!insightText.includes(label)) {
+        throw new Error(`deterministic rent insight missing ${label}: ${insightText}`);
+      }
+    }
+    await page.click('[data-action="rent-lens"][data-rent-lens="incumbency"]');
+    const lensState = await page.evaluate(() => ({
+      query: window.location.search,
+      active: document
+        .querySelector('[data-action="rent-lens"][aria-pressed="true"]')
+        ?.getAttribute("data-rent-lens"),
+      context: document
+        .querySelector('[data-testid="rent-population-context"]')
+        ?.getAttribute("data-rent-lens"),
+    }));
+    if (
+      !lensState.query.includes("lens=incumbency") ||
+      lensState.active !== "incumbency" ||
+      lensState.context !== "incumbency"
+    ) {
+      throw new Error(`rent lens did not round-trip through URL state: ${JSON.stringify(lensState)}`);
     }
     const roughEstimate = await page.$(
       '[data-testid="rent-context-row"][data-context-id="public_housing-recent"][data-reliability-status="use_with_caution"]',
@@ -449,7 +482,7 @@ async function playwrightSmoke() {
     }
     const lensSummary =
       (await page.textContent('[data-testid="asking-vs-occupied-toggle"]')) || "";
-    if (!lensSummary.includes("Available now vs paid by current renters")) {
+    if (!lensSummary.includes("Why are these rents different?")) {
       throw new Error(`missing entrant/incumbent distinction: ${lensSummary}`);
     }
     await page.click('[data-testid="asking-vs-occupied-toggle"]');
@@ -592,6 +625,7 @@ async function playwrightSmoke() {
         body: JSON.stringify({
           schema_version: 3,
           survey_vintage: "2023",
+          population_rent_gaps: [],
           population_rent_observations: [
             {
               observation_type: "population_rent",

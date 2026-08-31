@@ -64,7 +64,13 @@ import {
   type MetricRow,
 } from "./metrics";
 import { escapeHtml, formatUsd } from "./format";
-import { parseQualityFilter, readState, writeState, type AppView } from "./state";
+import {
+  parseQualityFilter,
+  readState,
+  writeState,
+  type AppView,
+  type RentContextLens,
+} from "./state";
 import type { DemoBundle, PopulationRentLoadState } from "./types";
 import { loadPopulationRentObservations } from "./data/loadBundle";
 
@@ -156,7 +162,11 @@ async function boot(): Promise<void> {
   const sidePanel = document.getElementById("side-panel");
   const mapPane = document.getElementById("map-pane");
   const hoverCard = document.getElementById("hover-card");
-  let populationRents: PopulationRentLoadState = { status: "loading", observations: [] };
+  let populationRents: PopulationRentLoadState = {
+    status: "loading",
+    observations: [],
+    gaps: [],
+  };
   const populationRentsPromise = loadPopulationRentObservations();
   const bundle = await loadBundle();
   const container = document.getElementById("map");
@@ -199,6 +209,8 @@ async function boot(): Promise<void> {
   let mapMetric: MapMetric = parseMapMetric(urlState.metric);
   let appView: AppView = urlState.view || "map";
   let methodSection: string | null = urlState.methodSection || "method-health";
+  let rentLens: RentContextLens = urlState.rentLens;
+  let rentDetailsOpen = urlState.rentDetails;
   let rankSort: RankingSort = "monthly-wedge";
   let metricRows: MetricRow[] = [];
   let combineLayers = readCombineLayers();
@@ -357,6 +369,41 @@ async function boot(): Promise<void> {
     if (!product) return;
     product.querySelector('[data-action="open-sources"]')?.addEventListener("click", openSources);
     wireMethodLinks(product);
+    if (product.dataset.rentContextDelegated !== "1") {
+      product.dataset.rentContextDelegated = "1";
+      product.addEventListener("click", (event) => {
+        const el = (event.target as Element | null)?.closest<HTMLElement>(
+          '[data-action="rent-lens"]',
+        );
+        if (!el) return;
+        const requested = el.getAttribute("data-rent-lens");
+        if (
+          requested !== "overview" &&
+          requested !== "seeking" &&
+          requested !== "incumbency" &&
+          requested !== "regulation" &&
+          requested !== "public"
+        ) {
+          return;
+        }
+        rentLens = requested;
+        writeState({ rentLens });
+        refreshPopulationContext();
+        product
+          .querySelector<HTMLElement>(`[data-action="rent-lens"][data-rent-lens="${rentLens}"]`)
+          ?.focus();
+      });
+      product.addEventListener(
+        "toggle",
+        (event) => {
+          const details = event.target as HTMLDetailsElement;
+          if (details.dataset.testid !== "asking-vs-occupied-explainer") return;
+          rentDetailsOpen = details.open;
+          writeState({ rentDetails: rentDetailsOpen });
+        },
+        true,
+      );
+    }
     product.querySelectorAll('[data-action="close-drawer"]').forEach((el) => {
       el.addEventListener("click", () => {
         selectedId = null;
@@ -558,6 +605,8 @@ async function boot(): Promise<void> {
       ctx.tenant,
       ctx.market,
       populationRents,
+      rentLens,
+      rentDetailsOpen,
     );
   };
 
@@ -596,6 +645,8 @@ async function boot(): Promise<void> {
           historical,
           ctx.alternatives,
           populationRents,
+          rentLens,
+          rentDetailsOpen,
         ) + renderHudNote(developmentId);
       wireDrawerActions();
       rerenderLayerControls();
@@ -1081,6 +1132,8 @@ async function boot(): Promise<void> {
     qualityFilter = parseQualityFilter(s.quality);
     appView = s.view;
     methodSection = s.methodSection || methodSection;
+    rentLens = s.rentLens;
+    rentDetailsOpen = s.rentDetails;
     if (s.unit) {
       const m = s.unit.toLowerCase().match(/^(\d+)/);
       if (m) bedroom = Number(m[1]);

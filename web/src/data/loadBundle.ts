@@ -1,6 +1,7 @@
 import type {
   DemoBundle,
   NychvsPopulationDocument,
+  PopulationRentGap,
   PopulationRentLoadState,
   PopulationRentObservation,
 } from "../types";
@@ -50,20 +51,44 @@ function isPopulationRentObservation(value: unknown): value is PopulationRentObs
   );
 }
 
+function isPopulationRentGap(value: unknown): value is PopulationRentGap {
+  if (!value || typeof value !== "object") return false;
+  const row = value as Partial<PopulationRentGap>;
+  return (
+    row.derived_type === "population_rent_gap" &&
+    typeof row.gap_id === "string" &&
+    [
+      "incumbency_within_regime",
+      "same_tenure_regulation",
+      "illustrative_cross_regime",
+    ].includes(String(row.gap_type)) &&
+    row.operation === "minuend_minus_subtrahend" &&
+    typeof row.minuend_observation_id === "string" &&
+    typeof row.subtrahend_observation_id === "string" &&
+    typeof row.geography_id === "string" &&
+    typeof row.dollar_difference === "number" &&
+    row.inference_class === "descriptive_only" &&
+    row.causal_claim_allowed === false
+  );
+}
+
 function populationLoadState(document: unknown): PopulationRentLoadState {
   if (!document || typeof document !== "object") {
-    return { status: "error", observations: [] };
+    return { status: "error", observations: [], gaps: [] };
   }
   const candidate = document as Partial<NychvsPopulationDocument>;
   if (
     !Array.isArray(candidate.population_rent_observations) ||
-    !candidate.population_rent_observations.every(isPopulationRentObservation)
+    !candidate.population_rent_observations.every(isPopulationRentObservation) ||
+    !Array.isArray(candidate.population_rent_gaps) ||
+    !candidate.population_rent_gaps.every(isPopulationRentGap)
   ) {
-    return { status: "error", observations: [] };
+    return { status: "error", observations: [], gaps: [] };
   }
   return {
     status: "ready",
     observations: candidate.population_rent_observations,
+    gaps: candidate.population_rent_gaps,
   };
 }
 
@@ -75,16 +100,16 @@ export async function loadPopulationRentObservations(): Promise<PopulationRentLo
       const parsed = JSON.parse(embedded.textContent) as { _pending?: boolean };
       if (!parsed._pending) return populationLoadState(parsed);
     } catch {
-      return { status: "error", observations: [] };
+      return { status: "error", observations: [], gaps: [] };
     }
   }
 
   try {
     const url = new URL("data/nychvs/estimates.json", window.location.href);
     const res = await fetch(url);
-    if (!res.ok) return { status: "error", observations: [] };
+    if (!res.ok) return { status: "error", observations: [], gaps: [] };
     return populationLoadState(await res.json());
   } catch {
-    return { status: "error", observations: [] };
+    return { status: "error", observations: [], gaps: [] };
   }
 }

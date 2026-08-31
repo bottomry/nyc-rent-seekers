@@ -3,11 +3,13 @@ import type {
   DemoBundle,
   Development,
   MarketRentObservation,
+  PopulationRentGap,
   PopulationRentLoadState,
   PopulationRentObservation,
   RentComparison,
   TenantRentObservation,
 } from "../types";
+import type { RentContextLens } from "../state";
 import {
   comparisonsForDevelopment,
   resolveObservationPair,
@@ -321,6 +323,105 @@ function surveyRow(
   };
 }
 
+function gapInputs(
+  loadState: PopulationRentLoadState,
+  gap: PopulationRentGap,
+): [PopulationRentObservation | null, PopulationRentObservation | null] {
+  const byId = new Map(loadState.observations.map((row) => [row.observation_id, row]));
+  return [
+    byId.get(gap.minuend_observation_id) || null,
+    byId.get(gap.subtrahend_observation_id) || null,
+  ];
+}
+
+function preferredGap(
+  loadState: PopulationRentLoadState,
+  development: Development,
+): PopulationRentGap | null {
+  const priorities: Array<(gap: PopulationRentGap) => boolean> = [
+    (gap) =>
+      gap.gap_type === "incumbency_within_regime" &&
+      gap.minuend_housing_regime === "unregulated_market",
+    (gap) =>
+      gap.gap_type === "incumbency_within_regime" &&
+      gap.minuend_housing_regime === "regulated_private",
+    (gap) =>
+      gap.gap_type === "same_tenure_regulation" && gap.minuend_tenure_cohort === "recent",
+    (gap) => gap.gap_type === "same_tenure_regulation",
+  ];
+  for (const geographyId of geographyCandidates(development)) {
+    const geographyGaps = loadState.gaps.filter((gap) => gap.geography_id === geographyId);
+    for (const matches of priorities) {
+      const gap = geographyGaps.find((candidate) => {
+        if (!matches(candidate) || candidate.illustrative) return false;
+        const [left, right] = gapInputs(loadState, candidate);
+        return left?.reliability_status === "reliable" && right?.reliability_status === "reliable";
+      });
+      if (gap) return gap;
+    }
+  }
+  return null;
+}
+
+function intervalsOverlap(
+  left: PopulationRentObservation,
+  right: PopulationRentObservation,
+): boolean | null {
+  const values = [
+    left.confidence_interval_lower,
+    left.confidence_interval_upper,
+    right.confidence_interval_lower,
+    right.confidence_interval_upper,
+  ];
+  if (values.some((value) => value == null || !Number.isFinite(value))) return null;
+  return (
+    Number(left.confidence_interval_lower) <= Number(right.confidence_interval_upper) &&
+    Number(right.confidence_interval_lower) <= Number(left.confidence_interval_upper)
+  );
+}
+
+function renderGapInsight(
+  loadState: PopulationRentLoadState,
+  development: Development,
+): string {
+  if (loadState.status !== "ready") return "";
+  const gap = preferredGap(loadState, development);
+  if (!gap) return "";
+  const [left, right] = gapInputs(loadState, gap);
+  if (!left || !right || left.value == null || right.value == null) return "";
+  const amount = formatUsd(Math.abs(gap.dollar_difference));
+  const higherLower = gap.dollar_difference >= 0 ? "more" : "less";
+  const regime = gap.minuend_housing_regime === "unregulated_market" ? "market" : "regulated";
+  const headline =
+    gap.gap_type === "incumbency_within_regime"
+      ? `Recent ${regime} movers paid ${amount} ${higherLower} than incumbents`
+      : `Unregulated renters paid ${amount} ${higherLower} than regulated renters`;
+  const overlap = intervalsOverlap(left, right);
+  const uncertainty =
+    overlap === true
+      ? "The two 95% intervals overlap, so treat the observed direction as uncertain."
+      : overlap === false
+        ? "The two 95% intervals do not overlap; this remains a descriptive difference, not a cause."
+        : "Inspect both source rows for uncertainty; no combined interval is asserted.";
+  return `
+    <article class="rent-context-insight" data-testid="rent-context-insight"
+      data-gap-id="${escapeHtml(gap.gap_id)}">
+      <div class="metric-label">Observed ${gap.gap_type === "incumbency_within_regime" ? "incumbency" : "regulation"} gap</div>
+      <strong>${escapeHtml(headline)}</strong>
+      <p>${escapeHtml(gap.geography_name)} · ${escapeHtml(gap.survey_vintage)} occupied-renter survey · descriptive only.</p>
+      <details class="rent-context-calculation" data-testid="rent-context-calculation">
+        <summary>Verify this difference</summary>
+        <p>${formatUsd(Number(left.value))} minus ${formatUsd(Number(right.value))} =
+          ${formatUsd(gap.dollar_difference)} (${gap.percent_difference == null ? "percentage unavailable" : `${gap.percent_difference.toFixed(1)}% of the second value`}).</p>
+        <p>${escapeHtml(uncertainty)}</p>
+        <code>${escapeHtml(left.observation_id)}</code>
+        <code>${escapeHtml(right.observation_id)}</code>
+      </details>
+      <button type="button" class="rent-context-next" data-action="rent-lens"
+        data-rent-lens="regulation">Next: compare regulation</button>
+    </article>`;
+}
+
 function contextRowHtml(row: RentContextRow, max: number): string {
   const available = row.value != null && Number.isFinite(row.value);
   const width = available ? Math.max(2, (Number(row.value) / max) * 100) : 0;
@@ -363,6 +464,20 @@ function contextRowHtml(row: RentContextRow, max: number): string {
             : "Not enough survey evidence to show reliably"
       }</span>`
     : "";
+  const reliabilityDisclosure =
+    reliabilityLabel && available
+      ? `<details class="rent-context-reliability-details">
+          <summary class="rent-context-reliability ${escapeHtml(row.reliabilityStatus || "")}" title="${escapeHtml(technicalDetail)}"
+            aria-label="${escapeHtml(`${row.label}: ${reliabilityLabel}. Show reliability details`)}">${escapeHtml(reliabilityLabel)}</summary>
+          <span>${escapeHtml(
+            row.reliabilityStatus === "reliable"
+              ? "Suitable for this descriptive comparison."
+              : "Treat this amount as approximate and compare it cautiously.",
+          )} ${escapeHtml(technicalDetail)}</span>
+        </details>`
+      : reliabilityLabel
+        ? `<span class="rent-context-reliability ${escapeHtml(row.reliabilityStatus || "")}">${escapeHtml(reliabilityLabel)}</span>`
+        : "";
   return `
     <div class="rent-context-row ${row.scope}" role="listitem"
       data-testid="rent-context-row" data-context-id="${escapeHtml(row.id)}"
@@ -371,7 +486,7 @@ function contextRowHtml(row: RentContextRow, max: number): string {
       <div class="rent-context-copy">
         <strong>${escapeHtml(row.label)}</strong>
         <span>${escapeHtml(scopeLabel)} · ${escapeHtml(row.geography)} · ${escapeHtml(row.vintage)}</span>
-        ${reliabilityLabel ? `<span class="rent-context-reliability ${escapeHtml(row.reliabilityStatus || "")}" title="${escapeHtml(technicalDetail)}">${escapeHtml(reliabilityLabel)}</span>` : ""}
+        ${reliabilityDisclosure}
         ${unavailable}
       </div>
       <div class="rent-context-track" aria-hidden="true">
@@ -383,7 +498,11 @@ function contextRowHtml(row: RentContextRow, max: number): string {
     </div>`;
 }
 
-function renderRentLens(loadState: PopulationRentLoadState, development: Development): string {
+function renderRentLens(
+  loadState: PopulationRentLoadState,
+  development: Development,
+  detailsOpen = false,
+): string {
   const [incumbentMarket, recentRegulated] = populationPairForDevelopment(
     loadState.observations,
     development,
@@ -449,10 +568,10 @@ function renderRentLens(loadState: PopulationRentLoadState, development: Develop
   }
 
   return `
-    <details class="rent-lens" data-testid="asking-vs-occupied-explainer">
+    <details class="rent-lens" data-testid="asking-vs-occupied-explainer" ${detailsOpen ? "open" : ""}>
       <summary data-testid="asking-vs-occupied-toggle">
-        <span>Available now vs paid by current renters</span>
-        <span class="rent-lens-action">What is the difference?</span>
+        <span>Why are these rents different?</span>
+        <span class="rent-lens-action">Definitions and limits</span>
       </summary>
       <div class="rent-lens-body" data-testid="asking-vs-occupied-body">
         <p><strong>Available to a renter now</strong> describes the entrant-facing market.
@@ -472,25 +591,29 @@ export function renderPopulationRentContext(
   tenant: TenantRentObservation,
   market: MarketRentObservation,
   loadState: PopulationRentLoadState,
+  activeLens: RentContextLens = "overview",
+  detailsOpen = false,
 ): string {
   const tenantVintage = (tenant.period_start || "").slice(0, 7) || "—";
   const marketVintage = (market.period_start || "").slice(0, 7) || "—";
-  const rows: RentContextRow[] = [
-    {
-      id: "selected-development",
-      label: "What residents here pay",
-      value: tenant.value,
-      geography: development.name,
-      vintage: tenantVintage,
-      scope: "development",
-    },
+  const seekerRows: RentContextRow[] = [
     {
       id: "selected-market",
-      label: "Selected nearby market comparator",
+      label: "A home available now",
       value: market.value,
       geography: marketAreaLabel(market),
       vintage: marketVintage,
       scope: "market",
+    },
+  ];
+  const currentRows: RentContextRow[] = [
+    {
+      id: "selected-development",
+      label: "Residents of this development",
+      value: tenant.value,
+      geography: development.name,
+      vintage: tenantVintage,
+      scope: "development",
     },
     surveyRow(loadState, development, "unregulated_market", "recent", "Market renters · recent movers"),
     surveyRow(loadState, development, "unregulated_market", "incumbent", "Market renters · incumbents"),
@@ -499,29 +622,70 @@ export function renderPopulationRentContext(
     surveyRow(loadState, development, "public_housing", "recent", "Public housing · recent movers"),
     surveyRow(loadState, development, "public_housing", "incumbent", "Public housing · incumbents"),
   ];
+  const rows = [...seekerRows, ...currentRows];
   const max = Math.max(...rows.flatMap((row) => (row.value == null ? [] : [row.value])), 1);
+  const lenses: Array<{ id: RentContextLens; label: string }> = [
+    { id: "overview", label: "Overview" },
+    { id: "seeking", label: "Seeking now" },
+    { id: "incumbency", label: "Recent vs incumbent" },
+    { id: "regulation", label: "Regulation" },
+    { id: "public", label: "Public housing" },
+  ];
   return `
     <section class="rent-context" data-testid="rent-population-context"
       data-population-load-status="${escapeHtml(loadState.status)}"
+      data-rent-lens="${escapeHtml(activeLens)}"
       aria-labelledby="rent-context-title">
       <div class="rent-context-heading">
         <div>
           <div class="metric-label">Renter context</div>
-          <h3 id="rent-context-title">Who pays this rent?</h3>
+          <h3 id="rent-context-title">What would a renter face now—and what do current renters pay?</h3>
         </div>
         <span class="rent-context-badge">Different geographies</span>
       </div>
       <p class="rent-context-intro">
-        Building, nearby-market, and source-native survey figures answer different questions.
-        Compare the labeled rows; they are not blended into one ranking.
+        Entry-facing rents are usually higher than rents already paid in occupied homes. These
+        groups answer different questions, so the figures stay separate rather than becoming one average.
       </p>
-      ${renderRentLens(loadState, development)}
-      <div class="rent-context-list" role="list">
-        ${rows.map((row) => contextRowHtml(row, max)).join("")}
+      <div class="rent-context-lenses" role="group" aria-label="Choose a rent question">
+        ${lenses
+          .map(
+            (lens) => `<button type="button" data-action="rent-lens"
+              data-rent-lens="${lens.id}" aria-pressed="${lens.id === activeLens ? "true" : "false"}"
+              class="${lens.id === activeLens ? "active" : ""}">${escapeHtml(lens.label)}</button>`,
+          )
+          .join("")}
       </div>
+      ${renderGapInsight(loadState, development)}
+      <div class="rent-context-groups">
+        <section class="rent-context-group seeker" data-context-group="seeking"
+          aria-labelledby="seeker-rent-title">
+          <div class="rent-context-group-heading">
+            <span>Available to a seeker</span>
+            <small>Entry-facing</small>
+          </div>
+          <p id="seeker-rent-title">What a renter looking today could encounter.</p>
+          <div class="rent-context-list" role="list">
+            ${seekerRows.map((row) => contextRowHtml(row, max)).join("")}
+          </div>
+        </section>
+        <section class="rent-context-group current" data-context-group="current"
+          aria-labelledby="current-rent-title">
+          <div class="rent-context-group-heading">
+            <span>Paid by current renters</span>
+            <small>Occupied homes</small>
+          </div>
+          <p id="current-rent-title">Development and survey rents paid by people already housed.</p>
+          <div class="rent-context-list" role="list">
+            ${currentRows.map((row) => contextRowHtml(row, max)).join("")}
+          </div>
+        </section>
+      </div>
+      ${renderRentLens(loadState, development, detailsOpen)}
       <p class="rent-context-note">
         Recent movers arrived in 2021–2022; incumbents arrived in 2020 or earlier.
-        Survey rows use 2023 NYCHVS weights and disappear into “Unavailable” rather than being estimated.
+        The development rent is not the citywide public-housing median. Survey rows use 2023 NYCHVS
+        weights and become “Unavailable” when the evidence is too weak.
       </p>
     </section>`;
 }
@@ -532,6 +696,8 @@ export function replacePopulationRentContext(
   tenant: TenantRentObservation,
   market: MarketRentObservation,
   loadState: PopulationRentLoadState,
+  activeLens: RentContextLens = "overview",
+  detailsOpen = false,
 ): void {
   const lens = current.querySelector<HTMLDetailsElement>(
     '[data-testid="asking-vs-occupied-explainer"]',
@@ -544,6 +710,8 @@ export function replacePopulationRentContext(
     tenant,
     market,
     loadState,
+    activeLens,
+    detailsOpen,
   ).trim();
   const replacement = template.content.firstElementChild;
   if (!replacement) return;
@@ -566,7 +734,9 @@ export function renderDevelopmentDrawer(
   comparison: RentComparison,
   historical?: TenantRentObservation | null,
   alternatives?: RentComparison[] | ComparisonAlt[] | null,
-  populationRents: PopulationRentLoadState = { status: "loading", observations: [] },
+  populationRents: PopulationRentLoadState = { status: "loading", observations: [], gaps: [] },
+  activeRentLens: RentContextLens = "overview",
+  rentDetailsOpen = false,
 ): string {
   const tenantScope =
     tenant.unit_scope === "all_units"
@@ -646,7 +816,14 @@ export function renderDevelopmentDrawer(
 
     ${renderRentBars(tenant.value, market.value, { marketLabel: barMarketLabel })}
 
-    ${renderPopulationRentContext(development, tenant, market, populationRents)}
+    ${renderPopulationRentContext(
+      development,
+      tenant,
+      market,
+      populationRents,
+      activeRentLens,
+      rentDetailsOpen,
+    )}
 
     <div class="metric-block compact">
       <div class="metric-label">What residents pay (building average)</div>
