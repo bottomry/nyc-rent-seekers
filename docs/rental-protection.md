@@ -60,6 +60,12 @@ moves remove an otherwise eligible household. Rent medians exclude missing and z
 the download distinguishes total group households from households represented in the rent measure.
 Borough cells never substitute citywide or outer-borough estimates when unavailable.
 
+All eight primary groups are published: public housing, rent-stabilized, Section 8 voucher,
+rent-controlled, other regulated, other or unspecified assistance, unassisted market, and
+unknown or conflicting protection status. The unknown group keeps unresolved households visible
+without assigning them a protection they did not report. All groups appear in bars and downloads;
+each non-market group can be selected for comparison.
+
 The map and ranking show the difference between the unassisted market median and the selected
 group median. Bars show the component gross rents (including separately paid utilities). The underlying
 RENT_AMOUNT includes rent paid by others on behalf of a tenant (codebook p.126); gross rent

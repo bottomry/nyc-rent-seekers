@@ -184,7 +184,7 @@ def _estimate_cell(
     cfg: dict[str, Any],
 ) -> dict[str, Any]:
     fields = cfg["fields"]
-    csr_values = {str(v).zfill(2) for v in population["csr_values"]}
+    csr_values = {str(v).zfill(2) for v in population.get("csr_values", [])}
     eligible: list[dict[str, str]] = []
     borough_field = fields.get("borough")
     borough_values = {str(value) for value in geography.get("borough_values", [])}
@@ -197,7 +197,7 @@ def _estimate_cell(
             continue
         if row.get(str(fields["tenure"])) != str(fields["renter_value"]):
             continue
-        if str(row.get(str(fields["housing_type"]), "")).zfill(2) not in csr_values:
+        if csr_values and str(row.get(str(fields["housing_type"]), "")).zfill(2) not in csr_values:
             continue
         if cohort_id == "all":
             eligible.append(row)
@@ -782,6 +782,11 @@ def build_protection_estimates(
     labels = {
         "public_housing": "Public housing",
         "rent_stabilized": "Rent-stabilized",
+        "section8_voucher": "Section 8 voucher",
+        "rent_controlled": "Rent-controlled",
+        "other_regulated": "Other regulated",
+        "other_or_unspecified_assistance": "Other or unspecified assistance",
+        "unknown": "Unknown or conflicting protection status",
         "unassisted_market": "Market · no reported assistance",
     }
     classified = [(row, classify_protection(row)) for row in rows]
@@ -796,7 +801,7 @@ def build_protection_estimates(
             estimate = _estimate_cell(
                 members,
                 population_id=group,
-                population={"label": label, "csr_values": ["05", "32", "80", "90", "97"]},
+                population={"label": label},
                 cohort_id="all",
                 cohort={},
                 geography_id=geo_id,

@@ -622,7 +622,7 @@ async function boot(): Promise<void> {
     );
   };
 
-  const showDevelopment = (developmentId: string, fly = false): void => {
+  const showDevelopment = (developmentId: string, fly = false, view: AppView = "map"): void => {
     if (!product) return;
     const selectionChanged = selectedId !== developmentId;
     selectedId = developmentId;
@@ -635,9 +635,9 @@ async function boot(): Promise<void> {
       quality: qualityFilter.join(","),
       metric: mapMetric,
       area: null,
-      view: "map",
+      view,
     });
-    setView("map");
+    setView(view);
     closeSources();
     if (fly) flyToDevelopment(map, bundle, developmentId);
 
@@ -1178,7 +1178,7 @@ async function boot(): Promise<void> {
       return;
     }
     if (initialDev) {
-      showDevelopment(initialDev);
+      showDevelopment(initialDev, false, appView);
       if (initialDev === "nycha:tds:136" && bundle.map?.focus_center) {
         map.easeTo({
           center: bundle.map.focus_center,

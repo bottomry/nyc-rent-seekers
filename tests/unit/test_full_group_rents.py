@@ -46,7 +46,7 @@ def test_full_population_ignores_move_year_and_excludes_assistance():
 def test_underpowered_group_has_no_published_value_or_fallback():
     cfg = policy()
     result = build_protection_estimates([], cfg=cfg)
-    assert len(result) == 18
+    assert len(result) == 48
     assert all(not e["available"] and e["value"] is None for e in result)
     assert {e["geography_id"] for e in result} == {
         "nyc",
@@ -56,3 +56,29 @@ def test_underpowered_group_has_no_published_value_or_fallback():
         "queens",
         "staten_island",
     }
+
+
+def test_all_primary_groups_reach_estimates_without_regime_refiltering():
+    cfg = deepcopy(policy())
+    cfg["quality"]["min_rent_sample_count"] = 1
+    cfg["variance"]["replicate_weight_count"] = 2
+    cfg["geographies"] = {"manhattan": cfg["geographies"]["manhattan"]}
+    cases = [
+        ("public_housing", "05", "2", "2"),
+        ("rent_stabilized", "32", "2", "2"),
+        ("section8_voucher", "-1", "1", "1"),
+        ("rent_controlled", "90", "2", "2"),
+        ("other_regulated", "97", "2", "2"),
+        ("other_or_unspecified_assistance", "-1", "1", "2"),
+        ("unknown", "-1", "-1", "-1"),
+        ("unassisted_market", "80", "2", "2"),
+    ]
+    rows = [dict(OCC="1", TENURE="1", BORO="3", CSR=csr,
+                 RENTASSIST=aid, RENTASSIST_VOUCHER=voucher, GRENT=str(500+i*100),
+                 FW="1", FW1="1", FW2="1", HHFIRSTMOVEIN="-1")
+            for i, (_, csr, aid, voucher) in enumerate(cases)]
+    estimates = {e["population_id"]: e for e in build_protection_estimates(rows, cfg=cfg)}
+    assert set(estimates) == {group for group, *_ in cases}
+    for i, (group, *_) in enumerate(cases):
+        assert estimates[group]["eligible_sample_count"] == 1
+        assert estimates[group]["value"] == 500+i*100
