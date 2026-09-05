@@ -2401,3 +2401,34 @@ button.linkish:focus-visible {
   color: #7dd3fc;
   outline: none;
 }
+
+/* Linked population comparisons. */
+.protection-host {width:100%;max-width:1400px;margin:auto;padding:28px;overflow:auto;}
+.protection-host[hidden]{display:none}
+.protection-heading h2{font-size:clamp(28px,4vw,46px);letter-spacing:-1px;margin:8px 0}
+.protection-heading .eyebrow{color:var(--accent);font:12px var(--mono);text-transform:uppercase}
+.protection-controls{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin:22px 0}
+.protection-controls select{margin-left:8px;padding:8px;background:var(--bg-elev);color:var(--text);border:1px solid var(--border)}
+.protection-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:36px}
+.protection-grid>*{min-width:0}
+.protection-map{display:block;width:100%;height:430px;background:#0e192a;border:1px solid var(--border)}
+.protection-map path{stroke:var(--bg);stroke-width:.35;fill-rule:evenodd;cursor:pointer}
+.protection-map .selected path,.protection-map g:focus path{stroke:var(--text);stroke-width:1.4}
+.protection-map g:focus{outline:none}
+.protection-legend{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:11px;color:var(--muted);margin:12px 0}
+.protection-legend>i{width:100px;height:8px;background:linear-gradient(90deg,#203e57,#a78bfa)}
+.protection-boroughs{display:flex;gap:6px;flex-wrap:wrap}
+.protection-host [aria-pressed=true]{color:var(--accent);border-color:var(--accent)}
+.protection-topline{display:flex;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:18px;gap:12px}
+.protection-topline h3{font-size:25px;margin:0}
+.protection-topline strong{display:block;font-size:40px;color:var(--wedge);text-align:right;line-height:1.1}
+.protection-topline span{font-size:12px;color:var(--muted)}
+.protection-bars{margin:24px 0 30px}.protection-bar{margin:20px 0}
+.protection-bar>div:first-child{display:flex;justify-content:space-between;gap:12px;margin-bottom:7px;font-size:14px}
+.protection-bar b{font-size:19px;white-space:nowrap}.protection-track{height:18px;background:#19253a}.protection-track i{display:block;height:100%}
+.protection-rank{display:grid;grid-template-columns:100px 1fr 90px;gap:14px;align-items:center;background:transparent;border:0;color:var(--text);width:100%;padding:10px 0;text-align:left;cursor:pointer;font:13px var(--font)}
+.protection-rank b{text-align:right}.protection-rank>i{height:8px;background:#19253a}.protection-rank>i>i{height:100%;display:block;background:var(--wedge)}
+.protection-evidence{margin-top:30px;border-top:1px solid var(--border);padding:20px 0;font-size:13px;line-height:1.6}.protection-evidence summary{cursor:pointer}.protection-evidence a{color:var(--accent)}.protection-table{overflow:auto}.protection-table table{width:100%;border-collapse:collapse}.protection-table th,.protection-table td{padding:10px;border-bottom:1px solid var(--border);text-align:left}
+@media(max-width:800px){.protection-host{padding:20px 16px}.protection-grid{grid-template-columns:1fr;gap:28px}.protection-map{height:320px}.protection-topline strong{font-size:32px}.protection-rank{grid-template-columns:90px 1fr 85px;gap:8px}}
+
+.shell-main:has(.protection-host:not([hidden])){grid-template-columns:1fr}

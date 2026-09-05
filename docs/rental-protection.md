@@ -50,3 +50,20 @@ rent-freeze amount cannot be derived from classification or from a market-rent d
 Section 9 funding, non-voucher project-based Section 8, and individual freeze programs remain
 unresolved here. Their absence is not recoded as absence of protection. Raw household records remain
 build-time inputs; only aggregate results may be published.
+
+## Full-group geographic comparisons
+
+The linked borough view estimates each primary group across all move-in years, directly from
+household records. It uses the same weighted median and 80-replicate successive-difference
+variance estimator as the existing survey views. Neither unknown move-in dates nor survey-year
+moves remove an otherwise eligible household. Rent medians exclude missing and zero-rent records;
+the download distinguishes total group households from households represented in the rent measure.
+Borough cells never substitute citywide or outer-borough estimates when unavailable.
+
+The map and ranking show the difference between the unassisted market median and the selected
+group median. Bars show the component gross rents (including separately paid utilities). The underlying
+RENT_AMOUNT includes rent paid by others on behalf of a tenant (codebook p.126); gross rent
+is not a separately measured out-of-pocket payment for assisted households. This is
+a comparison of distributions, not a matched-household treatment effect or a subsidy expenditure.
+The map scale stays fixed when selecting a borough. Sources, sample counts, reliability and
+intervals are available with exact values. URL parameters preserve the borough and comparison.

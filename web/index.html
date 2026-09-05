@@ -24,6 +24,7 @@
           How much lower is monthly NYCHA rent than nearby market rent at this building?
         </p>
         <nav class="view-tabs" data-testid="view-tabs" aria-label="Primary views">
+          <button type="button" class="view-tab" data-view="protection" aria-pressed="false">Rents by group</button>
           <button type="button" class="view-tab active" data-view="map" data-testid="view-map"
             aria-pressed="true">Map</button>
           <button type="button" class="view-tab" data-view="rankings" data-testid="view-rankings"
@@ -33,6 +34,7 @@
         </nav>
       </header>
       <main class="shell-main" id="shell-main">
+        <section id="protection-host" class="protection-host" hidden aria-label="Rents by protection group"></section>
         <div id="map-pane" class="map-pane">
           <div id="map" class="map" role="application" aria-label="NYC rent-wedge map" tabindex="0"></div>
           <div id="map-legend" class="map-legend" data-testid="map-legend" hidden></div>
