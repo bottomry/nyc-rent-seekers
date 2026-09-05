@@ -2432,3 +2432,5 @@ button.linkish:focus-visible {
 @media(max-width:800px){.protection-host{padding:20px 16px}.protection-grid{grid-template-columns:1fr;gap:28px}.protection-map{height:320px}.protection-topline strong{font-size:32px}.protection-rank{grid-template-columns:90px 1fr 85px;gap:8px}}
 
 .shell-main:has(.protection-host:not([hidden])){grid-template-columns:1fr}
+
+.badge[hidden]{display:none}

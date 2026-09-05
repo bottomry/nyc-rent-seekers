@@ -10,8 +10,8 @@ const base=`http://127.0.0.1:${server.address().port}`;
 const browser=await chromium.launch({headless:true});
 try{
  const page=await browser.newPage({viewport:{width:1440,height:1000}});
+ const fixture=JSON.parse(await readFile(resolve('web/public/data/nychvs/estimates.json'),'utf8'));
  if(!process.argv.includes('--actual')) {
-  const fixture=JSON.parse(await readFile(resolve('web/public/data/nychvs/estimates.json'),'utf8'));
   fixture.protection_estimates=['manhattan','brooklyn','bronx','queens','staten_island'].flatMap((g,i)=>['public_housing','rent_stabilized','unassisted_market','section8_voucher','rent_controlled','other_regulated','other_or_unspecified_assistance','unknown'].map((p,j)=>({population_id:p,population_label:p,geography_id:g,value:[500,1500,3000-i*200,700,800,900,1000,1100][j],available:!(g==='staten_island'&&j===0),rent_sample_count:100,weighted_population_estimate:1000,rent_weighted_population_estimate:1000,confidence_interval_lower:400,confidence_interval_upper:600,reliability_status:'reliable',unavailable_reason:null})));
   await page.route('**/data/nychvs/estimates.json',route=>route.fulfill({json:fixture}));
  }
@@ -46,7 +46,9 @@ try{
  for(const group of ['section8_voucher','rent_controlled','other_regulated','other_or_unspecified_assistance','unknown']) {
   await page.selectOption('#protection-against',group);
   assert.equal(new URL(page.url()).searchParams.get('against'),group);
-  assert.notEqual(await page.locator(`[data-group=${group}]`).innerText(),'Unavailable');
+  const expected=fixture.protection_estimates.find(e=>e.geography_id==='brooklyn'&&e.population_id===group);
+  const formatted=expected.available?new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(expected.value):'Unavailable';
+  assert.equal(await page.locator(`[data-group=${group}]`).innerText(),formatted);
  }
  await page.selectOption('#protection-against','public_housing');
  await page.locator('.protection-rank[data-borough=queens]').focus();
