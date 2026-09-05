@@ -2,7 +2,8 @@
 
 The classifier consumes a merged occupied-household/all-units NYCHVS record. It assigns one primary
 display group and retains regulation and assistance attributes for overlap analysis. Move-in date
-is not a protection criterion. This contract does not change the existing cohort estimates or UI.
+is not a protection criterion. These groups power the Rents by group view; the existing
+development-drawer cohort estimates retain their separate definitions.
 
 ## Source contract
 
@@ -53,9 +54,12 @@ build-time inputs; only aggregate results may be published.
 
 ## Full-group geographic comparisons
 
-The linked borough view estimates each primary group across all move-in years, directly from
-household records. It uses the same weighted median and 80-replicate successive-difference
-variance estimator as the existing survey views. Neither unknown move-in dates nor survey-year
+The `protection_estimates` field in `data/nychvs/estimates.json` publishes citywide and
+individual-borough estimates for each primary group across all move-in years, directly from
+household records, with `cohort_id: all`. It is separate from the cohort-based
+`population_rent_observations` used in development drawers. It uses the same weighted median
+and 80-replicate successive-difference variance estimator as the existing survey views.
+Neither unknown move-in dates nor survey-year
 moves remove an otherwise eligible household. Rent medians exclude missing and zero-rent records;
 the download distinguishes total group households from households represented in the rent measure.
 Borough cells never substitute citywide or outer-borough estimates when unavailable.
@@ -72,4 +76,5 @@ RENT_AMOUNT includes rent paid by others on behalf of a tenant (codebook p.126);
 is not a separately measured out-of-pocket payment for assisted households. This is
 a comparison of distributions, not a matched-household treatment effect or a subsidy expenditure.
 The map scale stays fixed when selecting a borough. Sources, sample counts, reliability and
-intervals are available with exact values. URL parameters preserve the borough and comparison.
+intervals are available with exact values. See [Rents by group usage](../README.md#rents-by-group)
+for selection, downloads, sharing, and keyboard controls.
