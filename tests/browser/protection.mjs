@@ -19,7 +19,7 @@ try{
  await page.locator('#product-panel').getByText('Fulton', {exact:false}).first().waitFor({state:'attached'});
  assert.equal(new URL(page.url()).searchParams.get('view'),'protection');
  assert.ok(await page.locator('#protection-host').isVisible());
- await page.locator('#protection-host h3').filter({hasText:'Manhattan'}).waitFor();
+ await page.locator('.protection-topline h3').filter({hasText:'Manhattan'}).waitFor();
  const first=await page.locator('[data-testid=protection-gap]').innerText();
  await page.locator('.protection-boroughs [data-borough=queens]').click();
  assert.match(page.url(),/borough=queens/);
@@ -43,7 +43,7 @@ try{
  await page.locator('.protection-map [data-borough=brooklyn]').focus();await page.keyboard.press('Enter');
  await page.locator('.protection-topline h3').filter({hasText:'Brooklyn'}).waitFor();
  assert.equal(await page.locator('.protection-map [data-borough=brooklyn]').evaluate(el=>el===document.activeElement),true);
- for(const group of ['section8_voucher','rent_controlled','other_regulated','other_or_unspecified_assistance','unknown']) {
+ for(const group of ['section8_voucher','rent_controlled','other_regulated','other_or_unspecified_assistance']) {
   await page.selectOption('#protection-against',group);
   assert.equal(new URL(page.url()).searchParams.get('against'),group);
   const expected=fixture.protection_estimates.find(e=>e.geography_id==='brooklyn'&&e.population_id===group);
@@ -51,11 +51,17 @@ try{
   assert.equal(await page.locator(`[data-group=${group}]`).innerText(),formatted);
  }
  await page.selectOption('#protection-against','public_housing');
+ assert.equal(await page.locator('.protection-bar').count(),3);
+ assert.equal(await page.locator('[data-testid=frozen-rent]').innerText(),'$951');
+ assert.ok(data.rent_freeze.source_sha256);
+ assert.equal(data.rent_freeze.observations[0].geography_id,'queens');
  await page.locator('.protection-rank[data-borough=queens]').focus();
  await page.keyboard.press('Space');
  assert.equal(await page.locator('.protection-rank[data-borough=queens]').evaluate(el=>el===document.activeElement),true);
+ await page.screenshot({path:'/tmp/nycrs-current-desktop.png',fullPage:true});
  await page.setViewportSize({width:390,height:844});
  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+ await page.screenshot({path:'/tmp/nycrs-current-mobile.png',fullPage:true});
 
  await page.locator('.protection-boroughs [data-borough=staten_island]').click();
  assert.equal(await page.locator('[data-testid=protection-gap]').innerText(),'Unavailable');

@@ -67,8 +67,9 @@ Borough cells never substitute citywide or outer-borough estimates when unavaila
 All eight primary groups are published: public housing, rent-stabilized, Section 8 voucher,
 rent-controlled, other regulated, other or unspecified assistance, unassisted market, and
 unknown or conflicting protection status. The unknown group keeps unresolved households visible
-without assigning them a protection they did not report. All groups appear in bars and downloads;
-each non-market group can be selected for comparison.
+without assigning them a protection they did not report. Core groups and the selected comparator appear in bars. Downloads retain all groups,
+including unknown status for source reconciliation. Identifiable non-market groups can be selected
+for comparison.
 
 The map and ranking show the difference between the unassisted market median and the selected
 group median. Bars show the component gross rents (including separately paid utilities). The underlying
