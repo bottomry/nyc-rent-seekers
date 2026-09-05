@@ -184,7 +184,7 @@ def _estimate_cell(
     cfg: dict[str, Any],
 ) -> dict[str, Any]:
     fields = cfg["fields"]
-    csr_values = {str(v).zfill(2) for v in population["csr_values"]}
+    csr_values = {str(v).zfill(2) for v in population.get("csr_values", [])}
     eligible: list[dict[str, str]] = []
     borough_field = fields.get("borough")
     borough_values = {str(value) for value in geography.get("borough_values", [])}
@@ -197,7 +197,10 @@ def _estimate_cell(
             continue
         if row.get(str(fields["tenure"])) != str(fields["renter_value"]):
             continue
-        if str(row.get(str(fields["housing_type"]), "")).zfill(2) not in csr_values:
+        if csr_values and str(row.get(str(fields["housing_type"]), "")).zfill(2) not in csr_values:
+            continue
+        if cohort_id == "all":
+            eligible.append(row)
             continue
         try:
             move_year = int(row[str(fields["first_move_year"])])
@@ -473,17 +476,13 @@ def derive_population_rent_gap(
         if getattr(left, field) != getattr(right, field)
     ]
     if mismatches:
-        raise ValueError(
-            "incompatible population-rent observations: " + ", ".join(mismatches)
-        )
+        raise ValueError("incompatible population-rent observations: " + ", ".join(mismatches))
     if not left.available or not right.available or left.value is None or right.value is None:
         raise ValueError("population-rent gaps require two available observations")
 
     difference = float(left.value) - float(right.value)
     percent_difference = (
-        None
-        if float(right.value) == 0
-        else round(100 * difference / float(right.value), 6)
+        None if float(right.value) == 0 else round(100 * difference / float(right.value), 6)
     )
     direction = "positive" if difference > 0 else "negative" if difference < 0 else "zero"
     gap_id = ":".join(
@@ -545,9 +544,7 @@ def build_population_rent_gaps(
 ) -> list[dict[str, Any]]:
     """Build supported gap types without imputing suppressed population cells."""
     rows = [PopulationRentObservation.model_validate(row) for row in observations]
-    by_key = {
-        (row.geography_id, row.housing_regime, row.tenure_cohort): row for row in rows
-    }
+    by_key = {(row.geography_id, row.housing_regime, row.tenure_cohort): row for row in rows}
     geography_ids = list(dict.fromkeys(row.geography_id for row in rows))
     gaps: list[PopulationRentGap] = []
 
@@ -776,6 +773,46 @@ def validate_published_benchmarks(
     }
 
 
+def build_protection_estimates(
+    rows: list[dict[str, str]], *, cfg: dict[str, Any]
+) -> list[dict[str, Any]]:
+    """Full-population comparisons; disjoint primary groups, no move-year restriction."""
+    from rent_seekers.normalize.protection import classify_protection
+
+    labels = {
+        "public_housing": "Public housing",
+        "rent_stabilized": "Rent-stabilized",
+        "section8_voucher": "Section 8 voucher",
+        "rent_controlled": "Rent-controlled",
+        "other_regulated": "Other regulated",
+        "other_or_unspecified_assistance": "Other or unspecified assistance",
+        "unknown": "Unknown or conflicting protection status",
+        "unassisted_market": "Market · no reported assistance",
+    }
+    classified = [(row, classify_protection(row)) for row in rows]
+    results = []
+    for group, label in labels.items():
+        members = [
+            row for row, classification in classified if classification.primary_group == group
+        ]
+        for geo_id, geography in cfg["geographies"].items():
+            if geography["type"] not in {"borough", "citywide"}:
+                continue
+            estimate = _estimate_cell(
+                members,
+                population_id=group,
+                population={"label": label},
+                cohort_id="all",
+                cohort={},
+                geography_id=geo_id,
+                geography=geography,
+                cfg=cfg,
+            )
+            estimate["classification"] = "primary_protection_group"
+            results.append(estimate)
+    return results
+
+
 def calculate_from_paths(
     occupied_path: Path,
     all_units_path: Path,
@@ -802,9 +839,7 @@ def calculate_from_paths(
         verified_artifacts[name] = {
             "artifact_id": artifact_id,
             "sha256": actual_sha256,
-            "source_url": str(
-                artifact.get("source_url") or source_settings[f"{name}_csv_url"]
-            ),
+            "source_url": str(artifact.get("source_url") or source_settings[f"{name}_csv_url"]),
             "landing_page": str(source_settings["landing_page"]),
             "documentation_url": str(source_settings["documentation_url"]),
             "raw_publication_allowed": False,
@@ -866,6 +901,7 @@ def calculate_from_paths(
         "source_artifacts": verified_artifacts,
         "estimates": estimates,
         "geography_estimates": geography_estimates,
+        "protection_estimates": build_protection_estimates(rows, cfg=cfg),
         "population_rent_observations": population_rent_observations,
         "population_rent_gaps": build_population_rent_gaps(population_rent_observations),
         "published_benchmark_check": benchmark_check,

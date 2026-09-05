@@ -1,3 +1,4 @@
+import { mountProtectionView } from "./components/ProtectionView";
 /**
  * Hub app shell: citywide NYCHA footprints + metric map + rankings + area drawers.
  * Leads with the market-rent wedge when a comparison exists; build stats stay in status.json.
@@ -154,6 +155,8 @@ function zctaMarketHtml(
 }
 
 async function boot(): Promise<void> {
+  const protectionHost = document.getElementById("protection-host");
+  if (protectionHost) void mountProtectionView(protectionHost);
   const product = document.getElementById("product-panel");
   const sourcePanel = document.getElementById("source-panel");
   const layerHost = document.getElementById("layer-controls-host");
@@ -619,7 +622,7 @@ async function boot(): Promise<void> {
     );
   };
 
-  const showDevelopment = (developmentId: string, fly = false): void => {
+  const showDevelopment = (developmentId: string, fly = false, view: AppView = "map"): void => {
     if (!product) return;
     const selectionChanged = selectedId !== developmentId;
     selectedId = developmentId;
@@ -632,9 +635,9 @@ async function boot(): Promise<void> {
       quality: qualityFilter.join(","),
       metric: mapMetric,
       area: null,
-      view: "map",
+      view,
     });
-    setView("map");
+    setView(view);
     closeSources();
     if (fly) flyToDevelopment(map, bundle, developmentId);
 
@@ -871,6 +874,12 @@ async function boot(): Promise<void> {
 
   const setView = (view: AppView, section?: string | null): void => {
     appView = view;
+    const vintageBanner = document.getElementById("mixed-vintage-banner");
+    if (vintageBanner) vintageBanner.hidden = view === "protection";
+    const thesis = document.querySelector(".thesis");
+    if (thesis) thesis.textContent = view === "protection"
+      ? "Rents, housing groups and geography."
+      : "How much lower is monthly NYCHA rent than nearby market rent at this building?";
     if (view === "methodology" && section) {
       methodSection = section;
     }
@@ -883,10 +892,11 @@ async function boot(): Promise<void> {
       btn.classList.toggle("active", active);
       btn.setAttribute("aria-pressed", active ? "true" : "false");
     });
+    if (protectionHost) protectionHost.hidden = view !== "protection";
     if (mapPane) mapPane.hidden = view !== "map";
     if (sidePanel) {
       // Methodology is a full-width product page; hide map chrome.
-      sidePanel.hidden = view === "methodology";
+      sidePanel.hidden = view === "methodology" || view === "protection";
     }
     if (rankingsHost) {
       rankingsHost.hidden = view !== "rankings";
@@ -1101,7 +1111,7 @@ async function boot(): Promise<void> {
     btn.addEventListener("click", () => {
       const raw = btn.dataset.view;
       const v: AppView =
-        raw === "rankings" ? "rankings" : raw === "methodology" ? "methodology" : "map";
+        raw === "protection" ? "protection" : raw === "rankings" ? "rankings" : raw === "methodology" ? "methodology" : "map";
       if (v === "methodology") {
         setView("methodology", methodSection || "method-wedge");
       } else {
@@ -1168,7 +1178,7 @@ async function boot(): Promise<void> {
       return;
     }
     if (initialDev) {
-      showDevelopment(initialDev);
+      showDevelopment(initialDev, false, appView);
       if (initialDev === "nycha:tds:136" && bundle.map?.focus_center) {
         map.easeTo({
           center: bundle.map.focus_center,

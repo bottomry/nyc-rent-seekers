@@ -95,6 +95,7 @@ test: test-isolation
 	$(NPM) run typecheck
 	$(MAKE) web-build
 	@node tests/browser/smoke.mjs --app-only
+	@node tests/browser/protection.mjs
 	@node scripts/static-edge-load.mjs
 
 test-isolation:

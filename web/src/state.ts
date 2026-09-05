@@ -1,7 +1,7 @@
 /** URL state for permalinks (no server session). NRS-008/009/010: source/unit/quality/metric/view. */
 
 export type MarketSourceOverride = "best" | "hud_safmr" | "zori" | "renthop";
-export type AppView = "map" | "rankings" | "methodology";
+export type AppView = "map" | "rankings" | "methodology" | "protection";
 export type RentContextLens = "overview" | "seeking" | "incumbency" | "regulation" | "public";
 
 export interface AppState {
@@ -67,7 +67,7 @@ export function readState(search = window.location.search): AppState {
       : "best";
   const viewRaw = p.get("view") || DEFAULTS.view;
   const view: AppView =
-    viewRaw === "rankings"
+    viewRaw === "protection" ? "protection" : viewRaw === "rankings"
       ? "rankings"
       : viewRaw === "methodology" || viewRaw === "method" || viewRaw === "data-health"
         ? "methodology"
@@ -102,6 +102,10 @@ export function writeState(partial: Partial<AppState>, replace = true): AppState
   const current = readState();
   const next: AppState = { ...current, ...partial };
   const p = new URLSearchParams();
+  for (const key of ["borough", "against"]) {
+    const value = new URLSearchParams(window.location.search).get(key);
+    if (value) p.set(key, value);
+  }
   if (next.development) p.set("development", next.development);
   if (next.sources) p.set("sources", "1");
   if (next.metric && next.metric !== DEFAULTS.metric) p.set("metric", next.metric);
