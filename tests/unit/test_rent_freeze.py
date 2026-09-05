@@ -1,3 +1,6 @@
+import json
+from pathlib import Path
+
 import pytest
 
 from rent_seekers.normalize.rent_freeze import parse_borough_table
@@ -34,3 +37,20 @@ def test_reported_benefit_is_preserved_separately_from_rounded_rent_difference()
 def test_changed_or_incomplete_report_fails_closed(text):
     with pytest.raises(ValueError):
         parse_borough_table(text, source_sha256="a" * 64)
+
+
+def test_published_borough_evidence_matches_scoped_parser_output():
+    artifact = Path(__file__).resolve().parents[2] / "web/public/data/rent-freeze/boroughs.json"
+    published = json.loads(artifact.read_text())
+    checksum = "5c7759e6c412db8a4db754c13affa8b90dc473248e0830f2515df76ba53c77cf"
+    parsed = parse_borough_table(TABLE, source_sha256=checksum)
+    assert published == parsed
+    assert len(parsed["observations"]) == 5
+    for row in parsed["observations"]:
+        assert set(row) == {
+            "geography_id",
+            "geography_name",
+            "mean_current_rent",
+            "mean_frozen_rent",
+            "mean_monthly_benefit",
+        }

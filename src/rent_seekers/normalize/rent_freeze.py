@@ -33,19 +33,17 @@ def parse_borough_table(text: str, *, source_sha256: str) -> dict[str, Any]:
         )
         if len(matches) != 1:
             raise ValueError(f"Missing or duplicate borough: {name}")
-        years, income, current, frozen, benefit = matches[0]
-        values = [int(value.replace(",", "")) for value in (income, current, frozen, benefit)]
-        if min(values) < 0 or abs(values[1] - values[2] - values[3]) > 1:
+        _, _, current, frozen, benefit = matches[0]
+        values = [int(value.replace(",", "")) for value in (current, frozen, benefit)]
+        if min(values) < 0 or abs(values[0] - values[1] - values[2]) > 1:
             raise ValueError(f"Unexpected rent and benefit relationship: {name}")
         observations.append(
             dict(
                 geography_id=geo,
                 geography_name=name,
-                mean_years_in_program=float(years),
-                mean_income=values[0],
-                mean_current_rent=values[1],
-                mean_frozen_rent=values[2],
-                mean_monthly_benefit=values[3],
+                mean_current_rent=values[0],
+                mean_frozen_rent=values[1],
+                mean_monthly_benefit=values[2],
             )
         )
     return dict(

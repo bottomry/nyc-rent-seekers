@@ -17,8 +17,6 @@
     {
       "geography_id": "manhattan",
       "geography_name": "Manhattan",
-      "mean_years_in_program": 10.9,
-      "mean_income": 20415,
       "mean_current_rent": 1230,
       "mean_frozen_rent": 967,
       "mean_monthly_benefit": 263
@@ -26,8 +24,6 @@
     {
       "geography_id": "bronx",
       "geography_name": "Bronx",
-      "mean_years_in_program": 9.6,
-      "mean_income": 19628,
       "mean_current_rent": 1124,
       "mean_frozen_rent": 909,
       "mean_monthly_benefit": 215
@@ -35,8 +31,6 @@
     {
       "geography_id": "brooklyn",
       "geography_name": "Brooklyn",
-      "mean_years_in_program": 10.2,
-      "mean_income": 20138,
       "mean_current_rent": 1194,
       "mean_frozen_rent": 951,
       "mean_monthly_benefit": 243
@@ -44,8 +38,6 @@
     {
       "geography_id": "queens",
       "geography_name": "Queens",
-      "mean_years_in_program": 10.3,
-      "mean_income": 21716,
       "mean_current_rent": 1319,
       "mean_frozen_rent": 1043,
       "mean_monthly_benefit": 277
@@ -53,8 +45,6 @@
     {
       "geography_id": "staten_island",
       "geography_name": "S. I.",
-      "mean_years_in_program": 8.2,
-      "mean_income": 24534,
       "mean_current_rent": 1277,
       "mean_frozen_rent": 1075,
       "mean_monthly_benefit": 202
