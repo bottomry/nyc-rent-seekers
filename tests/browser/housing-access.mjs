@@ -62,6 +62,16 @@ try {
   await page.click(`[data-analysis=${mode}]`);
   assert.equal(await launch.evaluate(el=>el===document.activeElement),true);
  }
+ await page.goto(base+'/?view=protection&analysis=rents');
+ await page.locator('[data-open-access]').click();
+ await page.locator('[data-access-group=rent_controlled]').click();
+ await page.click('[data-analysis=rents]');
+ await page.goBack();
+ assert.equal(await page.locator('[data-access-group=rent_controlled]').evaluate(el=>el===document.activeElement),true,'Back returns focus to the selected reference');
+ await page.goForward();
+ assert.equal(await page.locator('[data-open-access]').evaluate(el=>el===document.activeElement),true,'Forward restores comparison launcher');
+ await page.goBack();
+ assert.equal(await page.locator('[data-access-group=rent_controlled]').evaluate(el=>el===document.activeElement),true,'Repeated Back preserves destination focus');
  await page.goto(base+'/?view=protection&analysis=access&against=unknown');
  await page.getByText('No single allocation rule is assigned to this survey group.',{exact:false}).waitFor();
  assert.equal(await page.locator('.access-row').count(),0);
