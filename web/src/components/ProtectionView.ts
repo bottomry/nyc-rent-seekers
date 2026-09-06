@@ -1,3 +1,4 @@
+import {loadSurveyDocument} from '../data/loadBundle';
 import {renderNeighborhoodBrowse} from './NeighborhoodBrowse';
 import type {DemoBundle} from '../types';
 import {renderRentFreeze,type RentFreezeEvidence} from './RentFreeze';
@@ -19,9 +20,9 @@ const color = (v:number|null) => v == null ? '#38404b' : `rgb(${[32,62,87].map((
 export async function mountProtectionView(host: HTMLElement, bundle: DemoBundle|null): Promise<void> {
   host.innerHTML='<p class="muted">Loading rental comparisons…</p>';
   try {
-    const responses=await Promise.all(['data/nychvs/estimates.json','data/geometry/ntas.geojson'].map(p=>fetch(new URL(p,location.href))));
-    if(responses.some(r=>!r.ok)) throw new Error('Evidence unavailable');
-    const evidence:Evidence=await responses[0].json(), geometry:Geometry=await responses[1].json();
+    const [survey, response]=await Promise.all([loadSurveyDocument(),fetch(new URL('data/geometry/ntas.geojson',location.href))]);
+    if(!response.ok) throw new Error('Evidence unavailable');
+    const evidence=survey as Evidence, geometry:Geometry=await response.json();
     if(!Array.isArray(evidence.protection_estimates)) throw new Error('Evidence unavailable');
     const freeze:RentFreezeEvidence|null=await fetch(new URL('data/rent-freeze/boroughs.json',location.href)).then(r=>r.ok?r.json():null).catch(()=>null);
     const groups:Record<string,string>=Object.fromEntries(evidence.protection_estimates.map(e=>[e.population_id,e.population_label]));
