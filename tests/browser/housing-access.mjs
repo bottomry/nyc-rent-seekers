@@ -72,6 +72,21 @@ try {
  assert.equal(await page.locator('[data-open-access]').evaluate(el=>el===document.activeElement),true,'Forward restores comparison launcher');
  await page.goBack();
  assert.equal(await page.locator('[data-access-group=rent_controlled]').evaluate(el=>el===document.activeElement),true,'Repeated Back preserves destination focus');
+ for(const mode of ['rents','space']){
+  await page.goto(base+`/?view=protection&analysis=${mode}`);
+  await page.locator('[data-open-access]').click();
+  await page.click(`[data-analysis=${mode}]`);
+  if(mode==='rents'){
+   const borough=page.locator('button[data-focus=borough-bronx]');
+   await borough.focus();await page.keyboard.press('Enter');
+   assert.equal(new URL(page.url()).searchParams.get('borough'),'bronx');
+   assert.equal(await borough.evaluate(el=>el===document.activeElement),true,'Borough activation retains current focus after returning from Access');
+  }
+  const control=page.locator(mode==='rents'?'#protection-against':'#space-group');
+  await control.focus();await control.selectOption('rent_stabilized');
+  assert.equal(new URL(page.url()).searchParams.get(mode==='rents'?'against':'spaceGroup'),'rent_stabilized');
+  assert.equal(await control.evaluate(el=>el===document.activeElement),true,'Comparison selection retains current focus after returning from Access');
+ }
  await page.goto(base+'/?view=protection&analysis=access&against=unknown');
  await page.getByText('No single allocation rule is assigned to this survey group.',{exact:false}).waitFor();
  assert.equal(await page.locator('.access-row').count(),0);
