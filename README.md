@@ -41,14 +41,22 @@ The artifact carries citywide, outer-borough, and individual-borough observation
 ## Rents by group
 
 Open **Rents by group**, choose a comparison group, then select a borough on the map,
-with a borough button, or in the ranking. The linked bars show each group's median gross
-rent; the map and ranking compare the selected group with unassisted market rentals.
+with a borough button, or in the ranking. The linked bars show median gross rent for public
+housing, rent-stabilized and unassisted market rentals, plus the selected group when different.
+The map and ranking compare the selected group with unassisted market rentals.
 These comparisons include all move-in years. Group definitions, exclusions, and measurement
 limits are documented in [`docs/rental-protection.md`](docs/rental-protection.md).
 
-Expand **Sources, exact values and uncertainty** for group intervals, sample counts,
-reliability, and source links. **Download values** saves the selected borough's estimates,
-comparison difference, and source metadata as JSON. **Copy comparison link** preserves the
+The linked **Frozen rents** panel shows the selected borough's current rent, frozen rent and
+reported monthly benefit; see [Rent Freeze program evidence](docs/rent-freeze.md) for its
+separate administrative measure and source scope. Missing program evidence displays as unavailable.
+
+Expand **Sources, exact values and uncertainty** for all groups' intervals, sample counts,
+reliability, and source links. Unknown protection status remains in this table and downloads,
+but is not a selectable comparator. **Download values** saves all of the selected borough's
+survey group estimates, comparison difference, and source metadata as JSON, plus its program
+record and provenance under `rent_freeze` (`null` when program evidence could not be loaded).
+**Copy comparison link** preserves the
 view, borough, and comparison in the URL, including when a development is already selected.
 Existing development links remain supported through the **Map** view. Keyboard users can
 Tab to controls and activate borough map shapes with Enter or Space; borough buttons provide
