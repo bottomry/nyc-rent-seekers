@@ -41,6 +41,8 @@ def test_synthetic_puf_exercises_production_calculation_offline():
         source_artifacts=source_artifacts,
     )
 
+    # Point-only inputs cannot support a space distribution.
+    assert result["space_estimates"] is None
     assert result["published_benchmark_check"] == {
         "computed": {
             "all_renters": 1695,

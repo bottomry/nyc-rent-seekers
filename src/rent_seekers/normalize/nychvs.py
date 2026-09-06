@@ -156,7 +156,7 @@ def merge_puf_files(
             missing.append(key)
             continue
         row = dict(household)
-        for field in ("BORO", "CSR", "OCC"):
+        for field in ("BORO", "CSR", "OCC", "BEDROOMS"):
             row[field] = unit.get(field, "")
         merged.append(row)
     if missing:
@@ -777,21 +777,11 @@ def build_protection_estimates(
     rows: list[dict[str, str]], *, cfg: dict[str, Any]
 ) -> list[dict[str, Any]]:
     """Full-population comparisons; disjoint primary groups, no move-year restriction."""
-    from rent_seekers.normalize.protection import classify_protection
+    from rent_seekers.normalize.protection import GROUP_LABELS, classify_protection
 
-    labels = {
-        "public_housing": "Public housing",
-        "rent_stabilized": "Rent-stabilized",
-        "section8_voucher": "Section 8 voucher",
-        "rent_controlled": "Rent-controlled",
-        "other_regulated": "Other regulated",
-        "other_or_unspecified_assistance": "Other or unspecified assistance",
-        "unknown": "Unknown or conflicting protection status",
-        "unassisted_market": "Market · no reported assistance",
-    }
     classified = [(row, classify_protection(row)) for row in rows]
     results = []
-    for group, label in labels.items():
+    for group, label in GROUP_LABELS.items():
         members = [
             row for row, classification in classified if classification.primary_group == group
         ]
@@ -844,6 +834,8 @@ def calculate_from_paths(
             "documentation_url": str(source_settings["documentation_url"]),
             "raw_publication_allowed": False,
         }
+
+    from rent_seekers.normalize.household_space import build_space_estimates
 
     rows = merge_puf_files(occupied_path, all_units_path, cfg=cfg)
     benchmark_check = validate_published_benchmarks(
@@ -902,6 +894,7 @@ def calculate_from_paths(
         "estimates": estimates,
         "geography_estimates": geography_estimates,
         "protection_estimates": build_protection_estimates(rows, cfg=cfg),
+        "space_estimates": build_space_estimates(rows, cfg=cfg) if cfg.get("variance") else None,
         "population_rent_observations": population_rent_observations,
         "population_rent_gaps": build_population_rent_gaps(population_rent_observations),
         "published_benchmark_check": benchmark_check,

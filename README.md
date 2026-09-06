@@ -90,3 +90,5 @@ It is a **market-rent wedge**, not direct government expenditure or cash subsidy
 ## Isolation
 
 CI fails on peer-product package names, environment-variable prefixes, and hosts. See `config/deployment.yml` and `tests/unit/test_isolation.py`.
+
+The **Household space** view compares household persons and bedrooms across housing groups. Select a cell to inspect its share, denominator and uncertainty, or share the selected distribution. See [household-space methodology](docs/household-space.md).
