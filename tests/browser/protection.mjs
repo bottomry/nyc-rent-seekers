@@ -58,6 +58,21 @@ try{
  await page.locator('.protection-rank[data-borough=queens]').focus();
  await page.keyboard.press('Space');
  assert.equal(await page.locator('.protection-rank[data-borough=queens]').evaluate(el=>el===document.activeElement),true);
+ await page.locator('.protection-boroughs [data-borough=manhattan]').click();
+ await page.selectOption('#protection-neighborhood','MN0401');
+ assert.match(page.url(),/neighborhood=MN0401/);
+ await page.selectOption('#protection-development','nycha:tds:136');
+ const destination=new URL(await page.locator('#protection-open-development').getAttribute('href'));
+ assert.equal(destination.searchParams.get('view'),'map');
+ assert.equal(destination.searchParams.get('borough'),'manhattan');
+ await page.click('#protection-open-development');
+ await page.locator('#product-panel').getByText('Fulton',{exact:false}).first().waitFor();
+ await page.click('[data-view=protection]');
+ assert.equal(await page.locator('#protection-neighborhood').inputValue(),'MN0401');
+ assert.equal(await page.locator('#protection-development').inputValue(),'nycha:tds:136');
+ await page.reload();
+ await page.locator('.protection-topline h3').filter({hasText:'Manhattan'}).waitFor();
+ assert.equal(await page.locator('#protection-neighborhood').inputValue(),'MN0401');
  await page.screenshot({path:'/tmp/nycrs-current-desktop.png',fullPage:true});
  await page.setViewportSize({width:390,height:844});
  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
@@ -68,5 +83,13 @@ try{
  await page.click('[data-view=map]');
  assert.equal(new URL(page.url()).searchParams.get('development'),'nycha:tds:136');
  assert.ok(await page.locator('#product-panel').isVisible());
+ const missingGeometry=JSON.parse(await readFile(resolve('web/public/data/demo-bundle.json'),'utf8'));
+ missingGeometry.geometries.development_points.features=missingGeometry.geometries.development_points.features.filter(f=>f.properties.development_id!=='nycha:tds:136');
+ await page.route('**/data/demo-bundle.json',route=>route.fulfill({json:missingGeometry}));
+ await page.goto(base+'/?view=protection&borough=manhattan');
+ await page.locator('#protection-development').waitFor();
+ assert.match(await page.locator('#protection-development option[value="nycha:tds:136"]').innerText(),/location unavailable/);
+ await page.selectOption('#protection-neighborhood','MN0401');
+ assert.equal(await page.locator('#protection-development option[value="nycha:tds:136"]').count(),0);
  console.log('Protection browser: linked selection, history, reload, export, keyboard and mobile passed');
 }finally{await browser.close();await new Promise(r=>server.close(r));}
