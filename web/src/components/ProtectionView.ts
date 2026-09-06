@@ -109,6 +109,9 @@ export async function mountProtectionView(host: HTMLElement, bundle: DemoBundle|
       }catch{report('A matching citable release is unavailable. Export was not created.');}};
       host.querySelector<HTMLButtonElement>('#figure-print')!.onclick=async()=>{try{await pin();const details=Array.from(host.querySelectorAll<HTMLDetailsElement>('details'));const states=details.map(el=>el.open);details.forEach(el=>el.open=true);window.print();details.forEach((el,i)=>el.open=states[i]);}catch{report('A matching citable release is unavailable.');}};
     }
-    render();window.addEventListener('popstate',event=>render(event.state?.protectionFocus));
+    render();window.addEventListener('popstate',event=>{
+      if(new URLSearchParams(location.search).get('figure')!==figureId){location.reload();return;}
+      render(event.state?.protectionFocus);
+    });
   } catch {host.innerHTML=new URLSearchParams(location.search).has('figure')?'<p role="alert">This figure version is unavailable or failed verification. <a href="?view=protection">Open current analysis</a>.</p>':'<p>Rental comparisons are unavailable. <a href="?view=map">Open development comparisons</a>.</p>';}
 }

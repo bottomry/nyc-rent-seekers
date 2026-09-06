@@ -3,6 +3,7 @@ import {createServer} from 'node:http';
 import {readFile,writeFile} from 'node:fs/promises';
 import {resolve,extname} from 'node:path';
 import assert from 'node:assert/strict';
+import {checkFigureHistory} from './figure-history.mjs';
 const root=resolve('dist/app');
 const server=createServer(async(req,res)=>{try{const file=resolve(root,'.'+decodeURIComponent(new URL(req.url,'http://localhost').pathname).replace(/\/$/,'/index.html'));if(!file.startsWith(root+'/'))throw Error();res.setHeader('Content-Type',({'.js':'text/javascript','.css':'text/css','.json':'application/json','.geojson':'application/json','.html':'text/html','.svg':'image/svg+xml'})[extname(file)]||'application/octet-stream');res.end(await readFile(file));}catch{res.statusCode=404;res.end();}});
 await new Promise(r=>server.listen(0,'127.0.0.1',r));
@@ -12,6 +13,7 @@ try{
  const page=await browser.newPage({viewport:{width:1440,height:1000}});
  const manifest=JSON.parse(await readFile(resolve(root,'data/figures/current.json'),'utf8'));
  const frozen=JSON.parse(await readFile(resolve(root,`data/figures/${manifest.figure_id}.json`),'utf8'));
+ await checkFigureHistory(browser,base,manifest,frozen);
  const expected=frozen.evidence.protection_estimates.find(e=>e.geography_id==='manhattan'&&e.population_id==='public_housing').value;
  // Current fixture files can differ after the repository's normalization tests; serve a coherent release.
  await page.route('**/data/nychvs/estimates.json',route=>route.fulfill({json:frozen.evidence}));
