@@ -130,7 +130,7 @@ export function writeState(partial: Partial<AppState>, replace = true): AppState
         : "";
   const url = `${window.location.pathname}${qs ? `?${qs}` : ""}${hash}`;
   if (replace) {
-    history.replaceState(next, "", url);
+    history.replaceState({ ...history.state, ...next }, "", url);
   } else {
     history.pushState(next, "", url);
   }

@@ -55,7 +55,12 @@
     "freeze_scope": {
       "title": "NYC311: Rent Freeze administration",
       "url": "https://portal.311.nyc.gov/article/?kanumber=KA-02344",
-      "locator": "Mitchell-Lama and HDFC tenants; approval orders"
+      "locator": "Mitchell-Lama and HDFC tenants; approval orders; Keep Benefit After Move"
+    },
+    "voucher_succession": {
+      "title": "NYCHA Housing Choice Voucher Administrative Plan",
+      "url": "https://www.nyc.gov/assets/nycha/downloads/pdf/sec-8/hcvadministrativeplan.pdf",
+      "locator": "Effective May 2026, Appendix B, section G; checked 2026-09-06 UTC"
     }
   },
   "programs": [
@@ -183,6 +188,14 @@
           ]
         },
         {
+          "stage": "Voucher succession",
+          "authority": "NYCHA \u00b7 continued-subsidy determination",
+          "text": "After the voucher holder dies or leaves, NYCHA determines whether a remaining permanent household member can continue receiving assistance under its occupancy and succession policy. Household status, continued eligibility and legal-capacity or guardian requirements apply; voucher succession is separate from tenancy succession.",
+          "sources": [
+            "voucher_succession"
+          ]
+        },
+        {
           "stage": "Moving",
           "authority": "Administering agency \u00b7 transfer and portability rules",
           "text": "Moving assistance is governed by the administering agency\u2019s current transfer and portability rules. The voucher program and the apartment\u2019s underlying rent regulation are separate layers.",
@@ -221,6 +234,14 @@
           "text": "An eligible household member can apply to take over the benefit after the recipient dies or permanently leaves. Benefit takeover has its own qualification and documentation requirements, separate from succession to the tenancy.",
           "sources": [
             "takeover"
+          ]
+        },
+        {
+          "stage": "Benefit transfer",
+          "authority": "DOF \u00b7 SCRIE / DRIE benefit-transfer determination",
+          "text": "Recipients moving to another rent-regulated apartment can apply after moving to transfer their benefit. Qualification and the new apartment\u2019s legal rent govern the transfer and possible frozen-rent adjustment. This transfers a benefit, not an apartment assignment.",
+          "sources": [
+            "freeze_scope"
           ]
         }
       ]
