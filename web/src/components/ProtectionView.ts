@@ -55,7 +55,7 @@ export async function mountProtectionView(host: HTMLElement, bundle: DemoBundle|
         const restored=Array.from(host.querySelectorAll<HTMLElement | SVGElement>('[id], [data-focus]')).find(el=>(el.id||el.getAttribute('data-focus'))===focusKey);
         restored?.focus({preventScroll:true});
       }
-      const select=(key:string,v:string)=>{const url=new URL(location.href);url.searchParams.set('view','protection');url.searchParams.set(key,v);if(key==='borough'){url.searchParams.delete('neighborhood');url.searchParams.delete('browseDevelopment');}if(key==='neighborhood')url.searchParams.delete('browseDevelopment');history.pushState(null,'',url);render();};
+      const select=(key:string,v:string)=>{const url=new URL(location.href);url.searchParams.set('view','protection');url.searchParams.set(key,v);if(key==='borough'){url.searchParams.delete('neighborhood');url.searchParams.set('browseDevelopment','');}if(key==='neighborhood')url.searchParams.set('browseDevelopment','');history.pushState(null,'',url);render();};
       host.querySelectorAll<HTMLElement>('[data-borough]').forEach(el=>{el.onclick=()=>select('borough',el.dataset.borough!);if(el.tagName.toLowerCase()==='g')el.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select('borough',el.dataset.borough!);}};});
       const neighborhoodControl=host.querySelector<HTMLSelectElement>('#protection-neighborhood');
       if(neighborhoodControl)neighborhoodControl.onchange=()=>select('neighborhood',neighborhoodControl.value);

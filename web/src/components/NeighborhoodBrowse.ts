@@ -1,5 +1,5 @@
 import type {DemoBundle} from '../types';
-import {developmentPoint,geometryContainsPoint} from '../geo';
+import {developmentPoint,developmentsInArea,geometryContainsPoint} from '../geo';
 import {escapeHtml as esc} from '../format';
 
 export function renderNeighborhoodBrowse(bundle:DemoBundle|null, area:string, name:string):string {
@@ -7,10 +7,10 @@ export function renderNeighborhoodBrowse(bundle:DemoBundle|null, area:string, na
  const params=new URLSearchParams(location.search);
  const neighborhoods=(bundle.geometries.ntas?.features||[]).filter(f=>String(f.properties?.borough_name).toLowerCase()===name.toLowerCase());
  const neighborhood=neighborhoods.find(f=>f.properties?.nta_id===params.get('neighborhood'));
- const boroughDevelopments=bundle.developments.filter(d=>(d.borough||'').toLowerCase()===name.toLowerCase());
+ const boroughDevelopments=developmentsInArea(bundle,{kind:'borough',id:area,name,officialIds:{}});
  const missing=boroughDevelopments.filter(d=>!developmentPoint(bundle,d.development_id)).length;
  const developments=boroughDevelopments.filter(d=>{if(!neighborhood)return true;const point=developmentPoint(bundle,d.development_id);return point&&geometryContainsPoint(neighborhood.geometry,point.lng,point.lat);}).sort((a,b)=>a.name.localeCompare(b.name));
- const requested=params.get('browseDevelopment')||params.get('development');
+ const requested=params.get('browseDevelopment')??params.get('development');
  const selected=developments.find(d=>d.development_id===requested);
  const url=new URL(location.href);url.searchParams.set('view','map');url.searchParams.set('borough',area);
  if(selected)url.searchParams.set('development',selected.development_id);
