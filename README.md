@@ -95,6 +95,34 @@ selection. Keyboard users can Tab to matrix
 buttons and select them with Enter or Space; focus stays on the selected cell.
 See [household-space methodology](docs/household-space.md) for denominators and interpretation limits.
 
+## Housing access
+
+From **Rents** or **Household space**, select **Who controls access?** to open the
+reference for that comparison's housing group. You can also select the **Access** tab
+under **Rents by group** and choose a program. Each reference shows the responsible
+authority and linked primary sources, with locators and a displayed review date.
+See [housing access reference scope](docs/housing-access.md) for interpretation limits.
+
+Return with the **Rents** or **Household space** tab to retain your comparison selections,
+or use browser Back to restore the originating comparison URL. **Copy comparison link**
+preserves the Access selection. Direct links use `?view=protection&analysis=access`
+and optionally `accessGroup=<program-id>`; `accessGroup` survives reloads and development
+navigation. Without an explicit Access group, the reference uses `against`, then defaults
+to public housing. An unmapped group shows a message and the documented program choices.
+
+Keyboard users can Tab to program buttons and activate them with Enter or Space.
+Opening a mapped reference focuses its program button; returning to the originating
+comparison tab focuses **Who controls access?**. After changing programs and returning
+to that comparison, repeated browser Back and Forward restore focus to the selected
+program or comparison launcher. Subsequent borough and comparison selections keep
+focus on the control being used.
+
+In Access, **Download values** saves `housing-access-<program-id>.json`, containing
+`analysis`, the selected program under `selection`, and the complete reference under
+`evidence`, including source metadata and `checked_at`. An unmapped selection is `null`
+and uses `housing-access-unavailable.json`; if reference data could not be loaded,
+`evidence` is also `null`.
+
 ## What the wedge is (and is not)
 
 ```text

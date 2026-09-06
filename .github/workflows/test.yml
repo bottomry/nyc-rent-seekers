@@ -56,6 +56,7 @@ jobs:
           node tests/browser/smoke.mjs --app-only
           node tests/browser/protection.mjs
           node tests/browser/household-space.mjs
+          node tests/browser/housing-access.mjs
           node tests/browser/neighborhood-state.mjs
 
       - name: Edge hardening unit gate (NRS-012)

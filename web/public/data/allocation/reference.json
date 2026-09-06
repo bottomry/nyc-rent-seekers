@@ -1,0 +1,250 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-09-06",
+  "sources": {
+    "admission": {
+      "title": "NYCHA Tenant Selection and Assignment Plan",
+      "url": "https://www.nyc.gov/site/nycha/eligibility/public-housing-tsap.page",
+      "locator": "Sections IV\u2013VI"
+    },
+    "retention": {
+      "title": "NYCHA ACOP: current chapters 7\u20138",
+      "url": "https://www.nyc.gov/site/nycha/residents/acop/chapter-7and8-current-state.page",
+      "locator": "Chapter 8, annual reexamination"
+    },
+    "succession": {
+      "title": "NYCHA ACOP: leasing",
+      "url": "https://www.nyc.gov/site/nycha/residents/acop/chapter-6.page",
+      "locator": "Section K, remaining family member"
+    },
+    "transfer": {
+      "title": "NYCHA ACOP: transfers",
+      "url": "https://www.nyc.gov/site/nycha/residents/acop/chapter-10.page",
+      "locator": "Transfer reasons and priorities"
+    },
+    "leases": {
+      "title": "NYS HCR: leases",
+      "url": "https://hcr.ny.gov/leases",
+      "locator": "Vacancy and renewal leases"
+    },
+    "family": {
+      "title": "NYS HCR Fact Sheet 30",
+      "url": "https://hcr.ny.gov/system/files/documents/2023/11/fact-sheet-30-11-2023.pdf",
+      "locator": "November 2023, pages 1\u20132"
+    },
+    "control": {
+      "title": "NYS HCR: rent control",
+      "url": "https://hcr.ny.gov/rent-control",
+      "locator": "Overview and Maximum Base Rent"
+    },
+    "voucher": {
+      "title": "NYCHA: Section 8 program",
+      "url": "https://www.nyc.gov/site/nycha/section-8/about-section-8.page",
+      "locator": "Eligibility and program administration"
+    },
+    "freeze": {
+      "title": "NYC Rent Freeze: freezing your rent",
+      "url": "https://www.nyc.gov/site/rentfreeze/index.page",
+      "locator": "SCRIE and DRIE program overview"
+    },
+    "takeover": {
+      "title": "NYC DOF: benefit takeover",
+      "url": "https://www.nyc.gov/assets/rentfreeze/downloads/pdf/scrie_drie_benefit_takeover/ada/scrie_drie_benefit_takeover_ada.pdf",
+      "locator": "Pre-qualifying checklist and documentation"
+    },
+    "freeze_scope": {
+      "title": "NYC311: Rent Freeze administration",
+      "url": "https://portal.311.nyc.gov/article/?kanumber=KA-02344",
+      "locator": "Mitchell-Lama and HDFC tenants; approval orders; Keep Benefit After Move"
+    },
+    "voucher_succession": {
+      "title": "NYCHA Housing Choice Voucher Administrative Plan",
+      "url": "https://www.nyc.gov/assets/nycha/downloads/pdf/sec-8/hcvadministrativeplan.pdf",
+      "locator": "Effective May 2026, Appendix B, section G; checked 2026-09-06 UTC"
+    }
+  },
+  "programs": [
+    {
+      "id": "public_housing",
+      "label": "Public housing",
+      "scope": "NYCHA Section 9 public housing.",
+      "entries": [
+        {
+          "stage": "Entry",
+          "authority": "NYCHA \u00b7 eligibility and waiting-list assignment",
+          "text": "Eligibility screening, assigned priorities and required apartment size govern offers. Applicants who live, work or will work in NYC receive a preference over those who do not.",
+          "sources": [
+            "admission"
+          ]
+        },
+        {
+          "stage": "Staying",
+          "authority": "NYCHA \u00b7 continued occupancy",
+          "text": "Income and household composition are reexamined annually. NYCHA verifies the household information and recalculates rent under its continued-occupancy rules.",
+          "sources": [
+            "retention"
+          ]
+        },
+        {
+          "stage": "Succession",
+          "authority": "NYCHA \u00b7 remaining-family-member determination",
+          "text": "An authorized household member may succeed to a lease after the tenant leaves or dies. Permanent permission, continuous residence and remaining-family-member eligibility govern that decision.",
+          "sources": [
+            "succession"
+          ]
+        },
+        {
+          "stage": "Moving within the system",
+          "authority": "NYCHA \u00b7 transfer assignment",
+          "text": "Transfers use priorities, certification date and required apartment size. NYCHA\u2019s transfer priorities distinguish one excess bedroom from two or more against its occupancy standard.",
+          "sources": [
+            "transfer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rent_stabilized",
+      "label": "Rent-stabilized",
+      "scope": "New York City rent-stabilized tenancies.",
+      "entries": [
+        {
+          "stage": "Entry",
+          "authority": "Owner \u00b7 vacancy lease under rent regulation",
+          "text": "A new tenancy begins with a vacancy lease for a regulated apartment. The lease and rent remain subject to rent-stabilization rules.",
+          "sources": [
+            "leases"
+          ]
+        },
+        {
+          "stage": "Staying",
+          "authority": "Owner \u00b7 statutory renewal obligation; HCR \u00b7 oversight",
+          "text": "Tenants generally have the right to choose a one- or two-year renewal on the same terms and conditions, with lawful rent adjustments. HCR receives complaints when an owner fails to offer renewal.",
+          "sources": [
+            "leases"
+          ]
+        },
+        {
+          "stage": "Succession",
+          "authority": "State succession rules",
+          "text": "Qualifying family members who shared the apartment as their primary residence may inherit renewal rights. The general co-residence period is two years, reduced to one for seniors or disabled people; inception-of-tenancy, relationship and temporary-absence provisions also apply.",
+          "sources": [
+            "family"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rent_controlled",
+      "label": "Rent-controlled",
+      "scope": "New York City rent-controlled apartments.",
+      "entries": [
+        {
+          "stage": "Entry",
+          "authority": "Historic continuous occupancy and succession",
+          "text": "NYC rent control generally covers qualifying pre-1947 buildings with continuous occupancy dating from before July 1971. Qualifying family succession can continue the tenancy.",
+          "sources": [
+            "control",
+            "family"
+          ]
+        },
+        {
+          "stage": "Staying",
+          "authority": "HCR \u00b7 rent limits; statutory tenancy",
+          "text": "Renewal leases are not required. Rent increases are limited under the Maximum Base Rent system, and services and eviction are regulated.",
+          "sources": [
+            "control"
+          ]
+        },
+        {
+          "stage": "Succession",
+          "authority": "State succession rules",
+          "text": "Qualifying family members may retain rent-control protection when the tenant dies or permanently leaves. HCR\u2019s family and primary-residence criteria govern succession.",
+          "sources": [
+            "family"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "section8_voucher",
+      "label": "Section 8 voucher",
+      "scope": "NYCHA tenant-based Housing Choice Vouchers. HPD and HCR operate separate NYC programs.",
+      "entries": [
+        {
+          "stage": "Entry",
+          "authority": "Housing agency \u00b7 eligibility; owner \u00b7 tenancy",
+          "text": "The agency determines voucher eligibility. A voucher holder searches for a privately owned home; the unit must meet program requirements before assistance begins.",
+          "sources": [
+            "voucher"
+          ]
+        },
+        {
+          "stage": "Staying",
+          "authority": "Housing agency \u00b7 subsidy administration; owner \u00b7 lease",
+          "text": "Assistance is paid to the owner on the participant\u2019s behalf. Continuing participation includes household recertification and unit inspections.",
+          "sources": [
+            "voucher"
+          ]
+        },
+        {
+          "stage": "Voucher succession",
+          "authority": "NYCHA \u00b7 continued-subsidy determination",
+          "text": "After the voucher holder dies or leaves, NYCHA determines whether a remaining permanent household member can continue receiving assistance under its occupancy and succession policy. Household status, continued eligibility and legal-capacity or guardian requirements apply; voucher succession is separate from tenancy succession.",
+          "sources": [
+            "voucher_succession"
+          ]
+        },
+        {
+          "stage": "Moving",
+          "authority": "Administering agency \u00b7 transfer and portability rules",
+          "text": "Moving assistance is governed by the administering agency\u2019s current transfer and portability rules. The voucher program and the apartment\u2019s underlying rent regulation are separate layers.",
+          "sources": [
+            "voucher"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rent_freeze",
+      "label": "Rent Freeze \u00b7 SCRIE / DRIE",
+      "scope": "SCRIE and DRIE, layered onto eligible existing housing.",
+      "entries": [
+        {
+          "stage": "Entry",
+          "authority": "DOF \u00b7 SCRIE / DRIE; HPD \u00b7 specified SCRIE housing",
+          "text": "Age or disability, income, rent burden and housing type determine benefit eligibility. The benefit freezes eligible rent increases; it does not allocate an apartment.",
+          "sources": [
+            "freeze",
+            "freeze_scope"
+          ]
+        },
+        {
+          "stage": "Staying",
+          "authority": "Program administrator \u00b7 continuing eligibility",
+          "text": "The benefit covers eligible increases while the household remains qualified. The apartment\u2019s lease and underlying rent-regulation rules continue to apply.",
+          "sources": [
+            "freeze",
+            "freeze_scope"
+          ]
+        },
+        {
+          "stage": "Benefit succession",
+          "authority": "DOF \u00b7 benefit takeover determination",
+          "text": "An eligible household member can apply to take over the benefit after the recipient dies or permanently leaves. Benefit takeover has its own qualification and documentation requirements, separate from succession to the tenancy.",
+          "sources": [
+            "takeover"
+          ]
+        },
+        {
+          "stage": "Benefit transfer",
+          "authority": "DOF \u00b7 SCRIE / DRIE benefit-transfer determination",
+          "text": "Recipients moving to another rent-regulated apartment can apply after moving to transfer their benefit. Qualification and the new apartment\u2019s legal rent govern the transfer and possible frozen-rent adjustment. This transfers a benefit, not an apartment assignment.",
+          "sources": [
+            "freeze_scope"
+          ]
+        }
+      ]
+    }
+  ]
+}
