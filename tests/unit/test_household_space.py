@@ -93,3 +93,30 @@ def test_underpowered_cell_and_invalid_replicate():
     broken.pop("FW2")
     with pytest.raises(ValueError, match="replicate weight"):
         distribution([broken])
+
+
+def test_eighty_replicate_uncertainty_and_cv_suppression():
+    cfg = deepcopy(policy())
+    cfg["geographies"] = {"nyc": cfg["geographies"]["nyc"]}
+    assert cfg["variance"]["replicate_weight_count"] == 80
+    rows = [row() for _ in range(30)] + [row("2", "1") for _ in range(30)]
+    for r in rows:
+        r.update({f"FW{i}": "1" for i in range(1, 81)})
+    # Every replicate ratio is 2/3, against a full-sample ratio of 1/2.
+    # SDR SE = sqrt(.05 * 80 * (2/3 - 1/2)^2) = 1/3; CV = 2/3.
+    for r in rows[:30]:
+        r.update({f"FW{i}": "2" for i in range(1, 81)})
+    cell = distribution(rows, cfg)["cells"][2]
+    assert cell["sample_count"] == 30
+    assert cell["reliability_status"] == "sampling_uncertainty"
+    assert cell["available"] is False and cell["share"] is None
+    # A smaller replicate perturbation is publishable with the expected SE.
+    for r in rows[:30]:
+        r.update({f"FW{i}": "1.1" for i in range(1, 81)})
+    cell = distribution(rows, cfg)["cells"][2]
+    expected_se = math.sqrt(0.05 * 80 * (1.1 / 2.1 - 0.5) ** 2)
+    assert cell["available"] is True
+    assert cell["share"] == 0.5
+    assert cell["standard_error"] == pytest.approx(expected_se)
+    assert cell["confidence_interval_lower"] == pytest.approx(0.5 - 1.96 * expected_se)
+    assert cell["confidence_interval_upper"] == pytest.approx(0.5 + 1.96 * expected_se)

@@ -1,6 +1,6 @@
 # Borough, neighborhood and development views
 
-The rental-group comparison remains a borough survey estimate. The neighborhood control filters
+The rental-group rent comparison remains a borough survey estimate. The neighborhood control filters
 NYCHA developments by whether their representative point falls within a 2020 NTA polygon. It uses
 the existing polygon helper, including polygon holes and multipolygons; it does not create
 neighborhood survey estimates or classify buildings by a household survey response.

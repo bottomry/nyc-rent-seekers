@@ -73,6 +73,26 @@ Tab to controls and activate borough map shapes with Enter or Space; borough but
 an alternative to the map. On narrow screens, the map and bars stack vertically and the
 evidence table scrolls horizontally.
 
+## Household space
+
+Open **Rents by group**, then select **Household space** (or use
+`?view=protection&analysis=space`). It defaults to **New York City**, **Public housing**,
+**one person and two bedrooms**. Choose citywide or borough geography and a housing group,
+then select a matrix cell to compare its share across groups. Bars show public housing,
+rent-stabilized and unassisted market households, plus the selected group when different;
+the evidence table includes every group, including unknown protection status.
+
+Expand **Denominators, exact values and source** for sample counts, missing dimensions,
+uncertainty and source links. **Download values** saves the selected distribution, selected
+cell and comparison data, and source checksums as JSON named
+`household-space-<geography>.json` (for example, `household-space-nyc.json`). Available
+values retain their underlying precision; unavailable estimates remain null.
+**Copy comparison link** preserves the selection. The `analysis`, `spaceGeo`, `spaceGroup`,
+`people` and `bedrooms` URL parameters survive reloads and development navigation; the space
+geography is independent of the rent view's `borough`. Keyboard users can Tab to matrix
+buttons and select them with Enter or Space; focus stays on the selected cell.
+See [household-space methodology](docs/household-space.md) for denominators and interpretation limits.
+
 ## What the wedge is (and is not)
 
 ```text
@@ -90,5 +110,3 @@ It is a **market-rent wedge**, not direct government expenditure or cash subsidy
 ## Isolation
 
 CI fails on peer-product package names, environment-variable prefixes, and hosts. See `config/deployment.yml` and `tests/unit/test_isolation.py`.
-
-The **Household space** view compares household persons and bedrooms across housing groups. Select a cell to inspect its share, denominator and uncertainty, or share the selected distribution. See [household-space methodology](docs/household-space.md).
