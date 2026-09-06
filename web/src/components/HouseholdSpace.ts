@@ -7,10 +7,10 @@ const count=(v:number)=>Math.round(v).toLocaleString('en-US');
 export function spaceSelection(data:SpaceEvidence,params:URLSearchParams){
  const geographies=Object.fromEntries(data.distributions.map(d=>[d.geography_id,d.geography_name]));
  const groups=Object.fromEntries(data.distributions.map(d=>[d.population_id,d.population_label]));
- const geo=Object.hasOwn(geographies,params.get('spaceGeo')||'')?params.get('spaceGeo')!:'nyc';
- const group=Object.hasOwn(groups,params.get('spaceGroup')||'')?params.get('spaceGroup')!:'public_housing';
- const people=['1','2','3','4+'].includes(params.get('people')||'')?params.get('people')!:'1';
- const bedrooms=['0','1','2','3','4+'].includes(params.get('bedrooms')||'')?params.get('bedrooms')!:'2';
+ const geo=Object.keys(geographies).find(id=>id===params.get('spaceGeo'))||'nyc';
+ const group=Object.keys(groups).find(id=>id===params.get('spaceGroup'))||'public_housing';
+ const people=['1','2','3','4+'].find(id=>id===params.get('people'))||'1';
+ const bedrooms=['0','1','2','3','4+'].find(id=>id===params.get('bedrooms'))||'2';
  const distribution=data.distributions.find(d=>d.geography_id===geo&&d.population_id===group);
  const comparisons=data.distributions.filter(d=>d.geography_id===geo).map(d=>({...d,cells:d.cells.filter(c=>c.people===people&&c.bedrooms===bedrooms)}));
  return {geo,group,people,bedrooms,distribution,comparisons,geographies,groups};

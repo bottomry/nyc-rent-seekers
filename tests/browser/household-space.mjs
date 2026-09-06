@@ -58,5 +58,13 @@ try {
  await page.setViewportSize({width:390,height:844});
  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
  await screenshot(page,'household-space-mobile.png');
+ const malformed=new URL(base+'/?view=protection&analysis=space');
+ for(const key of ['people','bedrooms','spaceGeo','spaceGroup'])malformed.searchParams.set(key,'"><img src=x onerror="window.injected=true">');
+ await page.goto(malformed.href);await page.locator('.space-matrix').waitFor();
+ assert.equal(await page.locator('[data-space-cell="1,2"]').getAttribute('aria-pressed'),'true');
+ assert.equal(await page.locator('#space-geography').inputValue(),'nyc');
+ assert.equal(await page.locator('#space-group').inputValue(),'public_housing');
+ assert.equal(await page.locator('#protection-host img').count(),0);
+ assert.equal(await page.evaluate(()=>Boolean(window.injected)),false);
  console.log('Household space: values, denominator, cell links, keyboard, reload, download and mobile passed');
 }finally{await browser.close();await new Promise(r=>server.close(r));}
