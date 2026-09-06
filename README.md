@@ -110,6 +110,13 @@ and optionally `accessGroup=<program-id>`; `accessGroup` survives reloads and de
 navigation. Without an explicit Access group, the reference uses `against`, then defaults
 to public housing. An unmapped group shows a message and the documented program choices.
 
+Keyboard users can Tab to program buttons and activate them with Enter or Space.
+Opening a mapped reference focuses its program button; returning to the originating
+comparison tab focuses **Who controls access?**. After changing programs and returning
+to that comparison, repeated browser Back and Forward restore focus to the selected
+program or comparison launcher. Subsequent borough and comparison selections keep
+focus on the control being used.
+
 In Access, **Download values** saves `housing-access-<program-id>.json`, containing
 `analysis`, the selected program under `selection`, and the complete reference under
 `evidence`, including source metadata and `checked_at`. An unmapped selection is `null`
