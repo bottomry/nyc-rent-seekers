@@ -89,7 +89,9 @@ cell and comparison data, and source checksums as JSON named
 values retain their underlying precision; unavailable estimates remain null.
 **Copy comparison link** preserves the selection. The `analysis`, `spaceGeo`, `spaceGroup`,
 `people` and `bedrooms` URL parameters survive reloads and development navigation; the space
-geography is independent of the rent view's `borough`. Keyboard users can Tab to matrix
+geography is independent of the rent view's `borough`. Space selections resolve only to
+supported categories; missing or unrecognized values use the defaults above for each affected
+selection. Keyboard users can Tab to matrix
 buttons and select them with Enter or Space; focus stays on the selected cell.
 See [household-space methodology](docs/household-space.md) for denominators and interpretation limits.
 
