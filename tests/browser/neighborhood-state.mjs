@@ -1,19 +1,20 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { registerHooks } from 'node:module';
 import { test } from 'node:test';
+import { createServer } from 'vite';
 
-registerHooks({
-  resolve(specifier, context, nextResolve) {
-    if (context.parentURL?.endsWith('.ts') && specifier.startsWith('.') && !specifier.endsWith('.ts')) {
-      return nextResolve(`${specifier}.ts`, context);
-    }
-    return nextResolve(specifier, context);
-  },
+const server = await createServer({
+  configFile: false,
+  server: { middlewareMode: true, watch: null },
 });
-
-const { renderNeighborhoodBrowse } = await import('../../web/src/components/NeighborhoodBrowse.ts');
-const { writeState } = await import('../../web/src/state.ts');
+let renderNeighborhoodBrowse;
+let writeState;
+try {
+  ({ renderNeighborhoodBrowse } = await server.ssrLoadModule('/web/src/components/NeighborhoodBrowse.ts'));
+  ({ writeState } = await server.ssrLoadModule('/web/src/state.ts'));
+} finally {
+  await server.close();
+}
 const bundle = JSON.parse(await readFile(new URL('../../web/public/data/demo-bundle.json', import.meta.url)));
 
 function navigate(search) {
