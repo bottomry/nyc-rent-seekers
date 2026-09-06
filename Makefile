@@ -97,6 +97,7 @@ test: test-isolation
 	@node tests/browser/smoke.mjs --app-only
 	@node tests/browser/protection.mjs
 	@node tests/browser/household-space.mjs
+	@node tests/browser/housing-access.mjs
 	@node tests/browser/neighborhood-state.mjs
 	@node scripts/static-edge-load.mjs
 
