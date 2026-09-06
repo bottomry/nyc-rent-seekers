@@ -47,6 +47,11 @@ The map and ranking compare the selected group with unassisted market rentals.
 These comparisons include all move-in years. Group definitions, exclusions, and measurement
 limits are documented in [`docs/rental-protection.md`](docs/rental-protection.md).
 
+Under **From borough to building**, choose a neighborhood, choose a development, then select
+**Open building comparison**. Return through **Rents by group** to resume browsing. See
+[geographic navigation](docs/geographic-navigation.md) for the point-based neighborhood filter,
+missing-location handling, and URL selection rules.
+
 The linked **Frozen rents** panel shows the selected borough's current rent, frozen rent and
 reported monthly benefit; see [Rent Freeze program evidence](docs/rent-freeze.md) for its
 separate administrative measure and source scope. Missing program evidence displays as unavailable.
@@ -57,7 +62,7 @@ but is not a selectable comparator. **Download values** saves all of the selecte
 survey group estimates, comparison difference, and source metadata as JSON, plus its program
 record and provenance under `rent_freeze` (`null` when program evidence could not be loaded).
 **Copy comparison link** preserves the
-view, borough, and comparison in the URL, including when a development is already selected.
+view, borough, comparison, and neighborhood/development browsing context in the URL.
 Existing development links remain supported through the **Map** view. Keyboard users can
 Tab to controls and activate borough map shapes with Enter or Space; borough buttons provide
 an alternative to the map. On narrow screens, the map and bars stack vertically and the

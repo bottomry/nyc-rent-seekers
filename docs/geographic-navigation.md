@@ -7,10 +7,16 @@ neighborhood survey estimates or classify buildings by a household survey respon
 
 Developments lacking a representative point remain available in the borough list with a location
 label. They are excluded from neighborhood membership, and the borough coverage count reports
-the gap. An empty neighborhood selection produces an empty development list rather than an
-inferred match. Opening a building keeps its existing rents, source periods and comparison quality.
+the gap. Developments with composite borough attributes remain available in each constituent
+borough. A selected neighborhood with no matching points produces an empty development list;
+clearing the neighborhood restores the borough list. An absent or unrecognized NTA identifier
+also leaves the list at borough scope. Opening a building keeps its existing rents, source periods
+and comparison quality.
 
-`neighborhood` and `browseDevelopment` preserve the navigation context in links. Borough changes
-clear those narrower selections. Returning to Rents by group restores context; existing building
-links continue to work. The point-based assignment identifies a representative location, not a
+`neighborhood` and `browseDevelopment` preserve the navigation context alongside `borough` and
+`against` through the building route and reload. Borough changes clear the neighborhood and
+browse selection; neighborhood changes clear the browse selection. An explicit
+`browseDevelopment=` means no selection, while an absent parameter falls back to `development`
+when it belongs to the filtered list. Returning to Rents by group restores context; existing
+building links continue to work. The point-based assignment identifies a representative location, not a
 claim that every part of a development footprint lies inside that neighborhood.
