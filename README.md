@@ -2,8 +2,8 @@
 
 Standalone, evidence-first **market-rent wedge** map for NYC: NYCHA actual average gross rents
 versus nearby market comparators, with sources, periods, comparison quality, and source-native
-renter context labeled by geography and vintage. The **Rents by group** view adds linked borough
-comparisons across rental protection groups.
+renter context labeled by geography and vintage. New visitors land on **Rents by group**,
+with linked rental protection, household space and housing access comparisons.
 
 **Status:** public open-source project. The production site is published with
 [GitHub Pages](https://bottomry.github.io/nyc-rent-seekers/). The project is
@@ -47,13 +47,13 @@ The map and ranking compare the selected group with unassisted market rentals.
 These comparisons include all move-in years. Group definitions, exclusions, and measurement
 limits are documented in [`docs/rental-protection.md`](docs/rental-protection.md).
 
-Under **From borough to building**, choose a neighborhood, choose a development, then select
-**Open building comparison**. Return through **Rents by group** to resume browsing. See
+In current analysis, under **From borough to building**, choose a neighborhood and development,
+then select **Open building comparison**. Return through **Rents by group** to resume browsing. See
 [geographic navigation](docs/geographic-navigation.md) for the point-based neighborhood filter,
 missing-location handling, and URL selection rules.
 
-In the multi-file app, both views share one static survey request per page load. If the
-request fails or returns invalid JSON, **Rents by group** reports unavailable comparisons
+In the multi-file app’s current analysis, both views share one static survey request per page
+load. If the request fails or returns invalid JSON, **Rents by group** reports unavailable comparisons
 and the building view reports unavailable survey context. Switching views does not retry
 the request; reload the page to try again.
 
@@ -63,8 +63,8 @@ separate administrative measure and source scope. Missing program evidence displ
 
 Expand **Sources, exact values and uncertainty** for all groups' intervals, sample counts,
 reliability, and source links. Unknown protection status remains in this table and downloads,
-but is not a selectable comparator. **Download values** saves all of the selected borough's
-survey group estimates, comparison difference, and source metadata as JSON, plus its program
+but is absent from the comparison control unless an older link selects `against=unknown`.
+**Download values** saves all of the selected borough's survey group estimates, comparison difference, and source metadata as JSON, plus its program
 record and provenance under `rent_freeze` (`null` when program evidence could not be loaded).
 **Copy comparison link** preserves the
 view, borough, comparison, and neighborhood/development browsing context in the URL.
@@ -122,6 +122,23 @@ In Access, **Download values** saves `housing-access-<program-id>.json`, contain
 `evidence`, including source metadata and `checked_at`. An unmapped selection is `null`
 and uses `housing-access-unavailable.json`; if reference data could not be loaded,
 `evidence` is also `null`.
+
+## Citable figures
+
+**Copy figure link** pins the rental analysis and its selections to a checksum-verified evidence
+version. **Export SVG** (Rents and Household space) and **Print** also pin the figure before
+exporting. SVG contains the comparison bars, displayed values, caption, attribution, reuse
+notice and a link to exact values; Print expands the evidence disclosures. **Download values**
+adds `figure_id` and `method` to each analysis’s JSON; `figure_id` is null until pinned.
+Unavailable values remain unavailable. An ordinary **Copy comparison link** retains the
+current URL’s selections, including a figure version if already pinned.
+
+Saved figures use archived rental evidence and hide neighborhood/building browsing. Select
+**Current analysis** to return to current evidence. A missing or corrupt version reports an
+error; it does not substitute current values. If no published version matches current evidence,
+figure linking, SVG and Print report unavailable; comparison links and JSON downloads remain
+available. See [figure publication and archive contract](docs/citable-figures.md) for publishing
+and retaining evidence versions.
 
 ## What the wedge is (and is not)
 

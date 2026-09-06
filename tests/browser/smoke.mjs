@@ -268,7 +268,7 @@ async function playwrightSmoke() {
 
   try {
     const mobileInitial = await browser.newPage({ viewport: { width: 390, height: 844 } });
-    await mobileInitial.goto(`http://127.0.0.1:${port}/app/index.html`, {
+    await mobileInitial.goto(`http://127.0.0.1:${port}/app/index.html?view=map`, {
       waitUntil: "networkidle",
       timeout: 30000,
     });
@@ -870,7 +870,7 @@ async function playwrightSmoke() {
     await page.waitForSelector('[data-testid="copy-comparison-explanation-btn"]');
     await page.waitForSelector('[data-testid="methodology-btn"]');
     // City overview when no development deep-link
-    await page.goto(`http://127.0.0.1:${port}/app/index.html`, {
+    await page.goto(`http://127.0.0.1:${port}/app/index.html?view=map`, {
       waitUntil: "networkidle",
       timeout: 30000,
     });

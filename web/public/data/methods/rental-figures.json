@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "rent": "Weighted household medians of positive gross rent; all move-in years; 80 replicate weights; no geographic fallback.",
+  "space": "HHSIZE joined to BEDROOMS by CONTROL; positive full-sample weights; 80 replicate ratios; minimum 30 responses and CV at most 0.30.",
+  "reuse": "NYC Rent Seekers figures and documentation: MIT. Third-party source data retains its source terms.",
+  "license": "MIT License\n\nCopyright (c) 2026 NYC Rent Seekers contributors\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\nThird-party source data remains subject to each source's own terms.\n",
+  "implementation": {
+    "src/rent_seekers/normalize/protection.py": {
+      "sha256": "9d3c32973ef439613d4347f907b5f6412573bad5b6c573f71db11de79fa2c9c1",
+      "url": "https://github.com/bottomry/nyc-rent-seekers/blob/18bfde85f65e8d710c750ebd8b481854475d3642/src/rent_seekers/normalize/protection.py"
+    },
+    "src/rent_seekers/normalize/nychvs.py": {
+      "sha256": "a94346c6ba043f0b8cbf1e85bc81cfe3aaad012f1ecb365cf8f9c9d53dab4049",
+      "url": "https://github.com/bottomry/nyc-rent-seekers/blob/18bfde85f65e8d710c750ebd8b481854475d3642/src/rent_seekers/normalize/nychvs.py"
+    },
+    "src/rent_seekers/normalize/household_space.py": {
+      "sha256": "f13ab8e19db730354f0ade62f4d63820fc4f086558a43d1a1e3f0fef28e8434a",
+      "url": "https://github.com/bottomry/nyc-rent-seekers/blob/18bfde85f65e8d710c750ebd8b481854475d3642/src/rent_seekers/normalize/household_space.py"
+    },
+    "config/nychvs.yml": {
+      "sha256": "bb442773d4d3c909ad6d214313a96b4494b61b3e9f06022822030d16c580b34f",
+      "url": "https://github.com/bottomry/nyc-rent-seekers/blob/18bfde85f65e8d710c750ebd8b481854475d3642/config/nychvs.yml"
+    }
+  }
+}
