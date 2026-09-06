@@ -38,7 +38,7 @@ const DEFAULTS: AppState = {
   unit: null,
   quality: "exact,strong,representative",
   period: null,
-  view: "map",
+  view: "protection",
   geo: null,
   area: null,
   methodSection: null,
@@ -65,7 +65,8 @@ export function readState(search = window.location.search): AppState {
     sourceRaw === "best"
       ? sourceRaw
       : "best";
-  const viewRaw = p.get("view") || DEFAULTS.view;
+  const legacy = ["development", "source", "geo", "area", "metric", "unit", "quality", "period", "sources", "lens", "rentDetails"].some(key => p.has(key));
+  const viewRaw = p.get("view") || (legacy ? "map" : DEFAULTS.view);
   const view: AppView =
     viewRaw === "protection" ? "protection" : viewRaw === "rankings"
       ? "rankings"
@@ -102,7 +103,7 @@ export function writeState(partial: Partial<AppState>, replace = true): AppState
   const current = readState();
   const next: AppState = { ...current, ...partial };
   const p = new URLSearchParams();
-  for (const key of ["borough", "against", "neighborhood", "browseDevelopment", "analysis", "spaceGeo", "spaceGroup", "people", "bedrooms", "accessGroup"]) {
+  for (const key of ["borough", "against", "neighborhood", "browseDevelopment", "analysis", "spaceGeo", "spaceGroup", "people", "bedrooms", "accessGroup", "figure"]) {
     const value = new URLSearchParams(window.location.search).get(key);
     if (value !== null) p.set(key, value);
   }
@@ -113,7 +114,7 @@ export function writeState(partial: Partial<AppState>, replace = true): AppState
   if (next.unit) p.set("unit", next.unit);
   if (next.quality && next.quality !== DEFAULTS.quality) p.set("quality", next.quality);
   if (next.period) p.set("period", next.period);
-  if (next.view && next.view !== DEFAULTS.view) p.set("view", next.view);
+  p.set("view", next.view);
   if (next.geo) p.set("geo", next.geo);
   if (next.area) p.set("area", next.area);
   if (next.rentLens !== DEFAULTS.rentLens) p.set("lens", next.rentLens);
