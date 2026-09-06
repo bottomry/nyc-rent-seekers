@@ -81,3 +81,15 @@ def classify_protection(row: Mapping[str, object]) -> ProtectionClassification:
         section8_voucher=voucher,
         issues=tuple(issues),
     )
+
+
+GROUP_LABELS = {
+    "public_housing": "Public housing",
+    "rent_stabilized": "Rent-stabilized",
+    "section8_voucher": "Section 8 voucher",
+    "rent_controlled": "Rent-controlled",
+    "other_regulated": "Other regulated",
+    "other_or_unspecified_assistance": "Other or unspecified assistance",
+    "unknown": "Unknown or conflicting protection status",
+    "unassisted_market": "Market · no reported assistance",
+}
