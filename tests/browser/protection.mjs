@@ -1,9 +1,12 @@
 import { chromium } from 'playwright';
 import { createServer } from 'node:http';
-import { readFile } from 'node:fs/promises';
+import { readFile, mkdir } from 'node:fs/promises';
 import { resolve, extname } from 'node:path';
 import assert from 'node:assert/strict';
 const root=resolve('dist/app');
+const evidenceDir=process.env.TEST_EVIDENCE_DIR;
+if(evidenceDir)await mkdir(evidenceDir,{recursive:true});
+const screenshot=async(page,name)=>{if(evidenceDir)await page.screenshot({path:resolve(evidenceDir,name),fullPage:true});};
 const server=createServer(async(req,res)=>{try{const file=resolve(root,'.'+decodeURIComponent(new URL(req.url,'http://localhost').pathname).replace(/\/$/,'/index.html'));if(!file.startsWith(root+'/'))throw Error();res.setHeader('Content-Type',({'.js':'text/javascript','.css':'text/css','.json':'application/json','.geojson':'application/json','.html':'text/html','.svg':'image/svg+xml'})[extname(file)]||'application/octet-stream');res.end(await readFile(file));}catch{res.statusCode=404;res.end();}});
 await new Promise(r=>server.listen(0,'127.0.0.1',r));
 const base=`http://127.0.0.1:${server.address().port}`;
@@ -15,11 +18,14 @@ try{
   fixture.protection_estimates=['manhattan','brooklyn','bronx','queens','staten_island'].flatMap((g,i)=>['public_housing','rent_stabilized','unassisted_market','section8_voucher','rent_controlled','other_regulated','other_or_unspecified_assistance','unknown'].map((p,j)=>({population_id:p,population_label:p,geography_id:g,value:[500,1500,3000-i*200,700,800,900,1000,1100][j],available:!(g==='staten_island'&&j===0),rent_sample_count:100,weighted_population_estimate:1000,rent_weighted_population_estimate:1000,confidence_interval_lower:400,confidence_interval_upper:600,reliability_status:'reliable',unavailable_reason:null})));
   await page.route('**/data/nychvs/estimates.json',route=>route.fulfill({json:fixture}));
  }
+ let surveyRequests=0;
+ page.on('request',request=>{if(new URL(request.url()).pathname==='/data/nychvs/estimates.json')surveyRequests++;});
  await page.goto(base+'/?view=protection&development=nycha%3Atds%3A136');
  await page.locator('#product-panel').getByText('Fulton', {exact:false}).first().waitFor({state:'attached'});
  assert.equal(new URL(page.url()).searchParams.get('view'),'protection');
  assert.ok(await page.locator('#protection-host').isVisible());
  await page.locator('.protection-topline h3').filter({hasText:'Manhattan'}).waitFor();
+ assert.equal(surveyRequests,1);
  const first=await page.locator('[data-testid=protection-gap]').innerText();
  await page.locator('.protection-boroughs [data-borough=queens]').click();
  assert.match(page.url(),/borough=queens/);
@@ -59,6 +65,7 @@ try{
  await page.keyboard.press('Space');
  assert.equal(await page.locator('.protection-rank[data-borough=queens]').evaluate(el=>el===document.activeElement),true);
  await page.locator('.protection-boroughs [data-borough=manhattan]').click();
+ await page.selectOption('#protection-against','rent_stabilized');
  await page.selectOption('#protection-neighborhood','MN0401');
  assert.match(page.url(),/neighborhood=MN0401/);
  await page.selectOption('#protection-development','nycha:tds:136');
@@ -67,17 +74,32 @@ try{
  assert.equal(destination.searchParams.get('borough'),'manhattan');
  await page.click('#protection-open-development');
  await page.locator('#product-panel').getByText('Fulton',{exact:false}).first().waitFor();
+ await screenshot(page,'building-comparison.png');
  await page.click('[data-view=protection]');
+ assert.equal(await page.locator('#protection-against').inputValue(),'rent_stabilized');
  assert.equal(await page.locator('#protection-neighborhood').inputValue(),'MN0401');
  assert.equal(await page.locator('#protection-development').inputValue(),'nycha:tds:136');
  await page.reload();
  await page.locator('.protection-topline h3').filter({hasText:'Manhattan'}).waitFor();
  assert.equal(await page.locator('#protection-neighborhood').inputValue(),'MN0401');
- await page.screenshot({path:'/tmp/nycrs-current-desktop.png',fullPage:true});
+ await screenshot(page,'neighborhood-desktop.png');
  await page.setViewportSize({width:390,height:844});
  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
- await page.screenshot({path:'/tmp/nycrs-current-mobile.png',fullPage:true});
+ await screenshot(page,'neighborhood-mobile.png');
+ await page.selectOption('#protection-development','');
+ for(const reload of [false,true]) {
+  if(reload)await page.reload();
+  await page.click('[data-view=map]');
+  await page.click('[data-view=protection]');
+  assert.equal(await page.locator('#protection-development').inputValue(),'');
+  assert.equal(await page.locator('#protection-open-development').getAttribute('aria-disabled'),'true');
+  assert.equal(await page.locator('#protection-neighborhood').inputValue(),'MN0401');
+  assert.equal(await page.locator('#protection-against').inputValue(),'rent_stabilized');
+  assert.equal(new URL(page.url()).searchParams.get('browseDevelopment'),'');
+ }
+ await screenshot(page,'cleared-selection-mobile.png');
 
+ await page.selectOption('#protection-against','public_housing');
  await page.locator('.protection-boroughs [data-borough=staten_island]').click();
  assert.equal(await page.locator('[data-testid=protection-gap]').innerText(),'Unavailable');
  await page.click('[data-view=map]');
@@ -91,5 +113,20 @@ try{
  assert.match(await page.locator('#protection-development option[value="nycha:tds:136"]').innerText(),/location unavailable/);
  await page.selectOption('#protection-neighborhood','MN0401');
  assert.equal(await page.locator('#protection-development option[value="nycha:tds:136"]').count(),0);
+ await page.unroute('**/data/demo-bundle.json');
+ for(const failure of ['http','invalid-json']) {
+  await page.route('**/data/nychvs/estimates.json',route=>route.fulfill({status:failure==='http'?503:200,contentType:'application/json',body:'invalid'}));
+  surveyRequests=0;
+  await page.goto(base+'/?view=protection&development=nycha%3Atds%3A136');
+  await page.locator('#protection-host').getByText('Rental comparisons are unavailable.',{exact:false}).waitFor();
+  await page.click('[data-view=map]');
+  await page.locator('[data-testid=asking-vs-occupied-toggle]').click();
+  await page.locator('#product-panel').getByText('survey context failed to load.',{exact:false}).first().waitFor();
+  assert.equal(surveyRequests,1);
+  await screenshot(page,`survey-${failure}-building.png`);
+  await page.click('[data-view=protection]');
+  await screenshot(page,`survey-${failure}-rental.png`);
+  assert.equal(surveyRequests,1);
+ }
  console.log('Protection browser: linked selection, history, reload, export, keyboard and mobile passed');
 }finally{await browser.close();await new Promise(r=>server.close(r));}

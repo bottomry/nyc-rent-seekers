@@ -21,7 +21,7 @@ make geography   # official NYCHA polygons + 2020 NTA/tract layers
 make normalize   # DDB + 2026 PDF + HUD FY2026 SAFMR + ZORI + 2023 NYCHVS → JSON + health
 make demo        # evidence bundle + single-file HTML + multi-file app
 make release     # immutable content-addressed release + promote latest pointer
-make test        # isolation, golden arithmetic, geometry, schema, smoke
+make test        # isolation, golden arithmetic, geometry, schema, smoke, rental navigation
 make serve       # http://127.0.0.1:8791/
 ```
 
@@ -51,6 +51,11 @@ Under **From borough to building**, choose a neighborhood, choose a development,
 **Open building comparison**. Return through **Rents by group** to resume browsing. See
 [geographic navigation](docs/geographic-navigation.md) for the point-based neighborhood filter,
 missing-location handling, and URL selection rules.
+
+In the multi-file app, both views share one static survey request per page load. If the
+request fails or returns invalid JSON, **Rents by group** reports unavailable comparisons
+and the building view reports unavailable survey context. Switching views does not retry
+the request; reload the page to try again.
 
 The linked **Frozen rents** panel shows the selected borough's current rent, frozen rent and
 reported monthly benefit; see [Rent Freeze program evidence](docs/rent-freeze.md) for its
