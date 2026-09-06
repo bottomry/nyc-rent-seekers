@@ -96,6 +96,7 @@ test: test-isolation
 	$(MAKE) web-build
 	@node tests/browser/smoke.mjs --app-only
 	@node tests/browser/protection.mjs
+	@node tests/browser/neighborhood-state.mjs
 	@node scripts/static-edge-load.mjs
 
 test-isolation:

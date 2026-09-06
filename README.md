@@ -21,7 +21,7 @@ make geography   # official NYCHA polygons + 2020 NTA/tract layers
 make normalize   # DDB + 2026 PDF + HUD FY2026 SAFMR + ZORI + 2023 NYCHVS → JSON + health
 make demo        # evidence bundle + single-file HTML + multi-file app
 make release     # immutable content-addressed release + promote latest pointer
-make test        # isolation, golden arithmetic, geometry, schema, smoke
+make test        # isolation, golden arithmetic, geometry, schema, smoke, rental navigation
 make serve       # http://127.0.0.1:8791/
 ```
 
@@ -47,6 +47,16 @@ The map and ranking compare the selected group with unassisted market rentals.
 These comparisons include all move-in years. Group definitions, exclusions, and measurement
 limits are documented in [`docs/rental-protection.md`](docs/rental-protection.md).
 
+Under **From borough to building**, choose a neighborhood, choose a development, then select
+**Open building comparison**. Return through **Rents by group** to resume browsing. See
+[geographic navigation](docs/geographic-navigation.md) for the point-based neighborhood filter,
+missing-location handling, and URL selection rules.
+
+In the multi-file app, both views share one static survey request per page load. If the
+request fails or returns invalid JSON, **Rents by group** reports unavailable comparisons
+and the building view reports unavailable survey context. Switching views does not retry
+the request; reload the page to try again.
+
 The linked **Frozen rents** panel shows the selected borough's current rent, frozen rent and
 reported monthly benefit; see [Rent Freeze program evidence](docs/rent-freeze.md) for its
 separate administrative measure and source scope. Missing program evidence displays as unavailable.
@@ -57,7 +67,7 @@ but is not a selectable comparator. **Download values** saves all of the selecte
 survey group estimates, comparison difference, and source metadata as JSON, plus its program
 record and provenance under `rent_freeze` (`null` when program evidence could not be loaded).
 **Copy comparison link** preserves the
-view, borough, and comparison in the URL, including when a development is already selected.
+view, borough, comparison, and neighborhood/development browsing context in the URL.
 Existing development links remain supported through the **Map** view. Keyboard users can
 Tab to controls and activate borough map shapes with Enter or Space; borough buttons provide
 an alternative to the map. On narrow screens, the map and bars stack vertically and the

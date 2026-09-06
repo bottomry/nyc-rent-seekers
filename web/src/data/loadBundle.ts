@@ -99,6 +99,16 @@ function populationLoadState(document: unknown): PopulationRentLoadState {
   };
 }
 
+let surveyDocument: Promise<unknown> | undefined;
+/** Share the static survey response across views, including its failure state. */
+export function loadSurveyDocument(): Promise<unknown> {
+  if (!surveyDocument) surveyDocument = fetch(new URL("data/nychvs/estimates.json", location.href)).then(res => {
+    if (!res.ok) throw new Error(`Survey evidence unavailable: ${res.status}`);
+    return res.json();
+  });
+  return surveyDocument;
+}
+
 /** Load identifier-free occupied-stock context; absence never blocks the core app. */
 export async function loadPopulationRentObservations(): Promise<PopulationRentLoadState> {
   const embedded = document.getElementById("rent-seekers-population-data");
@@ -112,10 +122,7 @@ export async function loadPopulationRentObservations(): Promise<PopulationRentLo
   }
 
   try {
-    const url = new URL("data/nychvs/estimates.json", window.location.href);
-    const res = await fetch(url);
-    if (!res.ok) return { status: "error", observations: [], gaps: [] };
-    return populationLoadState(await res.json());
+    return populationLoadState(await loadSurveyDocument());
   } catch {
     return { status: "error", observations: [], gaps: [] };
   }

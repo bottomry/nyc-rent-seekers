@@ -54,6 +54,8 @@ jobs:
         run: |
           npx playwright install --with-deps chromium
           node tests/browser/smoke.mjs --app-only
+          node tests/browser/protection.mjs
+          node tests/browser/neighborhood-state.mjs
 
       - name: Edge hardening unit gate (NRS-012)
         run: uv run pytest tests/unit/test_edge_hardening.py -q

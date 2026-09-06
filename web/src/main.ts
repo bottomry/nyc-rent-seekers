@@ -156,7 +156,6 @@ function zctaMarketHtml(
 
 async function boot(): Promise<void> {
   const protectionHost = document.getElementById("protection-host");
-  if (protectionHost) void mountProtectionView(protectionHost);
   const product = document.getElementById("product-panel");
   const sourcePanel = document.getElementById("source-panel");
   const layerHost = document.getElementById("layer-controls-host");
@@ -172,6 +171,7 @@ async function boot(): Promise<void> {
   };
   const populationRentsPromise = loadPopulationRentObservations();
   const bundle = await loadBundle();
+  if (protectionHost) void mountProtectionView(protectionHost, bundle);
   const container = document.getElementById("map");
   if (!container) return;
 

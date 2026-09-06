@@ -102,9 +102,9 @@ export function writeState(partial: Partial<AppState>, replace = true): AppState
   const current = readState();
   const next: AppState = { ...current, ...partial };
   const p = new URLSearchParams();
-  for (const key of ["borough", "against"]) {
+  for (const key of ["borough", "against", "neighborhood", "browseDevelopment"]) {
     const value = new URLSearchParams(window.location.search).get(key);
-    if (value) p.set(key, value);
+    if (value !== null) p.set(key, value);
   }
   if (next.development) p.set("development", next.development);
   if (next.sources) p.set("sources", "1");
