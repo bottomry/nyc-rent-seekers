@@ -5,6 +5,11 @@ NYCHA developments by whether their representative point falls within a 2020 NTA
 the existing polygon helper, including polygon holes and multipolygons; it does not create
 neighborhood survey estimates or classify buildings by a household survey response.
 
+The displayed “2020 NTA boundaries” and “development representative points” citations read
+`source_url` from the first feature's properties in the pinned bundle's `ntas` and
+`development_points` layers, respectively. Source-host URLs belong to that metadata, not
+runtime JavaScript. Missing or non-HTTPS URLs leave the citation label visible without a link.
+
 Developments lacking a representative point remain available in the borough list with a location
 label. They are excluded from neighborhood membership, and the borough coverage count reports
 the gap. Developments with composite borough attributes remain available in each constituent
