@@ -87,6 +87,14 @@ try {
   assert.equal(new URL(page.url()).searchParams.get(mode==='rents'?'against':'spaceGroup'),'rent_stabilized');
   assert.equal(await control.evaluate(el=>el===document.activeElement),true,'Comparison selection retains current focus after returning from Access');
  }
+ await page.goto(base+'/?view=protection&analysis=space&spaceGroup=unassisted_market');
+ await page.locator('[data-open-access]').click();
+ await page.click('[data-analysis=rents]');
+ await page.goBack();
+ assert.equal(await page.locator('[data-analysis=access]').evaluate(el=>el===document.activeElement),true,'Unmapped reference has a focusable history destination');
+ await page.goForward();
+ await page.goBack();
+ assert.equal(await page.locator('[data-analysis=access]').evaluate(el=>el===document.activeElement),true,'Unmapped reference survives repeated history navigation');
  await page.goto(base+'/?view=protection&analysis=access&against=unknown');
  await page.getByText('No single allocation rule is assigned to this survey group.',{exact:false}).waitFor();
  assert.equal(await page.locator('.access-row').count(),0);
