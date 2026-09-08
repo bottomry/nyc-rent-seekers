@@ -1,0 +1,116 @@
+                                                                        DSS-34 (E) 04/17/2026 (page 1 of 3)
+
+
+
+
+            Rent Reviews for CityFHEPS, FHEPS, and SOTA Programs
+                       Frequently Asked Questions (FAQ)
+
+What is a Rent Review?
+The Department of Social Services (DSS) verifies that rents for apartments in New York City that
+are subsidized through the CityFHEPS, FHEPS, and SOTA programs:
+   •   Do not exceed rents for comparable unsubsidized apartments in the same building or
+       neighborhood, and
+   •   Do not exceed the maximum rent permitted for rent-subsidized apartments.
+
+Why is a Rent Review done?
+Rent reviews protect tenants from excessive rent and safeguard taxpayer dollars by ensuring fair
+market value.
+
+When is a Rent Review done?
+Rent reviews must be completed on units offered for clearance before applications for
+(including but not limited to) CityFHEPS To Stay/To Move (including transfers), FHEPS To
+Move (including transfers), and SOTA are submitted to DSS. Applications must pass the rent
+review before submission. Rent reviews may also be required at subsidy or lease renewal.
+
+How do I request a Rent Review?
+Landlords, Brokers, and Providers offering an apartment or preparing a new subsidy
+application on behalf of a client, go to https://a071-dhsapps.nyc.gov/apartmentoffers/ and
+enter the required information.
+Information collected as part of the standard subsidy renewal or lease renewal process will be
+used to complete rent reviews.
+
+What is the Rent Review Process?
+   •   DSS first conducts a data match with the New York State Division of Housing and
+       Community Renewal (HCR) to identify rent-stabilized apartments and their maximum
+       legal rent. The rent may not exceed the maximum rent allowed.
+   •   For market-rate apartments (apartments found as not rent stabilized in the HCR match),
+       DSS compares proposed rents to the rents currently charged for comparable apartments
+       in the area. This rent reasonableness test is done using www.affordablehousing.com, a
+       web-based tool that complies with Federal rules.
+
+
+
+
+                                          (Turn page)
+DSS-34 (E) 04/17/2026 (page 2 of 3)                                            Department of Social Services
+                                                                             Human Resources Administration
+
+
+
+
+                Rent Reviews for CityFHEPS, FHEPS, and SOTA Programs
+                      Frequently Asked Questions (FAQ) (continued)
+What if the tenant is remaining in the same unit?
+If the tenant is applying for CityFHEPS, their application must include a rent review result.
+Providers must go to https://a071-dhsapps.nyc.gov/apartmentoffers/ and enter the required
+information including contact information, apartment information, utility information, and asking
+rent. Offers submissions with missing or inaccurate information will require resubmission. After
+the unit passes the rent review, the result form will be emailed to the contact provided in the
+Offers submission. You must include this form with the CityFHEPS application before submitting
+it to DSS.
+
+How long does a rent review take?
+The HCR data match can take up to up to 3 weeks.
+If the application is for a client moving into a new apartment, the property will be checked for
+violations and if it passes, the results of the property review will be returned even if the rent
+review is still pending. This is so that the provider can proceed with the walkthrough. The rent
+review will be completed after the data match with HCR. Afterwards, a new results form is sent
+automatically to return the rent review results.
+If the client is remaining in the same apartment, the results form will only include the rent
+review results.
+
+
+
+
+                       Important – when the client is moving into a new apartment
+     If an apartment passes the property violations check, the provider should proceed with
+                scheduling the walkthrough. Do not wait for the rent review result.
+
+
+
+
+                                              (Turn page)
+DSS-34 (E) 04/17/2026 (page 3 of 3)                                               Department of Social Services
+                                                                                Human Resources Administration
+
+
+
+                Rent Reviews for CityFHEPS, FHEPS, and SOTA Programs
+                      Frequently Asked Questions (FAQ) (continued)
+What happens if I received a rent review fail result?
+If the rent proposed at the time of Apartment Offers submission exceeds the maximum legal rent
+or the rent is determined to be not reasonable for the area, the unit will fail the rent review. The
+results form will include the maximum allowable rent that can be charged based on the HCR data
+or rent reasonableness test.
+For a new subsidy or transfer request the submitter may accept the allowable rent or submit
+documentation that supports their proposed rent.
+
+    •    For rent-stabilized apartments – Email rentreview@hra.nyc.gov to accept the allowable
+         rent or submit documentation showing the rent that you are charging is allowed.
+    •    For market-rate apartments - Email rentreview@hra.nyc.gov to accept the allowable rent
+         or submit the Rent Comparable Form (DSS-35) with details on 3 similar units to support
+         your proposed rent.
+    •    At subsidy or lease renewal, DSS will compare renewal rent amounts to the HCR
+         maximum legal rent for that unit.
+    •    Rents will not be allowed to exceed the HCR maximum legal rent and will be lowered to
+         the HCR maximum if necessary.
+    •    If it is a market-rate apartment and the requested rent exceeds the reasonable amount,
+         the staff working on the renewal application will notify the landlord and provide instructions
+         on how to accept the allowable rent or submit the DSS-35 to DSS.
+
+Can a landlord/owner charge tenants more than the approved Contract Rent?
+No. Tenants must be charged only the amount authorized by DSS. Unauthorized side payments
+or “side deals” for rent must be refunded to the tenant. These types of side deals may adversely
+affect the landlord’s future participation in the program.
+

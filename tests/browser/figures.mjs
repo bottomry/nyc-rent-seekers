@@ -39,7 +39,7 @@ try{
  const spaceEvent=page.waitForEvent('download');await page.click('#figure-svg');const spaceSvg=await readFile(await (await spaceEvent).path(),'utf8');assert.ok(spaceSvg.includes('15.0%'));assert.ok(spaceSvg.includes('5.1%'));assert.ok(spaceSvg.includes('5.8%'));
  await page.setViewportSize({width:390,height:844});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await page.screenshot({path:'/tmp/nycrs-final-space-mobile.png',fullPage:true});
  await page.goto(base+'/?view=protection&analysis=access&against=unmapped-program&figure='+manifest.figure_id);
- await page.getByText('No single allocation rule is assigned',{exact:false}).waitFor();await page.click('#figure-link');await page.reload();await page.getByText('No single allocation rule is assigned',{exact:false}).waitFor();
+ await page.getByText('No single program identity is assigned',{exact:false}).waitFor();await page.click('#figure-link');await page.reload();await page.getByText('No single program identity is assigned',{exact:false}).waitFor();
  assert.equal(new URL(page.url()).searchParams.get('accessGroup'),'unmapped-program');
  await page.goto(base+'/?view=protection&figure='+'0'.repeat(64));await page.getByRole('alert').waitFor();assert.equal(await page.locator('.protection-bars').count(),0);
  await page.goto(base+'/?view=protection&figure=invalid');await page.getByRole('alert').waitFor();
