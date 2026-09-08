@@ -53,7 +53,8 @@ try {
  await page.locator('[data-space-cell="1,2"]').click();
  await screenshot(page,'household-space-desktop.png');
  await page.selectOption('#space-geography','manhattan');
- assert.equal(await page.locator('[data-space-group=public_housing]').innerText(),'Unavailable');
+ const manhattan=evidence.space_estimates.distributions.find(d=>d.geography_id==='manhattan'&&d.population_id==='public_housing').cells.find(c=>c.people==='1'&&c.bedrooms==='2');
+ assert.equal(await page.locator('[data-space-group=public_housing]').innerText(),manhattan.none_observed?'None observed in this sample':manhattan.available?(manhattan.share*100).toFixed(1)+'%':'Unavailable');
  await page.selectOption('#space-geography','nyc');
  await page.setViewportSize({width:390,height:844});
  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));

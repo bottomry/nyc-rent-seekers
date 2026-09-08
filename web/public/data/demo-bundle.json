@@ -7634,20 +7634,114 @@
       "hud_amp_id": "NY005010130",
       "tds_id": "116",
       "consolidated_tds_id": "116",
-      "program": "FEDERAL",
+      "program": "PACT / project-based Section 8",
       "borough": "STATEN ISLAND",
       "borough_code": "SI",
       "current_unit_count": 455,
       "number_of_rental_rooms": 2190.5,
       "avg_rental_rooms_per_unit": 4.81,
       "geometry_id": null,
-      "geometry_join": "ddb_without_geometry",
+      "geometry_join": "official_building_bins_representative_point",
       "source_artifact_id": "nycha-ddb-open-data-csv",
       "data_as_of": "2025-01-01",
       "structured_data_as_of": "2025-01-01",
       "current_rent_source_artifact_id": "nycha-ddb-open-data-csv",
       "current_rent_source_id": "nycha_ddb_open_data",
-      "rent_stale": true
+      "rent_stale": true,
+      "source_program": "FEDERAL",
+      "aliases": [
+        "West Brighton 1",
+        "West Brighton Houses I",
+        "820 Henderson Avenue",
+        "806 Henderson Avenue",
+        "780 Henderson Avenue",
+        "778 Henderson Avenue",
+        "810 Henderson Avenue",
+        "240 Broadway",
+        "1077 Castleton Avenue",
+        "1075 Castleton Avenue"
+      ],
+      "program_transition": {
+        "conversion_date": "2024-06-26",
+        "project_name": "West Brighton",
+        "program": "PACT / project-based Section 8",
+        "source_url": "https://www.nyc.gov/site/nycha/about/pact/west-brighton.page",
+        "sources": [
+          {
+            "file": "west-brighton.pdf",
+            "sha256": "ba29a92dd0158d1d86a0e5c276831850f52511332a5afebcd20615c331dc4ffd",
+            "url": "https://www.nyc.gov/assets/nycha/downloads/pdf/west_brighton.pdf",
+            "locator": "Prepared June 2024; page 1 conversion, page 2 building/address/BIN table"
+          },
+          {
+            "file": "west-brighton-footprints.geojson",
+            "sha256": "5a9d7d58f745fedd1035d16642286003406789204c2f8598018da6e9d2120cb0",
+            "url": "https://data.cityofnewyork.us/resource/5zhs-2jue.geojson?%24where=bin+in+%28%275095813%27%2C%275095814%27%2C%275095815%27%2C%275095816%27%2C%275095817%27%2C%275095818%27%2C%275095819%27%2C%275095820%27%2C%275095821%27%2C%275095822%27%2C%275136037%27%2C%275095824%27%2C%275095825%27%2C%275095826%27%2C%275095827%27%2C%275095828%27%29",
+            "locator": "NYC building footprints 5zhs-2jue; sixteen residential BINs from NYCHA table"
+          }
+        ],
+        "buildings": [
+          {
+            "bin": "5095813",
+            "address": "820 Henderson Avenue",
+            "zip": "10310",
+            "bbl": "5001960001"
+          },
+          {
+            "bin": "5095814",
+            "address": "806 Henderson Avenue",
+            "zip": "10310",
+            "bbl": "5001960001"
+          },
+          {
+            "bin": "5095815",
+            "address": "780 Henderson Avenue",
+            "zip": "10310",
+            "bbl": "5001960001"
+          },
+          {
+            "bin": "5095816",
+            "address": "778 Henderson Avenue",
+            "zip": "10310",
+            "bbl": "5001960001"
+          },
+          {
+            "bin": "5095817",
+            "address": "810 Henderson Avenue",
+            "zip": "10310",
+            "bbl": "5001960001"
+          },
+          {
+            "bin": "5095818",
+            "address": "240 Broadway",
+            "zip": "10310",
+            "bbl": "5001960001"
+          },
+          {
+            "bin": "5095819",
+            "address": "1077 Castleton Avenue",
+            "zip": "10310",
+            "bbl": "5001960001"
+          },
+          {
+            "bin": "5095820",
+            "address": "1075 Castleton Avenue",
+            "zip": "10310",
+            "bbl": "5001960001"
+          }
+        ],
+        "current_pact_rent": {
+          "value": null,
+          "status": "not_verified",
+          "reason": "No current development-level PACT rent observation was verified in the NYCHA conversion page or June 2024 development PDF. Retained structured rent records are dated source observations, not confirmed current PACT rents.",
+          "sources_checked": [
+            "https://www.nyc.gov/site/nycha/about/pact/west-brighton.page",
+            "https://www.nyc.gov/assets/nycha/downloads/pdf/west_brighton.pdf"
+          ],
+          "reviewed_on": "2026-09-08"
+        },
+        "geometry_scope": "Representative point from official residential building footprints; not a development parcel boundary."
+      }
     },
     {
       "development_id": "nycha:tds:175",
@@ -7657,20 +7751,114 @@
       "hud_amp_id": "NY005010130",
       "tds_id": "175",
       "consolidated_tds_id": "116",
-      "program": "FEDERAL",
+      "program": "PACT / project-based Section 8",
       "borough": "STATEN ISLAND",
       "borough_code": "SI",
       "current_unit_count": 69,
       "number_of_rental_rooms": 239.5,
       "avg_rental_rooms_per_unit": 3.47,
       "geometry_id": null,
-      "geometry_join": "ddb_without_geometry",
+      "geometry_join": "official_building_bins_representative_point",
       "source_artifact_id": "nycha-ddb-open-data-csv",
       "data_as_of": "2025-01-01",
       "structured_data_as_of": "2025-01-01",
       "current_rent_source_artifact_id": "nycha-ddb-open-data-csv",
       "current_rent_source_id": "nycha_ddb_open_data",
-      "rent_stale": true
+      "rent_stale": true,
+      "source_program": "FEDERAL",
+      "aliases": [
+        "West Brighton 2",
+        "West Brighton Houses II",
+        "159 Alaska Street",
+        "157 Alaska Street",
+        "155 Alaska Street",
+        "1115 Castleton Avenue",
+        "1085 Castleton Avenue",
+        "1065 Castleton Avenue",
+        "260 Broadway",
+        "244 Broadway"
+      ],
+      "program_transition": {
+        "conversion_date": "2024-06-26",
+        "project_name": "West Brighton",
+        "program": "PACT / project-based Section 8",
+        "source_url": "https://www.nyc.gov/site/nycha/about/pact/west-brighton.page",
+        "sources": [
+          {
+            "file": "west-brighton.pdf",
+            "sha256": "ba29a92dd0158d1d86a0e5c276831850f52511332a5afebcd20615c331dc4ffd",
+            "url": "https://www.nyc.gov/assets/nycha/downloads/pdf/west_brighton.pdf",
+            "locator": "Prepared June 2024; page 1 conversion, page 2 building/address/BIN table"
+          },
+          {
+            "file": "west-brighton-footprints.geojson",
+            "sha256": "5a9d7d58f745fedd1035d16642286003406789204c2f8598018da6e9d2120cb0",
+            "url": "https://data.cityofnewyork.us/resource/5zhs-2jue.geojson?%24where=bin+in+%28%275095813%27%2C%275095814%27%2C%275095815%27%2C%275095816%27%2C%275095817%27%2C%275095818%27%2C%275095819%27%2C%275095820%27%2C%275095821%27%2C%275095822%27%2C%275136037%27%2C%275095824%27%2C%275095825%27%2C%275095826%27%2C%275095827%27%2C%275095828%27%29",
+            "locator": "NYC building footprints 5zhs-2jue; sixteen residential BINs from NYCHA table"
+          }
+        ],
+        "buildings": [
+          {
+            "bin": "5095821",
+            "address": "159 Alaska Street",
+            "zip": "10310",
+            "bbl": "5001960001"
+          },
+          {
+            "bin": "5095822",
+            "address": "157 Alaska Street",
+            "zip": "10310",
+            "bbl": "5001960001"
+          },
+          {
+            "bin": "5136037",
+            "address": "155 Alaska Street",
+            "zip": "10310",
+            "bbl": "5001960001"
+          },
+          {
+            "bin": "5095824",
+            "address": "1115 Castleton Avenue",
+            "zip": "10310",
+            "bbl": "5001960001"
+          },
+          {
+            "bin": "5095825",
+            "address": "1085 Castleton Avenue",
+            "zip": "10310",
+            "bbl": "5001960001"
+          },
+          {
+            "bin": "5095826",
+            "address": "1065 Castleton Avenue",
+            "zip": "10310",
+            "bbl": "5001960001"
+          },
+          {
+            "bin": "5095827",
+            "address": "260 Broadway",
+            "zip": "10310",
+            "bbl": "5001960001"
+          },
+          {
+            "bin": "5095828",
+            "address": "244 Broadway",
+            "zip": "10310",
+            "bbl": "5001960001"
+          }
+        ],
+        "current_pact_rent": {
+          "value": null,
+          "status": "not_verified",
+          "reason": "No current development-level PACT rent observation was verified in the NYCHA conversion page or June 2024 development PDF. Retained structured rent records are dated source observations, not confirmed current PACT rents.",
+          "sources_checked": [
+            "https://www.nyc.gov/site/nycha/about/pact/west-brighton.page",
+            "https://www.nyc.gov/assets/nycha/downloads/pdf/west_brighton.pdf"
+          ],
+          "reviewed_on": "2026-09-08"
+        },
+        "geometry_scope": "Representative point from official residential building footprints; not a development parcel boundary."
+      }
     }
   ],
   "tenant_rent_observations": [
@@ -8046,7 +8234,8 @@
       "source_id": "nycha_ddb_open_data",
       "notes": "Structured Open Data DDB row; DATA AS OF 2025-01-01. Development-wide average monthly gross rent. Structured Open Data value retained; newer official PDF vintage 2026-01-01 has no successful parse for this development.",
       "stale_relative_to_pdf": true,
-      "pdf_data_as_of": "2026-01-01"
+      "pdf_data_as_of": "2026-01-01",
+      "program_evidence_status": "retained_source_not_verified_current_pact"
     },
     {
       "observation_id": "nycha:tds:117:avg-gross-rent:2026-01-01",
@@ -9344,7 +9533,8 @@
       "source_id": "nycha_ddb_open_data",
       "notes": "Structured Open Data DDB row; DATA AS OF 2025-01-01. Development-wide average monthly gross rent. Structured Open Data value retained; newer official PDF vintage 2026-01-01 has no successful parse for this development.",
       "stale_relative_to_pdf": true,
-      "pdf_data_as_of": "2026-01-01"
+      "pdf_data_as_of": "2026-01-01",
+      "program_evidence_status": "retained_source_not_verified_current_pact"
     },
     {
       "observation_id": "nycha:tds:176:avg-gross-rent:2026-01-01",
@@ -124574,6 +124764,58 @@
               -73.98381964832095,
               40.68254161728978
             ]
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -74.11965109019603,
+              40.636337336253504
+            ]
+          },
+          "properties": {
+            "development_id": "nycha:tds:116",
+            "name": "WEST BRIGHTON I",
+            "tds_id": "116",
+            "borough": "STATEN ISLAND",
+            "borough_code": "SI",
+            "program": "PACT / project-based Section 8",
+            "source_url": "https://data.cityofnewyork.us/resource/5zhs-2jue.geojson?%24where=bin+in+%28%275095813%27%2C%275095814%27%2C%275095815%27%2C%275095816%27%2C%275095817%27%2C%275095818%27%2C%275095819%27%2C%275095820%27%2C%275095821%27%2C%275095822%27%2C%275136037%27%2C%275095824%27%2C%275095825%27%2C%275095826%27%2C%275095827%27%2C%275095828%27%29",
+            "source_sha256": "5a9d7d58f745fedd1035d16642286003406789204c2f8598018da6e9d2120cb0",
+            "source_dataset_id": "5zhs-2jue",
+            "join_method": "nycha_official_building_bin",
+            "join_confidence": "high",
+            "geometry_quality": "official_building_derived_point",
+            "geometry_scope": "Representative point from official residential building footprints; not a development parcel boundary.",
+            "current_pact_rent": null
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -74.11915215049835,
+              40.6346733146395
+            ]
+          },
+          "properties": {
+            "development_id": "nycha:tds:175",
+            "name": "WEST BRIGHTON II",
+            "tds_id": "175",
+            "borough": "STATEN ISLAND",
+            "borough_code": "SI",
+            "program": "PACT / project-based Section 8",
+            "source_url": "https://data.cityofnewyork.us/resource/5zhs-2jue.geojson?%24where=bin+in+%28%275095813%27%2C%275095814%27%2C%275095815%27%2C%275095816%27%2C%275095817%27%2C%275095818%27%2C%275095819%27%2C%275095820%27%2C%275095821%27%2C%275095822%27%2C%275136037%27%2C%275095824%27%2C%275095825%27%2C%275095826%27%2C%275095827%27%2C%275095828%27%29",
+            "source_sha256": "5a9d7d58f745fedd1035d16642286003406789204c2f8598018da6e9d2120cb0",
+            "source_dataset_id": "5zhs-2jue",
+            "join_method": "nycha_official_building_bin",
+            "join_confidence": "high",
+            "geometry_quality": "official_building_derived_point",
+            "geometry_scope": "Representative point from official residential building footprints; not a development parcel boundary.",
+            "current_pact_rent": null
           }
         }
       ],
@@ -484285,6 +484527,156 @@
         "unit_weighted_mean": "Weighted by current NYCHA unit counts where available; missing units default to weight 1.",
         "unit_weighted_median_proxy": "Median of the unit-weighted distribution (cumulative unit weight)."
       }
+    }
+  },
+  "program_transitions": {
+    "version": 1,
+    "reviewed_on": "2026-09-08",
+    "conversion_date": "2024-06-26",
+    "program": "PACT / project-based Section 8",
+    "project_name": "West Brighton",
+    "conversion_source_url": "https://www.nyc.gov/site/nycha/about/pact/west-brighton.page",
+    "sources": [
+      {
+        "file": "west-brighton.pdf",
+        "sha256": "ba29a92dd0158d1d86a0e5c276831850f52511332a5afebcd20615c331dc4ffd",
+        "url": "https://www.nyc.gov/assets/nycha/downloads/pdf/west_brighton.pdf",
+        "locator": "Prepared June 2024; page 1 conversion, page 2 building/address/BIN table"
+      },
+      {
+        "file": "west-brighton-footprints.geojson",
+        "sha256": "5a9d7d58f745fedd1035d16642286003406789204c2f8598018da6e9d2120cb0",
+        "url": "https://data.cityofnewyork.us/resource/5zhs-2jue.geojson?%24where=bin+in+%28%275095813%27%2C%275095814%27%2C%275095815%27%2C%275095816%27%2C%275095817%27%2C%275095818%27%2C%275095819%27%2C%275095820%27%2C%275095821%27%2C%275095822%27%2C%275136037%27%2C%275095824%27%2C%275095825%27%2C%275095826%27%2C%275095827%27%2C%275095828%27%29",
+        "locator": "NYC building footprints 5zhs-2jue; sixteen residential BINs from NYCHA table"
+      }
+    ],
+    "developments": [
+      {
+        "development_id": "nycha:tds:116",
+        "name": "WEST BRIGHTON I",
+        "aliases": [
+          "West Brighton 1",
+          "West Brighton Houses I"
+        ],
+        "buildings": [
+          {
+            "bin": "5095813",
+            "address": "820 Henderson Avenue",
+            "zip": "10310",
+            "bbl": "5001960001"
+          },
+          {
+            "bin": "5095814",
+            "address": "806 Henderson Avenue",
+            "zip": "10310",
+            "bbl": "5001960001"
+          },
+          {
+            "bin": "5095815",
+            "address": "780 Henderson Avenue",
+            "zip": "10310",
+            "bbl": "5001960001"
+          },
+          {
+            "bin": "5095816",
+            "address": "778 Henderson Avenue",
+            "zip": "10310",
+            "bbl": "5001960001"
+          },
+          {
+            "bin": "5095817",
+            "address": "810 Henderson Avenue",
+            "zip": "10310",
+            "bbl": "5001960001"
+          },
+          {
+            "bin": "5095818",
+            "address": "240 Broadway",
+            "zip": "10310",
+            "bbl": "5001960001"
+          },
+          {
+            "bin": "5095819",
+            "address": "1077 Castleton Avenue",
+            "zip": "10310",
+            "bbl": "5001960001"
+          },
+          {
+            "bin": "5095820",
+            "address": "1075 Castleton Avenue",
+            "zip": "10310",
+            "bbl": "5001960001"
+          }
+        ]
+      },
+      {
+        "development_id": "nycha:tds:175",
+        "name": "WEST BRIGHTON II",
+        "aliases": [
+          "West Brighton 2",
+          "West Brighton Houses II"
+        ],
+        "buildings": [
+          {
+            "bin": "5095821",
+            "address": "159 Alaska Street",
+            "zip": "10310",
+            "bbl": "5001960001"
+          },
+          {
+            "bin": "5095822",
+            "address": "157 Alaska Street",
+            "zip": "10310",
+            "bbl": "5001960001"
+          },
+          {
+            "bin": "5136037",
+            "address": "155 Alaska Street",
+            "zip": "10310",
+            "bbl": "5001960001"
+          },
+          {
+            "bin": "5095824",
+            "address": "1115 Castleton Avenue",
+            "zip": "10310",
+            "bbl": "5001960001"
+          },
+          {
+            "bin": "5095825",
+            "address": "1085 Castleton Avenue",
+            "zip": "10310",
+            "bbl": "5001960001"
+          },
+          {
+            "bin": "5095826",
+            "address": "1065 Castleton Avenue",
+            "zip": "10310",
+            "bbl": "5001960001"
+          },
+          {
+            "bin": "5095827",
+            "address": "260 Broadway",
+            "zip": "10310",
+            "bbl": "5001960001"
+          },
+          {
+            "bin": "5095828",
+            "address": "244 Broadway",
+            "zip": "10310",
+            "bbl": "5001960001"
+          }
+        ]
+      }
+    ],
+    "current_pact_rent": {
+      "value": null,
+      "status": "not_verified",
+      "reason": "No current development-level PACT rent observation was verified in the NYCHA conversion page or June 2024 development PDF. Retained structured rent records are dated source observations, not confirmed current PACT rents.",
+      "sources_checked": [
+        "https://www.nyc.gov/site/nycha/about/pact/west-brighton.page",
+        "https://www.nyc.gov/assets/nycha/downloads/pdf/west_brighton.pdf"
+      ],
+      "reviewed_on": "2026-09-08"
     }
   }
 }

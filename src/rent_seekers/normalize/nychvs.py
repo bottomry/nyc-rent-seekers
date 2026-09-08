@@ -79,6 +79,10 @@ def weighted_median_uncertainty(
     """Estimate a weighted median and HPD-compatible replicate-weight uncertainty."""
     if replicate_weight_count <= 0:
         raise ValueError("replicate_weight_count must be positive")
+    if not math.isfinite(critical_value) or critical_value <= 0:
+        raise ValueError("critical value must be finite and positive")
+    if not math.isfinite(variance_multiplier) or variance_multiplier <= 0:
+        raise ValueError("variance multiplier must be finite and positive")
 
     point_pairs = [(float(row[rent_field]), float(row[weight_field])) for row in rows]
     point = weighted_median(point_pairs)
@@ -92,7 +96,7 @@ def weighted_median_uncertainty(
             pairs = [(float(row[rent_field]), float(row[field])) for row in rows]
         except (KeyError, TypeError, ValueError) as exc:
             raise ValueError(f"invalid or missing NYCHVS replicate weight field: {field}") from exc
-        if any(not math.isfinite(weight) or weight <= 0 for _, weight in pairs):
+        if any(not math.isfinite(weight) or weight < 0 for _, weight in pairs):
             raise ValueError(f"invalid NYCHVS replicate weight in field: {field}")
         median = weighted_median(pairs)
         if median is None:
@@ -212,14 +216,16 @@ def _estimate_cell(
     weight_field = str(fields["weight"])
     rent_field = str(fields["gross_rent"])
     eligible_weights: list[float] = []
+    invalid_weight_count = 0
     for row in eligible:
         try:
             weight = float(row[weight_field])
-        except (KeyError, TypeError, ValueError) as exc:
-            value = row.get(weight_field)
-            raise ValueError(f"invalid survey weight in eligible NYCHVS row: {value!r}") from exc
+        except (KeyError, TypeError, ValueError):
+            invalid_weight_count += 1
+            continue
         if not math.isfinite(weight) or weight <= 0:
-            raise ValueError(f"invalid survey weight in eligible NYCHVS row: {weight!r}")
+            invalid_weight_count += 1
+            continue
         eligible_weights.append(weight)
     weighted_population = sum(eligible_weights)
     rent_values: list[tuple[float, float]] = []
@@ -235,45 +241,51 @@ def _estimate_cell(
             rent_rows.append(row)
 
     rent_sample_count = len(rent_values)
-    min_count = int(cfg["quality"]["min_rent_sample_count"])
-    median = weighted_median(rent_values)
+    median = weighted_median(rent_values) if not invalid_weight_count else None
     variance_cfg = cfg.get("variance")
     uncertainty: dict[str, float | int] | None = None
-    if median is not None and variance_cfg and int(variance_cfg["replicate_weight_count"]) > 0:
-        uncertainty = weighted_median_uncertainty(
-            rent_rows,
-            rent_field=rent_field,
-            weight_field=weight_field,
-            replicate_weight_prefix=str(fields["replicate_weight_prefix"]),
-            replicate_weight_count=int(variance_cfg["replicate_weight_count"]),
-            variance_multiplier=float(variance_cfg["variance_multiplier"]),
-            critical_value=float(variance_cfg["critical_value"]),
-        )
-
-    reliability_status = "unavailable"
-    unavailable_reason: str | None = None
-    if median is None:
-        unavailable_reason = "no_usable_rent_observations"
-    elif rent_sample_count < min_count:
-        unavailable_reason = f"project_sample_guard_failed:{rent_sample_count}<{min_count}"
-    elif uncertainty is None:
-        reliability_status = "reliable"
-    else:
-        cv = float(uncertainty["coefficient_of_variation"])
-        reliable_max = float(cfg["quality"]["reliable_cv_max"])
-        caution_max = float(cfg["quality"]["use_with_caution_cv_max"])
-        if cv <= reliable_max:
-            reliability_status = "reliable"
-        elif bool(cfg["quality"]["allow_use_with_caution"]) and cv <= caution_max:
-            reliability_status = "use_with_caution"
-        elif not bool(cfg["quality"]["allow_use_with_caution"]) and cv <= caution_max:
-            unavailable_reason = (
-                "project_reliability_guard_failed:use_with_caution_disabled:"
-                f"cv={cv:.4f}>{reliable_max:.4f}"
-            )
-        else:
-            unavailable_reason = f"project_reliability_guard_failed:cv={cv:.4f}>{caution_max:.4f}"
-    available = reliability_status != "unavailable"
+    uncertainty_reason = None
+    if median is not None:
+        uncertainty_reason = "replicate_weights_unavailable"
+        if variance_cfg and int(variance_cfg["replicate_weight_count"]) > 0:
+            try:
+                uncertainty = weighted_median_uncertainty(
+                    rent_rows,
+                    rent_field=rent_field,
+                    weight_field=weight_field,
+                    replicate_weight_prefix=str(fields["replicate_weight_prefix"]),
+                    replicate_weight_count=int(variance_cfg["replicate_weight_count"]),
+                    variance_multiplier=float(variance_cfg["variance_multiplier"]),
+                    critical_value=float(variance_cfg["critical_value"]),
+                )
+                if any(not math.isfinite(float(v)) for v in uncertainty.values()):
+                    raise ValueError("nonfinite uncertainty")
+                uncertainty_reason = None
+            except (ValueError, OverflowError, ZeroDivisionError):
+                uncertainty = None
+                uncertainty_reason = "invalid_replicate_weights_or_variance"
+    unavailable_reason = (
+        "invalid_full_sample_weights" if invalid_weight_count
+        else "no_usable_rent_observations" if median is None else None
+    )
+    available = median is not None
+    caveats = []
+    if available:
+        if rent_sample_count < int(cfg["quality"].get("small_rent_sample_caution", 30)):
+            caveats.append(f"Small sample: {rent_sample_count} rent responses.")
+        if uncertainty is None:
+            caveats.append("Uncertainty could not be estimated")
+        elif float(uncertainty["coefficient_of_variation"]) > float(
+            cfg["quality"].get("high_uncertainty_cv_min", 0.30)
+        ):
+            caveats.append("High sampling uncertainty.")
+        elif float(uncertainty["coefficient_of_variation"]) > float(
+            cfg["quality"]["reliable_cv_max"]
+        ):
+            caveats.append("Higher sampling uncertainty.")
+    reliability_status = (
+        "unavailable" if not available else "use_with_caution" if caveats else "reliable"
+    )
     publish_uncertainty = uncertainty if available else None
     citywide_id = str(cfg["geography"]["id"])
     estimate_id = f"nychvs:{cfg['vintage']}:{population_id}:{cohort_id}:gross-rent"
@@ -333,6 +345,10 @@ def _estimate_cell(
             if publish_uncertainty
             else None
         ),
+        "publication_policy_version": 2,
+        "caveats": caveats,
+        "uncertainty_reason": uncertainty_reason,
+        "invalid_weight_sample_count": invalid_weight_count,
         "reliability_status": reliability_status,
         "available": available,
         "unavailable_reason": unavailable_reason,
@@ -429,6 +445,9 @@ def build_population_rent_observations(
             confidence_interval_lower=estimate["confidence_interval_lower"],
             confidence_interval_upper=estimate["confidence_interval_upper"],
             coefficient_of_variation=estimate["coefficient_of_variation"],
+            publication_policy_version=estimate.get("publication_policy_version"),
+            caveats=estimate.get("caveats", []),
+            uncertainty_reason=estimate.get("uncertainty_reason"),
             reliability_status=str(estimate["reliability_status"]),
             inference_class="descriptive_only",
             rival_explanations=[
@@ -522,6 +541,7 @@ def derive_population_rent_gap(
         percent_denominator_observation_id=right.observation_id,
         direction=direction,
         comparability_notes=comparability_notes,
+        component_caveats={left.observation_id: left.caveats, right.observation_id: right.caveats},
         uncertainty_note=(
             "Point-estimate difference only; inspect both source observations for uncertainty. "
             "No combined interval is asserted."
@@ -881,8 +901,9 @@ def calculate_from_paths(
             "rent_field": cfg["fields"]["gross_rent"],
             "rent_measure": "monthly gross rent including separately paid utilities",
             "cohorts": cfg["cohorts"],
-            "min_rent_sample_count": cfg["quality"]["min_rent_sample_count"],
-            "sample_guard_policy": "project_defined",
+            "publication_policy_version": 2,
+            "small_rent_sample_caution": cfg["quality"].get("small_rent_sample_caution", 30),
+            "sample_guard_policy": "caution_only_no_count_or_cv_suppression",
             "reliability": cfg["quality"],
             "variance": cfg.get("variance"),
             "geography_field": cfg["fields"]["borough"],

@@ -94,14 +94,19 @@ populations:
     csr_values: ["05"]
 
 quality:
-  # These are project display guards, not HPD publication thresholds. HPD supplies
-  # the variance method; this product decides which estimates it can explain safely.
-  min_rent_sample_count: 30
+  publication_policy_version: 2
+  # Caution thresholds only. A valid point estimate is never hidden by N or CV.
+  small_rent_sample_caution: 30
   reliable_cv_max: 0.15
-  use_with_caution_cv_max: 0.30
-  allow_use_with_caution: true
+  high_uncertainty_cv_min: 0.30
   unavailable_value: null
   impute_underpowered_cells: false
+
+space_quality:
+  publication_policy_version: 2
+  small_cell_caution: 30
+  high_uncertainty_cv_min: 0.30
+  none_observed_interval: null
 
 variance:
   method: successive_difference_replication

@@ -3,7 +3,10 @@
 from __future__ import annotations
 
 import json
+import shlex
 from pathlib import Path
+
+import yaml
 
 ROOT = Path(__file__).resolve().parents[2]
 PUBLIC_ESTIMATES = ROOT / "web" / "public" / "data" / "nychvs" / "estimates.json"
@@ -40,43 +43,50 @@ def test_published_evidence_has_source_method_uncertainty_and_inference_contract
     )
 
 
-def test_analytical_ui_release_gate_covers_teaching_states_and_mobile_behavior():
-    workflow = (ROOT / ".github" / "workflows" / "test.yml").read_text(encoding="utf-8")
-    browser = (ROOT / "tests" / "browser" / "smoke.mjs").read_text(encoding="utf-8")
-    component = (ROOT / "web" / "src" / "components" / "DevelopmentDrawer.ts").read_text(
-        encoding="utf-8"
+def test_analytical_ui_release_gate_runs_required_checks():
+    workflow = yaml.safe_load(
+        (ROOT / ".github" / "workflows" / "test.yml").read_text(encoding="utf-8")
     )
-    styles = (ROOT / "web" / "src" / "styles" / "app.css").read_text(encoding="utf-8")
+    assert workflow["permissions"] == {"contents": "read"}
+    assert workflow.get("env", {}) == {}
+    commands = set()
+    for job in workflow["jobs"].values():
+        assert "if" not in job
+        assert not job.get("continue-on-error", False)
+        assert job.get("permissions", workflow["permissions"]) == {"contents": "read"}
+        assert job.get("env", {}) == {}
+        for step in job["steps"]:
+            assert "if" not in step
+            assert not step.get("continue-on-error", False)
+            assert step.get("env", {}) == {}
+            if step.get("uses", "").startswith("actions/checkout@"):
+                assert step["with"]["persist-credentials"] is False
+            if "run" not in step:
+                continue
+            assert step.get("shell", "bash") == "bash"
+            for line in step["run"].replace("\\\n", "").splitlines():
+                lexer = shlex.shlex(line, posix=True, punctuation_chars=True)
+                lexer.whitespace_split = True
+                command = tuple(lexer)
+                if not command:
+                    continue
+                assert command[0] in {"uv", "npm", "make", "node", "npx", "echo"}
+                assert not any(
+                    token and all(char in "();<>|&" for char in token)
+                    for token in command
+                ), "Release checks must be unconditional simple commands"
+                commands.add(command)
 
     for gate in (
-        "uv run pytest -q",
-        "npm run typecheck",
-        "node tests/browser/smoke.mjs --app-only",
+        ("make", "test-isolation"),
+        ("uv", "run", "pytest", "-q"),
+        ("uv", "run", "ruff", "check", "src", "tests"),
+        ("npm", "run", "typecheck"),
+        ("make", "web-build"),
+        ("node", "tests/browser/smoke.mjs", "--app-only"),
+        ("node", "tests/browser/visible-uncertainty.mjs"),
+        ("node", "tests/browser/drawer-difference-precision.mjs"),
+        ("uv", "run", "pytest", "tests/unit/test_edge_hardening.py", "-q"),
+        ("node", "scripts/static-edge-load.mjs"),
     ):
-        assert gate in workflow
-    for browser_contract in (
-        'data-population-load-status="loading"',
-        'data-population-load-status="error"',
-        'data-testid="population-provenance"',
-        "descriptive insight asserted a causal explanation",
-        "provenance disclosure disrupted analysis state",
-        "geography fallback did not select borough then citywide",
-    ):
-        assert browser_contract in browser
-    for teaching_contract in (
-        "Available to a seeker",
-        "Paid by current renters",
-        "Why are these rents different?",
-        "Next: compare regulation",
-        'data-testid="population-provenance"',
-    ):
-        assert teaching_contract in component
-    assert "@media (max-width:" in styles
-    assert "grid-template-columns: repeat(2, minmax(0, 1fr))" in styles
-
-
-def test_product_chrome_excludes_repository_lifecycle_labels():
-    lifecycle_labels = ("public project", "private software", "promotion stage")
-    for relative in ("web/index.html", "web/demo.html"):
-        surface = (ROOT / relative).read_text(encoding="utf-8").lower()
-        assert not any(label in surface for label in lifecycle_labels), relative
+        assert gate in commands

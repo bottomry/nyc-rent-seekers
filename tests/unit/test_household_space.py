@@ -57,7 +57,7 @@ def test_missing_dimensions_and_invalid_weights_are_not_zero_cells():
     missing, bad_weight = row("-1"), row()
     bad_weight["FW"] = "nan"
     d = distribution([row(), missing, bad_weight])
-    assert d["weighted_households"] == 1
+    assert d["weighted_households"] is None
     assert d["missing_dimensions_sample_count"] == 1
     assert d["missing_dimensions_weighted_households"] == 1
     assert d["invalid_weight_sample_count"] == 1
@@ -88,14 +88,17 @@ def test_underpowered_cell_and_invalid_replicate():
     cfg["quality"]["min_rent_sample_count"] = 30
     d = distribution([row()], cfg)
     c = next(c for c in d["cells"] if c["sample_count"])
-    assert c["share"] is None and c["weighted_households"] is None
+    assert c["share"] == 1 and c["weighted_households"] == 1
+    assert c["available"] is True
     broken = row()
     broken.pop("FW2")
-    with pytest.raises(ValueError, match="replicate weight"):
-        distribution([broken])
+    cell = next(c for c in distribution([broken])["cells"] if c["sample_count"])
+    assert cell["share"] == 1
+    assert cell["confidence_interval_lower"] is None
+    assert "Uncertainty could not be estimated" in cell["caveats"]
 
 
-def test_eighty_replicate_uncertainty_and_cv_suppression():
+def test_eighty_replicate_uncertainty_preserves_high_cv_share():
     cfg = deepcopy(policy())
     cfg["geographies"] = {"nyc": cfg["geographies"]["nyc"]}
     assert cfg["variance"]["replicate_weight_count"] == 80
@@ -108,8 +111,10 @@ def test_eighty_replicate_uncertainty_and_cv_suppression():
         r.update({f"FW{i}": "2" for i in range(1, 81)})
     cell = distribution(rows, cfg)["cells"][2]
     assert cell["sample_count"] == 30
-    assert cell["reliability_status"] == "sampling_uncertainty"
-    assert cell["available"] is False and cell["share"] is None
+    assert cell["reliability_status"] == "use_with_caution"
+    assert "High sampling uncertainty." in cell["caveats"]
+    assert cell["available"] is True and cell["share"] == 0.5
+    assert cell["standard_error"] == pytest.approx(1 / 3)
     # A smaller replicate perturbation is publishable with the expected SE.
     for r in rows[:30]:
         r.update({f"FW{i}": "1.1" for i in range(1, 81)})
@@ -120,3 +125,21 @@ def test_eighty_replicate_uncertainty_and_cv_suppression():
     assert cell["standard_error"] == pytest.approx(expected_se)
     assert cell["confidence_interval_lower"] == pytest.approx(0.5 - 1.96 * expected_se)
     assert cell["confidence_interval_upper"] == pytest.approx(0.5 + 1.96 * expected_se)
+
+
+def test_none_observed_is_a_sample_zero_without_a_population_interval():
+    d = distribution([row()])
+    c = d["cells"][0]
+    assert c["share"] == 0 and c["available"]
+    assert c["none_observed"] and c["sample_count"] == 0
+    assert c["denominator_sample_count"] == 1
+    assert c["standard_error"] is None
+    assert c["confidence_interval_lower"] is None
+    assert c["confidence_interval_upper"] is None
+    assert "population absence" in c["caveats"][0]
+
+
+def test_missing_denominator_is_unavailable_not_a_sample_zero():
+    d = distribution([])
+    assert d["weighted_households"] is None
+    assert all(not c["available"] and c["share"] is None for c in d["cells"])

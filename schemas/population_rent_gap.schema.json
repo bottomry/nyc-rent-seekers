@@ -38,6 +38,7 @@
     "causal_claim_allowed"
   ],
   "properties": {
+    "component_caveats": {"additionalProperties": {"items": {"type": "string"}, "type": "array"}, "title": "Component Caveats", "type": "object"},
     "derived_type": { "const": "population_rent_gap" },
     "gap_id": { "type": "string", "minLength": 1 },
     "gap_type": {

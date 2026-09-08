@@ -57,7 +57,7 @@ load. If the request fails or returns invalid JSON, **Rents by group** reports u
 and the building view reports unavailable survey context. Switching views does not retry
 the request; reload the page to try again.
 
-The linked **Frozen rents** panel shows the selected borough's current rent, frozen rent and
+Under **Program details**, the combined **Rent Freeze** reference shows the selected borough's current rent, frozen rent and
 reported monthly benefit; see [Rent Freeze program evidence](docs/rent-freeze.md) for its
 separate administrative measure and source scope. Missing program evidence displays as unavailable.
 
@@ -157,3 +157,18 @@ It is a **market-rent wedge**, not direct government expenditure or cash subsidy
 ## Isolation
 
 CI fails on peer-product package names, environment-variable prefixes, and hosts. See `config/deployment.yml` and `tests/unit/test_isolation.py`.
+
+
+### Visible precision and program history
+
+Valid rent medians remain visible with response counts and replicate-weight 95% intervals.
+Below 30 responses adds a small-sample caution; high CV adds an uncertainty caution.
+Neither hides an otherwise valid value, and 30 responses does not guarantee precision.
+Invalid weights or no usable rents stay unavailable; missing uncertainty is labeled explicitly.
+Differences carry both component cautions; borough order is a point-estimate order, not a
+statistically established ranking. No interval for a difference is asserted.
+
+Household-space shares have independent rules, counts and group denominators. “None observed
+in this sample” does not establish population absence and has no zero-width confidence interval.
+West Brighton I and II remain searchable by legacy ID, name and official address. Their PACT
+conversion and retained source rent records are distinct; current PACT rent is an explicit gap.

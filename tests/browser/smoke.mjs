@@ -592,10 +592,10 @@ async function playwrightSmoke() {
     }));
     if (
       selectedGeographies.marketRecent !== "manhattan" ||
-      selectedGeographies.publicRecent !== "nyc"
+      selectedGeographies.publicRecent !== "manhattan"
     ) {
       throw new Error(
-        `geography fallback did not select borough then citywide: ${JSON.stringify(selectedGeographies)}`,
+        `estimable borough rent was replaced by a broader geography: ${JSON.stringify(selectedGeographies)}`,
       );
     }
     const lensSummary =

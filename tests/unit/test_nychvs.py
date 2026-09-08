@@ -136,20 +136,22 @@ def test_estimates_separate_recent_incumbent_and_exclude_partial_survey_year():
     assert recent["geography_type"] == "citywide"
 
 
-def test_underpowered_cell_is_unavailable_and_never_imputed():
+def test_small_cell_is_visible_with_caution_and_never_imputed():
     rows = [{"TENURE": "1", "HHFIRSTMOVEIN": "2022", "GRENT": "500", "FW": "12", "CSR": "05"}]
     public_recent = next(
         row
         for row in build_population_estimates(rows, cfg=_cfg(min_count=2))
         if row["population_id"] == "public_housing" and row["cohort_id"] == "recent"
     )
-    assert public_recent["available"] is False
-    assert public_recent["value"] is None
+    assert public_recent["available"] is True
+    assert public_recent["value"] == 500
     assert public_recent["imputed"] is False
-    assert public_recent["unavailable_reason"] == "project_sample_guard_failed:1<2"
+    assert public_recent["unavailable_reason"] is None
+    assert "Small sample: 1 rent responses." in public_recent["caveats"]
+    assert "Uncertainty could not be estimated" in public_recent["caveats"]
 
 
-def test_disabled_caution_state_reports_the_effective_project_cutoff():
+def test_high_uncertainty_stays_visible_even_with_legacy_suppression_settings():
     cfg = _cfg()
     cfg["quality"] = {
         "min_rent_sample_count": 2,
@@ -189,10 +191,11 @@ def test_disabled_caution_state_reports_the_effective_project_cutoff():
         if row["population_id"] == "regulated_private" and row["cohort_id"] == "recent"
     )
 
-    assert recent["available"] is False
-    assert recent["unavailable_reason"] == (
-        "project_reliability_guard_failed:use_with_caution_disabled:cv=0.5000>0.1000"
-    )
+    assert recent["available"] is True
+    assert recent["value"] == 200
+    assert recent["unavailable_reason"] is None
+    assert "High sampling uncertainty." in recent["caveats"]
+    assert recent["confidence_interval_lower"] == 4
 
 
 def test_published_benchmark_gate_rejects_drift():

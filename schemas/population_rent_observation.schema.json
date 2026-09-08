@@ -41,6 +41,9 @@
     "imputed"
   ],
   "properties": {
+    "publication_policy_version": {"anyOf": [{"type": "integer"}, {"type": "null"}], "default": null, "title": "Publication Policy Version"},
+    "caveats": {"items": {"type": "string"}, "title": "Caveats", "type": "array"},
+    "uncertainty_reason": {"anyOf": [{"type": "string"}, {"type": "null"}], "default": null, "title": "Uncertainty Reason"},
     "observation_type": { "const": "population_rent" },
     "observation_id": { "type": "string", "minLength": 1 },
     "source_id": { "type": "string", "minLength": 1 },

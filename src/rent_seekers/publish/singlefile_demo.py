@@ -1291,6 +1291,9 @@ def build_demo_bundle(root: Path | None = None) -> dict[str, Any]:
         },
     }
     # NRS-008: quality-ranked best-available index, rankings, aggregations
+    from rent_seekers.normalize.program_transitions import apply_program_transitions
+
+    bundle = apply_program_transitions(bundle, root / "data/reference/program-transitions")
     enrich_bundle_comparisons(bundle)
     return bundle
 

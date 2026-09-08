@@ -2457,3 +2457,11 @@ button.linkish:focus-visible {
 .program-evidence table caption {text-align:left;padding:.8rem 0;color:var(--muted)}
 .program-effects summary,.program-evidence summary {cursor:pointer;padding:.7rem 0}
 @media(max-width:600px){.program-stat strong{display:block}.program-selector{align-items:flex-start;flex-direction:column}.program-selector select{width:100%}.program-effects{margin:1rem 0;padding:0 .7rem}}
+
+/* Precision accompanies the value in screen, keyboard and print views. */
+.uncertainty-note {font-size:.82rem;line-height:1.5;color:var(--muted);margin:.5rem 0 1rem;overflow-wrap:anywhere;}
+.protection-rank {flex-wrap:wrap;}
+.rank-uncertainty {display:block;flex:0 0 100%;grid-column:1 / -1;font-size:.75rem;line-height:1.45;text-align:left;font-weight:400;white-space:normal;}
+.space-matrix button {white-space:normal;}
+.space-matrix button small {display:block;font-size:.65rem;opacity:.85;}
+@media print {.uncertainty-note,.rank-uncertainty {color:inherit;break-inside:avoid;}}

@@ -132,3 +132,26 @@ not confirmed releasability. The draft prioritizes monthly destination aggregate
 separate flows and actual payments with suppression and boundary metadata. Access
 to HCR unit data and rent-review comparisons remains unconfirmed. Do not identify
 anonymous survey respondents or send the draft without separate authorization.
+
+
+## Publication policy 2: availability and precision
+
+`config/nychvs.yml` sets a small-rent-sample caution at 30 and CV precision flags at 0.15/0.30.
+These are project display conventions, not HPD publication cutoffs. Every valid positive-rent
+weighted median is published, including a 16-response cell. Below 30 responses adds the exact
+response count; 30 or more guarantees neither accuracy nor precision. High CV never suppresses
+an otherwise valid value. A normal 95% interval uses 80 replicate medians and SDR variance
+(4/80 times the sum of squared departures from the full-weight median). See the
+[HPD variance guide](https://www.nyc.gov/assets/hpd/downloads/pdfs/about/2023-nychvs-guide-to-estimating-variances.pdf).
+Intervals describe sampling uncertainty, not all measurement or classification errors.
+
+No usable rent observations and invalid full-sample weights have separate unavailable reasons.
+Invalid/missing replica uncertainty leaves a valid point estimate with null interval and
+“Uncertainty could not be estimated”. Raw files remain private build inputs. Regenerate using
+`uv run rent-seekers normalize nychvs`; source checksums and published benchmark checks still gate it.
+
+Bars display counts, intervals and precision caveats alongside amounts. Differences carry both
+component caveats, with no independently claimed interval; ranking is descriptive point-estimate
+ordering, not a test of borough differences. JSON includes a null difference interval. SVG and
+print retain labels and the pinned source/policy version. Archived figure files are never rewritten.
+Administrative development means are never substituted into these household survey medians.
