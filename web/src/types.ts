@@ -17,6 +17,13 @@ export interface Development {
   borough?: string | null;
   borough_code?: string | null;
   program?: string | null;
+  source_program?: string | null;
+  aliases?: string[];
+  program_transition?: {
+    conversion_date:string; program:string; source_url:string; geometry_scope:string;
+    buildings:{bin:string;address:string;zip:string;bbl:string}[];
+    current_pact_rent:{value:null;status:string;reason:string};
+  };
   /** Current rent DATA AS OF (ISO date) — from PDF or structured per resolver. */
   data_as_of?: string | null;
   /** Structured Open Data DATA AS OF (ISO date); may lag PDF current values. */
@@ -65,6 +72,7 @@ export interface MarketRentObservation {
 }
 
 export interface PopulationRentObservation {
+  caveats?:string[]; uncertainty_reason?:string|null; publication_policy_version?:number;
   observation_type: "population_rent";
   observation_id: string;
   source_id: string;

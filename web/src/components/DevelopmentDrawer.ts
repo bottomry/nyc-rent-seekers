@@ -188,6 +188,7 @@ interface RentContextRow {
   unavailableReason?: string | null;
   reliabilityStatus?: "reliable" | "use_with_caution" | "unavailable";
   sampleSize?: number;
+  caveats?:string[];
   standardError?: number | null;
   confidenceIntervalLower?: number | null;
   confidenceIntervalUpper?: number | null;
@@ -317,6 +318,7 @@ function surveyRow(
     unavailableReason: loadReason || row?.unavailable_reason || null,
     reliabilityStatus: row?.reliability_status,
     sampleSize: row?.sample_size,
+    caveats:row?.caveats,
     standardError: row?.standard_error,
     confidenceIntervalLower: row?.confidence_interval_lower,
     confidenceIntervalUpper: row?.confidence_interval_upper,
@@ -479,7 +481,7 @@ function renderPopulationProvenance(
           <div><dt>Housing regime</dt><dd><code>${escapeHtml(recordValue(method, "housing_type_field"))}</code></dd></div>
           <div><dt>Tenure/cohort</dt><dd><code>${escapeHtml(recordValue(method, "tenure_field"))}</code> · <code>${escapeHtml(recordValue(method, "first_move_year_field"))}</code></dd></div>
           <div><dt>Geography</dt><dd><code>${escapeHtml(recordValue(method, "geography_field"))}</code></dd></div>
-          <div><dt>Display guards</dt><dd>sample ≥ ${escapeHtml(recordValue(reliability, "min_rent_sample_count"))}; reliable CV ≤ ${escapeHtml(recordValue(reliability, "reliable_cv_max"))}</dd></div>
+          <div><dt>Precision policy</dt><dd>${method.publication_policy_version===2?"Valid values remain visible; fewer than 30 rent responses is a caution, not a cutoff.":`Saved policy sample cutoff: ${escapeHtml(recordValue(reliability, "min_rent_sample_count"))}`}</dd></div>
         </dl>
         <p>Recent movers: 2021–2022. Incumbents: 2020 or earlier. Survey-year movers are excluded.
           Cells are filtered to occupied renter households, classified with the All Units file,
@@ -554,6 +556,7 @@ function contextRowHtml(row: RentContextRow, max: number): string {
         <strong>${escapeHtml(row.label)}</strong>
         <span>${escapeHtml(scopeLabel)} · ${escapeHtml(row.geography)} · ${escapeHtml(row.vintage)}</span>
         ${reliabilityDisclosure}
+        ${available&&row.scope==='survey'?`<span class="uncertainty-note">${escapeHtml([...(row.caveats||[]),technicalDetail||'Uncertainty could not be estimated'].join(' '))}</span>`:''}
         ${unavailable}
       </div>
       <div class="rent-context-track" aria-hidden="true">
@@ -1020,7 +1023,7 @@ export function developmentDataCardText(
 function unitsLine(development: Development): string {
   const units =
     development.current_unit_count != null
-      ? `${development.current_unit_count.toLocaleString("en-US")} current apartments`
+      ? `${development.current_unit_count.toLocaleString("en-US")} ${development.program_transition?"apartments in the retained source":"current apartments"}`
       : "";
   const rooms =
     development.avg_rental_rooms_per_unit != null
@@ -1087,11 +1090,13 @@ export function renderStructuredRentDrawer(
     ? `<a href="${escapeHtml(rent.source_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}</a>`
     : escapeHtml(label);
   const meta = unitsLine(development);
-  const geomNote = opts?.hasGeometry
+  const geomNote = development.program_transition
+    ? escapeHtml(development.program_transition.geometry_scope)
+    : opts?.hasGeometry
     ? `Official footprint on map${opts.geometrySourceUrl ? ` · ${escapeHtml(opts.geometrySourceUrl)}` : ""}`
     : "No matched polygon in the geometry layer";
   const stale =
-    rent.stale_relative_to_pdf || development.rent_stale
+    !development.program_transition && (rent.stale_relative_to_pdf || development.rent_stale)
       ? `<div class="metric-detail stale-flag" data-testid="rent-stale-flag">
            Stale relative to official PDF vintage ${escapeHtml(rent.pdf_data_as_of || "2026-01-01")}
            — structured Open Data retained after PDF parse miss.
@@ -1126,8 +1131,9 @@ export function renderStructuredRentDrawer(
       <button type="button" class="close" data-action="close-drawer" aria-label="Close drawer">×</button>
     </div>
 
+    ${development.program_transition?`<section class="metric-block" data-testid="pact-transition"><h3>PACT · project-based Section 8</h3><p>Converted ${escapeHtml(development.program_transition.conversion_date)}. This is project-based assistance, distinct from a tenant-based voucher.</p><p><strong>Current PACT rent unavailable.</strong> ${escapeHtml(development.program_transition.current_pact_rent.reason)}</p><p><a href="${escapeHtml(development.program_transition.source_url)}" target="_blank" rel="noopener">NYCHA conversion record</a> · Legacy development IDs and source dates are retained.</p></section>`:''}
     <div class="metric-block hero" data-testid="structured-rent-card">
-      <div class="metric-label">What residents pay (building average)</div>
+      <div class="metric-label">${development.program_transition?'Retained source rent (historical record)':'What residents pay (building average)'}</div>
       <div class="metric-value tenant hero-value" data-testid="structured-rent">
         ${formatUsd(rent.value)}<span class="hero-unit">/mo</span>
       </div>

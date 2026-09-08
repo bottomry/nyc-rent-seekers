@@ -101,7 +101,7 @@ try{
 
  await page.selectOption('#protection-against','public_housing');
  await page.locator('.protection-boroughs [data-borough=staten_island]').click();
- assert.equal(await page.locator('[data-testid=protection-gap]').innerText(),'Unavailable');
+ assert.equal(await page.locator('[data-testid=protection-gap]').innerText(),process.argv.includes('--actual')?'$1,457':'Unavailable');
  await page.click('[data-view=map]');
  assert.equal(new URL(page.url()).searchParams.get('development'),'nycha:tds:136');
  assert.ok(await page.locator('#product-panel').isVisible());

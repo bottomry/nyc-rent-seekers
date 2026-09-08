@@ -43,7 +43,7 @@ export function searchDevelopments(bundle: DemoBundle, query: string, limit = 12
     const amp = d.hud_amp_id || "";
     const borough = d.borough || d.borough_code || "";
     const program = d.program || "";
-    const hay = norm([name, tds, amp, borough, program, d.development_id].join(" "));
+    const hay = norm([name, tds, amp, borough, program, d.development_id, ...(d.aliases||[])].join(" "));
     if (!hay.includes(q) && !norm(name).startsWith(q) && tds !== query.trim()) {
       if (!(q === tds || q === norm(tds))) continue;
     }
@@ -63,7 +63,7 @@ export function searchDevelopments(bundle: DemoBundle, query: string, limit = 12
       id: d.development_id,
       development_id: d.development_id,
       label: name,
-      meta: [tds ? `TDS ${tds}` : null, borough, program].filter(Boolean).join(" · "),
+      meta: [tds ? `TDS ${tds}` : null, borough, program, d.program_transition?"retained historical rent":""].filter(Boolean).join(" · "),
       rent: rent?.value ?? null,
       data_as_of: rent?.period ?? d.data_as_of ?? null,
       score,

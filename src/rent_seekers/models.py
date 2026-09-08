@@ -154,6 +154,9 @@ class PopulationRentObservation(BaseModel):
     confidence_interval_lower: float | None = None
     confidence_interval_upper: float | None = None
     coefficient_of_variation: float | None = Field(default=None, ge=0)
+    publication_policy_version: int | None = None
+    caveats: list[str] = Field(default_factory=list)
+    uncertainty_reason: str | None = None
     reliability_status: Literal["reliable", "use_with_caution", "unavailable"]
     inference_class: Literal["descriptive_only"] = "descriptive_only"
     rival_explanations: list[NonEmptyString] = Field(min_length=1)
@@ -232,6 +235,7 @@ class PopulationRentGap(BaseModel):
     percent_denominator_observation_id: NonEmptyString
     direction: Literal["positive", "negative", "zero"]
     comparability_notes: list[NonEmptyString] = Field(min_length=1)
+    component_caveats: dict[str, list[str]] = Field(default_factory=dict)
     uncertainty_note: NonEmptyString
     inference_class: Literal["descriptive_only"] = "descriptive_only"
     minuend_reliability_status: Literal["reliable", "use_with_caution"]

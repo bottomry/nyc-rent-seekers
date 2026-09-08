@@ -68,8 +68,10 @@ def test_synthetic_puf_exercises_production_calculation_offline():
     assert public_recent["eligible_sample_count"] == 2
     assert public_recent["rent_sample_count"] == 1
     assert public_recent["weighted_population_estimate"] == 12
-    assert public_recent["value"] is None
-    assert public_recent["available"] is False
+    assert public_recent["value"] == 588
+    assert public_recent["available"] is True
+    assert "Small sample: 1 rent responses." in public_recent["caveats"]
+    assert "Uncertainty could not be estimated" in public_recent["caveats"]
     assert public_recent["imputed"] is False
     assert {row["cohort_id"] for row in result["estimates"]} == {"recent", "incumbent"}
     assert {row["geography_type"] for row in result["estimates"]} == {"citywide"}
