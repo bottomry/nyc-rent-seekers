@@ -488,7 +488,7 @@
       "reviewed_at": "2026-09-08",
       "predecessors": [],
       "finding": "Program rules and rent comparisons describe different populations; no program-specific spillover is estimated here.",
-      "statistic_note": "No comparable administrative statistic is published in this release.",
+      "statistic_note": "Combined DOF-administered SCRIE / DRIE borough averages for 2024 current rent, frozen rent and monthly benefit are available below. HPD-administered SCRIE is excluded. These administrative means are separate from survey median rents and cannot be split into separate program-by-borough averages.",
       "purpose": "SCRIE and DRIE, layered onto eligible existing housing.",
       "rent_regulation": "Separate layer; see survey classification and program scope",
       "effects": {
