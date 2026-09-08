@@ -58,7 +58,7 @@ try{
  }
  await page.selectOption('#protection-against','public_housing');
  assert.equal(await page.locator('.protection-bar').count(),3);
- assert.equal(await page.locator('[data-testid=frozen-rent]').innerText(),'$951');
+ assert.equal(await page.locator('[data-testid=frozen-rent]').count(),0);
  assert.ok(data.rent_freeze.source_sha256);
  assert.equal(data.rent_freeze.observations[0].geography_id,'queens');
  await page.locator('.protection-rank[data-borough=queens]').focus();

@@ -1,0 +1,629 @@
+ Preston Niblack
+ Commissioner
+
+
+
+2025 Report on the
+New York City Rent Freeze Program
+
+Contents
+Executive Summary....................................................................................................................................... 2
+Rent Freeze Program Overview .................................................................................................................... 3
+Rent Freeze Program Recipients ................................................................................................................... 5
+Eligible Population Estimate ......................................................................................................................... 8
+Conclusion ................................................................................................................................................... 10
+Appendix A: Data and Methodology........................................................................................................... 11
+Appendix B: Estimated Eligible Population and Actual Recipients of SCRIE/DRIE Benefits in Rent
+Stabilized Apartment Units in 2023 by Neighborhood ............................................................................... 15
+Appendix C: Rent Freeze Participants by Neighborhood, 2023 .................................................................. 17
+
+
+
+
+Published June 2025                                                                                                                                   1 of 17
+Executive Summary
+
+The New York City Rent Freeze Program consists of the Senior Citizen Rent Increase Exemption
+(SCRIE) and the Disability Rent Increase Exemption (DRIE). The program provides rent freeze
+benefits to low-income seniors and people with disabilities living in rent-regulated apartments
+or in units governed by the Private Housing Finance Law. By freezing rent and protecting
+recipients from future increases, the program helps vulnerable New Yorkers remain in their
+homes despite rising housing costs.
+
+This report, published in June 2025 by the Department of Finance (DOF), follows the initial 2014
+report and two subsequent reports issued in 2018 and 2022. Local Law 40 of 2015 requires the
+report to be published every three years. While the publication schedule was modified due to
+the COVID-19 pandemic, it will be corrected going forward; the next report will be issued in
+2027.
+
+In calendar year 2024, 67,677 households received Rent Freeze benefits, a slight increase from
+2023 and a sign that participation may be stabilizing. Program enrollment grew from 67,042
+households in 2014 to a peak of 75,515 in 2019, but then declined to 72,297 in 2020 (–4.3%)
+and 69,175 in 2021 (–4.3%). The initial drop in 2020 is attributed to the COVID-19 pandemic,
+which disproportionately affected the program’s target population. Since then, the rate of
+decline has slowed (to –2.6% in 2022 and –0.3% in 2023) followed by a modest 0.8% increase in
+2024, suggesting that the trend may be reversing.
+
+This report also provides updated estimates of the total number of households eligible for
+SCRIE or DRIE. In 2023, the most recent year for which complete data is available, an estimated
+158,214 households were potentially eligible—a 17% increase from the 135,111 estimated in
+2019. This increase is largely due to a rise in rent-stabilized units registered with New York State
+Homes and Community Renewal (HCR).
+
+Of the households estimated to be eligible in 2023, 67,132 received benefits, resulting in a
+utilization rate of 42.4%, down from 55.9% in 2019. This decline reflects both a drop in the
+number of recipients and a higher estimate of the eligible population. The increase may,
+however, be an artifact of previous underreporting of rent-stabilized units to HCR, and an effort
+more recently to ensure that all rent-stabilized units are registered, as required by law. As a
+result, the utilization rate should be interpreted with caution.
+
+
+
+
+Published June 2025                                                                          2 of 17
+Rent Freeze Program Overview
+
+The Rent Freeze Program freezes rent for eligible tenants, protecting them from most future
+increases as long as they remain in the program. To offset the gap between the frozen rent and
+what landlords are otherwise allowed to charge under Rent Guidelines Board increases, the City
+provides property tax credits to landlords. Eligible tenants include those living in Mitchell-Lama
+and other Private Housing Finance Law units, rent-controlled apartments, rent-stabilized
+apartments, hotel-stabilized apartments, and apartments regulated by New York State Homes
+and Community Renewal.
+
+SCRIE was established by state law in 1972 and adopted by New York City the same year.
+Originally limited to HCR-regulated units, the program was later expanded to include rent-
+controlled and rent-stabilized apartments, as well as rental and cooperative apartments
+covered by Articles II, IV, V, or XI of the Private Housing Finance Law or by federally insured
+mortgages under Section 213 of the National Housing Act.
+
+The Department of Finance has administered SCRIE for rent-regulated apartments since 2009,
+taking over from the Department for the Aging and the Department of Housing Preservation
+and Development. DRIE was created in October 2005 and has been administered by the
+Department of Finance since its inception. Additionally, pursuant to Local Law 109 of 2023,
+certain former Mitchell-Lama and Battery Park City units are now eligible for the Rent Freeze
+Program.
+
+In July 2023, new legislation simplified how income is calculated for determining eligibility and
+benefit levels for new applicants. Income is now defined as federal adjusted gross income
+minus the taxable portion of IRA or annuity distributions. This aligns with the income definition
+used for New York State’s School Tax Relief (STAR) program.
+
+To ensure that existing recipients are not negatively affected by this change, those who
+received the exemption for any tax year ending on or before June 30, 2024, may use either the
+previous or the new income definition when applying, whichever is more beneficial to the
+recipient.
+
+Eligibility requirements for the Rent Freeze Program are as follows:
+
+SCRIE Eligibility:
+
+   •   Age 62 or older
+   •   Combined household income of $50,000 or less
+   •   More than one-third of the monthly household income must be spent on rent
+   •   Applicant must live in an eligible unit and be named on the lease or have succession
+       rights
+   •   Unit must be rent-regulated or governed by the Private Housing Finance Law
+
+
+Published June 2025                                                                          3 of 17
+DRIE Eligibility:
+
+    •   Age 18 or older
+    •   Combined household income of $50,000 or less
+    •   More than one-third of the monthly household income must be spent on rent
+    •   Applicant must live in an eligible unit and be named on the lease or have succession
+        rights
+    •   Applicant must receive one of the following: Supplemental Security Income, Social
+        Security Disability Insurance, disability-related Medicaid, or a disability pension or
+        compensation from the U.S. Department of Veterans Affairs or U.S. Postal Service
+    •   Unit must be rent-regulated or governed by the Private Housing Finance Law
+
+
+
+
+Published June 2025                                                                         4 of 17
+Rent Freeze Program Recipients
+
+The number of SCRIE and DRIE recipients increased steadily from 2014 through 2019, then
+declined from 2020 to 2023. Table 1 shows the total number of households receiving Rent
+Freeze benefits each calendar year. (Note that certain SCRIE are administered by the
+Department of Housing Preservation and Development, or HPD.) In this table, and throughout
+the report, tenants are counted as program recipients if the Department of Finance issued tax
+abatement credits to their landlords through the Rent Freeze Program. If a tenant failed to
+renew their benefit and no credit was issued to their landlord for the year in question, that
+tenant is not included in the recipient count.
+
+ Table 1: Annual Recipient Figure, SCRIE and DRIE
+                            SCRIE (DOF)       SCRIE (HPD)       DRIE (DOF)          Total
+ 2014                              52,171             5,723            9,148          67,042
+ 2015                              55,791             7,109           10,764          73,664
+ 2016                              55,215             6,721           11,363          73,299
+ 2017                              55,539             7,225           11,551          74,315
+ 2018                              56,658             6,056           11,952          74,666
+ 2019                              56,793             6,507           12,215          75,515
+ 2020                              54,353             5,991           11,953          72,297
+ 2021                              51,276             6,480           11,419          69,175
+ 2022                              49,910             6,137           11,301          67,348
+ 2023                              50,395             5,560           11,177          67,132
+ 2024                              50,071             6,594           11,012          67,677
+ 2014 – 2019 Change                  8.9%            13.7%             33.5%           12.6%
+ 2014 – 2024 Change                 -4.0%            15.2%             20.4%            0.9%
+
+Between 2014 and 2019, total participation grew by 12.6%, with increases of 8.9% in DOF-
+administered SCRIE benefits, 13.7% in HPD-administered SCRIE benefits, and 33.5% in DRIE
+benefits. Over the longer span from 2014 to 2024, DOF-administered SCRIE participation
+declined by 4.0%, while HPD-administered SCRIE and DRIE participation rose by 15.2% and
+20.4%, respectively.
+
+The remainder of this section focuses on DOF-administered Rent Freeze benefits, excluding
+SCRIE benefits administered by the Department of Housing Preservation and Development
+(HPD).
+
+Table 2 shows how benefits were distributed across the five boroughs from 2014 to 2024. The
+number of SCRIE recipients declined in every borough except Queens, where the change was
+negligible (a 0.2% increase). In contrast, DRIE participation rose significantly in Brooklyn
+(55.9%), Queens (27.7%), Manhattan (19.1%), and Staten Island (11.8%), but fell by 7.8% in the
+Bronx.
+
+
+Published June 2025                                                                     5 of 17
+ Table 2: Annual Enrollment by Borough
+ (Excluding HPD-Administered SCRIE Benefits)
+
+
+                                     SCRIE                                         DRIE
+
+                                                2014-2024                                         2014-2024
+                2014        2020         2024                  2014       2020        2024
+                                                 Change                                            Change
+Bronx            9,015       8,361        7,706    -14.5%       2,821      2,844          2,602       -7.8%
+Brooklyn        14,582      15,778       14,270     -2.1%       2,051      3,554          3,198       55.9%
+Manhattan       17,212      18,118       16,734        -2.8%    2,779      3,565       3,311           19.1%
+Queens          10,995      11,673       11,020         0.2%    1,429      1,908       1,825           27.7%
+S. I.              367         423          341        -7.1%       68         82          76           11.8%
+Total           52,171      54,353       50,071        -4.0%    9,148     11,953      11,012           20.4%
+
+    Table 3 presents the average length of time recipients have participated in the Rent Freeze
+    Program, along with the average and median benefit amounts. As expected, longer
+    participation is associated with higher benefit amounts, since rent increases permitted by the
+    Rent Guidelines Board accumulate over time. Most recipients have incomes well below the
+    $50,000 income eligibility threshold.
+
+      Table 3: Average Benefit Period and Amount, 2024
+    (Excluding HPD-Administered SCRIE Benefits)
+                          Years in                                                           Monthly
+                                             Income    Current Rent     Frozen Rent
+                          Program                                                            Benefit
+                AVG         10.4             $20,910      $1,228           $979               $249
+    SCRIE
+                MED         9.7              $18,551      $1,138           $904               $178
+                AVG         10.1             $18,662      $1,188           $926               $261
+    DRIE
+                MED         10.6             $16,671      $1,114           $858               $215
+
+    Table 4 provides data on household size and the age of the household head, showing both
+    average and median values for SCRIE and DRIE recipients.
+
+      Table 4: Householder Information, 2024
+     (Excluding HPD-Administered SCRIE Benefits)
+                            Household Size              Householder Age
+               AVG               1.5                          77
+     SCRIE
+               MED                1                           77
+               AVG               1.5                          64
+     DRIE
+               MED                1                           65
+
+
+    Published June 2025                                                                           6 of 17
+Table 5 shows the average benefit duration and monthly benefit amount, broken down by
+borough.
+
+          Table 5: Average Benefit Period and Amount by Borough, 2024
+ (Excluding HPD-Administered SCRIE Benefits)
+                                       Years in                             Current               Frozen           Monthly
+                                                         Income
+                                       Program                                Rent                 Rent            Benefit
+ Manhattan                               10.9            $20,415             $1,230                $967             $263
+ Bronx                                   9.6             $19,628             $1,124                $909             $215
+ Brooklyn                                10.2            $20,138             $1,194                $951             $243
+ Queens                                  10.3            $21,716             $1,319               $1,043            $277
+ S. I.                                   8.2             $24,534             $1,277               $1,075            $202
+
+Chart 1 illustrates how average monthly benefit amounts rise with program tenure. The longer
+a household remains in the program, the larger the benefit, as legal rents increase over time.
+
+Chart 1: Average Monthly Benefit Amount in 2024
+
+
+                          $600                                                                      $554
+
+
+
+
+ Average Benefit Amount
+                          $500
+                                      SCRIE    DRIE                               $406 $426
+                          $400
+                                                                 $281 $291
+                          $300
+                                               $172 $191
+                          $200
+                                 $84 $112
+                          $100
+                           $0
+                                 0 - 5 Years    5 - 10 Years     10 - 15 Years    15 - 20 Years    Over 20 Years
+                                                               Years in Program
+
+
+Chart 2 shows the average share of a tenant’s legal rent that is covered by the benefit. As with
+benefit amounts, the covered percentage increases with time in the program.
+
+
+
+
+Published June 2025                                                                                                          7 of 17
+Chart 2: Percentage of Rent Covered as Benefit in 2024
+
+
+
+                               60%
+                                                                                                             50%
+
+
+
+
+% of Rent Covered as Benefit
+                               50%
+                                               SCRIE           DRIE
+                               40%                                                          37%
+
+                                                                                              36%
+                               30%                                        25%
+
+                               20%                       16%                24%
+                                        9%
+                               10%                         13%
+                                          6%
+                               0%
+                                     0 - 5 Years       5 - 10 Years     10 - 15 Years    15 - 20 Years   Over 20 Years
+                                                                      Years in Program
+
+
+Chart 3 shows the distribution of recipients by rent burden category. The largest group falls into the
+33%-40% range: 26% of SCRIE recipients and 20% of DRIE recipients pay that share of income toward
+frozen rent. Notably, 14% of SCRIE and 16% of DRIE recipients had frozen rents that exceeded their
+household income in 2024. The median rent-to-income ratio was 56% for SCRIE and 62% for DRIE
+recipients.
+
+Chart 3: Distribution of Recipients by Rent Burden on Income in 2024
+
+
+
+
+Eligible Population Estimate
+
+
+
+
+Published June 2025                                                                                                      8 of 17
+The Department of Finance first estimated the Rent Freeze Program’s eligible population in its
+2014 report. That estimate was based on data from the Housing and Vacancy Survey (HVS), a
+public dataset released every three years that provides information on New York City’s housing
+market, with a focus on rental vacancy rates.
+
+The 2018 report introduced a new methodology that relied on administrative data from the IRS
+and New York State Homes and Community Renewal to estimate the eligible population living
+in rent-stabilized apartments. It continued to use the 2017 HVS data to make an estimate for
+tenants in rent-controlled and Mitchell-Lama units. When evaluating the suitability of HVS data,
+the Department of Finance found that the HVS-based estimate was roughly 40% higher than
+the estimate derived from administrative data. DOF concluded that the administrative data
+approach better reflected the agency’s experience, including feedback from outreach events.
+
+This administrative approach was used again in the 2022 report and in the current June 2025
+report. The estimate of eligible households living in rent-stabilized units was derived by
+combining HCR registration data with IRS income data. HCR’s 2023 data provides the number of
+rent-stabilized units registered that year. Income, age, and disability status were drawn from
+IRS records. Where possible, apartment units were matched to individual tax records by name
+and address; when direct matches were not available, assignments were made based on rent
+and income levels.
+
+Although multiple taxpayers may reside in a single apartment, the current methodology assigns
+only one taxpayer per unit. As a result, some households with multiple income earners may be
+incorrectly counted as eligible, potentially overstating the size of the eligible population. Future
+refinements may include multiple income records per household for a more accurate estimate.
+
+For rent-controlled and Mitchell-Lama units, updated estimates were derived from the 2023
+HVS. (See Appendix A for details on the methodology.)
+
+DOF estimates that 158,214 households were eligible for the Rent Freeze Program in 2023—up
+17% from the 135,111 estimated in 2019. The program utilization rate in 2023 was 42.4%, down
+from 55.9% in 2019. (Neighborhood-level data is provided in Appendix B.) The increase in the
+estimated eligible population is primarily due to growth in the number of rent-stabilized
+apartments registered with HCR. In the September 2022 report, the estimate for rent-stabilized
+units was based on HCR’s 2019 data, which listed 907,012 registered units. By 2023, that
+number had increased by 7.4% to 974,050.
+
+Landlords of rent-stabilized buildings are required by law to file annual registrations with HCR.
+In recent years, amid concerns about declining compliance, HCR increased audit activity to
+enforce this requirement. The resulting uptick in registrations may reflect units that should
+have been rent-stabilized in prior years but had not been reported. This may have contributed
+to the higher estimate of eligible households and, in turn, exaggerated the decline in the
+program’s utilization rate.
+
+
+Published June 2025                                                                          9 of 17
+Conclusion
+
+Nearly 68,000 households in New York City are currently protected from rising housing costs
+through the Rent Freeze Program. Although participation declined after the onset of the COVID-
+19 pandemic, enrollment held steady in 2023, and in 2024, the program experienced a modest
+0.8% increase—the first rise since the pandemic began.
+
+The Department of Finance will continue working with public and private partners to encourage
+eligible tenants to apply for and receive Rent Freeze benefits. The agency remains committed
+to expanding outreach to ensure that more eligible households are informed about and
+enrolled in the program. DOF looks forward to continued collaboration with other agencies and
+the New York City Council to strengthen the Rent Freeze Program and help vulnerable New
+Yorkers remain in their homes.
+
+
+
+
+Published June 2025                                                                   10 of 17
+Appendix A: Data and Methodology
+
+This appendix outlines the data sources and methods used to produce the estimates presented
+in the report. The methodology relies on administrative data to estimate eligible tenants in
+rent-stabilized units and on survey data to estimate those in rent-controlled and Mitchell-Lama
+units (as administrative data is not available).
+
+Administrative Data
+
+This section describes the methodology used to estimate the eligible population using
+administrative data. The 2014 report relied solely on Housing and Vacancy Survey (HVS) data,
+which resulted in an estimated eligible population significantly higher than what was supported
+by the outreach efforts made by the Department of Finance after the report’s publication. In
+2018, DOF adopted a revised methodology based on administrative records from New York
+State Homes and Community Renewal and the IRS. This methodology has been used in each
+report since, including this one.
+
+The starting point for the estimate is the number of rent-stabilized units actively registered with
+HCR in 2023, including late registrations. Units that were vacant or exempt were excluded, as
+they are not eligible for SCRIE or DRIE. Units that are receiving Section 8 subsidies were also
+excluded, as it is highly unlikely for units to receive Section 8 vouchers and qualify for SCRIE or
+DRIE benefits at the same time. After these exclusions, the number of eligible rent-stabilized
+units in 2023 was 826,812—an increase of 7.0% from 772,904 in 2019. This increase was more
+than triple the growth rate observed between 2016 and 2021. The expanded base of registered
+rent-stabilized units was a major factor driving the higher eligible population estimate in 2023.
+
+To apply the remaining eligibility criteria—age, disability status, income, and rent burden—DOF
+used IRS tax data, including both personal income tax return filer and non-filer records. Because
+these datasets do not share common identifiers, records were matched by tenant name and
+building address. This process yielded age and income data for approximately 56% of the units.
+
+For the remaining units, DOF used a simulation model called an optimization algorithm to
+assign demographic data. The model matched the lowest-income individuals to the lowest-rent
+units within each building to estimate the largest possible eligible population. 1 Personal income
+tax filers were identified at the filing-unit level, so joint filers were treated as a single
+household. For non-filers, the model assumed single-person occupancy. Because many
+households include multiple income earners, this assumption may overstate eligibility by
+underestimating total household income. As a result, some households that appear eligible
+
+
+
+ 1
+   Simulations were also performed for other scenarios, with various combinations of assigning income to rent for
+the 2018 report. The scenario that generated the maximum eligible population was selected and retained for the
+subsequent reports.
+
+Published June 2025                                                                                     11 of 17
+under the current methodology would be ineligible if their full income were considered. 2 While
+this approach remains the best available, the resulting estimates should be interpreted with
+caution.
+
+Filers were assessed using full eligibility criteria: income 3 of $50,000 or less, age 62 or older (or
+disability status), rent burden greater than one-third of income, and residence in an eligible
+unit. For non-filers, Social Security benefit records were used to infer age or disability status. 4
+Since deductions could not be calculated precisely, a 10% allowance above the income
+threshold was applied, consistent with the HVS methodology. Administrative data estimates are
+shown in Table 8.
+
+       Table 8: Eligible Population Estimates for SCRIE and DRIE (2023)
+       (Excluding Rent-Controlled and Mitchell Lama)
+                                   Total Rent-             Non-Vacant and
+                                                                                       Eligible Population
+                                 Stabilized Units         Non-Section 8 Units
+           Manhattan                262,751                    216,286                         40,053
+            Brooklyn                284,298                    247,361                         37,465
+              Bronx                 239,905                    196,408                         30,700
+             Queens                 178,249                    159,511                         27,572
+          Staten Island               8,847                     7,246                          1,424
+              Total                 974,050                    826,812                        137,214
+
+Because administrative data is not available for rent-controlled and Mitchell-Lama units,
+estimates for those groups were derived from HVS data, as shown in Table 9.
+
+                Table 9: Eligible Population Estimates for SCRIE and DRIE
+               (Including Rent-Controlled and Mitchell Lama) 2023
+                                                                      Eligible Population 5
+                           Rent-Stabilized                                   137,214
+                           Rent-Controlled                                    13,000
+                            Mitchell Lama                                     8,000
+                                Total                                        158,214
+
+Table 10 compares current estimates to those from previous reports.
+
+
+
+ 2
+      The income definition was based on pre-2023 legislation.
+ 3
+    Income less than or equal to $50,000; disability or age of filer or spouse 62 or above; rent income ratio greater
+than 1/3; eligible unit status.
+ 4
+   The Social Security benefits include Supplemental Security Income and Social Security Disability Insurance
+benefits, which are the main disability benefits defined under the DRIE benefit, in addition to retirement benefits.
+ 5
+     For rent-controlled and Mitchell Lama units, the estimates based on the 2023 HVS data were used.
+
+Published June 2025                                                                                         12 of 17
+ Table 10: SCRIE/DRIE-Eligible Population Estimates by Apartment Type
+                                  Administrative Data       Administrative Data         Administrative Data
+                                   Estimates, 2016 6         Estimates, 2019 7           Estimates, 2023 8
+       Rent-Stabilized                 112,201                   116,998                     137,214
+       Rent-Controlled                  9,509                     9,509                       13,000
+        Mitchell Lama                   8,604                     8,604                       8,000
+            Total                      130,314                   135,111                     158,214
+
+HVS 2023 Data
+
+The HVS-based estimates for rent-controlled and Mitchell-Lama units use the 2023 New York
+City Housing and Vacancy Survey. To prevent double-counting households eligible for both
+SCRIE and DRIE, those age 62 or older were classified as potentially SCRIE-eligible, and those
+under 62 as DRIE-eligible. Income eligibility was capped at 110% of the $50,000 threshold to
+account for allowable deductions such as income taxes and Social Security taxes.
+
+Eligibility for SCRIE:
+
+      •   Householder or spouse age 62 or older
+      •   Household income not exceeding 110% of the $50,000 limit
+      •   Monthly rent equal to or greater than one-third of household income
+      •   Residence in a rent-stabilized, rent-controlled, or Mitchell-Lama rental or co-op unit
+
+Eligibility for DRIE:
+
+      •   Same income, rent burden, and unit criteria as above
+      •   Householder and spouse (if any) under age 62
+      •   Household receives SSDI or SSI
+      •   At least one household member has a disability
+
+Households meeting these criteria were considered eligible for DRIE.
+
+Comparison of Estimation Methodologies
+
+In the 2014 report, HVS data was used to estimate that 155,366 households were eligible for Rent
+Freeze benefits. At that time, 67,042 households 9 were enrolled, resulting in a utilization rate of 43.2%.
+
+
+ 6
+    For rent-controlled and Mitchell Lama units, the estimates based on the 2017 HVS data were used.
+ 7
+    For rent-controlled and Mitchell Lama units, the estimates based on the HVS data are used. The 2017 HVS was
+still the latest census data available at the time when the 2022 report was prepared.
+  8
+    For rent-controlled and Mitchell Lama units, the estimates based on the HVS data are used. The 2023 HVS was
+used.
+ 9
+     Including 5,723 SCRIE benefits administered by HPD.
+
+Published June 2025                                                                                     13 of 17
+To close the gap, DOF undertook an extensive outreach campaign in partnership with the Mayor’s Public
+Engagement Unit and the City Council. However, enrollment grew by only 9% over the next two years,
+reaching 73,299 in 2016. Much of that increase was attributed to a 2014 change in the income threshold
+from $29,000 to $50,000, which expanded eligibility.
+
+A 2017 update using the same HVS methodology estimated 175,050 eligible households—a 12.7%
+increase over the 2014 estimate. But actual participation in 2017 was 74,315 households, putting the
+utilization rate at 42.5%. This figure seemed inconsistent with DOF’s outreach experience and prompted
+a shift to an administrative-data-based methodology. Using HCR registration data, the estimated eligible
+population in 2016 was 130,314 households, with a utilization rate of 56.2%. This method was adopted
+for the 2018 report and retained for the 2022 and June 2025 reports.
+
+Although HVS data continues to be a valuable resource for housing research and planning, there are
+ongoing limitations. The 2023 HVS-based estimate puts the eligible population at 153,000—a 12.6%
+decrease from the 2017 HVS estimate of 175,050. At the same time, the number of occupied rent-
+stabilized units reported by the survey data increased from 946,500 to 960,700. The 2023 survey also
+introduced changes in available data fields and calculations.
+
+Therefore, there is uncertainty of the estimate under either approach. As a result, the Department of
+Finance continues to face challenges in producing consistent, accurate estimates. While DOF remains
+committed to refining its methodology and using the best available data, all estimates should be treated
+with caution.
+
+
+
+
+Published June 2025                                                                             14 of 17
+      Appendix B: Estimated Eligible Population and Actual Recipients of SCRIE/DRIE Benefits in
+      Rent Stabilized Apartment Units in 2023 by Neighborhood 10
+
+                   Sub-                                                                                 Total
+                                                                                                                  Utilization
+ Borough          borough                   Sub-borough Name                        Recipients         Eligible
+                                                                                                                     Rate
+                  Number                                                                              Population
+Manhattan            1         Greenwich Village / Financial District                         1,141         2,471      46.2%
+Manhattan            2         Lower East Side / Chinatown                                    1,955         3,806      51.4%
+Manhattan            3         Chelsea / Clinton / Midtown                                    1,621         4,151      39.1%
+Manhattan            4         Stuyvesant Town / Turtle Bay                                   1,480         3,103      47.7%
+Manhattan            5         Upper West Side                                                1,810         4,373      41.4%
+Manhattan            6         Upper East Side                                                1,356         3,630      37.4%
+Manhattan            7         Morning Heights / Hamilton Heights                             1,589         3,258      48.8%
+Manhattan            8         Central Harlem                                                 1,028         3,197      32.2%
+Manhattan            9         East Harlem                                                      492         1,849      26.6%
+Manhattan            10        Washington Heights / Inwood                                    6,509        10,215      63.7%
+Bronx                1         Mott Haven / Hunts Point                                         601         2,459      24.4%
+Bronx                2         Morrisania / East Tremont                                        804         3,605      22.3%
+Bronx                3         Highbridge / South Concourse                                   1,872         4,870      38.4%
+Bronx                4         University Heights / Fordham                                   1,670         5,064      33.0%
+Bronx                5         Kings Heights / Mosholu                                        1,581         4,765      33.2%
+Bronx                6         Riverdale / Kingsbridge                                        1,021         2,839      36.0%
+Bronx                7         Soundview / Parkchester                                        1,050         2,502      42.0%
+Bronx                8         Throgs Neck / Co-op City                                         409           778      52.6%
+Bronx                9         Pelham Parkway                                                   775         2,071      37.4%
+Bronx                10        Williamsbridge / Baychester                                      405         1,747      23.2%
+Brooklyn             1         Williamsburg / Greenpoint                                        763         2,111      36.1%
+Brooklyn             2         Brooklyn Heights / Fort Greene                                   489         1,297      37.7%
+Brooklyn             3         Bedford Stuyvesant                                               312         1,112      28.1%
+Brooklyn             4         Bushwick                                                         608         1,527      39.8%
+Brooklyn             5         East New York / Starret City                                     242         1,034      23.4%
+Brooklyn             6         Park Slope / Carroll Gardens                                     375           811      46.2%
+Brooklyn             7         Sunset Park                                                      763         1,773      43.0%
+Brooklyn             8         North Crown Heights / Prospect Heights                         1,012         2,514      40.3%
+Brooklyn             9         South Crown Heights                                            2,292         4,526      50.6%
+Brooklyn             10        Bay Ridge                                                        768         1,972      38.9%
+Brooklyn             11        Bensonhurst                                                    1,400         2,446      57.2%
+Brooklyn             12        Borough Park                                                   1,017         1,741      58.4%
+Brooklyn             13        Coney Island                                                   1,196         1,958      61.1%
+Brooklyn             14        Flatbush                                                       2,933         5,578      52.6%
+Brooklyn             15        Sheepshead Bay / Gravesend                                     1,404         2,218      63.3%
+Brooklyn             16        Brownsville / Ocean Hill                                         272         1,439      18.9%
+Brooklyn             17        East Flatbush                                                  1,139         2,869      39.7%
+Brooklyn             18        Flatlands / Canarsie                                             224           539      41.6%
+Queens               1         Astoria                                                        1,379         3,445      40.0%
+Queens               2         Sunnyside / Woodside                                           1,347         2,985      45.1%
+
+       10
+            Only the tenants residing in rent-stabilized apartment units are reported here.
+
+      Published June 2025                                                                                      15 of 17
+Queens          3          Jackson Heights                    1,307    2,698         48.4%
+Queens          4          Elmhurst / Corona                  1,608     2,937        54.7%
+Queens          5          Middle Village / Ridgewood           507     1,344        37.7%
+Queens          6          Forest Hill / Rego Park            1,647     2,629        62.6%
+Queens          7          Flushing / Whitestone              1,588     3,788        41.9%
+Queens          8          Hillcrest / Fresh Madows           1,104     2,348        47.0%
+Queens          9          Kew Gardens / Woodhaven              428     1,037        41.3%
+Queens          10         Howard Beach / South Ozone Park       68       165        41.2%
+Queens          11         Bayside / Little Neck                234       560        41.8%
+Queens          12         Jamaica                              848     2,035        41.7%
+Queens          13         Bellerose / Rosedale                 141       358        39.4%
+Queens          14         Rockaways                            389     1,243        31.3%
+S.I             1          North Shore                          245       898        27.3%
+S.I             2          Mid Island                            59       217        27.2%
+S.I             3          South Shore                          126       309        40.8%
+Total                                                        59,403   137,214        43.3%
+
+
+
+
+     Published June 2025                                                  16 of 17
+Appendix C: Rent Freeze Participants by Neighborhood, 2023
+
+
+
+
+Published June 2025                                          17 of 17
+

@@ -78,3 +78,57 @@ a comparison of distributions, not a matched-household treatment effect or a sub
 The map scale stays fixed when selecting a borough. Sources, sample counts, reliability and
 intervals are available with exact values. See [Rents by group usage](../README.md#rents-by-group)
 for selection, downloads, sharing, and keyboard controls.
+
+## Named assistance remains a separate evidence layer
+
+The latest public-use release listed on HPD's research page at the 2026-09-08
+review was 2023. Its assistance fields cannot separately identify CityFHEPS,
+FHEPS, SCRIE or DRIE. Re-audit later released codebooks rather than treating that
+limitation as permanent. Administrative enrollment cannot split a survey bar,
+provide a missing identity, or be subtracted from weighted households. Recipients
+may already appear in regulated or other primary groups. Apparent eligibility is
+not evidence of receipt. Exports retain the unresolved identity as null.
+
+Cash Assistance shelter allowances and emergency arrears grants are distinct
+research targets. Total Cash Assistance enrollment is not their recipient count.
+
+### Effects on other renters
+
+The primary target is rent change for comparable **unassisted units**, separate
+from rent received by participating landlords. The current release does not
+estimate that NYC effect. `allocation/reference.json` contains a reproducible
+field-level availability assessment, descriptive StreetEasy series, conditional
+scenario definitions and a draft (unsent) data request.
+
+The market trends measure listings, with assistance status unobserved. CityFHEPS
+caseload geography includes outside-NYC destinations, so it is not regressed
+against NYC borough rents. HUD county snapshots are more geographically specific
+but do not provide a policy event study by themselves. Existing ZIP ZORI remains a
+repeat-rent market index; it is not averaged into a borough median or relabeled as
+an unassisted tenancy series.
+
+`conditional_scenario` in `normalize/rental_effects.py` computes an explicitly
+conditional local linear sensitivity: incremental demand as a share of rental
+stock divided by supply elasticity plus the magnitude of demand elasticity. Every
+input needs a source or an explicit assumption and a time horizon. Tests use
+synthetic inputs, never NYC calibration. The published NYC scenario parameters and
+effects remain null because take-up, incremental demand and supply response are
+not established. The no-incremental-demand condition allows a no-effect scenario.
+Sensitivity ranges are not confidence intervals. This demand mechanism does not
+transfer unchanged to freezes, host-household payments or construction.
+
+Credible causal work would require an unassisted rental panel, pre-policy exposure,
+actual implementation/application/lease dates, comparison areas or segments,
+pre-trend and concurrent-policy checks, stable geography and assessment of
+spillovers into controls. Payment standards can respond to rents; changes are not
+automatically exogenous. Both increases and decreases matter. Bunching at a
+ceiling is a mechanism diagnostic; quality changes, sorting and landlord
+participation are alternative explanations. A precise credible estimate excluding
+a meaningful increase would weaken the positive-spillover hypothesis; wide
+intervals mean uncertainty.
+
+For `request_or_agreement` fields, the status means a proposed agency access path,
+not confirmed releasability. The draft prioritizes monthly destination aggregates,
+separate flows and actual payments with suppression and boundary metadata. Access
+to HCR unit data and rent-review comparisons remains unconfirmed. Do not identify
+anonymous survey respondents or send the draft without separate authorization.
