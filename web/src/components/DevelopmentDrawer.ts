@@ -21,6 +21,7 @@ import {
 import { escapeHtml, formatMonthYear, formatPct, formatPeriod, formatUsd } from "../format";
 import { buildDataCardText } from "../metrics";
 import { marketBarLabel, renderRentBars } from "./RentBars";
+import { rentNote } from "./Uncertainty";
 
 export function findDevelopmentContext(
   bundle: DemoBundle,
@@ -383,6 +384,28 @@ function intervalsOverlap(
   );
 }
 
+function renderDifferencePrecision(
+  left: PopulationRentObservation,
+  right: PopulationRentObservation,
+): string {
+  const components = [left, right].map((row) => {
+    const regime = row.housing_regime === "unregulated_market" ? "Unregulated" : "Regulated";
+    const cohort = row.tenure_cohort === "recent" ? "recent movers" : "incumbents";
+    const note = rentNote({
+      ...row,
+      rent_sample_count: row.sample_size,
+      confidence_interval_lower: row.confidence_interval_lower ?? null,
+      confidence_interval_upper: row.confidence_interval_upper ?? null,
+    });
+    return `<p data-observation-id="${escapeHtml(row.observation_id)}"><strong>${regime} renters · ${cohort}:</strong>
+      ${escapeHtml(note)}</p>`;
+  });
+  return `<div class="uncertainty-note" data-testid="difference-precision">
+    ${components.join("")}
+    <p>Descriptive point difference only; no interval for the difference is asserted.</p>
+  </div>`;
+}
+
 function renderGapInsight(
   loadState: PopulationRentLoadState,
   development: Development,
@@ -412,6 +435,7 @@ function renderGapInsight(
       <div class="metric-label">Observed ${gap.gap_type === "incumbency_within_regime" ? "incumbency" : "regulation"} gap</div>
       <strong>${escapeHtml(headline)}</strong>
       <p>${escapeHtml(gap.geography_name)} · ${escapeHtml(gap.survey_vintage)} occupied-renter survey · descriptive only.</p>
+      ${renderDifferencePrecision(left, right)}
       <details class="rent-context-calculation" data-testid="rent-context-calculation">
         <summary>Verify this difference</summary>
         <p>${formatUsd(Number(left.value))} minus ${formatUsd(Number(right.value))} =
@@ -652,6 +676,7 @@ function renderRentLens(
           occupied stock; the development row summarizes current residents of one development.</p>
         <p>${escapeHtml(observedExample)} This is an observed difference, not evidence that tenure alone caused it;
           apartment, location, household, regulation, and selection differences may also matter.</p>
+        ${hasCrossRegimeExample ? renderDifferencePrecision(incumbentMarket, recentRegulated) : ""}
       </div>
     </details>`;
 }
