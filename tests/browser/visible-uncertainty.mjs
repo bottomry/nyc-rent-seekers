@@ -39,7 +39,7 @@ try {
   await page.locator('[data-testid=pact-transition]').waitFor();
   assert.match(await page.locator('[data-testid=pact-transition]').innerText(),/2024-06-26/);
   assert.match(await page.locator('[data-testid=pact-transition]').innerText(),/Current PACT rent unavailable/);
-  assert.match(await page.locator('[data-testid=structured-rent-card]').innerText(),/historical record/);
+  assert.match(await page.locator('[data-testid=structured-rent-card]').innerText(),/historical record/i);
   assert.equal(await page.locator('[data-testid=rent-stale-flag]').count(),0);
   await page.click('[data-view=protection]');
  }
