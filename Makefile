@@ -100,6 +100,7 @@ test: test-isolation
 	@node tests/browser/housing-access.mjs
 	@node tests/browser/figures.mjs
 	@node tests/browser/visible-uncertainty.mjs
+	@node tests/browser/drawer-difference-precision.mjs
 	@node tests/browser/neighborhood-state.mjs
 	@node scripts/static-edge-load.mjs
 

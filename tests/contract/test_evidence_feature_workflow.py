@@ -52,6 +52,8 @@ def test_analytical_ui_release_gate_covers_teaching_states_and_mobile_behavior()
         "uv run pytest -q",
         "npm run typecheck",
         "node tests/browser/smoke.mjs --app-only",
+        "node tests/browser/visible-uncertainty.mjs",
+        "node tests/browser/drawer-difference-precision.mjs",
     ):
         assert gate in workflow
     for browser_contract in (
@@ -60,7 +62,7 @@ def test_analytical_ui_release_gate_covers_teaching_states_and_mobile_behavior()
         'data-testid="population-provenance"',
         "descriptive insight asserted a causal explanation",
         "provenance disclosure disrupted analysis state",
-        "geography fallback did not select borough then citywide",
+        "estimable borough rent was replaced by a broader geography",
     ):
         assert browser_contract in browser
     for teaching_contract in (
